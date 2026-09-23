@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div style="font:600 13px/1.5 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:0 0 1.1rem"><a href="../index.html" style="display:inline-block;text-decoration:none;color:inherit;border:1px solid rgba(128,128,128,.35);border-radius:99px;padding:.3rem .9rem;opacity:.85">↑ Comprendre et discuter l’IA — portail du fonds</a></div>
+<h1>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</h1>
+<p class="chapeau">Restitution en vingt fiches de l’exposé-débat présenté par Christo Datso au
+bâtiment de la COCOF, pour l’institut NeuroDivergent Brain Intelligences et le Café Philo
+Rencontres &amp; Progrès.</p>
+
+<div class="note">
+<p><b>Ce que contient ce mini-site.</b> Les <b>97 diapositives</b> de la présentation, regroupées en
+<b>20 fiches</b>. Une fiche&nbsp;= une idée qui se tient, pas une diapositive.</p>
+<p><b>Ce que la salle n’a pas vu.</b> Vingt et une diapositives portent des notes d’orateur, pour
+<b>plus de 80&nbsp;000 caractères</b> — dossiers de presse complets, argumentaires, documentation
+préparatoire. Une seule en compte près de 22&nbsp;000. Ces notes sont reprises ici et signalées
+comme telles.</p>
+<p><b>Ce qui n’a pas été présenté faute de temps.</b> L’auteur le dit lui-même dans sa présentation
+publique&nbsp;: le <i>slide-deck</i> « comprend toutes les diapositives présentées et un grand
+nombre d’autres qui n’ont pas été présentées faute de temps, ainsi que quelques diapositives
+supplémentaires en annexe ». Le mini-site restitue l’ensemble.</p>
+<p><b>Ce qu’il ne contient pas.</b> Aucune actualisation. Là où c’est daté, la fiche le dit&nbsp;;
+elle ne le corrige pas.</p>
+<p><b>Où est passée la diapositive&nbsp;N&nbsp;?</b> La
+<a href="correspondance-diapositives.html">table de correspondance</a> répond pour les 97.</p>
+</div>
+
+<div class="note"><b>Sur la date.</b> Le dossier source s’appelle <code>@NDBI 2026-02-19</code>
+et contient une version distincte datée du 19 février ; il a donc pu y avoir une seconde séance.
+C’est le deck du <b>12 février 2026</b> qui est restitué ici — la date de la diapositive de titre,
+du pied de page des 97 diapositives, et de la présentation publique de l’auteur.</div>
+
+<h2>La question de la soirée</h2>
+<p class="exergue">Qu’en est-il des risques de l’IA&nbsp;: <b>techniques</b> ou
+<b>politiques</b>&nbsp;?</p>
+<p>Elle est posée à la <a href="fiche-04-ice.html">fiche&nbsp;4</a>, après trois cas choisis pour la
+rendre inévitable, et elle traverse les quatre parties sans jamais recevoir de réponse frontale.
+La <a href="fiche-14-critiques.html">fiche&nbsp;14</a> explique pourquoi&nbsp;: elle n’appelle pas
+une réponse mais une séparation des deux plans.</p>
+
+<h2>Les vingt fiches</h2>
+<ul class="fiches">
+<li><a href="fiche-01-ouverture.html">1. Ouverture&nbsp;: le cadre, l’avertissement, l’agenda</a><span class="d">dia. 1–5</span><p>Le COCOF, le NDBI, la licence — et une conférence qui commence par dire qu’elle est un « travail en progrès ». Puis éthos, éthique, éthologie.</p></li>
+<li><a href="fiche-02-degre-zero.html">2. Le degré zéro du risque&nbsp;: un chatbot à 650&nbsp;dollars</a><span class="d">dia. 6–8</span><p>L’affaire Air Canada, et la défense « remarquable » de la compagnie&nbsp;: le chatbot serait « une entité juridique distincte », responsable de ses propres actes.</p></li>
+<li><a href="fiche-03-machines-xenophobes.html">3. Les machines xénophobes&nbsp;: le scandale néerlandais</a><span class="d">dia. 9</span><p>Une diapositive et six mille caractères de notes&nbsp;: la nationalité comme facteur de risque, la boucle discriminatoire, et un humain dans la boucle privé de toute information.</p></li>
+<li><a href="fiche-04-ice.html">4. L’ICE, et la question qui structure tout l’exposé</a><span class="d">dia. 10–11</span><p>Quand une agence fédérale rachète l’appareil publicitaire. Puis la question de la soirée&nbsp;: ces risques sont-ils plutôt <b>techniques</b>… ou <b>politiques</b>&nbsp;?</p></li>
+<li><a href="fiche-05-consensus.html">5. Le socle de consensus, et ce qu’il ne dit pas</a><span class="d">dia. 12–14</span><p>OCDE, UNESCO, NIST, AI Act&nbsp;: six principes partagés. Et trois questions qu’ils ne tranchent pas — jusqu’où accepter le risque, qui paie le prix, qui décide.</p></li>
+<li><a href="fiche-06-reconnaissance-faciale.html">6. La reconnaissance faciale&nbsp;: deux cas d’usage</a><span class="d">dia. 15–20</span><p>Un vote silencieux, un article du <i>Parisien</i> de 2019, et deux emplacements pour le même matériel&nbsp;: au portique, on authentifie&nbsp;; dans le couloir, on identifie.</p></li>
+<li><a href="fiche-07-belgique.html">7. La reconnaissance faciale en Belgique&nbsp;: le Droit sous pression</a><span class="d">dia. 21–25</span><p>Un procès-fiction daté de juin 2026, l’appel des Ligues à une interdiction sans exception, l’accord « Arizona », et le visa américain contre les données biométriques.</p></li>
+<li><a href="fiche-08-trois-lunettes.html">8. Les trois lunettes éthiques</a><span class="d">dia. 26–30</span><p>Le modèle simplifié promis à l’agenda&nbsp;: utilitarisme, déontologie, vertus &amp; care — avec le tableau comparatif complet et ses quatre dilemmes d’IA.</p></li>
+<li><a href="fiche-09-trois-verdicts.html">9. Un cas unique, trois verdicts</a><span class="d">dia. 31–35</span><p>Utile&nbsp;? Légitime&nbsp;? Désirable&nbsp;? Puis la charge de Manuela Cadelli contre les « idiots utiles », et la réponse de l’orateur — qui tient à une préposition.</p></li>
+<li><a href="fiche-10-mensonges.html">10. Quand l’IA ment, menace, « tue »</a><span class="d">dia. 36–40</span><p>Le chantage à l’adultère, <i>What is Claude?</i> dans le <i>New Yorker</i>, et l’expérience « Alex »&nbsp;: malveillance, ou continuation narrative&nbsp;?</p></li>
+<li><a href="fiche-11-exfiltration.html">11. L’auto-exfiltration, et la mesure des incidents</a><span class="d">dia. 41–45</span><p>Apollo Research, le moniteur d’incidents de l’OCDE — et l’opacité qui devient une architecture&nbsp;: la logique migre du code vers le modèle.</p></li>
+<li><a href="fiche-12-religion-agents.html">12. Parenthèse&nbsp;: la religion des agents</a><span class="d">dia. 46–49</span><p>Moltbook, l’Église de Molt, le crustafarianisme. Drôle — et exactement la question de la personnalité juridique qu’Air Canada avait plaidée sérieusement.</p></li>
+<li><a href="fiche-13-alignement.html">13. L’alignement, et la gestion des risques</a><span class="d">dia. 50–57</span><p>Une expérience de pensée sur les buts de la super-IA, la déclaration sur la superintelligence et ses 134&nbsp;650 signatures, Bengio et Amodei, puis une boucle sans fin.</p></li>
+<li><a href="fiche-14-critiques.html">14. Les impasses des LLM, et les critiques politiques</a><span class="d">dia. 58–60</span><p>LeCun, JEPA et les <i>world models</i> d’un côté&nbsp;; Yarvin, Land, Thiel de l’autre. Deux critiques qui n’ont pas le même objet — et c’est le propos.</p></li>
+<li><a href="fiche-15-se-former.html">15. Se former, éduquer, transmettre</a><span class="d">dia. 61–66</span><p>Trois voies, dont l’apprentissage par la délibération — ce que la salle a fait toute la soirée. Et cinq marches où la pratique des outils vient en quatrième.</p></li>
+<li><a href="fiche-16-ai-act.html">16. L’AI Act, et les cadres de gouvernance</a><span class="d">dia. 67–68</span><p>Le règlement de 2024, sa « simplification » proposée fin 2025, et la comparaison de quatre cadres qui disent la même chose — dont un seul est obligatoire.</p></li>
+<li><a href="fiche-17-fracture-numerique.html">17. La fracture numérique</a><span class="d">dia. 69–72</span><p>Quatre Belges sur dix en situation de vulnérabilité numérique. Le risque le plus massif de tout l’exposé, et le seul qui ne doive rien à une défaillance de l’IA.</p></li>
+<li><a href="fiche-18-ressources.html">18. Ressources&nbsp;: philosophie, droit, pratique</a><span class="d">dia. 73–86</span><p>La LSE, MacIntyre et <i>Après la vertu</i>, les éthiques sectorielles, Poullet et Cadelli, le master DTIC de Namur, et la formation de terrain.</p></li>
+<li><a href="fiche-19-conference-precedente.html">19. La conférence précédente, et la littérature critique de 2026</a><span class="d">dia. 87–91</span><p>L’exposé renvoie à <i>Rise of the Machines</i> plutôt que de refaire l’introduction technique — et met sa bibliographie critique à jour&nbsp;: Bridle, Miranda, Klein, Bronner.</p></li>
+<li><a href="fiche-20-bibliographie.html">20. Bibliographie, films, et le mot de la fin</a><span class="d">dia. 92–97</span><p>Vingt-deux livres en quatre familles, douze films avec leurs réalisateurs, et la licence CC&nbsp;BY-NC-SA qui autorise ce mini-site.</p></li>
+</ul>
+
+<h2>Ce que la relecture dégage</h2>
+<p><b>Trois cas, trois ordres de grandeur, une seule technologie.</b> L’introduction monte en trois
+marches&nbsp;: un chatbot qui coûte <b>650&nbsp;dollars</b>, un algorithme qui ruine <b>des dizaines
+de milliers de familles</b> et fait tomber un gouvernement, une agence fédérale qui réoriente
+<b>l’appareil publicitaire</b> en instrument de surveillance. Aucun des trois ne se résout par un
+meilleur modèle — et c’est toute la démonstration.</p>
+<p><b>Un exposé qui projette la critique de son propre genre.</b> Manuela Cadelli traite les
+éthiciens de l’IA de « nouveaux idiots utiles, promus par le marché et certains réseaux sociaux
+comme LinkedIn ». L’orateur la cite trois fois, dont en ouverture, et lui répond par une
+préposition&nbsp;: le titre est « <b>L’éthique ET l’IA</b> », non « l’éthique DE l’IA » — car la
+seconde formule supposerait que l’IA soit devenue un sujet de droit. « Nous n’y sommes pas… pas
+encore&nbsp;? »</p>
+<p><b>Le modèle des trois lunettes, et son honnêteté.</b> Le cœur de l’exposé est un outil&nbsp;:
+trois grilles — utilitarisme, déontologie, vertus et care — appliquées au même cas. Il ne sert pas
+à trancher mais à <b>rendre le désaccord prévisible</b>. Et la diapositive qui suit le tableau ne
+promet rien&nbsp;: « pas de solutions propres, pas de consensus confortable, des tensions à
+assumer ».</p>
+<p><b>Un dispositif participatif, assumé comme méthode.</b> Vote silencieux à main levée, deux cas
+d’usage soumis à discussion, questions posées à la salle à chaque étape. La
+<a href="fiche-15-se-former.html">fiche&nbsp;15</a> le justifie rétrospectivement&nbsp;: on
+n’apprend pas l’éthique en lisant des principes, mais « par la pratique des délibérations et des
+décisions ». La salle ne suivait pas un cours&nbsp;: elle s’exerçait.</p>
+<p><b>Et le risque dont personne ne parle.</b> Les fiches 10 à 13 traitent de risques rares et
+spectaculaires — chantage, exfiltration, superintelligence. La
+<a href="fiche-17-fracture-numerique.html">fiche&nbsp;17</a> en présente un autre&nbsp;:
+<b>quatre Belges sur dix</b> en situation de vulnérabilité numérique. Actuel, massif, documenté —
+et il ne doit rien à une défaillance de l’IA. Il doit tout à une décision d’automatiser.</p>
+
+<h2>Trois conférences, un même auteur</h2>
+<div class="rappel">Cette conférence est la <b>troisième</b> d’une série. Elle renvoie
+explicitement à la précédente (<a href="fiche-19-conference-precedente.html">fiche&nbsp;19</a>)
+plutôt que de refaire l’introduction technique — ce qui lui permet d’attaquer directement
+l’éthique.<br><br>
+<b>10 janvier 2025</b> — <a href="../conference-reduiste-2025-01-10/index.html">Conférence « IA » — La Réduiste</a>&nbsp;:
+49 diapositives, public général, une introduction qui <i>montre</i> l’outil.<br>
+<b>23 février 2025</b> — <a href="../conference-cafe-philo-2025-02-23/index.html">« Rise of the Machines » — Café Philo</a>&nbsp;:
+53 diapositives, une actualité de quatre semaines, un exposé qui <i>cite</i>.<br>
+<b>12 février 2026</b> — la présente&nbsp;: 97 diapositives, un exposé qui <i>fait délibérer</i>.</div>
+<p>La progression est nette. En janvier 2025, l’orateur convoque l’outil comme pièce à
+conviction — une dystopie générée par DALL·E, un schéma raté par ChatGPT. En février 2025, il
+produit des publications et des cours de bourse. En février 2026, il apporte des <b>cas juridiques
+documentés</b>, un <b>modèle d’analyse</b>, et il fait voter la salle. Une seule diapositive est
+commune aux trois — « Pour aller plus loin. Jusqu’où &amp; comment&nbsp;? » — et elle n’a pas
+changé d’une ligne.</p>
+
+<h2>Comprendre les mécanismes</h2>
+<div class="rappel"><b>Un dossier voisin</b> rassemble la matière pratique — ce que la machine lit,
+comment elle range le sens, comment elle choisit un mot — avec des démonstrations qu’on peut
+exécuter soi-même. Il renvoie à cette conférence pour tout ce qu’elle explique déjà, plutôt que de
+le réexpliquer.<br><br>
+<a href="../concepts/index.html"><b>Comprendre quelques concepts avec des exemples</b></a>
+— tokens, vecteurs, du neurone au poids, fenêtre de contexte, température, hallucinations, et la
+question de savoir si la vérité est une direction.</div>
+
+<h2>Ressources citées dans la conférence</h2>
+<div class="tbl"><table>
+<tr><th>Ressource</th><th style="width:1%">Fiche</th></tr>
+<tr><td><a class="lien-ext" href="https://www.ndbi.eu/">ndbi.eu</a> — NeuroDivergent Brain
+Intelligences</td><td>1</td></tr>
+<tr><td><a class="lien-ext" href="https://www.cafephilorp.eu/">cafephilorp.eu</a> — Café Philo
+Rencontres &amp; Progrès</td><td>1</td></tr>
+<tr><td><a class="lien-ext" href="https://www.amnesty.org/fr/latest/news/2021/10/xenophobic-machines-dutch-child-benefit-scandal/">Amnesty
+International — <i>Xenophobic Machines</i></a></td><td>3</td></tr>
+<tr><td>Principes de l’<b>OCDE</b> sur l’IA · Recommandation de l’<b>UNESCO</b> ·
+<b>NIST AI RMF&nbsp;1.0</b> · <b>AI Act</b> (EUR-Lex)</td><td>5, 16</td></tr>
+<tr><td><a class="lien-ext" href="https://www.theatrenational.be/fr/activities/3972-proces-fiction-on-vous-voit-o-le-proces-de-la-reconnaissance-faciale">Théâtre
+National — <i>On vous voit. Le procès de la reconnaissance faciale</i></a></td><td>7</td></tr>
+<tr><td><b>Ligue des droits humains</b> — pour une interdiction sans exception de la reconnaissance
+faciale</td><td>7</td></tr>
+<tr><td><a class="lien-ext" href="https://www.alignmentforum.org/posts/8gy7c8GAPkuu6wTiX/frontier-models-are-capable-of-in-context-scheming">Apollo
+Research — <i>Frontier Models are Capable of In-context Scheming</i></a></td><td>11</td></tr>
+<tr><td><a class="lien-ext" href="https://oecd.ai/en/incidents">OECD AI Incidents and Hazards
+Monitor (AIM)</a></td><td>11</td></tr>
+<tr><td><a class="lien-ext" href="https://www.moltbook.com/">moltbook.com</a> — le réseau social des
+agents</td><td>12</td></tr>
+<tr><td><a class="lien-ext" href="https://www.youtube.com/watch?v=zATXsGm_xJo">Robert Miles —
+<i>Tech is Good, AI Will Be Different</i></a></td><td>13</td></tr>
+<tr><td><a class="lien-ext" href="https://internationalaisafetyreport.org/">International AI Safety
+Report</a></td><td>13</td></tr>
+<tr><td><a class="lien-ext" href="https://legrandcontinent.eu/fr/2026/01/28/lia-est-un-risque-existentiel-lalerte-de-dario-amodei-texte-integral-commente/">Dario
+Amodei — « L’IA est un risque existentiel », texte intégral commenté</a></td><td>13</td></tr>
+<tr><td><a class="lien-ext" href="https://www.turingpost.com/p/jepa">JEPA — <i>Joint Embedding
+Predictive Architecture</i></a></td><td>14</td></tr>
+<tr><td><a class="lien-ext" href="https://www.lse.ac.uk/study-at-lse/executive-education/programmes/ethics-of-ai">LSE —
+<i>Ethics of AI</i></a></td><td>18</td></tr>
+<tr><td><a class="lien-ext" href="https://www.unamur.be/fr/master/dtic">Université de Namur —
+master de spécialisation en droit du numérique (DTIC)</a></td><td>18</td></tr>
+<tr><td><a class="lien-ext" href="https://kbs-frb.be/fr/barometre-inclusion-numerique-2024">Baromètre
+de l’inclusion numérique 2024 — Fondation Roi Baudouin</a></td><td>17</td></tr>
+<tr><td><a class="lien-ext" href="https://shs.cairn.info/liste-lecture/vwKxwtD?lang=fr">Cairn —
+liste de lecture « Numérique &amp; Intelligence artificielle »</a></td><td>17</td></tr>
+<tr><td><a class="lien-ext" href="https://fr.slideshare.net/ChristoDatso">Slideshare — les
+présentations de l’auteur, sous licence CC&nbsp;BY-NC-SA</a></td><td>19, 20</td></tr>
+</table></div>
+
+<h2>Comment ce mini-site a été fait</h2>
+<ul>
+<li><b>Source.</b> <code>Ethique et IA conférence NDBI Christo Datso 12 février 2026 final -
+mise à jour 13 février.pptx</code> (33,9&nbsp;Mo, 97 diapositives, aucune masquée) — la plus
+récente des trois versions présentes dans le dossier.</li>
+<li><b>Texte.</b> Extrait du <code>.pptx</code> avec les niveaux de hiérarchie et les notes de
+l’orateur, reproduit sans réécriture.</li>
+<li><b>Images.</b> Dix-sept visuels, rendus depuis un PDF <b>exporté par PowerPoint</b>. Le PDF présent
+dans le dossier date du 12 février, soit <b>avant</b> la mise à jour du 13 février que porte le
+fichier désigné&nbsp;: s’en servir aurait risqué un décalage de numérotation.</li>
+<li><b>Transcriptions plutôt qu’images.</b> Quatre pièces gagnaient à être transcrites&nbsp;: le
+<b>tableau comparatif des trois lunettes</b> (fiche&nbsp;8), la <b>comparaison des quatre cadres de
+gouvernance</b> (fiche&nbsp;16), le <b>programme du master DTIC</b> et la <b>déclaration sur la
+superintelligence</b> (fiches&nbsp;18 et&nbsp;13).</li>
+<li><b>Aucun regroupement hors ordre.</b> Contrairement au deck de février 2025, celui-ci est
+linéaire&nbsp;: aucune diapositive n’a été déplacée.</li>
+</ul>
+
+<h2>Limites</h2>
+<ul>
+<li><b>Neuf diapositives ne font pas page</b>&nbsp;: ce sont les intertitres des quatre parties et
+des sections d’annexe. Elles sont signalées dans la
+<a href="correspondance-diapositives.html">table de correspondance</a>.</li>
+<li><b>Le statut de certaines notes.</b> Plusieurs blocs de notes sont des <b>productions d’outils
+génératifs</b> — synthèses ChatGPT, NotebookLM, Copilot — que l’auteur a utilisées comme matériau
+préparatoire. C’est signalé partout où c’est le cas&nbsp;; ces passages n’ont pas la même valeur
+probante que les sources de presse ou les publications citées.</li>
+<li><b>Deux coquilles de noms propres corrigées</b> — Hofstadter, Norvig — signalées en
+fiche&nbsp;20.</li>
+<li><b>Droits.</b> La présentation est sous licence <b>CC&nbsp;BY-NC-SA</b> de Christo Datso, qui
+autorise le partage avec attribution, sans usage commercial, dans les mêmes conditions. Les visuels
+empruntés à des tiers — couvertures, captures de presse, images générées — relèvent de leurs
+auteurs.</li>
+<li><b>Portabilité.</b> Les renvois vers les deux mini-sites précédents sont des liens
+relatifs&nbsp;: ils supposent que les trois dossiers restent voisins sous <code>CNF\IA\</code>.</li>
+</ul>
+
+<div class="pied"><span></span><a href="fiche-01-ouverture.html">1. Ouverture &#8594;</a></div>
+<footer>Mini-site produit le 03/09/2026 à partir de la présentation du 12 février 2026. 20 fiches, 17 visuels, une table de correspondance. Présentation d’origine sous licence CC BY-NC-SA de Christo Datso. Restitution sans actualisation.</footer>
+</div></body></html>

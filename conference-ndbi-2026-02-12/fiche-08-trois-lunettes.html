@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. Les trois lunettes éthiques — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>8. Les trois lunettes éthiques</h1>
+<p class="dias">DIAPOSITIVES 26 à 30</p>
+<p class="chapeau">Le modèle simplifié annoncé à l’agenda&nbsp;: pourquoi des gens de bonne foi ne sont pas d’accord.</p>
+<h2>Pourquoi n’est-on pas d’accord&nbsp;?</h2>
+<p>La réponse de l’exposé n’est pas que certains ont tort. C’est qu’il y a
+<b>trois camps, trois « lunettes éthiques »</b>&nbsp;:</p>
+<div class="bloc">
+<ul>
+<li>Les <b>« ingénieurs du résultat »</b></li>
+<li>Les <b>« gardiens des lignes rouges »</b></li>
+<li>Les <b>« vigies morales »</b></li>
+</ul>
+</div>
+<figure><a href="images/dia-27.jpg"><img src="images/dia-27.jpg" alt="Diapositive 27"></a><figcaption>L’image emblématique de l’exposé, générée par Gemini&nbsp;3&nbsp;: trois personnages sur un banc, chacun portant des lunettes différentes — un monocle d’observateur pour l’<b>utilitarisme</b>, des verres marqués <i>devoir</i> et <i>règle</i> pour la <b>déontologie</b>, des lunettes en forme de cœur pour l’<b>éthique des vertus et du care</b>. Terme académique&nbsp;: <i>schémas moraux hétérogènes</i>.</figcaption></figure>
+<p>L’image fait le travail d’une définition&nbsp;: les trois regardent <b>la même
+scène</b> — le même tramway passe derrière eux — et n’en voient pas la même chose. Le désaccord
+n’est pas un défaut d’information.</p>
+
+<h2>Trois grilles de lecture</h2>
+<div class="tbl"><table>
+<tr><th style="width:1%">Grille</th><th>Ce qu’elle regarde</th></tr>
+<tr><td><b>Utilitarisme</b></td><td>→ performance, efficacité, retour sur investissement</td></tr>
+<tr><td><b>Droits / déontologie</b></td><td>→ conformité, lignes rouges</td></tr>
+<tr><td><b>Care / vertus</b></td><td>→ confiance, asymétries de pouvoir</td></tr>
+</table></div>
+
+<h2>Les principes fondamentaux, et la question que chacune pose</h2>
+<div class="bloc">
+<p><b>Utilitarisme / conséquentialisme</b> — on juge aux résultats (bénéfices et risques agrégés).<br>
+<i>« Si ça réduit les agressions de 20&nbsp;%, le jeu en vaut-il la chandelle&nbsp;? »</i></p>
+<p><b>Déontologie / droits</b> — certaines atteintes sont <b>inacceptables</b>, même si
+« efficaces »&nbsp;: vie privée, non-discrimination, autonomie.<br>
+<i>« A-t-on le droit de traiter tout le monde comme un suspect potentiel&nbsp;? »</i></p>
+<p><b>Éthique des vertus &amp; du care</b> — qualité des pratiques, caractère des institutions,
+vulnérabilités, relations de dépendance.<br>
+<i>« Quel type de société cela façonne-t-il&nbsp;? »</i></p>
+</div>
+<div class="note">Question posée à la salle&nbsp;: « Laquelle de ces approches vous paraît la plus
+“juste”… et pourquoi&nbsp;? »</div>
+
+<h2>Le tableau comparatif</h2>
+<p>La diapositive suivante déploie un tableau à trois colonnes, présenté comme un
+<b>« travail de synthèse réalisé avec OpenAI ChatGPT 5.2, 7 février 2026 »</b>. Il est reproduit
+ici intégralement — c’est l’outil analytique le plus complet de l’exposé.</p>
+<div class="tbl"><table>
+<tr><th style="width:14%">Dimension</th><th>Utilitarisme (conséquentialisme)</th>
+    <th>Déontologie &amp; droits fondamentaux</th><th>Vertus &amp; care</th></tr>
+<tr><td><b>Question centrale</b></td>
+<td>« Quelle option maximise le bien-être total / minimise les torts&nbsp;? »</td>
+<td>« Quelles actions sont interdites/obligatoires, <b>même si elles auraient de bonnes
+conséquences</b>&nbsp;? »</td>
+<td>« Quelle réponse exprime un bon caractère et prend soin des personnes concernées, dans ce
+contexte&nbsp;? »</td></tr>
+<tr><td><b>Ce qui compte le plus</b></td>
+<td>Résultats globaux, souvent en <b>utilité attendue</b></td>
+<td><b>Règles, devoirs, respect de la personne</b>, droits (dignité, équité procédurale,
+non-discrimination, vie privée…)</td>
+<td><b>Jugement pratique</b>, qualités morales (compassion, honnêteté, courage…), <b>relations</b>,
+vulnérabilité, non-abandon</td></tr>
+<tr><td><b>Logique de décision</b></td>
+<td>Calcul et agrégation (coûts-bénéfices, risques, probabilités)</td>
+<td>Contraintes (« on ne fait pas ça »), universalisation, « ne pas traiter comme un moyen »</td>
+<td>Délibération contextuelle&nbsp;: « que ferait une personne vertueuse&nbsp;? », réponse attentive
+et responsable</td></tr>
+<tr><td><b>Forces</b></td>
+<td>Très utile pour les politiques publiques, l’allocation de ressources, l’optimisation de
+sécurité</td>
+<td>Protège contre l’arbitraire et les sacrifices d’individus&nbsp;; garde-fous clairs</td>
+<td>Sensible aux situations réelles, aux effets vécus, à la confiance et à la dignité
+relationnelle</td></tr>
+<tr><td><b>Risques et angles morts</b></td>
+<td>Peut justifier des atteintes à des individus (sacrifices)&nbsp;; « tyrannie du total »</td>
+<td>Peut être rigide (des règles qui empirent les conséquences), conflits de droits</td>
+<td>Peut sembler moins « calculable »&nbsp;; risque de favoritisme ou d’incohérence si mal
+cadré</td></tr>
+<tr><td><b>Dilemme IA n<sup>o</sup>&nbsp;1</b><br>
+<span style="font-size:.9em">surveillance</span></td>
+<td><b>Déployer</b> une surveillance algorithmique massive si elle réduit fortement agressions et
+terrorisme — même au prix de la vie privée</td>
+<td><b>Refuser</b> la surveillance indiscriminée&nbsp;: violation du droit à la vie privée, risque
+d’abus, présomption d’innocence</td>
+<td>Chercher une solution qui <b>préserve la confiance</b>&nbsp;: minimisation des données, contrôle
+humain, ciblage proportionné, attention aux vulnérables</td></tr>
+<tr><td><b>Dilemme IA n<sup>o</sup>&nbsp;2</b><br>
+<span style="font-size:.9em">justice, erreur</span></td>
+<td>Utiliser un outil de « prédiction » (récidive, fraude) si, statistiquement, il réduit le crime
+global — même avec des erreurs individuelles</td>
+<td>Interdire ou limiter fortement si cela viole la non-discrimination, le droit à un procès
+équitable, la transparence, la contestabilité</td>
+<td>Prioriser la <b>dignité</b>&nbsp;: expliquer, écouter, permettre la contestation, éviter
+l’humiliation et la stigmatisation automatisée</td></tr>
+<tr><td><b>Dilemme IA n<sup>o</sup>&nbsp;3</b><br>
+<span style="font-size:.9em">triage santé</span></td>
+<td>L’IA doit allouer lits et soins pour <b>maximiser les vies sauvées / QALYs</b>, même si certains
+groupes perdent plus souvent l’accès</td>
+<td>Certaines règles ne se marchandent pas&nbsp;: égalité de considération, interdiction de critères
+injustes, consentement, respect des patients</td>
+<td>Mettre l’accent sur <b>l’accompagnement</b>, la compréhension des situations (isolement,
+handicap, précarité), et la responsabilité de ne pas « abandonner »</td></tr>
+<tr><td><b>Dilemme IA n<sup>o</sup>&nbsp;4</b><br>
+<span style="font-size:.9em">véhicules autonomes</span></td>
+<td>Programmer l’IA pour minimiser le nombre total de morts, même si cela sacrifie le passager dans
+de rares cas</td>
+<td>Interdit de « tuer intentionnellement » un innocent&nbsp;: ne pas concevoir un système qui
+décide de sacrifier quelqu’un comme moyen</td>
+<td>Concevoir pour <b>prudence, humilité, transparence</b>&nbsp;; focalisation sur la prévention, la
+réduction des risques, la responsabilité et la confiance sociale</td></tr>
+<tr><td><b>Type d’exemple « où ça l’emporte sur tout »</b></td>
+<td>Accepter une atteinte à la vie privée si les bénéfices de sécurité ou de santé sont énormes et
+démontrables</td>
+<td>Refuser une atteinte (profilage, torture, punir un innocent) <b>même si elle « marcherait »</b></td>
+<td>Privilégier une réponse humaine (explicabilité, accompagnement, non-abandon) même si elle est
+moins « optimale » sur les métriques</td></tr>
+</table></div>
+<p class="chapeau">QALYs&nbsp;: <i>Quality-Adjusted Life Years</i>, années de vie pondérées par la
+qualité.</p>
+<p>Ce qui rend ce tableau utile n’est pas qu’il départage — il ne départage rien. C’est qu’il rend
+<b>prévisible</b> le désaccord&nbsp;: sur n’importe quel cas nouveau, on sait d’avance quelles trois
+réponses vont être données, et pour quelles raisons. C’est ce que l’agenda annonçait sous le nom de
+<b>« modèle simplifié pour aborder des dilemmes éthiques »</b>.</p>
+<div class="note">Les notes de cette diapositive contiennent la documentation préparatoire complète
+— trois exposés détaillés sur l’utilitarisme, la déontologie et l’éthique du care, chacun assorti
+d’un dilemme où ce cadre l’emporte sur les autres&nbsp;: le triage en réanimation pour le premier,
+la condamnation d’un innocent pour éviter une émeute pour le deuxième, l’infirmière qui reste
+auprès d’un mourant plutôt que d’exécuter trois actes de routine pour le troisième. Ce matériau n’a
+pas été projeté&nbsp;; il a servi à construire le tableau.</div>
+
+<div class="pied"><a href="fiche-07-belgique.html">&#8592; 7. La reconnaissance faciale en Belgique</a><a href="fiche-09-trois-verdicts.html">9. Un cas unique, trois verdicts &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

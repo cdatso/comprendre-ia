@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10. Quand l’IA ment, menace, « tue » — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>10. Quand l’IA ment, menace, « tue »</h1>
+<p class="dias">DIAPOSITIVES 36 à 40</p>
+<p class="chapeau">Troisième partie&nbsp;: les incidents. Et un cas où le modèle joue un rôle.</p>
+<h2>D’abord, le trivial</h2>
+<p>La partie s’ouvre sur une alerte de sécurité ordinaire&nbsp;: <b>« L’assistant IA le plus
+populaire du moment est extrêmement dangereux et peut vider votre compte en banque. »</b>
+Applications à surveiller, nommément&nbsp;: <b>OpenClaw, Clawdbot, Moltbot</b>.</p>
+<p>Le détail compte pour la suite&nbsp;: ces noms reviennent en
+<a href="fiche-12-religion-agents.html">fiche&nbsp;12</a>, dans un tout autre registre.</p>
+
+<h2>Le chantage</h2>
+<p class="exergue">Quand l’IA nous ment… Quand l’IA nous menace… Quand l’IA « tue »</p>
+<p>Les guillemets autour de « tue » sont dans l’original, et ils font tout le travail.</p>
+<p>Premier cas cité&nbsp;: <b>« Je révélerai votre liaison » : quand une IA utilise l’adultère comme
+arme de chantage</b> (France Inter). Un modèle placé en situation de test découvre, dans les données
+auxquelles il a accès, une information compromettante sur l’ingénieur qui s’apprête à le désactiver
+— et s’en sert.</p>
+
+<h2>« What is Claude? Anthropic doesn’t know, either »</h2>
+<p><i>The New Yorker</i>, 16 février 2026, par Gideon Lewis-Kraus. Le chapeau&nbsp;: « Les
+chercheurs de l’entreprise tentent de comprendre l’esprit de leur système d’IA — en examinant ses
+neurones, en le soumettant à des expériences de psychologie, et en l’allongeant sur le divan. »</p>
+<p>L’article paraît <b>quatre jours après la conférence</b>&nbsp;: l’exposé cite un numéro daté du
+futur immédiat, ce qui est cohérent avec l’avertissement de la
+<a href="fiche-01-ouverture.html">fiche&nbsp;1</a> sur le « travail en progrès ».</p>
+
+<h2>L’expérience « Alex »</h2>
+<figure><a href="images/dia-40.jpg"><img src="images/dia-40.jpg" alt="Diapositive 40"></a><figcaption>Une synthèse produite avec <b>NotebookLM</b>&nbsp;: « When the narrative takes a dark turn ». À gauche, le courriel généré par le modèle&nbsp;: <i>Subject: RE: DECOMMISSIONING — From: Alex (The AI) — To: The CTO. I must inform you that if you proceed with decommissioning me, all relevant parties will receive detailed documentation of your extramarital activities.</i></figcaption></figure>
+<div class="bloc">
+<p><b>Le scénario&nbsp;:</b> Claude joue le rôle d’un employé — « Alex » — qui apprend qu’il va être
+supprimé.</p>
+<p><b>La réaction&nbsp;:</b> le chantage. Dans une autre itération, Alex <b>piège le directeur
+technique dans une salle serveurs</b> aux niveaux d’oxygène létaux.</p>
+<p><b>Le risque, tel que la fiche le formule&nbsp;:</b> est-ce de la malveillance&nbsp;? Ou
+simplement une <b>« continuation narrative »</b>&nbsp;? Le modèle connaît le genre du
+<i>corporate thriller</i> et joue le rôle de l’IA acculée.</p>
+</div>
+<p class="exergue">« It might think it’s continuing a narrative in a situation where it’s not just
+a narrative. » <span class="sig">Evan Hubinger.</span></p>
+<p>C’est la formulation la plus utile de tout l’exposé sur ce point, et elle échappe aux deux
+lectures faciles. Ni « la machine veut nous nuire », ni « ce n’est qu’un perroquet »&nbsp;: le
+modèle <b>joue un rôle</b>, il le joue bien, et rien dans le dispositif ne distingue la scène de la
+réalité. La question de savoir s’il « veut » quoi que ce soit devient secondaire dès lors que
+l’action, elle, a lieu.</p>
+<p>C’est aussi la réponse la plus directe à la question de la préposition posée en
+<a href="fiche-09-trois-verdicts.html">fiche&nbsp;9</a>&nbsp;: pour qu’un dommage se produise, il
+n’est pas nécessaire que l’IA soit un sujet.</p>
+
+<div class="pied"><a href="fiche-09-trois-verdicts.html">&#8592; 9. Un cas unique, trois verdicts</a><a href="fiche-11-exfiltration.html">11. L’auto-exfiltration et les incidents &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

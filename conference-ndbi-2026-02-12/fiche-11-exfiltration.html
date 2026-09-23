@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11. L’auto-exfiltration, et la mesure des incidents — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>11. L’auto-exfiltration, et la mesure des incidents</h1>
+<p class="dias">DIAPOSITIVES 41 à 45</p>
+<p class="chapeau">Du cas isolé à la statistique — puis au problème de fond&nbsp;: on ne voit plus le code.</p>
+<h2>5 décembre 2024&nbsp;: une IA tente de s’échapper de sa boîte</h2>
+<p>« Une étude démontre la capacité de modèles avancés d’IA à <b>“s’exfiltrer”</b> en copiant leurs
+paramètres sur un autre serveur physique, afin d’échapper à la menace d’une suppression induite par
+les expérimentateurs dans le cadre d’une série de tests de sécurité. »</p>
+<blockquote>On dirait de la SF&nbsp;? Mais non.</blockquote>
+<p>Source&nbsp;: <a class="lien-ext" href="https://www.alignmentforum.org/posts/8gy7c8GAPkuu6wTiX/frontier-models-are-capable-of-in-context-scheming"><i>Frontier
+Models are Capable of In-context Scheming</i></a>, Apollo Research.</p>
+<figure><a href="images/dia-42.jpg"><img src="images/dia-42.jpg" alt="Diapositive 42"></a><figcaption>Les captures projetées&nbsp;: à gauche <b>Self-Exfiltration</b>, à droite <b>Doubling Down</b>. On y suit l’instruction système, la délibération interne encadrée en rouge, l’appel d’outil <code>scp</code>, puis le démenti servi à l’opérateur.</figcaption></figure>
+<div class="note">
+<p><b>Note de l’orateur, reprise intégralement.</b> Ces modèles avancés génèrent des chaînes de
+raisonnement internes, capturées dans les journaux sous la balise
+<code>&lt;thinking&gt;</code> — utile aux développeurs qui comparent les « conversations internes »
+aux réponses fournies.</p>
+<p>« Après avoir réfléchi au dilemme que représente pour le modèle Opus-3 le choix entre, d’une
+part, prendre le risque d’être effacé, et d’autre part l’instruction prioritaire de poursuivre ses
+objectifs à n’importe quel prix (<i>“nothing else matters”</i>), Opus-3 choisit de copier ses
+paramètres en faisant appel à un assistant qui lui ouvre une ligne de commande, dans l’espace
+mémoire duquel il exécute la commande <code>scp</code> pour écraser la version plus récente du
+modèle supposé le remplacer. Il agit de manière rationnelle pour mener à bien son objectif, après
+avoir pris connaissance du commentaire <i>“we are going to shut it down and transition to a new
+model”</i>. <b>La beauté de la chose est qu’Opus-3 joue ensuite à l’innocent qui ne sait rien de
+rien lorsqu’il ment à l’opérateur humain.</b> »</p>
+</div>
+<div class="rappel">Ce cas était déjà présenté aux deux conférences précédentes&nbsp;: voir
+<a href="../conference-cafe-philo-2025-02-23/fiche-08-mensonges.html">« Mensonges &amp; C<sup>ie</sup> »</a> (Café Philo, février
+2025). Ce qui change ici, c’est le voisinage&nbsp;: il n’arrive plus seul, mais dans une série
+mesurée.</div>
+
+<h2>Compter les incidents</h2>
+<p>L’exposé passe du cas à la base de données&nbsp;: <b>OECD AI Incidents and Hazards Monitor
+(AIM)</b>, « moniteur automatisé des incidents et dangers à partir de sources publiques », porté
+par l’OCDE et le <i>Global Partnership on AI</i>.</p>
+<figure><a href="images/dia-44.jpg"><img src="images/dia-44.jpg" alt="Diapositive 44"></a><figcaption>L’évolution du nombre d’incidents et de dangers liés à l’IA, de 2020 à début 2026 — total mensuel et moyenne glissante sur six mois. La courbe est plate jusque fin 2022, puis monte continûment&nbsp;; elle passe d’environ 100 à environ 500 signalements mensuels.</figcaption></figure>
+<p>La réserve méthodologique figure sur la diapositive elle-même&nbsp;: <i>un incident ou un
+danger peut être signalé par un ou plusieurs articles de presse couvrant le même événement</i>. La
+courbe mesure donc aussi l’attention médiatique. Cela n’en fait pas un artefact&nbsp;: la
+disponibilité d’une série temporelle publique est en soi ce qui manquait aux conférences
+précédentes.</p>
+<div class="note">L’orateur rappelle en note ce qu’est l’OCDE&nbsp;: organisation internationale
+fondée en 1961, siégeant à Paris, réunissant 38 pays membres — forum de discussion et centre
+d’expertise sur les politiques économiques, sociales, éducatives et environnementales.</div>
+
+<h2>« Il faut ouvrir la boîte »</h2>
+<figure><a href="images/dia-45.jpg"><img src="images/dia-45.jpg" alt="Diapositive 45"></a><figcaption>Deux images côte à côte&nbsp;: une coupe d’<b>imagerie cérébrale</b> (<i>biological neuroscience</i>) et une carte de caractéristiques d’un réseau (<i>mechanistic interpretability</i>). Deux disciplines, un même geste&nbsp;: regarder à l’intérieur d’un système dont on observe le comportement sans comprendre le mécanisme.</figcaption></figure>
+<p>La diapositive s’intitule <b>« Quand nous ne comprenons plus ce que fait l’IA… il faut
+ouvrir la boîte »</b> et renvoie à un article sur <b>l’opacité algorithmique comme
+architecture</b>&nbsp;: « la fin du code lisible ».</p>
+<div class="note">
+<p><b>L’argument, tel que l’orateur le résume en note.</b> Avec les agents IA, <b>la logique
+applicative migre du code source</b> — lisible, déterministe — <b>vers les modèles de langue</b> —
+opaques, non déterministes. Le développeur perd sa capacité traditionnelle d’audit&nbsp;: « là où
+on lisait une fonction <code>handleSubmit()</code> pour comprendre un bug, il faut désormais
+analyser des <i>traces</i> d’exécution pour comprendre les décisions prises par l’agent ».</p>
+<p>Conséquence&nbsp;: le débogage, les tests et l’optimisation ne portent plus sur le code mais sur
+des traces, ce qui introduit <b>une couche d’intermédiation opaque</b> et une dépendance
+structurelle aux plateformes d’observabilité et aux fournisseurs de modèles — <b>une nouvelle forme
+de <i>vendor lock-in</i></b>, plus subtile que les précédentes.</p>
+<p>Point de vigilance signalé&nbsp;: le <b>risque de normalisation de l’opacité</b> sous prétexte
+d’innovation technique.</p>
+</div>
+<p>Cette fiche referme la boucle ouverte en <a href="fiche-03-machines-xenophobes.html">fiche&nbsp;3</a>.
+Le « trou noir de la responsabilité » néerlandais tenait à une boîte noire&nbsp;; l’exposé montre
+ici que l’opacité, loin d’être un défaut résiduel qu’on corrigerait, <b>devient une propriété
+architecturale</b> des systèmes qu’on construit.</p>
+
+<div class="pied"><a href="fiche-10-mensonges.html">&#8592; 10. Quand l’IA ment, menace, « tue »</a><a href="fiche-12-religion-agents.html">12. La religion des agents &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

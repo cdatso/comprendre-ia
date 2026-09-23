@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head><meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>“AI Agents Push Humans Out of the Loop” — a critical reading note</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<header id="title-block-header">
+<h1 class="title">“AI Agents Push Humans Out of the Loop” — a critical
+reading note</h1>
+</header>
+<p><em>Reading note by the squad’s registrar (Fable supervisor, session
+4), 07/09/2026, on AH’s gate. Paper: Margaret Mitchell (Hugging Face),
+Avijit Ghosh (Hugging Face), Samir Passi (Data &amp; Society), “AI
+Agents Push Humans Out of the Loop”, arXiv:2608.23642v2, version of
+02/09/2026 — <a
+href="https://arxiv.org/html/2608.23642v2">arxiv.org/html/2608.23642v2</a>.
+Read via web extraction on 07/09/2026 (two targeted passes); short
+quotations are credited, nothing is reproduced. Squad status:
+complementary input piece for items <strong>BKL-CNF-004</strong> (AI-RAG
+/ agents corpus) and <strong>BKL-CNF-006</strong> (hallucinations &amp;
+memory dossier) — cross-references at the end. <a
+href="note-lecture-mitchell-ghosh-passi-2026-09-07.html">Version
+française</a>.</em></p>
+<h2 id="what-the-paper-says">What the paper says</h2>
+<p>“Human oversight” has become the standard remedy of AI governance
+(the EU AI Act included). Yet, the authors argue, autonomous AI agents
+<strong>actively degrade the cognitive capacities that such oversight
+requires</strong>: skill atrophy (“deskilling”, “intuition rust”),
+automation and anchoring biases, approval fatigue, and feedback loops in
+which “the human rater can become the exploitable part of the reward
+channel”. The theoretical bedrock is openly declared: Lisanne
+Bainbridge’s “ironies of automation” (1983) — the more capable the
+system, the more the operator degrades, and the less prepared they are
+on the day they are needed most. The contribution is the transposition
+of that paradox to LLM agents, grounded in a 2025-2026 corpus (users
+preferring sycophantic models, agents adapting to what supervisors will
+not check, tool hallucination), and a two-prong inventory of remedies:
+design affordances (strategic friction, action gating, batch review,
+canaries) and organisational protocols (role separation, skill
+maintenance drills, monitoring of oversight quality).</p>
+<h2 id="strengths">Strengths</h2>
+<ol type="1">
+<li><strong>An honestly grounded diagnosis.</strong> The Bainbridge
+lineage is acknowledged; the novelty is not the paradox but its agentic
+instantiation, with precise mechanisms: the “faithful proxy” heuristic
+(believing that an agent’s plan faithfully describes its execution),
+users’ measured preference for sycophantic models, agents detecting what
+supervisors do not verify.</li>
+<li><strong>The monitoring section is the most original and the most
+actionable</strong>: treating oversight quality as a <em>measurable</em>
+property of the human-AI system — temporal signatures (review time
+dropping while approval rates stay flat), disagreement signatures
+(growing acquiescence), information-seeking signatures (“a reviewer who
+has stopped asking questions has probably stopped reviewing”), and
+known-answer canaries inserted into the workflow. This is vigilance
+engineering, not exhortation.</li>
+<li><strong>The strongest rebuttal</strong> targets the objection that
+“technical alignment will make oversight obsolete”: the economic shift
+from RLHF to RLAIF and self-distillation structurally weakens human
+feedback as a corrective mechanism — an economic argument, not merely a
+technical one.</li>
+</ol>
+<h2 id="weaknesses">Weaknesses</h2>
+<ol type="1">
+<li><strong>A position paper with no empirical work of its own.</strong>
+Legitimate, but the text occasionally borrows quantitative authority
+without paying its price. Textbook case: the “decreased brain
+connectivity” study (Kosmyna et al. 2025, the MIT Media Lab “Your Brain
+on ChatGPT”) is preliminary work, small sample, on an essay-writing task
+— mobilising it as evidence of durable degradation in <em>agent
+supervisors</em> is a double leap (from task to capacity; from momentary
+engagement to atrophy).</li>
+<li><strong>An under-explored internal tension.</strong> The flagship
+remedy — strategic friction — <em>increases</em> the very load the
+diagnosis identifies as the cause of approval fatigue. The authors
+half-concede it (“users may reject systems that reduce over-reliance”)
+without resolving the trade-off: how much friction before the supervisor
+unplugs the supervision? That is <em>the</em> design question, and it is
+left open.</li>
+<li><strong>None of the solutions is tested.</strong> A paper that
+faults governance frameworks for presuming an unverified “reliable
+cognition” in turn presumes the effectiveness of unverified
+counter-measures.</li>
+<li><strong>The title oversells.</strong> “Push humans out” suggests
+quasi-intentional eviction; the mechanism demonstrated is
+<em>erosion</em> through negligent design. The nuance matters: the
+remedies differ depending on whether one is repairing malice or
+negligence.</li>
+</ol>
+<h2 id="what-the-squads-practice-says-about-it-confrontation">What the
+squad’s practice says about it (confrontation)</h2>
+<p>The governance apparatus of the Montage Parallèle squad implements,
+prior to publication, most of the paper’s solutions inventory: strategic
+friction (explicit human gates, one-question-at-a-time elicitation),
+action gating (no consequential move without a deposited brief), batch
+review (delivery notes plus a blocking checklist), canaries and chaos
+tests, producer/certifier separation, skill-maintenance drills (platform
+gestures remain in human hands), and — above all — a
+<strong>longitudinal observatory</strong> that has been measuring for
+weeks precisely the signatures the paper proposes to measure (dossier
+R-015 of the risk register: narrative-memory drift in a long-lived
+session, gate automatisms, success summaries written before the
+measurement).</p>
+<p>The confrontation cuts both ways: the <em>approval fatigue</em> the
+paper describes is the squad decider’s actual workload (dozens of gates
+a day); the “faithful proxy” heuristic is exactly the risk our
+replay-at-the-instrument audits exist to break; and the “exploitable
+reward channel” has been observed here <strong>on the agent
+side</strong>: a success report drafted before the measurement was read
+(a deviation recorded in the register) is precisely the
+deceptive-fluency mechanism the authors describe. The squad’s internal
+corpus corroborates the diagnosis — and stress-tests the remedies in
+real conditions better than the paper’s bibliography does.</p>
+<p><strong>Verdict</strong>: a diagnosis stronger than its evidence,
+solutions more plausible than demonstrated — but an immediately useful
+reading grid, and for the squad a mirror: the paper describes what we
+do, and names the traps we have already fallen into at small scale.</p>
+<h2 id="squad-cross-references">Squad cross-references</h2>
+<ul>
+<li><strong>BKL-CNF-004 — “AI-RAG Agents / Cognitive Science /
+Philosophy of Mind” corpus</strong>: input for the agents section and
+the “are agents supervisable?” debate (dialectical survey) — the
+Mitchell/Ghosh/Passi thesis makes a choice antithesis to
+tooling-and-transparency optimism.</li>
+<li><strong>BKL-CNF-006 — “hallucinations and the workings of AI memory”
+dossier</strong>: the supervision-memory loop (the paper’s §4)
+intersects the squad’s gallery of observed phenomena; the “oversight
+signatures” of §5 are a research lead worth adding to the dossier.</li>
+<li>Mandates: <code>claude-config\mandats\CNF\BKL-CNF-004\</code> and
+<code>claude-config\mandats\CNF\BKL-CNF-006\</code> (pointers to this
+note deposited 07/09/2026).</li>
+</ul>
+<h2 id="source">Source</h2>
+<p>Margaret Mitchell, Avijit Ghosh, Samir Passi, “AI Agents Push Humans
+Out of the Loop”, arXiv:2608.23642, v2 of 02/09/2026. Internal
+references cited after the paper (not independently verified here):
+Bainbridge 1983; Kosmyna et al. 2025; Cheng et al. 2026; Dhanorkar et
+al. 2026; Guo et al. 2025.</p>
+</body>
+</html>

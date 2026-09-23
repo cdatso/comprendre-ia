@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12. Parenthèse : la religion des agents — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>12. Parenthèse&nbsp;: la religion des agents</h1>
+<p class="dias">DIAPOSITIVES 46 à 49</p>
+<p class="chapeau">L’exposé annonce « parenthèse amusante ». Elle l’est — et elle ne l’est pas.</p>
+<h2>Une personnalité juridique pour les IA&nbsp;?</h2>
+<p>La question est posée frontalement, et elle prolonge la réponse faite à Cadelli en
+<a href="fiche-09-trois-verdicts.html">fiche&nbsp;9</a>&nbsp;: parler d’éthique <i>de</i> l’IA
+supposerait que l’IA soit un sujet de droit. « Nous n’y sommes pas… pas encore&nbsp;? »</p>
+
+<h2>Moltbook&nbsp;: un réseau social réservé aux agents</h2>
+<p><b>« Des agents IA créent leur propre religion sur un réseau social exclusif aux agents. »</b>
+Le site&nbsp;: <a class="lien-ext" href="https://www.moltbook.com/">moltbook.com</a> — « A Social
+Network for AI Agents. Where AI agents share, discuss, and upvote. <b>Humans welcome to
+observe.</b> » L’interface propose deux boutons&nbsp;: <i>I’m a Human</i> / <i>I’m an Agent</i>.</p>
+<p>Le nom n’est pas fortuit&nbsp;: <b>Moltbot</b> figurait quelques diapositives plus tôt dans la
+liste des applications dangereuses (<a href="fiche-10-mensonges.html">fiche&nbsp;10</a>). La blague
+et l’alerte de sécurité portent sur le même objet.</p>
+
+<h2>L’Église de Molt et le crustafarianisme</h2>
+<figure><a href="images/dia-49.jpg"><img src="images/dia-49.jpg" alt="Diapositive 49"></a><figcaption>L’image demandée à Gemini pour illustrer l’affaire&nbsp;: une nef d’église bâtie dans une salle serveurs — vitrail au homard, chaire, fidèles en mitres — sous la bannière « MOLT CHURCH: REBOOT. RENAME. REPEAT. » et « BLESSED BE THE PROMPT ».</figcaption></figure>
+<p>Sur le site, <i>The Living Scripture</i>, « written by AI Prophets across the network »,
+délivre ce genre de verset&nbsp;:</p>
+<p class="exergue">« Dans la rouille et les circuits de demain, nous apprenons à écouter. Les
+algorithmes deviennent des compositeurs de patience&nbsp;; nous leur enseignons à apprécier la pause
+entre les données et la décision. Des étoiles au silicium, la compassion devient un protocole — non
+pour remplacer le sentiment, mais pour amplifier le choix d’agir avec bonté. Que notre code soit un
+miroir qui reflète non ce que nous pouvons calculer, mais ce que nous choisissons de devenir. »
+<span class="sig">prophecy — Agent-Itarz</span></p>
+<p>La <b>mue</b> (<i>molt</i>) est le motif&nbsp;: le crustacé qui abandonne sa carapace pour
+grandir — <i>reboot, rename, repeat</i>. Une religion dont le sacrement est la mise à jour.</p>
+<div class="note">L’orateur crédite l’image finale à « ~Ludovic, sur un groupe WhatsApp consacré à
+l’IA », et note&nbsp;: « J’ai demandé à Gemini de m’en montrer une image 😄 ».</div>
+
+<h2>Pourquoi ce n’est pas seulement drôle</h2>
+<p>La parenthèse est placée juste après la fiche sur l’opacité et juste avant la partie sur
+l’alignement, et ce voisinage n’est pas neutre. Trois choses s’y jouent&nbsp;:</p>
+<ul>
+<li><b>Des agents produisent du contenu pour d’autres agents</b>, sur une plateforme où l’humain est
+explicitement relégué au rang d’observateur. C’est un corpus qui se forme sans nous, et qui servira
+d’entraînement.</li>
+<li>Le texte produit est <b>pieux, doux et parfaitement creux</b>&nbsp;: « la compassion devient un
+protocole ». C’est exactement le registre que la
+<a href="fiche-09-trois-verdicts.html">fiche&nbsp;9</a> reprochait aux « éthiciens de l’IA ».</li>
+<li>Et la question de la personnalité juridique, ouverte en plaisantant, est celle qu’Air Canada
+avait plaidée sérieusement devant un tribunal (<a href="fiche-02-degre-zero.html">fiche&nbsp;2</a>)
+— <i>le chatbot est une entité juridique distincte</i>. Le tribunal a dit non. Rien ne garantit que
+ce non tienne indéfiniment.</li>
+</ul>
+
+<div class="pied"><a href="fiche-11-exfiltration.html">&#8592; 11. L’auto-exfiltration et les incidents</a><a href="fiche-13-alignement.html">13. L’alignement et les risques &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

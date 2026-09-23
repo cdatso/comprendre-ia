@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16. L’AI Act, et les cadres de gouvernance — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>16. L’AI Act, et les cadres de gouvernance</h1>
+<p class="dias">DIAPOSITIVES 67 et 68</p>
+<p class="chapeau">Les textes qui font foi, et ce qu’ils valent les uns par rapport aux autres.</p>
+<h2>Les textes importants</h2>
+<div class="bloc">
+<p><b>Règlement (UE) 2024/1689 du 13 juin 2024</b> — « établissant des règles harmonisées concernant
+l’intelligence artificielle », <b>entré en vigueur le 2 février 2025</b> après plusieurs années
+d’élaboration. Index&nbsp;: EUR-Lex — (UE) 2024/1689.</p>
+<p><b>Proposition de règlement du 19 novembre 2025</b> modifiant le règlement 2024/1689 et
+d’autres, « en ce qui concerne la simplification de la mise en œuvre des règles harmonisées » —
+le <b>train de mesures omnibus numérique sur l’IA</b>. Index&nbsp;: EUR-Lex — 52025PC0836. Sont
+concernés, entre autres&nbsp;: le <b>RGPD</b>, <b>l’AI Act</b>, le <b>Data Act</b> et la
+<b>directive ePrivacy</b>.</p>
+</div>
+<p>Le second texte est le fait marquant, et l’exposé le pose sans commentaire&nbsp;: neuf mois après
+l’entrée en vigueur du règlement, la Commission propose déjà d’en <b>simplifier</b> la mise en
+œuvre. C’est la contrepartie institutionnelle de la pression décrite en
+<a href="fiche-07-belgique.html">fiche&nbsp;7</a>.</p>
+
+<h2>Quatre cadres comparés</h2>
+<figure><a href="images/dia-68.jpg"><img src="images/dia-68.jpg" alt="Diapositive 68"></a><figcaption>Comparaison de l’<b>EU AI Act (2024)</b>, du <b>NIST AI RMF (2023)</b>, du <b>Microsoft Responsible AI (2023)</b> et de l’<b>ISO 42001 (2023)</b> sur neuf dimensions. Extrait d’un travail réalisé avec Microsoft M365 Copilot&nbsp;: <b>9 dimensions analysées sur 20</b>.</figcaption></figure>
+<div class="tbl"><table>
+<tr><th style="width:16%">Aspect / principe</th><th>EU AI Act (2024)</th><th>NIST AI RMF (2023)</th>
+    <th>Microsoft Responsible AI (2023)</th><th>ISO 42001 (2023)</th></tr>
+<tr><td><b>Nature du cadre</b></td><td>Réglementation <b>contraignante</b></td>
+<td>Cadre <b>volontaire</b> de gestion des risques</td><td>Principes et standards d’entreprise</td>
+<td>Standard de système de management</td></tr>
+<tr><td><b>Statut juridique</b></td><td><b>Loi européenne obligatoire</b></td>
+<td>Guide volontaire non contraignant</td><td>Politique interne d’entreprise</td>
+<td>Norme internationale volontaire</td></tr>
+<tr><td><b>Équité</b></td><td>Obligation d’évaluation des biais et mesures correctives pour les
+systèmes à haut risque</td><td>Mesures de biais et équité dans la fonction « Measure »</td>
+<td>Principe central&nbsp;: systèmes équitables pour tous</td>
+<td>Contrôles A.5 et A.9 sur impacts et usage éthique</td></tr>
+<tr><td><b>Transparence</b></td><td>Obligations strictes, notamment pour l’IA générative et les
+systèmes à haut risque</td><td>Transparence comme caractéristique de fiabilité</td>
+<td>Principe de transparence&nbsp;: compréhension du comportement de l’IA</td>
+<td>Contrôle A.8 sur transparence et information</td></tr>
+<tr><td><b>Responsabilité</b></td><td>Responsabilité claire des fournisseurs et déployeurs, avec
+obligations spécifiques</td><td>Responsabilité humaine dans la fonction « Govern »</td>
+<td>Principe d’<i>accountability</i>&nbsp;: responsabilité humaine</td>
+<td>Responsabilités définies dans le contrôle A.3</td></tr>
+<tr><td><b>Sécurité et fiabilité</b></td><td>Exigences strictes de sécurité, tests rigoureux et
+systèmes de gestion qualité</td><td>Fiabilité et sécurité comme caractéristiques centrales</td>
+<td>Principe de fiabilité et de sécurité</td>
+<td>Contrôles de sécurité et gestion du cycle de vie A.6</td></tr>
+<tr><td><b>Vie privée et protection des données</b></td><td>Conformité RGPD obligatoire, plus
+exigences spécifiques à l’IA sur la protection des données</td><td>Respect de la vie privée comme
+caractéristique de fiabilité</td><td>Principe de confidentialité et de sécurité</td>
+<td>Contrôle A.7 sur qualité et gouvernance des données</td></tr>
+<tr><td><b>Supervision humaine</b></td><td>Supervision humaine <b>obligatoire</b> pour les systèmes
+à haut risque</td><td>Supervision humaine dans la gouvernance</td><td>Contrôle humain et
+supervision</td><td>Supervision humaine intégrée dans les contrôles</td></tr>
+<tr><td><b>Inclusivité</b></td><td>Non-discrimination et accessibilité requises</td>
+<td>Engagement des parties prenantes diverses</td>
+<td>Principe d’inclusivité&nbsp;: autonomisation de tous</td>
+<td>Évaluation des impacts sur individus et société</td></tr>
+</table></div>
+<p>Ce que la comparaison rend visible, et qui n’est écrit nulle part&nbsp;: <b>les quatre cadres
+disent à peu près la même chose</b>. La différence tient à une seule ligne, la deuxième&nbsp;:
+un seul est obligatoire. Les trois autres sont des engagements volontaires — dont un est une
+politique interne d’entreprise.</p>
+<p>C’est, sur le terrain de la gouvernance, la réponse à la question de la
+<a href="fiche-04-ice.html">fiche&nbsp;4</a>&nbsp;: le contenu éthique fait consensus, seule la
+<b>force contraignante</b> est en jeu — et elle est politique.</p>
+
+<div class="pied"><a href="fiche-15-se-former.html">&#8592; 15. Se former, éduquer</a><a href="fiche-17-fracture-numerique.html">17. La fracture numérique &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

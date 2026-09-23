@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>« Ce que la philosophie de l’IA a à dire » — entretien avec Roger Vergauwen</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+   :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+         --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+         --code:#f3f4f6;--codef:#24292f}
+   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+     --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+     --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+   *{box-sizing:border-box}
+   body{margin:0 auto;max-width:54rem;padding:1.5rem 1.25rem 5rem;
+        background:var(--bg);color:var(--fg);
+        font:16px/1.62 Georgia,"Iowan Old Style",serif}
+   h1,h2,h3,h4,#TOC,table,.subtitle,.author,.date,figcaption{
+     font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+   h1.title{font-size:1.85rem;line-height:1.18;margin:.2rem 0 .3rem}
+   p.subtitle{color:var(--muted);font-size:1.02rem;margin:0 0 .3rem}
+   p.date{color:var(--muted);font-size:.85rem;letter-spacing:.03em;margin:0 0 1.6rem}
+   h1{font-size:1.45rem;margin:2.6rem 0 .6rem;padding-bottom:.3rem;
+      border-bottom:2px solid var(--accent)}
+   h2{font-size:1.16rem;margin:2rem 0 .5rem;padding-bottom:.25rem;
+      border-bottom:1px solid var(--rule)}
+   h3{font-size:1rem;margin:1.4rem 0 .35rem;color:var(--muted);
+      text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+   a{color:var(--accent2);word-break:break-word}
+   p{margin:0 0 .85rem}
+   ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+   li{margin:.22rem 0}
+   li>ul{margin:.25rem 0 .4rem}
+   hr{border:0;border-top:1px solid var(--rule);margin:2.4rem 0}
+   blockquote{border-left:3px solid var(--accent);margin:1.2rem 0;
+              padding:.35rem 0 .35rem 1rem;color:var(--muted);font-size:.94rem;
+              background:var(--z);border-radius:0 6px 6px 0}
+   blockquote p:last-child{margin-bottom:0}
+   blockquote strong{color:var(--fg)}
+   #TOC{background:var(--card);border:1px solid var(--rule);border-radius:8px;
+        padding:.9rem 1.2rem;margin:0 0 2rem;font-size:.88rem}
+   #TOC ul{padding-left:1.1rem;margin:0}
+   #TOC>ul>li{margin:.3rem 0}
+   #TOC a{text-decoration:none}
+   #TOC a:hover{text-decoration:underline}
+   .toc-title{font-weight:700;font-size:.78rem;letter-spacing:.08em;
+              text-transform:uppercase;color:var(--muted);margin:0 0 .4rem}
+   table{border-collapse:collapse;width:100%;margin:1.2rem 0;font-size:.85rem;
+         display:block;overflow-x:auto}
+   th,td{border:1px solid var(--rule);padding:.45rem .6rem;text-align:left;
+         vertical-align:top}
+   th{background:var(--z);font-weight:700}
+   tbody tr:nth-child(even){background:var(--z)}
+   code{background:var(--code);color:var(--codef);border-radius:3px;
+        padding:.08rem .3rem;font:13px/1.4 ui-monospace,Consolas,"Courier New",monospace}
+   strong{font-weight:700}
+  </style>
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<header id="title-block-header">
+<h1 class="title">« Ce que la philosophie de l’IA a à dire » — entretien
+avec Roger Vergauwen</h1>
+<p class="subtitle">Résumé de la vidéo de présentation du cours
+Philosophy of AI (KU Leuven)</p>
+<p class="date">6 septembre 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#le-cadre" id="toc-le-cadre">Le cadre</a></li>
+<li><a
+href="#que-fait-la-philosophie-de-lia-au-delà-de-léthique-et-des-biais"
+id="toc-que-fait-la-philosophie-de-lia-au-delà-de-léthique-et-des-biais">1.
+Que fait la philosophie de l’IA, au-delà de l’éthique et des biais
+?</a></li>
+<li><a href="#la-conscience-machinique"
+id="toc-la-conscience-machinique">2. La conscience machinique</a></li>
+<li><a href="#à-qui-sadresse-le-cours"
+id="toc-à-qui-sadresse-le-cours">3. À qui s’adresse le cours ?</a></li>
+<li><a href="#trois-remarques" id="toc-trois-remarques">Trois
+remarques</a></li>
+</ul>
+</nav>
+<blockquote>
+<p><strong>Objet.</strong> Résumé de lecture de la transcription de
+l’entretien filmé présentant le cours <em>Philosophy of AI</em> de la KU
+Leuven. Durée : 14 min 48 s. Source locale :
+<code>KUL-philosophy-of-ai-interview-Roger-Vergauwen_1_unkkg2j3_audio_transcription-small.txt</code>
+(transcription automatique <em>faster-whisper</em>, modèle « small »,
+<strong>non relue</strong>). Provenance de la vidéo et conditions
+d’usage :
+<code>KUL-philosophy-of-ai-interview-Roger-Vergauwen_PROVENANCE.txt</code>
+— copie privée de consultation, <strong>local seulement</strong>, la
+vidéo appartient à la KU Leuven. Ce résumé est une reformulation, sans
+citation longue.</p>
+</blockquote>
+<hr />
+<h2 id="le-cadre">Le cadre</h2>
+<p><strong>Jens Berger</strong>, manager de Leuven.AI, interroge
+<strong>Roger Vergauwen</strong>, professeur émérite, qui enseigne la
+philosophie de l’IA depuis plus de vingt-cinq ans. L’argument d’autorité
+est posé d’entrée : la KU Leuven abrite le <strong>deuxième plus ancien
+master en IA d’Europe, en continu depuis 1988</strong>.</p>
+<p>Ce n’est pas un entretien de fond mais la <strong>bande-annonce d’une
+formation</strong> : le cours vendu en conclusion compte <strong>douze
+séances en soirée, de deux heures</strong>. Trois questions, trois
+réponses.</p>
+<hr />
+<h2
+id="que-fait-la-philosophie-de-lia-au-delà-de-léthique-et-des-biais">1.
+Que fait la philosophie de l’IA, au-delà de l’éthique et des biais
+?</h2>
+<p>Vergauwen commence par définir son métier : la philosophie est
+<strong>l’analyse critique des présupposés</strong> qui se tiennent
+derrière les questions et les réponses de la vie courante, de la culture
+et des théories scientifiques.</p>
+<p>Puis il l’applique au nom même de la discipline. « Intelligence
+artificielle » — mais qu’est-ce qu’être <em>artificiel</em> plutôt que
+<em>naturel</em> ? La distinction est-elle aussi tranchée qu’on le
+croit, ou la ligne est-elle fluide, au point que <strong>tout artificiel
+soit aussi naturel, et tout naturel en partie artificiel</strong> ? Si
+oui, en quel sens une machine est-elle naturelle ? Et alors des
+propriétés que nous réservons aux humains — l’intelligence — pourraient
+lui être attribuables.</p>
+<p>Le mouvement se referme en boucle : si l’on peut donner sens à
+l’intelligence machinique, <strong>cela éclaire en retour ce qu’est
+l’intelligence tout court</strong>, donc qui et ce que nous sommes.</p>
+<p>L’éthique n’est pas évacuée, mais relancée d’un cran. Biais, voitures
+autonomes, <strong>armes létales autonomes</strong> qui choisissent
+leurs cibles : une composante éthique est évidemment nécessaire. Mais la
+philosophie demande aussitôt <strong>quel système éthique</strong> — ils
+sont nombreux et certains mutuellement exclusifs — et surtout
+<strong>s’il est seulement possible d’implémenter une éthique dans une
+machine</strong>.</p>
+<hr />
+<h2 id="la-conscience-machinique">2. La conscience machinique</h2>
+<p>Berger amène la question par l’exemple le plus intéressant de
+l’entretien : en philosophie de l’esprit, la thèse d’un esprit
+indépendant du corps a conduit à l’autonomie, donc à la responsabilité
+morale et légale. <strong>Une hypothèse philosophique a fini par
+structurer le droit.</strong> D’où sa question : que devrions-nous
+demander à propos de la conscience des machines ?</p>
+<p>Vergauwen déroule une généalogie en quatre marches.</p>
+<ol type="1">
+<li><strong>Leibniz et l’expérience du moulin.</strong> Supposons une
+machine dont nous pensons qu’elle pense. Agrandissons-la, entrons dedans
+: nous ne verrons que des engrenages qui poussent et se meuvent. Jamais
+la pensée, jamais l’expérience. Donc on ne peut lui attribuer la
+conscience.</li>
+<li><strong>Les versions contemporaines</strong> : le <em>fossé
+explicatif</em> et le <em>problème difficile</em> de la conscience.
+Étudier l’esprit par le cerveau ne livre que des neurones qui déchargent
+— et une décharge, cela se simule sur machine. Il manque pourtant
+quelque chose : <strong>l’aspect subjectif, l’expérience vécue</strong>,
+absente du seul feu neuronal.</li>
+<li><strong>La personnalité</strong> (<em>personhood</em>). Si des
+machines sont conscientes en un sens quelconque, ne deviennent-elles pas
+des <em>personnes</em> — agents moraux, titulaires de droits et de
+devoirs ?</li>
+<li><strong>Le risque</strong>. Hawking, Bostrom, Kurzweil et sa
+singularité : ces machines conscientes seraient un danger, voire une
+menace pour l’humanité. Le cours analyse ces thèses, les évalue, et
+regarde comment elles rétroagissent sur l’idée même de ce qu’est
+l’IA.</li>
+</ol>
+<hr />
+<h2 id="à-qui-sadresse-le-cours">3. À qui s’adresse le cours ?</h2>
+<p>« Idéalement, à tous » : ceux qui conçoivent, développent,
+commercialisent, régulent, utilisent. Vergauwen cite les travaux de
+l’<strong>Union européenne sur l’IA de confiance</strong> — preuve que
+le sujet est traité au plus haut niveau politique, et preuve simultanée
+qu’une discussion reste nécessaire.</p>
+<p>Sa thèse de clôture : ces régulations socio-économiques
+<strong>devraient être informées par le niveau philosophique</strong>,
+parce que la philosophie sert à la fois à éviter les écueils et à ouvrir
+des horizons. Il termine sur la vocation classique de sa discipline —
+non pas seulement un savoir théorique, mais <strong>un savoir pratique
+orienté vers le bien-être de l’homme et de la société</strong>.</p>
+<p>Berger conclut sur une note personnelle : ingénieur de formation,
+venu tard à la philosophie de la technique, il dit que cela a rendu son
+rapport à la technologie plus riche.</p>
+<hr />
+<h2 id="trois-remarques">Trois remarques</h2>
+<h3 id="un-même-geste-répété-trois-fois">Un même geste, répété trois
+fois</h3>
+<p>À chaque question, Vergauwen refuse la réponse au niveau où elle est
+posée et remonte d’un cran vers le présupposé. Question sur l’éthique →
+<em>quel</em> système éthique. Question sur la conscience → ce que la
+conscience nous apprend de nous. Question sur le public → quel niveau de
+discours doit informer les autres.</p>
+<p>C’est cohérent avec sa définition d’ouverture, et c’est la seule
+chose qu’il <em>démontre</em> : il ne tranche aucune des controverses
+qu’il expose. Posture de professeur qui annonce un programme, non de
+philosophe qui défend une thèse — ce qui est normal pour une
+bande-annonce, mais qu’il faut avoir en tête avant de citer cet
+entretien comme une position.</p>
+<h3 id="ça-recoupe-la-fiche-des-trois-livres">Ça recoupe la fiche des
+trois livres</h3>
+<p>Voir <code>fiche-trois-livres-philosophie-ia-2026-09-06.md</code>,
+dans ce dossier.</p>
+<ul>
+<li>Vergauwen <strong>ouvre</strong> la question « artificiel / naturel
+» comme une énigme ; <strong>Bencivenga la ferme</strong>, en soutenant
+que l’IA n’est pas un inédit métaphysique mais un déplacement d’échelle,
+et que l’intelligence n’exige pas la conscience. Les deux se lisent l’un
+contre l’autre.</li>
+<li>Les deux points que Vergauwen annonce comme le cœur de son cours —
+conscience artificielle, statut de personne — sont deux chapitres du
+volume Müller : Kuske &amp; VanRullen sur l’espace de travail global en
+silico (p. 321), Formánek sur le statut moral dans l’interaction
+homme-robot (p. 161).</li>
+<li>Son insistance finale sur la régulation européenne renvoie au volume
+Pantsar : Wallenberg sur l’AI Act (p. 103), Lassègue sur les
+transformations de la légalité (p. 87, <strong>en accès libre sur
+HAL</strong>).</li>
+</ul>
+<p>Si l’on monte quelque chose de public sur ce corpus, la vidéo fait
+une porte d’entrée grand public et les trois livres l’appareil.</p>
+<h3 id="réserve-sur-la-source">Réserve sur la source</h3>
+<p>La transcription est automatique, modèle <code>small</code>,
+<strong>non relue</strong> — l’en-tête du fichier le signale lui-même.
+Elle écorche les noms propres et quelques termes techniques. Corrections
+rétablies dans le présent résumé :</p>
+<table>
+<thead>
+<tr>
+<th>Transcription</th>
+<th>Lecture correcte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fagauvin</td>
+<td><strong>Vergauwen</strong></td>
+</tr>
+<tr>
+<td>Löwen / KU Löwen</td>
+<td><strong>Leuven / KU Leuven</strong></td>
+</tr>
+<tr>
+<td>half-problem</td>
+<td><strong>hard problem</strong> (problème difficile)</td>
+</tr>
+<tr>
+<td>exploratory gap</td>
+<td><strong>explanatory gap</strong> (fossé explicatif)</td>
+</tr>
+<tr>
+<td>so-called laws</td>
+<td><strong>LAWS</strong> (<em>lethal autonomous weapons
+systems</em>)</td>
+</tr>
+<tr>
+<td>describe (à une machine)</td>
+<td><strong>ascribe</strong> (attribuer)</td>
+</tr>
+</tbody>
+</table>
+<p>Rien dans le fond ne paraît corrompu, mais <strong>l’audio n’a pas
+été réécouté</strong> pour contrôler les passages douteux. Avant toute
+citation littérale de Vergauwen, il faut revenir à la vidéo.</p>
+<hr />
+<p><em>Résumé établi le 2026-09-06 à 18:34:58, à partir de la
+transcription du même jour (18:03:37).</em></p>
+</body>
+</html>

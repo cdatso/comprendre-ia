@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Un cas unique, trois verdicts — L’éthique et l’IA, NDBI 2026</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>9. Un cas unique, trois verdicts</h1>
+<p class="dias">DIAPOSITIVES 31 à 35</p>
+<p class="chapeau">Ce que le modèle produit — et ce qu’il ne produit pas.</p>
+<h2>Trois questions, trois réponses</h2>
+<p>Reconnaissance faciale en espace public&nbsp;:</p>
+<div class="tbl"><table>
+<tr><th style="width:33%">Utile&nbsp;?</th><th style="width:33%">Légitime&nbsp;?</th>
+    <th>Désirable&nbsp;?</th></tr>
+<tr><td>La question de l’utilitariste</td><td>La question du déontologue</td>
+<td>La question des vertus et du care</td></tr>
+</table></div>
+<p>Les trois adjectifs ne sont pas synonymes, et l’exposé les fait correspondre terme à terme aux
+trois lunettes. Un dispositif peut être utile <i>et</i> illégitime, légitime <i>et</i> indésirable.
+C’est là que se loge la difficulté réelle.</p>
+
+<h2>Les dilemmes de l’éthique</h2>
+<div class="bloc">
+<ul>
+<li><b>Pas de solutions propres</b></li>
+<li><b>Pas de consensus confortable</b></li>
+<li><b>Des tensions à assumer</b></li>
+</ul>
+</div>
+<p>Trois lignes, et c’est probablement la diapositive la plus honnête de l’exposé. Après avoir
+construit un modèle à trois grilles, l’orateur refuse d’en faire une machine à décider.</p>
+
+<h2>Le postulat&nbsp;: des principes communs sous les trois lunettes</h2>
+<figure><a href="images/dia-33.jpg"><img src="images/dia-33.jpg" alt="Diapositive 33"></a><figcaption>Les trois triangles — <b>utilitarisme / conséquentialisme</b>, <b>déontologie et philosophies morales des droits et des devoirs</b>, <b>théorie des vertus et du care</b> — se recouvrent en un noyau central&nbsp;: « principes éthiques communs et universels ».</figcaption></figure>
+<p>C’est un <b>postulat</b>, l’exposé le dit. Et il ouvre sur une série de questions qui
+excèdent largement le sujet de l’IA&nbsp;:</p>
+<div class="bloc">
+<ul>
+<li>Quels principes ultimes&nbsp;?</li>
+<li>Au-delà du constat « d’accord de ne pas être d’accord »&nbsp;?</li>
+<li>Comment <b>« faire société »</b>&nbsp;?</li>
+<li>Comment refonder un monde commun&nbsp;?</li>
+<li>Comment délibérer en commun&nbsp;?</li>
+</ul>
+</div>
+<p>L’orateur renvoie ici à <b>Alasdair MacIntyre</b> (1929-2025) — voir la section ressources,
+<a href="fiche-18-ressources.html">fiche&nbsp;18</a> — et invite à « lire et méditer à partir des
+textes de <b>Hannah Arendt</b>… et de bien d’autres ».</p>
+<p>Le geste mérite d’être relevé&nbsp;: après avoir montré que les trois cadres divergent
+irréductiblement sur chaque cas d’IA, l’exposé <b>parie</b> qu’ils partagent un fond commun, sans
+pouvoir le démontrer. C’est un pari sur la possibilité même de la délibération publique — ce qui,
+dans un café philo, est exactement le sujet.</p>
+
+<h2>La critique des éthiciens de l’IA</h2>
+<p class="exergue">« Émancipée du Droit, la “modernité” telle que l’entendent les supporters de
+l’IA s’est trouvée un <i>artefact</i> de légitimité dans le prétendu “accompagnement” que lui
+fournissent les éthiciens de l’IA, sortes de nouveaux <b>“idiots utiles”</b>, promus par le marché
+et certains réseaux sociaux comme LinkedIn. »
+<span class="sig">Manuela Cadelli, <i>opus cité</i>, p.&nbsp;11, 2025.</span></p>
+<p>L’orateur choisit de projeter la charge la plus dure contre l’activité qu’il est en train
+d’exercer. Et il y répond, en note&nbsp;:</p>
+<div class="note">
+<p>« Cette charge de Manuela Cadelli contre les “idiots utiles” est en partie justifiée, mais vous
+noterez que <b>le titre de l’exposé est “L’éthique ET l’IA” et non pas “L’éthique DE l’IA”</b>…
+car cette dernière expression est en effet beaucoup plus problématique et source de confusions.
+L’éthique <i>de</i> l’IA sous-entend que l’IA est devenue un <b>sujet de droit, autonome et
+conscient</b>, soumis à des droits et des devoirs. Nous n’y sommes pas… <b>pas encore&nbsp;?</b> »</p>
+</div>
+<p>La réponse est précise et elle tient à une préposition. Elle annonce aussi, avec son point
+d’interrogation final, la <a href="fiche-12-religion-agents.html">fiche&nbsp;12</a> — où la question
+de la personnalité juridique des agents cesse d’être une hypothèse d’école.</p>
+
+<h2>Un sujet à la frontière de trois domaines</h2>
+<figure><a href="images/dia-35.jpg"><img src="images/dia-35.jpg" alt="Diapositive 35"></a><figcaption>Trois triangles à nouveau, mais ce ne sont plus les mêmes&nbsp;: <b>le Droit</b>, <b>l’informatique</b> et <b>l’éthique</b> se recouvrent, et « l’éthique et l’IA » se loge exactement à leur intersection.</figcaption></figure>
+<p>« L’éthique et l’IA&nbsp;: un sujet difficile <b>[et contesté]</b>, à la frontière de
+trois domaines d’expertise. » Le crochet est de l’auteur, et il fait suite immédiate à Cadelli.</p>
+<p>Le schéma explique la difficulté pratique&nbsp;: pour tenir un propos solide, il faut trois
+compétences que personne ne réunit — et c’est pourquoi la partie suivante quitte les cadres pour
+revenir aux faits.</p>
+
+<div class="pied"><a href="fiche-08-trois-lunettes.html">&#8592; 8. Les trois lunettes éthiques</a><a href="fiche-10-mensonges.html">10. Quand l’IA ment, menace, « tue » &#8594;</a></div>
+<footer>Fiche du mini-site <i>L’éthique et l’intelligence artificielle — NDBI, 12 février 2026</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>
