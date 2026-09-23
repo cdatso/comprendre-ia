@@ -222,13 +222,16 @@ def page_jansma(style, textes, md, pandoc, tmp, css):
     os.remove(tmp)
     if res.returncode != 0:
         raise SystemExit('pandoc : ' + res.stderr.decode('utf-8', 'replace'))
+    # pandoc rend du CRLF sur ce poste : on normalise en LF, sans quoi le fichier du disque
+    # differe du blob que git stocke -- et la recette compare le SERVI au blob A L'OCTET.
+    html = res.stdout.decode('utf-8').replace('\r\n', '\n')
     b = textes['bandeau_jansma']
     n = textes['nav']
     corps = ('<div class="nav"><a href="../index.html">' + n['jansma_dossier'] + '</a>'
              '<a href="../concept-07-verite-direction.html">' + n['jansma_concept7']
              + '</a></div>\n'
              '<div class="avert"><b>' + b['titre'] + '.</b> ' + b['texte'] + '</div>\n'
-             + res.stdout.decode('utf-8'))
+             + html)
     return gabarit(style, textes['titre_jansma'], textes['noindex'], corps, css)
 
 

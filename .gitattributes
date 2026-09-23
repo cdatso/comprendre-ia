@@ -20,3 +20,4 @@
 *.PNG binary
 *.jpg binary
 *.jpeg binary
+.gitattributes text eol=lf
