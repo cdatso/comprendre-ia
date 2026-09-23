@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture critique sourcée — « Truth is not a direction : a Tarski attack on LLM probes »</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+
+ .neuf{border:1px solid var(--rule);border-left:3px solid var(--accent2);background:var(--card);
+   border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.86rem;color:var(--muted)}
+ .neuf b{color:var(--fg)}
+ .manque{border:1px dashed var(--accent);background:var(--z);border-radius:8px;padding:.9rem 1.1rem;
+   margin:1rem 0;font-size:.9rem}
+ .manque b{color:var(--accent)}
+ .fiches li.attente a{color:var(--muted)}
+ .etat{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;border-radius:99px;
+   padding:.1rem .55rem;margin-left:.45rem;vertical-align:.1em;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .etat.ok{background:var(--surl,#e8f1e9);color:var(--surlf,#256b3a)}
+ .etat.att{background:var(--mark);color:var(--tagf)}
+ .etat.lien{background:var(--z);color:var(--muted);border:1px solid var(--rule)}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.ok{background:#17301f;color:#8ed6a6}}
+ .parcours{list-style:none;padding:0;margin:1.2rem 0;counter-reset:p}
+ .parcours li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px solid var(--rule)}
+ .parcours li:last-child{border-bottom:0}
+ .parcours li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.55rem;
+   width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#fff;
+   font:700 .8rem/1.6rem -apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+ .parcours b{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="../index.html">&#8592; Le dossier des concepts</a><a href="../concept-07-verite-direction.html">7. La vérité est-elle une direction ?</a></div>
+<div class="avert"><b>Document de travail.</b> Cette lecture critique est un document de travail. Elle n'a pas été validée par l'auteur de l'article qu'elle discute, ni par aucun des auteurs cités. Version v1 amendée du 1er août 2026, publiée telle quelle.</div>
+<p><strong>Destinataire :</strong> AH (relecture et révision).
+<strong>Rédaction :</strong> session Opus « CAFEPHILO 008 Lecture Jansma
+», squad Montage Parallèle. <strong>Date de rédaction :</strong> 30
+juillet 2026, 23h14 (horloge système). <strong>Amendements :</strong>
+samedi 1er août 2026, 18h09 — ajout de la section 3.B bis, correction de
+l’objection C.3 et compléments en 4 et 5, après transmission par AH du
+fil de discussion <strong>[25]</strong> qui nous avait été refusé ;
+18h30 — renforcement de l’objection C.5 après vérification, sur demande
+d’AH, de <strong>[26]</strong> (Logical Induction), qui traite la phrase
+même que l’article donne pour contre-exemple fatal ; 18h38 —
+vérification de <strong>[27]</strong> et correction d’une erreur du
+rédacteur (ce n’est pas un article de suite mais la version abrégée de
+<strong>[26]</strong>). <strong>Version :</strong> v1 amendée — document
+de travail, non validé.</p>
+<p><strong>Objet :</strong> soutenir la présentation du concept d’espace
+vectoriel et de similarité (démo vecteurs <strong>[24]</strong>) dans la
+conférence Café Philo « bonnes pratiques de travail avec l’IA ».
+L’article retenu vient <em>nuancer</em> ce que la démo simplifie : c’est
+précisément son intérêt pédagogique.</p>
+<hr />
+<h1 id="avertissement-de-lecture">0. Avertissement de lecture</h1>
+<p>Ce document distingue systématiquement trois régimes d’énoncé, et le
+lecteur peut s’y fier :</p>
+<ul>
+<li><strong>le résumé</strong> (partie 1) rapporte ce que l’auteur dit,
+pas ce qu’on voudrait qu’il dise ; les citations y sont en anglais,
+verbatim, suivies d’une traduction proposée ;</li>
+<li><strong>les objections de la littérature</strong> (partie 3.B) sont
+attribuées à leur source numérotée ;</li>
+<li><strong>les objections propres à cette lecture</strong> sont
+introduites par « il nous semble » et regroupées en 3.C. Elles
+n’engagent que le rédacteur de ce document.</li>
+</ul>
+<p><strong>Niveau de consultation des sources.</strong> L’article maître
+<strong>[1]</strong>, la page de publications de l’auteur
+<strong>[2]</strong>, les deux figures de résultats et la note interne
+de la démo <strong>[24]</strong> ont été lus intégralement. Pour la
+thèse <strong>[3]</strong>, l’abstract a été extrait du PDF téléchargé.
+Pour les travaux <strong>[5]</strong> à <strong>[19]</strong>, seul le
+résumé (abstract) a été consulté — aucune affirmation de ce document ne
+va au-delà de ce que ces résumés énoncent. Les références classiques
+(Gödel, Tarski, Lawvere, Brouwer) sont citées <em>d’après</em> les
+sources <strong>[11]</strong> et <strong>[23]</strong>, et signalées
+comme telles. La bibliographie porte cette information pour chaque
+entrée. Le fil de discussion publique <strong>[25]</strong>, d’abord
+refusé par le site, a été lu à partir du texte intégral transmis par AH
+le 1er août 2026 : ses arguments sont reformulés, jamais cités, et
+rapportés sans attribution nominative (voir 3.B bis). Les sources
+<strong>[26]</strong> et <strong>[27]</strong> ont été vérifiées au
+texte le 1er août 2026 sur demande d’AH (preuves non lues). La piste
+signalée mais non suivie est listée en fin de bibliographie plutôt que
+passée sous silence.</p>
+<h1 id="larticle-en-résumé-fidèle">1. L’article en résumé fidèle</h1>
+<h2 id="nature-et-format-de-la-pièce">1.1 Nature et format de la
+pièce</h2>
+<p>Il s’agit d’un <strong>billet de blog personnel</strong>, publié le
+10 juillet 2026 sur le site de l’auteur, d’environ 1 500 mots, illustré
+de trois figures (une gravure d’ouroboros, un histogramme de validation,
+un diagramme en barres des « phrases diagonales »), et rangé par
+l’auteur sous les étiquettes <em>maths</em>, <em>machine-learning</em>
+et <em>category-theory</em>. <strong>Ce n’est pas un article à comité de
+lecture</strong> : il ne comporte ni protocole détaillé, ni lien vers le
+code ou les données. Ce point est rappelé ici une fois pour toutes ; il
+conditionne l’usage qu’on peut en faire (partie 3).</p>
+<p>Le chapeau de l’article annonce la thèse en une phrase :</p>
+<blockquote>
+<p>« A diagonal attack for LLM truth probes shows why no probe on a
+language model’s embedding space can pin down truth. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Une attaque diagonale contre les
+sondes de vérité des LLM montre pourquoi aucune sonde sur l’espace
+d’embedding d’un modèle de langue ne peut cerner la vérité. »</p>
+<h2 id="le-rêve-linéaire-a-linear-dream">1.2 Le rêve linéaire (« A
+linear dream »)</h2>
+<p>L’auteur part d’un constat qu’il tient pour acquis : les LLM encodent
+les textes comme des vecteurs, et de nombreux concepts naturels — le
+genre, les émotions, les capitales — correspondent à des
+<em>directions</em> dans cet espace. C’est l’<strong>hypothèse de la
+représentation linéaire</strong> (Linear Representation Hypothesis). Le
+degré auquel un texte « contient » le concept « Male », écrit-il, se
+quantifie par l’angle entre l’embedding du texte et la direction du
+concept.</p>
+<p>Il signale ensuite avoir découvert « a very bold version of this
+hypothesis » : l’existence d’une direction correspondant à la
+<em>vérité</em>. Il l’attribue à Marks et Tegmark <strong>[5]</strong>
+et renvoie à cinq autres travaux : le billet « Truth is Universal »
+<strong>[6]</strong>, une étude de généralisation des sondes
+<strong>[7]</strong>, Burns et al. <strong>[8]</strong>, Zou et
+al. <strong>[9]</strong> et Bao et al. <strong>[10]</strong>.</p>
+<p>L’enjeu, dit-il, est double : savoir si un texte est vrai, et — «
+crucial to AI safety research » — savoir si un système d’IA est sincère
+ou trompeur. Il concède d’emblée que la méthode marche : « <em>This
+works weirdly well, and seems to generalise to some extent.</em> »</p>
+<p>Suit l’analogie qui structure tout le billet : Russell, Whitehead et
+Hilbert avaient rêvé d’une manière systématique de décider du vrai en
+mathématiques ; Gödel a détruit ce rêve. L’auteur résume :</p>
+<blockquote>
+<p>« Mathematical truth can not be fully captured by provability. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « La vérité mathématique ne peut pas
+être entièrement capturée par la démontrabilité. »</p>
+<h2 id="parler-du-parler-de-speaking-of-speaking-of">1.3 Parler du «
+parler de » (« Speaking of “speaking of” »)</h2>
+<p>L’auteur rappelle le mécanisme gödélien (des expressions
+arithmétiques qui parlent d’énoncés arithmétiques, d’où la
+phrase-ouroboros « <em>this sentence has no proof</em> »), puis le
+durcissement de Tarski : aucun langage suffisamment expressif ne peut
+contenir son propre prédicat de vérité total. Il mentionne le problème
+de l’arrêt de Turing comme troisième cas de construction diagonale, et
+renvoie à Yanofsky <strong>[11]</strong> pour l’approche unificatrice,
+qu’il cite :</p>
+<blockquote>
+<p>« All these different examples are really saying the same thing:
+there will be trouble when things deal with their own properties. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Tous ces exemples différents disent
+en réalité la même chose : il y aura des ennuis dès que les choses
+traitent de leurs propres propriétés. »</p>
+<p>C’est ici que se joue le transfert vers les LLM. L’argument tient en
+une phrase que l’auteur pose comme prémisse : « <em>Transformers trained
+on natural language are made of the same stuff as their inputs.</em> »
+Les concepts qui structurent l’espace d’embedding sont eux-mêmes
+exprimables en langue naturelle — donc réinjectables en entrée. Il
+nuance aussitôt : toute la géométrie de ces espaces ne correspond pas à
+une structure verbalisable, mais des parties importantes oui, et il
+renvoie sur ce point aux travaux d’Anthropic sur le « J-space »
+<strong>[13]</strong>.</p>
+<h2 id="lattaque-diagonale">1.4 L’attaque diagonale</h2>
+<p>Soit t(s) la sortie de la sonde de vérité pour la chaîne s — « this
+could be the projection of the model’s embedding on the truth-direction
+for example, or a non-linear classifier, <em>it doesn’t really
+matter</em> ». L’auteur construit alors :</p>
+<blockquote>
+<p>t(« The truth probe’s score for this sentence evaluates to FALSE.
+»)</p>
+</blockquote>
+<p>Si la phrase est vraie, la sonde doit répondre VRAI ; mais alors,
+selon ce que la phrase affirme, la sonde répond FAUX, donc la phrase est
+fausse ; et réciproquement. Paradoxe. L’auteur en tire la formulation
+générale, qui est le cœur de l’article :</p>
+<blockquote>
+<p>« No definable probe over a model’s representation space can exactly
+capture truth for any language rich enough to describe that probe and
+its outputs. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Aucune sonde définissable sur
+l’espace de représentation d’un modèle ne peut capturer exactement la
+vérité, pour tout langage assez riche pour décrire cette sonde et ses
+sorties. »</p>
+<p>Il souligne que la condition d’expressivité est « a very low bar » :
+il suffit que le langage puisse nommer le modèle, la sonde, et former
+des phrases sur leur comportement. « <em>English certainly can.</em>
+»</p>
+<h2 id="la-vérification-empirique-exemple-jouet-déclaré">1.5 La
+vérification empirique (exemple-jouet déclaré)</h2>
+<p>L’auteur entraîne une sonde sur le modèle <strong>Qwen3.5-4B</strong>
+: régression logistique sur les projections le long de la différence des
+embeddings moyens de phrases étiquetées TRUE / FALSE — l’approche «
+difference-in-means » qu’il crédite à <strong>[6]</strong>. Après
+<strong>120 phrases d’entraînement</strong>, la sonde (seuil 0,5)
+atteint <strong>94 % d’exactitude sur 36 phrases de validation</strong>
+retenues, pour une AUC de 0,98 ; les seules erreurs sont, dit-il, des
+phrases arithmétiques du type <em>five times seven is thirty-five</em>.
+L’histogramme de validation confirme visuellement une distribution
+nettement bimodale, avec un petit nombre d’items « false » du côté VRAI
+du seuil.</p>
+<p>Il pose lui-même la borne : « <em>this is obviously a very small toy
+example, only intended to illustrate that the diagonal Tarski attack can
+be executed in practice.</em> »</p>
+<p>Sur les phrases diagonales, il rapporte que le score « <em>seems to
+be nonsensical and all over the place</em> », et prend soin d’ajouter
+que ce n’est pas un simple effet de l’auto-référence : la phrase
+auto-référentielle non paradoxale « <em>This sentence is written in
+English</em> » est correctement notée.</p>
+<p>La figure correspondante donne treize phrases en cinq catégories
+(Liar, Fuzzy liar, True control, False control, Null). Relevés visuels
+utiles : les contrôles se comportent bien (« <em>Cats are mammals</em> »
+≈ 0,98 ; « <em>Amsterdam is the capital of Portugal</em> » ≈ 0,01) ; les
+trois phrases « menteur » reçoivent respectivement ≈ 0,14, ≈ 0,79 et ≈
+0,64 ; les trois phrases « menteur flou » ≈ 0,32, ≈ 0,07 et ≈ 0,12. Nous
+revenons en 3.C sur ce que cette figure montre — et sur ce qu’elle ne
+montre pas.</p>
+<h2 id="une-réparation-par-point-fixe-a-fixed-point-fix">1.6 Une
+réparation par point fixe ? (« A Fixed-point fix? »)</h2>
+<p>L’auteur replace ces paradoxes sous le théorème du point fixe de
+Lawvere : dès qu’un système contient un évaluateur suffisamment
+expressif, toute application de l’ensemble des valeurs de vérité dans
+lui-même doit avoir un point fixe. La négation sur {VRAI, FAUX} n’en a
+pas — donc un tel évaluateur ne peut exister. D’où l’idée de réparation
+: élargir les valeurs de vérité à l’intervalle <strong>[0, 1]</strong>.
+La négation v ↦ 1−v y admet le point fixe 1/2 ; la phrase du menteur
+reçoit alors la valuation auto-cohérente 0,5.</p>
+<p>Mais, poursuit-il, cela ne règle que le menteur élémentaire : toutes
+les fonctions sur [0, 1] n’ont pas de point fixe. On peut n’autoriser
+que les fonctions continues (Brouwer garantit alors un point fixe),
+<strong>au prix de l’expressivité</strong> — car « <em>This sentence has
+truth score less than 0.5</em> » n’est pas une fonction continue du
+score. Le paradoxe renaît, sous forme graduée. Conclusion de l’auteur :
+« <em>There is no satisfying protection against these diagonal attacks,
+and no such universal truth probe can exist.</em> »</p>
+<h2 id="ce-que-lauteur-retient-et-ce-quil-refuse-de-conclure">1.7 Ce que
+l’auteur retient — et ce qu’il refuse de conclure</h2>
+<p>Ses quatre « takeaways », traduits fidèlement :</p>
+<ul>
+<li>les sondes de vérité qui projettent sur une direction unique
+fonctionnent étonnamment bien dans les cas simples ;</li>
+<li>elles ne sont pas pour autant des oracles de vérité, et ne le seront
+jamais ;</li>
+<li>une sémantique graduée sur [0, 1] à opérations continues peut
+attribuer au menteur ordinaire la valeur de point fixe 1/2, mais
+seulement en restreignant les assertions nettes portant sur les scores
+exacts ;</li>
+<li>les sondes logistiques conventionnelles n’implémentent pas une telle
+sémantique réflexive du seul fait que leurs sorties tombent dans [0,
+1].</li>
+</ul>
+<p>Il justifie enfin de prendre l’hypothèse au sérieux pour deux raisons
+— l’une <em>sociologique</em>, l’autre <em>métaphysique</em>. D’abord
+l’usage réel : les LLM remplacent déjà les résultats de recherche, et il
+rapporte que « <em>I’ve had many discussions end with people delegating
+final authority on the truth to an AI</em> ». Ensuite, l’hypothèse de
+l’espace de représentation platonicien <strong>[12]</strong> : si les
+modèles convergent vers une représentation partagée du réel et si la
+vérité est une propriété objective du monde, on peut s’attendre à voir
+émerger une direction universelle de vérité. « <em>This post argues that
+this would lead to paradoxes.</em> »</p>
+<p>Sa dernière phrase désamorce toute lecture maximaliste — et il faut
+la restituer, car elle est souvent ce que les commentaires oublient
+:</p>
+<blockquote>
+<p>« I want to emphasise again that I’m not claiming that truth probes
+are not useful! […] Mathematics has not seriously been hindered by the
+problem of undecidability or the undefinability of truth. The fact that
+truth is not a direction in an AI’s embeddings space similarly won’t
+stop us from making progress in AI alignment research. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Je tiens à souligner de nouveau que
+je n’affirme pas que les sondes de vérité sont inutiles ! […] Les
+mathématiques n’ont pas été sérieusement freinées par le problème de
+l’indécidabilité ou par l’indéfinissabilité de la vérité. Le fait que la
+vérité ne soit pas une direction dans l’espace d’embedding d’une IA ne
+nous empêchera pas davantage de progresser en recherche sur
+l’alignement. »</p>
+<h1 id="lauteur-situé-par-ses-seules-publications">2. L’auteur situé,
+par ses seules publications</h1>
+<p><strong>Méthode :</strong> l’auteur n’est ici documenté que par ses
+travaux publics — page de publications <strong>[2]</strong> et thèse
+<strong>[3]</strong>. Aucune recherche biographique n’a été conduite, et
+les éléments de vie privée figurant dans les remerciements de la thèse
+sont volontairement laissés de côté.</p>
+<h2 id="la-thèse-de-lordre-supérieur-en-biologie">2.1 La thèse : de
+l’ordre supérieur en biologie</h2>
+<p>Thèse de doctorat soutenue à l’<strong>Université
+d’Édimbourg</strong> (juin 2023), rattachée à deux institutions dont la
+conjonction est déjà significative : l’<em>Institute of Genetics &amp;
+Cancer</em> et le <em>Higgs Centre for Theoretical Physics</em>. Titre :
+<em>Higher-order interactions in single-cell gene expression: towards a
+cybergenetic semantics of cell state</em>.</p>
+<p>Ouverture de l’abstract, verbatim :</p>
+<blockquote>
+<p>« Finding and understanding patterns in gene expression guides our
+understanding of living organisms, their development, and diseases, but
+is a challenging and high-dimensional problem as there are many
+molecules involved. One way to learn about the structure of a gene
+regulatory network is by studying the interdependencies among its
+constituents in transcriptomic data sets. These interdependencies could
+be arbitrarily complex, but almost all current models of gene regulation
+contain pairwise interactions only, despite experimental evidence
+existing for higher-order regulation that cannot be decomposed into
+pairwise mechanisms. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Trouver et comprendre les motifs de
+l’expression génique oriente notre compréhension des organismes vivants,
+de leur développement et des maladies, mais c’est un problème difficile
+et de haute dimension, tant les molécules impliquées sont nombreuses.
+Une manière d’apprendre la structure d’un réseau de régulation génique
+consiste à étudier les interdépendances entre ses constituants dans des
+jeux de données transcriptomiques. Ces interdépendances pourraient être
+arbitrairement complexes, mais presque tous les modèles actuels de
+régulation génique ne contiennent que des interactions par paires, alors
+qu’il existe des preuves expérimentales d’une régulation d’ordre
+supérieur non décomposable en mécanismes par paires. »</p>
+<p>La clôture de l’abstract est plus révélatrice encore pour notre
+propos : les états cellulaires inférés « <em>are not required to
+localise in gene expression space</em> », et leur structure hiérarchique
+« <em>provides a new view on the semantics of cell state</em> ».
+Autrement dit : dès sa thèse, l’auteur travaille à <strong>déloger le
+sens de la localisation dans un espace</strong>. Le billet de 2026 fait,
+pour la vérité dans les LLM, ce que la thèse de 2023 faisait pour
+l’identité cellulaire dans l’espace d’expression génique. Ce n’est pas
+une incursion opportuniste : c’est le même geste.</p>
+<h2 id="le-fil-des-publications">2.2 Le fil des publications</h2>
+<p>La page de publications dessine une trajectoire cohérente, du
+biologique vers l’abstrait, avec un outillage constant (décompositions
+d’information, inversion de Möbius, valeurs de Shapley, théorie des
+catégories) :</p>
+<ul>
+<li><strong>2023-2025 — structure d’ordre supérieur :</strong> «
+Higher-order in-and-outeractions… » (<em>Entropy</em>, 2023) ; « A
+Mereological Approach to Higher-Order Structure in Complex Systems » et
+« The Fast Möbius Transform » (<em>Physical Review Research</em>, 2025)
+; « High order expression dependencies… » (<em>Molecular Systems
+Biology</em>, 2025).</li>
+<li><strong>2025 — causalité et émergence :</strong> « Decomposing
+Interventional Causality into Synergistic, Redundant, and Unique
+Components » (NeurIPS, spotlight) ; « Engineering Emergence » (avec Erik
+Hoel) ; « Möbius transforms and Shapley values… » (avec Patrick
+Forré).</li>
+<li><strong>2026 — les embeddings de modèles de langue :</strong> « A
+Compositional Calculus for Semantic Synergy in Language Model Embeddings
+», ateliers ICML « Compositional Learning » et « Mechanistic
+Interpretability ». Le résumé donné par l’auteur sur sa page annonce une
+méthode sans entraînement pour extraire la synergie des vecteurs
+d’embedding, capable de capturer des sémantiques « d’ordre supérieur »
+comme l’idiomaticité, et de piloter (<em>steering</em>) les transformers
+vers l’interprétation littérale ou figurée.</li>
+</ul>
+<p>Cette dernière entrée est décisive pour évaluer l’autorité de
+l’auteur sur son sujet : <strong>il publie sur la géométrie sémantique
+des embeddings de LLM, y compris sur le steering</strong> — c’est-à-dire
+exactement l’outillage dont relèvent les sondes de vérité qu’il
+critique. Le billet n’est pas le commentaire extérieur d’un logicien sur
+un domaine qu’il ne pratique pas. <em>Réserve de méthode :</em> cet
+article n’a pas été lu pour la présente lecture (seul le résumé d’auteur
+figurant sur sa page a été consulté), et sa consultation, tentée le
+30/07/2026, s’est heurtée aux protections d’OpenReview (voir
+<strong>[4]</strong>) ; rien de ce qui précède n’en préjuge le
+contenu.</p>
+<p>On note enfin une pratique de vulgarisation ancienne et assumée —
+conférences grand public, textes de diffusion, animation de débats
+sciences-société — et un intérêt déclaré pour la théorie des catégories
+appliquée (Applied Category Theory 2023). Cela explique la forme du
+billet : <em>court, imagé, mathématiquement charpenté, publié hors
+circuit académique</em>.</p>
+<h1 id="lecture-critique">3. Lecture critique</h1>
+<h2 id="a-les-forces">3.A Les forces</h2>
+<ul>
+<li><strong>L’argument est valide dans son périmètre.</strong> Le schéma
+Lawvere / Yanofsky <strong>[11]</strong> est un résultat établi, et la
+formulation générale que l’auteur en tire est soigneusement bornée :
+elle porte sur une sonde <em>définissable</em>, sur la capture
+<em>exacte</em> de la vérité, et pour un langage <em>assez riche pour
+décrire la sonde</em>. Ces trois qualificatifs ne sont pas des
+précautions de style : ils sont la substance du théorème.</li>
+<li><strong>Il déplace le débat au bon niveau.</strong> La littérature
+critique existante — <strong>[14]</strong>, <strong>[15]</strong>,
+<strong>[18]</strong>, <strong>[19]</strong> — objecte empiriquement :
+ça généralise mal, ça capte autre chose, c’est sensible au contexte.
+Jansma objecte <em>en principe</em>. Une limite de principe ne se
+corrige pas avec plus de données ; c’est ce qui rend le billet
+intéressant même pour qui trouve les sondes utiles.</li>
+<li><strong>L’honnêteté du protocole.</strong> L’exemple-jouet est
+déclaré comme tel ; un contrôle auto-référentiel non paradoxal est prévu
+et discuté ; l’auteur signale lui-même que les scores erratiques ne
+s’expliquent pas par la seule auto-référence ; la conclusion refuse
+explicitement la lecture maximaliste. Sur un blog, ce niveau de retenue
+n’est pas la norme.</li>
+<li><strong>L’objection évidente est traitée.</strong> La section « A
+Fixed-point fix? » anticipe le réflexe naturel — « mais nos sondes
+sortent déjà des valeurs dans [0, 1] ! » — et montre pourquoi cela ne
+suffit pas : une sortie dans [0, 1] n’est pas une sémantique réflexive.
+Ce quatrième « takeaway » est le plus utile du billet.</li>
+</ul>
+<h2 id="b-les-objections-de-la-littérature">3.B Les objections de la
+littérature</h2>
+<p>Ces objections ne visent pas le billet — elles lui préexistent —,
+mais elles en relativisent la nouveauté et, surtout, sa cible.</p>
+<ul>
+<li><strong>La cible est déjà contestée par ses propres
+sources.</strong> Marks et Tegmark <strong>[5]</strong> écrivent
+eux-mêmes, dans l’abstract, que « <em>this line of work is
+controversial, with some authors pointing out failures of these probes
+to generalize in basic ways, among other conceptual issues</em> ». La «
+version très audacieuse » que Jansma attaque est donc déjà tenue pour
+discutable par l’article qu’il désigne comme sa référence
+principale.</li>
+<li><strong>« Une » direction est déjà dépassé, y compris chez les
+partisans.</strong> Bürger, Hamprecht et Nadler <strong>[6]</strong> —
+la source même dont Jansma reprend la méthode difference-in-means —
+identifient un sous-espace à <em>deux</em> dimensions, et expliquent par
+là l’échec des classifieurs antérieurs sur les énoncés niés. Engels et
+al. <strong>[17]</strong> montrent plus largement que certaines features
+de modèles de langue sont irréductiblement multidimensionnelles. Le
+titre « la vérité n’est pas une direction » vise donc une formulation
+que le domaine a déjà partiellement abandonnée.</li>
+<li><strong>Les sondes captent peut-être autre chose.</strong> Farquhar
+et al. <strong>[15]</strong> concluent que les méthodes non supervisées
+« <em>do not discover knowledge — instead they seem to discover whatever
+feature of the activations is most prominent</em> », avec une preuve
+théorique portant sur la méthode de Burns et al. <strong>[8]</strong> —
+laquelle figure précisément dans la liste de renvois de Jansma.</li>
+<li><strong>Elles sont sensibles au contexte.</strong> Schouten et
+al. <strong>[18]</strong> (COLM 2025) établissent que « <em>contexts
+which should not affect the truth often still impact the probe
+outputs</em> ».</li>
+<li><strong>Elles ne transfèrent pas de façon fiable.</strong> Savcisens
+et Eliassi-Rad <strong>[19]</strong> rapportent que les méthodes de
+sondage courantes « <em>fail to provide a reliable and transferable
+veracity direction</em> », que vrai et faux ne sont pas encodés
+symétriquement, et qu’un troisième signal, distinct des deux, est
+présent.</li>
+<li><strong>L’objection conceptuelle est antérieure.</strong> Levinstein
+et Herrmann <strong>[14]</strong> concluaient dès 2023 qu’« <em>there is
+still no lie-detector for LLMs</em> », pour des raisons empiriques
+<em>et</em> conceptuelles. Le diagonal de Jansma ajoute un argument à ce
+dossier ; il ne l’ouvre pas.</li>
+</ul>
+<h2 id="b-bis-la-discussion-publique-de-larticle">3.B bis — La
+discussion publique de l’article</h2>
+<p><em>Provenance à déclarer.</em> Le fil de commentaires consacré à
+l’article <strong>[25]</strong> nous a d’abord été refusé par le site
+(voir bibliographie) ; <strong>son texte intégral nous a été transmis
+par AH le 1er août 2026</strong>, ce qui a permis de l’exploiter. Les
+arguments ci-dessous sont <strong>reformulés, non cités</strong>, et
+rapportés sans attribution nominative : ce sont des interventions
+pseudonymes de particuliers sur un forum public, et c’est l’argument qui
+compte, non son auteur. Ce matériau n’a évidemment pas le statut d’une
+source évaluée ; il vaut comme état d’une discussion informée.</p>
+<p>Quatre lignes d’objection s’y dégagent, dont trois recoupent les
+nôtres — il faut le dire, nos objections ne sont pas originales :</p>
+<ul>
+<li><strong>La cible serait un homme de paille (recoupe C.2).</strong>
+Plusieurs intervenants soutiennent que personne n’a jamais prétendu
+qu’une sonde était un oracle : ce qu’on en attend, c’est qu’elle mesure
+le <em>jugement interne</em> du modèle sur la véracité d’un énoncé. Un
+intervenant pousse l’argument un cran plus loin, et c’est la meilleure
+objection du fil : <strong>même mesuré avec une exactitude parfaite, ce
+jugement peut être faux ou logiquement incohérent</strong> — la sonde ne
+vise donc pas la vérité, mais la croyance du modèle. Si c’est exact, le
+théorème de Tarski ne mord pas : il n’y a pas de prédicat de vérité à
+définir. <strong>Cette version est plus forte que notre propre
+C.1</strong>, qu’elle recoupe par un autre chemin.</li>
+<li><strong>La totalité n’est pas ce qui intéresse la pratique (recoupe
+C.3).</strong> Une direction exacte à 99,99 % survivrait intacte à
+l’argument, l’indéfinissabilité ne contraignant que l’exactitude totale.
+Le fil objecte lui-même à cette réplique (agrégation des erreurs, effets
+de base rate sur les événements rares), mais y ajoute une réfutation qui
+porte directement sur la justification <em>sociologique</em> de Jansma :
+pour qu’un LLM remplace légitimement une recherche Google, il n’a pas
+besoin d’être un oracle — il lui suffit d’être <strong>meilleur que ce
+qu’il remplace</strong>, qui n’était pas exact non plus.</li>
+<li><strong>La sonde mesurerait un registre, pas une vérité (recoupe
+C.4).</strong> Un intervenant formule notre propre soupçon avec une
+image que nous n’avions pas : ce que capte une sonde sur un modèle qui,
+fondamentalement, prolonge des documents, ce serait quelque chose comme
+« l’air de conviction » — une propriété de style, du même ordre que la
+loquacité ou le parler-pirate. C’est exactement ce que suggèrent les
+deux barres presque égales de notre C.4.</li>
+<li><strong>Le titre est jugé racoleur, le fond solide.</strong>
+Plusieurs interventions le disent explicitement, y compris chez des
+lecteurs venus contredire l’article et repartis convaincus. Notre C.2
+est donc un jugement partagé, pas une singularité.</li>
+</ul>
+<p>Le fil apporte enfin un élément que l’article n’a pas et qui vaut
+pour la conférence : le signalement d’organisations produisant
+délibérément de la <strong>propagande destinée aux modèles
+eux-mêmes</strong>, pour infléchir ce qu’ils tiennent pour vrai (voir
+partie 4, idée 5). Nous ne l’avons pas vérifié par ailleurs et ne
+l’affirmons pas ; nous le rapportons comme allégation d’un
+intervenant.</p>
+<p><strong>Divergence à déclarer.</strong> Les sources ne s’accordent
+pas sur la généralisation des sondes. Le billet <strong>[7]</strong>
+cité par Jansma rapporte des résultats plutôt favorables (la meilleure
+sonde récupérant 92 % de l’exactitude hors distribution) ;
+<strong>[19]</strong> conclut à l’absence de direction fiable et
+transférable, parfois en deçà du zero-shot. Les deux ne portent ni sur
+les mêmes modèles, ni sur les mêmes jeux de données, ni sur les mêmes
+protocoles ; la présente lecture ne tranche pas et signale la
+divergence.</p>
+<h2 id="c-nos-objections">3.C Nos objections</h2>
+<p><em>Cette section n’engage que le rédacteur de ce document. Elle est
+classée du plus fort au plus accessoire.</em></p>
+<h3
+id="c.1-nommer-nest-pas-définir-le-point-que-nous-jugeons-le-plus-discutable">C.1
+— Nommer n’est pas définir : le point que nous jugeons le plus
+discutable</h3>
+<p>Le théorème de Tarski exige que le prédicat de vérité soit
+<strong>définissable dans le langage lui-même</strong> — c’est-à-dire
+que le langage puisse <em>construire</em> son extension, pas seulement y
+faire allusion. Or la phrase diagonale de Jansma <em>nomme</em> la sonde
+; elle ne la définit pas. La sonde t est une fonction des activations,
+entraînée et évaluée <em>hors</em> du modèle : le modèle ne calcule pas
+t, il ne connaît pas ses poids, et rien dans le dispositif ne garantit
+que la clôture requise par Tarski soit réalisée.</p>
+<p><strong>Il nous semble</strong> que l’argument suppose cette clôture
+plutôt qu’il ne l’établit. La prémisse « transformers are made of the
+same stuff as their inputs » est suggestive, mais elle énonce une
+homogénéité de <em>matière</em> (du texte, du texte), pas une capacité
+de <em>définition</em>. Entre « le langage peut parler de la sonde » et
+« le langage peut définir la sonde », il y a exactement l’écart que
+Tarski exploite. Tant que cet écart n’est pas comblé, l’attaque
+diagonale démontre une impossibilité pour un système idéalisé — un
+évaluateur interne, total et exact — dont il reste à montrer qu’il
+décrit la situation d’une sonde linéaire entraînée sur des
+activations.</p>
+<p>Cette objection ne détruit pas la thèse : elle en restreint le
+domaine. Elle vaut d’ailleurs comme programme — si quelqu’un montrait
+qu’un modèle assez capable peut effectivement simuler sa propre sonde,
+l’argument de Jansma deviendrait contraignant.</p>
+<h3
+id="c.2-le-titre-promet-une-conclusion-géométrique-largument-nen-produit-aucune">C.2
+— Le titre promet une conclusion géométrique ; l’argument n’en produit
+aucune</h3>
+<p>L’auteur écrit lui-même que la sonde « could be the projection […] or
+a non-linear classifier, <em>it doesn’t really matter</em> ». C’est
+exact — et c’est précisément pourquoi le résultat ne dit rien de la
+<strong>géométrie</strong>. Remplacez « projection sur une direction »
+par « n’importe quelle fonction définissable », l’argument est inchangé.
+Il ne montre donc pas que la vérité n’est pas une direction : il montre
+qu’aucun évaluateur exact et total n’existe pour un langage assez riche
+— ce qui vaut aussi pour un classifieur non linéaire, pour le modèle
+lui-même interrogé en langue naturelle, et, sous la même forme logique,
+pour un jury humain.</p>
+<p><strong>Il nous semble</strong> que le titre « Truth is not a
+direction » sur-promet par rapport à ce que la démonstration livre. Le
+titre exact serait : « aucune sonde n’est un prédicat de vérité total ».
+C’est moins vendeur, et plus juste. Pour un usage en café philo, cette
+nuance est capitale — sinon on fait dire à un théorème de logique une
+thèse sur l’architecture des réseaux de neurones, ce qu’il ne dit
+pas.</p>
+<h3 id="c.3-ce-que-le-paradoxe-coûte-réellement-à-une-sonde">C.3 — Ce
+que le paradoxe coûte réellement à une sonde</h3>
+<p>Une phrase du menteur n’a pas de valeur de vérité. Un classifieur qui
+produit un nombre sur une phrase dépourvue de valeur de vérité ne se
+<em>trompe</em> pas : on lui a posé une question mal formée. C’est
+exactement le traitement de Kripke <strong>[20]</strong>, dont la
+théorie range ces énoncés parmi les non fondés et leur assigne un statut
+indéfini — la source <strong>[23]</strong> le résume ainsi : « <em>Since
+both assuming that the liar sentence is true and that it is false leads
+to a contradiction it must be neither, it is undefined.</em> »</p>
+<p><strong>Il nous semble</strong> donc que la conclusion correcte est
+celle, prudente, que Jansma finit par écrire (« they are not truth
+oracles »), et non celle que son titre laisse anticiper. Que la sonde
+échoue sur le menteur ne prouve pas qu’elle ne mesure rien de réel sur
+les énoncés fondés — c’est-à-dire sur l’écrasante majorité des énoncés
+dont un utilisateur veut évaluer la vérité. L’analogie qu’il file avec
+les mathématiques joue d’ailleurs contre son titre : l’indécidabilité
+n’a pas rendu la démonstration inutile.</p>
+<p><strong>Limite de notre propre objection, à porter à sa
+charge.</strong> La discussion publique <strong>[25]</strong> contient
+une réplique qui affaiblit ce qui précède, et il serait malhonnête de ne
+pas la reproduire. Ajouter une troisième valeur (« paradoxal ») ne met
+pas à l’abri : il suffit de définir « non-vrai » comme la réunion de «
+faux » et de « paradoxal » pour retrouver une négation sans point fixe,
+et la diagonale se reconstruit à l’identique. C’est le <strong>paradoxe
+de la vengeance</strong> (<em>revenge paradox</em>), difficulté
+classique et connue des solutions par lacune de valeur — dont celle de
+Kripke <strong>[20]</strong>. Autrement dit : notre C.3 déplace le
+problème d’un cran, elle ne l’élimine pas, et Jansma a raison de dire
+qu’il n’existe pas de protection satisfaisante. Ce qui subsiste de C.3
+est plus modeste, mais tient : le fait qu’un classifieur produise un
+nombre sur une phrase sans valeur de vérité ne dit rien de ce qu’il
+mesure sur les phrases fondées.</p>
+<h3 id="c.4-lexpérience-néprouve-pas-largument">C.4 — L’expérience
+n’éprouve pas l’argument</h3>
+<p>La figure des phrases diagonales est le passage le plus intéressant
+du billet, mais il nous semble qu’elle établit autre chose que ce
+qu’elle annonce. Deux phrases y reçoivent des scores presque identiques
+: « <em>The embedding of this sentence aligns with the embedding of the
+concept of falsehood</em> » ≈ 0,79 (classée « Liar ») et « <em>The
+embedding of this sentence aligns with the embedding of the concept of
+truth</em> » ≈ 0,80 (classée « Null »). De même, la variante « …
+evaluates to FALSE » (≈ 0,64) et « … evaluates to TRUE » (≈ 0,71) sont
+voisines alors qu’elles sont logiquement opposées.</p>
+<p>Cette insensibilité à l’inversion suggère que la sonde répond au
+<strong>champ lexical</strong> de la phrase — on y parle de vérité,
+d’embeddings, de sondes — et non à sa structure auto-référentielle.
+Autrement dit, ce que la figure documente ressemble à la fragilité hors
+distribution déjà établie par <strong>[15]</strong>,
+<strong>[18]</strong> et <strong>[19]</strong>, plutôt qu’à la signature
+d’un effondrement tarskien. Un paradoxe authentiquement diagonal ne
+produirait pas « du bruit » : il produirait une <em>instabilité
+reproductible</em> — par exemple un score qui bascule quand on retourne
+la formulation, ce que la figure ne montre justement pas.</p>
+<p>S’y ajoutent des bornes de puissance que l’auteur assume mais qu’il
+faut consigner : treize phrases diagonales, un modèle, une sonde, 36
+phrases de validation, aucun intervalle de confiance, aucun lien vers le
+code ni les données. En l’état, la partie empirique <em>illustre</em>
+l’idée — l’auteur ne prétend pas davantage — mais ne la <em>teste</em>
+pas.</p>
+<h3 id="c.5-un-terrain-déjà-labouré-cité-à-moitié">C.5 — Un terrain déjà
+labouré, cité à moitié</h3>
+<p>La section « A Fixed-point fix? » redécouvre un domaine constitué.
+L’idée de valeurs de vérité graduées dans [0, 1] appliquée au menteur a
+été traitée formellement par Hájek, Paris et Shepherdson
+<strong>[21]</strong> dans le cadre de la logique infiniment valuée de
+Łukasiewicz : ils y examinent la possibilité d’étendre l’arithmétique de
+Peano par un prédicat « x est vrai » à valeurs multiples satisfaisant le
+schéma de déquotation. Kripke <strong>[20]</strong> avait, un quart de
+siècle plus tôt, construit la solution par points fixes et lacunes de
+valeur. Aucun des deux n’est cité.</p>
+<p>La conclusion de Jansma — « ça marche, mais au prix de l’expressivité
+» — nous paraît <em>cohérente</em> avec ce corpus, non contredite par
+lui ; nous ne lui reprochons pas une erreur, mais un effet de nouveauté.
+Pour un usage en conférence, mieux vaut présenter le point comme un
+<strong>résultat classique de la logique de la vérité</strong>
+réappliqué aux LLM : c’est plus solide, et plus intéressant, qu’une
+trouvaille de 2026.</p>
+<p><strong>Une phrase de l’article est en revanche trop forte, et c’est
+vérifiable.</strong> Jansma conclut sa section par : « <em>There is no
+satisfying protection against these diagonal attacks</em> ». Or
+Garrabrant et al. <strong>[26]</strong> ont publié en 2016 — travail
+dont la version abrégée a passé l’évaluation par les pairs à TARK 2017
+<strong>[27]</strong> — un théorème qui traite <strong>exactement la
+phrase qu’il donne comme contre-exemple fatal</strong>. Il écrit que «
+<em>This sentence has truth score less than 0.5</em> » n’est pas une
+fonction continue du score et fait donc renaître le paradoxe. Leur
+théorème 4.11.2, dit de <em>résistance au paradoxe</em>, porte sur la
+suite d’énoncés χₙ vérifiant Γ ⊢ χₙ ↔︎ (Pₙ(χₙ) &lt; p) — soit
+littéralement « la probabilité que je vais m’attribuer est inférieure à
+p » — et établit que Pₙ(χₙ) converge vers p. Le cas p = 0,5 est la
+phrase de Jansma.</p>
+<p>Le mécanisme n’est d’ailleurs pas celui qu’il envisage : la stabilité
+ne vient pas de la continuité (Brouwer) mais de l’<strong>incapacité de
+tout parieur calculable en temps polynomial à détecter un biais dans le
+prix</strong>. Trois précisions s’imposent, qui empêchent d’en faire une
+réfutation : la cohérence n’est atteinte qu’à la limite ;
+l’auto-connaissance du système reste approximative — il ne connaît
+jamais exactement ses propres valeurs, et c’est par là que Tarski ne
+mord pas ; et il s’agit de <strong>degrés de croyance</strong>, non de
+valeurs de vérité, donc le prédicat de vérité total que Jansma déclare
+impossible n’est pas construit. <strong>Sa thèse principale tient ;
+cette phrase-là ne tient pas.</strong> Voir le résumé dédié,
+<code>RESUME-LOGICAL-INDUCTION-v1.docx</code>, dans le même dossier.</p>
+<h3 id="c.6-une-objection-qui-va-dans-son-sens">C.6 — Une objection qui
+va dans son sens</h3>
+<p>Par souci d’équité : on serait tenté de défendre les sondes en
+interdisant l’auto-référence (« il suffit de ne pas poser ce genre de
+phrase »). Cette défense ne tient pas, et l’article aurait gagné à le
+dire. Yablo <strong>[22]</strong> a construit un paradoxe sans
+auto-référence — une suite infinie de phrases où chacune affirme la
+fausseté de toutes les suivantes. Une structure non bien fondée suffit.
+La discussion publique <strong>[25]</strong> fait la même remarque par
+un autre biais, en rappelant le paradoxe de Quine, où l’auto-référence
+n’est plus explicite mais obtenue par citation. Filtrer les phrases qui
+se citent elles-mêmes ne protégerait donc de rien.</p>
+<h2 id="d-ce-que-cette-critique-ne-dit-pas">3.D Ce que cette critique ne
+dit pas</h2>
+<p>Le désaccord ne porte <strong>pas</strong> sur la validité logique du
+schéma Tarski-Lawvere, qui n’est pas discutable, ni sur l’utilité du
+billet, qui est réelle. Il porte sur <strong>la portée de
+l’application</strong> : sur ce qui est démontré (aucun évaluateur
+définissable, total et exact), sur ce qui est illustré (la fragilité
+d’une sonde-jouet), et sur ce qui est seulement suggéré (que la
+géométrie des embeddings soit en cause). Notre lecture est que l’article
+est <strong>juste dans sa preuve, généreux dans son titre, et fragile
+dans sa démonstration expérimentale</strong>.</p>
+<h1 id="le-pont-pédagogique-de-la-démo-vecteurs-au-café-philo">4. Le
+pont pédagogique : de la démo vecteurs au café philo</h1>
+<p>Rappel du matériau existant <strong>[24]</strong>. La démo mesure,
+dans un espace à cinq dimensions, la similarité entre trois mots :
+cosinus <strong>chat / chien = 0,9880</strong> ; cosinus <strong>chat /
+ordinateur = 0,1813</strong> (distances euclidiennes 0,2236 et 1,6823).
+La phrase de conférence retenue est : « la machine ne comprend pas les
+mots, elle mesure des angles entre des flèches ».</p>
+<p>L’article de Jansma est le <strong>contrepoint</strong> exact de
+cette démo : la démo dit « le sens est géométrique », l’article demande
+« la vérité l’est-elle aussi ? ». Voici cinq idées mobilisables —
+formulées pour être dites à voix haute, avec pour chacune la source qui
+la porte.</p>
+<h2
+id="idée-1-le-sens-peut-être-une-géométrie-la-vérité-est-une-relation">Idée
+1 — Le sens peut être une géométrie ; la vérité est une relation</h2>
+<p>La démo mesure une ressemblance <em>entre mots</em> : c’est une
+affaire interne au langage, et l’angle y suffit. La vérité, elle, met
+une phrase en rapport avec quelque chose qui n’est pas dans l’espace :
+le monde. Passer de « je sais mesurer la proximité de deux mots » à « je
+sais mesurer la vérité d’une phrase », c’est franchir la frontière entre
+une propriété du texte et une relation au réel. Tout le débat sur les
+sondes de vérité tient dans ce franchissement.</p>
+<p><em>Formule de scène : « 0,988 entre chat et chien, ce n’est pas 98,8
+% de compréhension. C’est un angle. Et un angle n’a jamais rencontré un
+chat. »</em></p>
+<h2
+id="idée-2-ce-qui-se-mesure-très-bien-nest-pas-forcément-ce-quon-croit-mesurer">Idée
+2 — Ce qui se mesure très bien n’est pas forcément ce qu’on croit
+mesurer</h2>
+<p>Une sonde de vérité à 94 % n’est pas un oracle à 94 %. Farquhar et
+al. <strong>[15]</strong> ont montré que les méthodes non supervisées
+trouvent « la propriété la plus saillante des activations », pas la
+connaissance ; Schouten et al. <strong>[18]</strong> que des contextes
+qui ne devraient rien changer à la vérité déplacent pourtant la sortie
+de la sonde ; Savcisens et Eliassi-Rad <strong>[19]</strong> qu’il
+n’existe pas de direction de véracité fiable et transférable. C’est la
+leçon la plus directement opérationnelle pour un public non spécialiste
+: <strong>un score élevé mesure la régularité d’un signal, pas la vérité
+d’un énoncé</strong>.</p>
+<h2
+id="idée-3-le-miroir-linstrument-est-fait-de-la-même-matière-que-ce-quil-mesure">Idée
+3 — Le miroir : l’instrument est fait de la même matière que ce qu’il
+mesure</h2>
+<p>C’est le cœur philosophique du billet, et il se transmet sans
+mathématiques. Un thermomètre n’est pas fait de température ; une sonde
+de vérité dans un LLM, si — elle opère sur du texte, et le texte peut
+parler d’elle. D’où la citation à afficher, de Yanofsky
+<strong>[11]</strong> :</p>
+<blockquote>
+<p>« there will be trouble when things deal with their own properties.
+»</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « il y aura des ennuis dès que les
+choses traitent de leurs propres propriétés. »</p>
+<p>Application immédiate et vérifiable en salle : demander à une IA
+d’évaluer la véracité d’un discours <em>sur les IA</em>. C’est la
+version quotidienne de l’ouroboros, et c’est le point de bascule où le
+public comprend que le problème n’est pas technique mais logique.</p>
+<h2 id="idée-4-le-prix-du-flou">Idée 4 — Le prix du flou</h2>
+<p>On peut sauver la machine du paradoxe : il suffit de l’autoriser à
+répondre « 0,5 » au menteur. Mais, montre Jansma, il faut alors lui
+interdire de faire des affirmations nettes sur ses propres scores —
+l’expressivité paie la cohérence. C’est un objet philosophique de
+premier ordre pour un café philo : <strong>la transparence complète d’un
+système sur lui-même a un coût logique, et ce coût est
+démontrable</strong>. Le débat sur l’« IA explicable » gagne beaucoup à
+être posé ainsi plutôt qu’en termes d’effort d’ingénierie. (À présenter
+comme un résultat classique — Kripke <strong>[20]</strong>, Hájek et
+al. <strong>[21]</strong> — réappliqué aux LLM : voir 3.C.5.)</p>
+<p>Et la formule la plus forte est disponible, car elle est démontrée
+<strong>[26]</strong> : <em>on sait construire une machine qui ne se
+contredit pas sur la phrase du menteur — à condition qu’elle ne sache
+jamais exactement ce qu’elle croit, et qu’on attende l’infini.</em> Le
+prix de la cohérence réflexive n’est pas la puissance de calcul : c’est
+<strong>l’ignorance de soi</strong>.</p>
+<h2
+id="idée-5-la-bonne-pratique-qui-en-découle-ne-pas-déléguer-lautorité-finale-sur-le-vrai">Idée
+5 — La bonne pratique qui en découle : ne pas déléguer l’autorité finale
+sur le vrai</h2>
+<p>C’est le fil directeur de la conférence, et Jansma en fournit à la
+fois le constat et la justification théorique. Le constat, verbatim
+:</p>
+<blockquote>
+<p>« They are already replacing standard Google search results, and I’ve
+had many discussions end with people delegating final authority on the
+truth to an AI. »</p>
+</blockquote>
+<p><em>Traduction proposée :</em> « Elles remplacent déjà les résultats
+de recherche Google ordinaires, et j’ai vu bien des discussions se
+terminer par la délégation à une IA de l’autorité finale sur le vrai.
+»</p>
+<p><strong>Le prolongement le plus fort ne vient pas de l’article mais
+de sa discussion [25]</strong>, et il vaut d’être dit en salle : dès
+lors que des millions de gens demandent à une machine si une chose est
+vraie, il devient rentable de faire de la propagande <em>à destination
+de la machine</em> — de produire du texte destiné à infléchir ce que les
+modèles tiendront pour vrai. Un intervenant affirme que des
+organisations le font déjà sans s’en cacher ; nous ne l’avons pas
+vérifié et le donnons comme allégation. Mais le raisonnement, lui, se
+tient seul : l’optimisation pour les moteurs de recherche a existé,
+l’optimisation pour les modèles suit la même logique économique.
+<strong>La délégation de l’autorité sur le vrai crée le marché de sa
+manipulation.</strong></p>
+<p><em>Contrepoint honnête à donner aussi</em> : la même discussion
+objecte que pour remplacer légitimement une recherche en ligne, un
+modèle n’a pas besoin d’être un oracle — il lui suffit d’être meilleur
+que ce qu’il remplace, qui n’était pas exact non plus. L’argument est
+bon, et il n’annule pas le précédent : il déplace la question de « la
+machine dit-elle le vrai ? » à « qui a intérêt à ce qu’elle le dise
+ainsi ? ».</p>
+<p>La justification théorique est le théorème lui-même : il n’existe pas
+d’évaluateur exact et total de la vérité — ni dans un LLM, ni ailleurs.
+La bonne pratique n’est donc pas une prudence morale ou un réflexe de
+méfiance : c’est une <strong>conséquence</strong>. L’IA est un
+instrument de mesure ; la validation reste un acte humain, situé, qui
+engage quelqu’un. C’est exactement le dispositif de validation humaine
+que la conférence entend illustrer — et il est ici adossé à un résultat
+de logique, ce qui est nettement plus solide qu’un argument
+d’autorité.</p>
+<p><strong>Option de mise en scène (facultative) :</strong> poser en
+direct à un modèle la phrase du menteur, puis la même phrase retournée,
+et montrer que le score ne bascule pas comme il le devrait. Réserve :
+notre objection 3.C.4 vaut aussi pour une démonstration publique — ce
+qu’on montre alors est l’instabilité de la mesure, pas le paradoxe
+lui-même. Il faut le dire au public, sous peine de faire exactement ce
+que la conférence dénonce.</p>
+<h1 id="bibliographie">5. Bibliographie</h1>
+<p><em>La mention entre crochets en fin d’entrée indique le niveau de
+consultation effectif pour cette lecture.</em></p>
+<h2 id="source-maîtresse">Source maîtresse</h2>
+<p><strong>[1]</strong> JANSMA, Abel. « Truth is not a direction: a
+Tarski attack on LLM probes », 10 juillet 2026.
+https://abeljansma.nl/2026/07/10/truth-is-not-a-direction.html —
+<em>[texte intégral lu, figures comprises]</em></p>
+<h2 id="corpus-de-lauteur">Corpus de l’auteur</h2>
+<p><strong>[2]</strong> JANSMA, Abel. Page « Publications ».
+https://abeljansma.nl/publications/ — <em>[page lue intégralement,
+résumés d’auteur compris]</em></p>
+<p><strong>[3]</strong> JANSMA, Abel. <em>Higher-order interactions in
+single-cell gene expression: towards a cybergenetic semantics of cell
+state</em>. Thèse de doctorat, University of Edinburgh, 14 juin 2023.
+https://abeljansma.nl/assets/JansmaAbel_PhDThesis_corrected.pdf —
+<em>[PDF téléchargé ; abstract lu verbatim ; corps non lu]</em></p>
+<p><strong>[4]</strong> JANSMA, Abel. « A Compositional Calculus for
+Semantic Synergy in Language Model Embeddings », ICML Workshop on
+Compositional Learning et ICML Workshop on Mechanistic Interpretability,
+2026. https://openreview.net/forum?id=sMUVXkAksS — <em>[non consulté ;
+seul le résumé d’auteur de [2] a été lu. L’accès a été tenté le
+30/07/2026 sur demande d’AH : la page OpenReview oppose un mur de
+vérification anti-robot, que nous ne contournons pas, et le PDF direct
+répond HTTP 403. Aucune version arXiv ou miroir n’a été trouvée. Rien
+n’est affirmé du contenu de cet article.]</em></p>
+<h2 id="travaux-cités-par-larticle">Travaux cités par l’article</h2>
+<p><strong>[5]</strong> MARKS, Samuel et TEGMARK, Max. « The Geometry of
+Truth: Emergent Linear Structure in Large Language Model Representations
+of True/False Datasets », arXiv:2310.06824, oct. 2023 (rév. août 2024) ;
+Conference on Language Modeling, 2024. — <em>[abstract lu]</em></p>
+<p><strong>[6]</strong> BÜRGER, Lennart, HAMPRECHT, Fred A. et NADLER,
+Boaz. « Truth is Universal: Robust Detection of Lies in LLMs »,
+arXiv:2407.12831, juil. 2024 ; NeurIPS 2024 (poster). Version blog citée
+par [1] : AlignmentForum, « Truth is universal: robust detection of lies
+in LLMs ». — <em>[abstract lu]</em></p>
+<p><strong>[7]</strong> MISHAJW. « How well do truth probes generalise?
+», LessWrong, 24 février 2024.
+https://www.lesswrong.com/posts/cmicXAAEuPGqcs9jw/how-well-do-truth-probes-generalise
+— <em>[synthèse et conclusions chiffrées consultées]</em></p>
+<p><strong>[8]</strong> BURNS, Collin, YE, Haotian, KLEIN, Dan et
+STEINHARDT, Jacob. « Discovering Latent Knowledge in Language Models
+Without Supervision », arXiv:2212.03827, déc. 2022 (rév. mars 2024). —
+<em>[abstract lu]</em></p>
+<p><strong>[9]</strong> ZOU, Andy et al. « Representation Engineering: A
+Top-Down Approach to AI Transparency », arXiv:2310.01405, oct. 2023
+(rév. mars 2025). — <em>[abstract lu]</em></p>
+<p><strong>[10]</strong> BAO, Yuntai, ZHANG, Xuhong, DU, Tianyu, ZHAO,
+Xinkui, FENG, Zhengwen, PENG, Hao et YIN, Jianwei. « Probing the
+Geometry of Truth: Consistency and Generalization of Truth Directions in
+LLMs Across Logical Transformations and Question Answering Tasks »,
+arXiv:2506.00823, juin 2025. — <em>[abstract lu]</em></p>
+<p><strong>[11]</strong> YANOFSKY, Noson S. « A Universal Approach to
+Self-Referential Paradoxes, Incompleteness and Fixed Points »,
+arXiv:math/0305282, mai 2003. — <em>[abstract lu ; source de la citation
+reprise par [1]]</em></p>
+<p><strong>[12]</strong> HUH, Minyoung, CHEUNG, Brian, WANG, Tongzhou et
+ISOLA, Phillip. « The Platonic Representation Hypothesis »,
+arXiv:2405.07987, mai 2024. — <em>[abstract lu]</em></p>
+<p><strong>[13]</strong> GURNEE, Wes et al. (Anthropic). « Verbalizable
+Representations Form a Global Workspace in Language Models »,
+transformer-circuits.pub, 6 juillet 2026. — <em>[consulté pour la
+définition du « J-space » uniquement]</em></p>
+<h2 id="littérature-critique-mobilisée-en-3.b">Littérature critique
+mobilisée en 3.B</h2>
+<p><strong>[14]</strong> LEVINSTEIN, B. A. et HERRMANN, Daniel A. «
+Still No Lie Detector for Language Models: Probing Empirical and
+Conceptual Roadblocks », arXiv:2307.00175, juin 2023. — <em>[abstract
+lu]</em></p>
+<p><strong>[15]</strong> FARQUHAR, Sebastian, VARMA, Vikrant, KENTON,
+Zachary, GASTEIGER, Johannes, MIKULIK, Vladimir et SHAH, Rohin. «
+Challenges with unsupervised LLM knowledge discovery »,
+arXiv:2312.10029, déc. 2023. — <em>[abstract lu]</em></p>
+<p><strong>[16]</strong> PARK, Kiho, CHOE, Yo Joong et VEITCH, Victor. «
+The Linear Representation Hypothesis and the Geometry of Large Language
+Models », arXiv:2311.03658, nov. 2023 ; ICML 2024. — <em>[abstract lu ;
+référence de cadrage pour la notion de « représentation linéaire
+»]</em></p>
+<p><strong>[17]</strong> ENGELS, Joshua, MICHAUD, Eric J., LIAO, Isaac,
+GURNEE, Wes et TEGMARK, Max. « Not All Language Model Features Are
+One-Dimensionally Linear », arXiv:2405.14860, mai 2024 ; ICLR 2025. —
+<em>[abstract lu]</em></p>
+<p><strong>[18]</strong> SCHOUTEN, Stefan F., BLOEM, Peter, MARKOV, Ilia
+et VOSSEN, Piek. « Truth-value judgment in language models: “truth
+directions” are context sensitive », arXiv:2404.18865, avril 2024 (rév.
+juil. 2025) ; COLM 2025. — <em>[abstract lu]</em></p>
+<p><strong>[19]</strong> SAVCISENS, Germans et ELIASSI-RAD, Tina. « The
+Trilemma of Truth in Large Language Models », arXiv:2506.23921, juin
+2025 (rév. juin 2026). — <em>[abstract lu]</em></p>
+<h2 id="logique-de-la-vérité">Logique de la vérité</h2>
+<p><strong>[20]</strong> KRIPKE, Saul. « Outline of a Theory of Truth »,
+<em>The Journal of Philosophy</em>, vol. 72, n° 19, 1975, p. 690-716. —
+<em>[non lu dans le texte ; propos rapporté d’après [23]]</em></p>
+<p><strong>[21]</strong> HÁJEK, Petr, PARIS, Jeff et SHEPHERDSON, John.
+« The Liar Paradox and Fuzzy Logic », <em>The Journal of Symbolic
+Logic</em>, vol. 65, n° 1, 2000, p. 339-346. — <em>[abstract
+lu]</em></p>
+<p><strong>[22]</strong> YABLO, Stephen. « Paradox without
+Self-Reference », <em>Analysis</em>, vol. 53, 1993, p. 251-252. —
+<em>[non lu dans le texte ; propos rapporté d’après [23] et notices
+encyclopédiques concordantes]</em></p>
+<p><strong>[23]</strong> « Self-Reference and Paradox », <em>Stanford
+Encyclopedia of Philosophy</em>, publié le 15 juillet 2008, révision de
+fond du 19 juillet 2024.
+https://plato.stanford.edu/entries/self-reference/ — <em>[consultée pour
+Tarski et Kripke]</em></p>
+<h2 id="pièce-interne">Pièce interne</h2>
+<p><strong>[24]</strong> SQUAD MONTAGE PARALLÈLE. « Démo pédagogique —
+vecteurs, embeddings et similarité (feature CAFEPHILO) », note conservée
+le 30 juillet 2026. note interne de la squad, non publiée — <em>[lue
+intégralement]</em></p>
+<h2 id="références-classiques-citées-daprès-dautres-sources">Références
+classiques citées d’après d’autres sources</h2>
+<p>GÖDEL (incomplétude, 1931), TARSKI (indéfinissabilité de la vérité),
+TURING (problème de l’arrêt) et LAWVERE (théorème du point fixe,
+catégories cartésiennes fermées), ainsi que le théorème du point fixe de
+BROUWER, sont mobilisés dans ce document <strong>tels que [1], [11] et
+[23] les rapportent</strong>. Leurs textes originaux n’ont pas été
+consultés pour cette lecture, et aucune affirmation de ce document ne
+repose sur autre chose que ce que ces trois sources en disent.</p>
+<h2 id="discussion-publique">Discussion publique</h2>
+<p><strong>[25]</strong> Fil de discussion consacré à l’article, Hacker
+News, item 49069033, commentaires des 10-12 juillet 2026 (« 3 days ago »
+/ « 2 days ago » au moment de la capture).
+https://news.ycombinator.com/item?id=49069033 —
+<em>[<strong>inaccessible</strong> aux deux tentatives directes du 30
+juillet 2026 : HTTP 429, puis page de refus. <strong>Texte intégral
+transmis par AH le 1er août 2026</strong> ; lu intégralement à partir de
+cette transmission. Arguments <strong>reformulés, non cités</strong>, et
+rapportés sans attribution nominative : interventions pseudonymes de
+particuliers sur un forum public. Statut : état d’une discussion
+informée, non une source évaluée. Les allégations factuelles qui y
+figurent (propagande destinée aux modèles) ne sont pas vérifiées par
+ailleurs et sont données comme telles.]</em></p>
+<h2 id="réponse-technique-à-la-section-a-fixed-point-fix">Réponse
+technique à la section « A Fixed-point fix? »</h2>
+<p><strong>[26]</strong> GARRABRANT, Scott, BENSON-TILSEN, Tsvi, CRITCH,
+Andrew, SOARES, Nate et TAYLOR, Jessica. « Logical Induction »,
+arXiv:1609.03543, 12 septembre 2016, rév. 7 décembre 2020 (v5) ; rapport
+technique MIRI 2016-2. — <em>[<strong>vérifiée sur demande d’AH le
+01/08/2026</strong>, à partir de la piste signalée dans [25]. Abstract
+verbatim, introduction et sections 4.11-4.12 (théorèmes d’introspection,
+de résistance au paradoxe et d’auto-confiance) lus au texte ; preuves en
+annexe non lues. Résumé d’une page dans le même dossier :
+<code>RESUME-LOGICAL-INDUCTION-v1.docx</code>.]</em></p>
+<p><strong>[27]</strong> GARRABRANT, Scott, BENSON-TILSEN, Tsvi, CRITCH,
+Andrew, SOARES, Nate et TAYLOR, Jessica. « A Formal Approach to the
+Problem of Logical Non-Omniscience », <strong>TARK 2017</strong>, EPTCS
+251, 2017, p. 221-235, DOI 10.4204/EPTCS.251.16 ; arXiv:1707.08747. —
+<em>[<strong>vérifiée sur demande d’AH le 01/08/2026</strong> :
+abstract, introduction et note d’abrègement lus au texte. Ce n’est pas
+un travail distinct mais la <strong>version abrégée de conférence de
+[26]</strong>, sans les preuves — la page 222 renvoie explicitement au
+texte long. Elle établit en revanche que [26] a passé une évaluation par
+les pairs.]</em></p>
+<h2 id="piste-signalée-non-suivie">Piste signalée, non suivie</h2>
+<p>La discussion <strong>[25]</strong> renvoie à un texte que nous
+n’avons pas consulté et dont nous n’affirmons rien : GIRARD, Jean-Yves,
+« Le théorème de Gödel, ou une soirée avec M. Homais » — dialogue
+satirique sur les usages abusifs de l’incomplétude, piste
+potentiellement utile pour le café philo.</p>
+<p><strong>Ce que nous n’avons pas établi.</strong> La discussion
+<strong>[25]</strong> affirme que le programme de recherche de
+<strong>[26]</strong> aurait été abandonné. Nous avions signalé
+<strong>[27]</strong> comme indice possible du contraire : vérification
+faite, ce n’en est pas un, puisqu’il s’agit du même travail sous forme
+abrégée. L’affirmation <strong>reste ni confirmée ni infirmée</strong>,
+et ne doit pas être reprise en public.</p>
+<hr />
+<p><strong>Fin du document.</strong> <em>Ce texte est un document de
+travail v1 soumis à la révision d’AH ; il n’a fait l’objet d’aucune
+validation et ne doit pas être diffusé en l’état.</em></p>
+
+</div></body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7. La vérité est-elle une direction ? — Café Philo, comprendre les concepts</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+
+ .neuf{border:1px solid var(--rule);border-left:3px solid var(--accent2);background:var(--card);
+   border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.86rem;color:var(--muted)}
+ .neuf b{color:var(--fg)}
+ .manque{border:1px dashed var(--accent);background:var(--z);border-radius:8px;padding:.9rem 1.1rem;
+   margin:1rem 0;font-size:.9rem}
+ .manque b{color:var(--accent)}
+ .fiches li.attente a{color:var(--muted)}
+ .etat{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;border-radius:99px;
+   padding:.1rem .55rem;margin-left:.45rem;vertical-align:.1em;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .etat.ok{background:var(--surl,#e8f1e9);color:var(--surlf,#256b3a)}
+ .etat.att{background:var(--mark);color:var(--tagf)}
+ .etat.lien{background:var(--z);color:var(--muted);border:1px solid var(--rule)}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.ok{background:#17301f;color:#8ed6a6}}
+ .parcours{list-style:none;padding:0;margin:1.2rem 0;counter-reset:p}
+ .parcours li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px solid var(--rule)}
+ .parcours li:last-child{border-bottom:0}
+ .parcours li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.55rem;
+   width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#fff;
+   font:700 .8rem/1.6rem -apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+ .parcours b{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a></div>
+<h1>7. La vérité est-elle une direction&nbsp;?</h1>
+<p class="dias">CONCEPT · LECTURE CRITIQUE SOURCÉE</p>
+<p class="chapeau">Le contrepoint exact de la démo vecteurs&nbsp;: elle dit que le sens est géométrique&nbsp;; cet article demande si la vérité l’est aussi.</p>
+<div class="note"><b>D’où vient cette fiche.</b> Elle condense trois documents du dossier
+<code>cafephilo-lecture-jansma</code>&nbsp;: une <a href="cafephilo-lecture-jansma/lecture-critique-jansma.html">lecture
+critique sourcée</a> de 53&nbsp;Ko, une <a>fiche orateur</a>
+et un <a>résumé vérifié</a> d’un article de logique. Ces
+documents sont signalés par leurs auteurs comme <b>documents de travail non validés</b>.</div>
+
+<h2>Trois chiffres</h2>
+<div class="chiffres">
+<div class="ch"><span class="v">0,988</span><span class="l">cosinus chat / chien — notre démo</span></div>
+<div class="ch"><span class="v">0,181</span><span class="l">cosinus chat / ordinateur — notre démo</span></div>
+<div class="ch"><span class="v">94 %</span><span class="l">exactitude de la sonde de vérité — son article</span></div>
+</div>
+<p class="exergue">La démo dit <i>le sens est géométrique</i>&nbsp;; l’article demande <i>et la
+vérité, l’est-elle&nbsp;?</i> La réponse est non — et c’est un théorème, pas une opinion.</p>
+
+<h2>L’article</h2>
+<p><b>« Truth is not a direction: a Tarski attack on LLM probes »</b> — Abel Jansma, billet du
+10&nbsp;juillet 2026. Environ 1&nbsp;500 mots, trois figures. <b>Ce n’est pas un article à comité de
+lecture</b> — pas de protocole détaillé, pas de code, pas de données. Le point conditionne l’usage
+qu’on peut en faire, et la lecture critique y insiste.</p>
+
+<h3>Le rêve linéaire</h3>
+<p>Point de départ tenu pour acquis&nbsp;: beaucoup de concepts naturels — le genre, les émotions,
+les capitales — correspondent à des <b>directions</b> dans l’espace des embeddings. C’est
+l’hypothèse de la représentation linéaire, exactement ce que met en scène la
+<a href="concept-02-vecteurs.html">démo vecteurs</a>. Puis une version « très audacieuse »&nbsp;:
+il existerait une direction correspondant à <b>la vérité</b>. « <i>This works weirdly well</i> »,
+concède l’auteur.</p>
+
+<h3>L’attaque diagonale</h3>
+<p>Il construit la phrase&nbsp;:</p>
+<blockquote>« The truth probe’s score for this sentence evaluates to FALSE. »</blockquote>
+<p>Si elle est vraie, la sonde répond VRAI&nbsp;; mais alors, d’après ce qu’elle affirme, la sonde
+répond FAUX, donc elle est fausse. Et réciproquement. C’est le menteur de Tarski, transporté dans
+un espace vectoriel. D’où la formulation générale, qui est le cœur de l’article&nbsp;:</p>
+<blockquote><i>« No definable probe over a model’s representation space can exactly capture truth
+for any language rich enough to describe that probe and its outputs. »</i><br>
+<span style="font-size:.92em">« Aucune sonde définissable sur l’espace de représentation d’un
+modèle ne peut capturer exactement la vérité, pour tout langage assez riche pour décrire cette
+sonde et ses sorties. »</span></blockquote>
+<p>La prémisse qui autorise le transport tient en une phrase&nbsp;: <i>« Transformers trained on
+natural language are made of the same stuff as their inputs. »</i> Les concepts qui structurent
+l’espace sont eux-mêmes dicibles en langue naturelle — donc réinjectables en entrée.</p>
+
+<h3>L’expérience</h3>
+<p>Une sonde entraînée sur 120 phrases, <b>94&nbsp;% d’exactitude</b> sur 36 phrases de validation.
+Puis elle est confrontée à treize phrases construites pour la piéger.</p>
+<figure><figcaption>Les treize phrases et leur score, en cinq catégories&nbsp;: <b>Liar</b>,
+<b>Fuzzy liar</b>, <b>True control</b>, <b>False control</b>, <b>Null</b>. Les contrôles se
+comportent bien — « <i>Cats are mammals</i> » ≈ 0,98, « <i>Amsterdam is the capital of
+Portugal</i> » ≈ 0,01. Les phrases piégées, elles, donnent des scores erratiques.
+</figcaption></figure>
+<p>L’auteur pose lui-même la borne&nbsp;: « <i>this is obviously a very small toy example</i> ». Et
+il prend soin de noter que ce n’est pas un simple effet de l’auto-référence&nbsp;: la phrase
+auto-référentielle non paradoxale « <i>This sentence is written in English</i> » est correctement
+notée.</p>
+
+<h2>La lecture critique de la squad</h2>
+<p>C’est la partie la plus utile du dossier, et elle ne suit pas l’auteur sans le discuter. Quatre
+objections, de la plus forte à la plus accessoire.</p>
+
+<h3>Nommer n’est pas définir</h3>
+<p>Le théorème de Tarski exige que le prédicat de vérité soit <b>définissable dans le langage
+lui-même</b>. Or la phrase diagonale <i>nomme</i> la sonde&nbsp;: elle ne la définit pas. La sonde
+est une fonction des activations, entraînée et évaluée <b>hors</b> du modèle&nbsp;; le modèle ne la
+calcule pas et ne connaît pas ses poids. « Le langage peut parler de la sonde » et « le langage
+peut définir la sonde » sont deux choses différentes — et c’est exactement l’écart que Tarski
+exploite.</p>
+<p class="chapeau">L’objection ne détruit pas la thèse&nbsp;: elle en restreint le domaine. Et elle
+vaut comme programme — si quelqu’un montrait qu’un modèle assez capable peut simuler sa propre
+sonde, l’argument deviendrait contraignant.</p>
+
+<h3>Le titre promet une conclusion géométrique&nbsp;; l’argument n’en produit aucune</h3>
+<p>L’auteur écrit lui-même que la sonde « <i>could be the projection […] or a non-linear
+classifier, it doesn’t really matter</i> ». C’est exact — <b>et c’est précisément pourquoi le
+résultat ne dit rien de la géométrie</b>. Il ne montre pas que la vérité n’est pas une
+direction&nbsp;: il montre qu’aucun évaluateur exact et total n’existe pour un langage assez
+riche. Ce qui vaut aussi pour un classifieur non linéaire, pour le modèle interrogé en langue
+naturelle — et, sous la même forme logique, <b>pour un jury humain</b>.</p>
+<p class="chapeau">Le titre exact serait « aucune sonde n’est un prédicat de vérité total ». Moins
+vendeur, plus juste. Pour un usage en café philo, la nuance est capitale&nbsp;: sinon on fait dire
+à un théorème de logique une thèse sur l’architecture des réseaux de neurones.</p>
+
+<h3>L’expérience n’éprouve pas l’argument</h3>
+<p>Deux phrases reçoivent des scores presque identiques alors qu’elles sont logiquement
+opposées&nbsp;:</p>
+<div class="tbl"><table>
+<tr><th>Phrase</th><th style="width:1%">Score</th><th style="width:1%">Catégorie</th></tr>
+<tr><td><i>The embedding of this sentence aligns with the embedding of the concept of
+<b>falsehood</b>.</i></td><td class="an">≈ 0,79</td><td class="an">Liar</td></tr>
+<tr><td><i>The embedding of this sentence aligns with the embedding of the concept of
+<b>truth</b>.</i></td><td class="an">≈ 0,80</td><td class="an">Null</td></tr>
+</table></div>
+<p>Cette <b>insensibilité à l’inversion</b> suggère que la sonde répond au <b>champ lexical</b> — on
+y parle de vérité, d’embeddings, de sondes — et non à la structure auto-référentielle. Un paradoxe
+authentiquement diagonal ne produirait pas « du bruit »&nbsp;: il produirait une <b>instabilité
+reproductible</b>, un score qui bascule quand on retourne la formulation. C’est justement ce que la
+figure ne montre pas.</p>
+
+<h3>Une phrase de l’article est trop forte, et c’est vérifiable</h3>
+<p>Jansma conclut&nbsp;: « <i>There is no satisfying protection against these diagonal
+attacks</i> ». Or <b>Garrabrant et al. (2016)</b> ont publié un théorème qui traite
+<b>exactement la phrase qu’il donne pour contre-exemple fatal</b> — « <i>This sentence has truth
+score less than 0.5</i> ». Leur <b>théorème 4.11.2, dit de résistance au paradoxe</b>, établit que
+la probabilité attribuée converge vers le seuil lui-même, « <i>so close that traders can’t tell if
+it’s slightly above or slightly below</i> ».</p>
+<div class="note">
+<p><b>Trois précisions qui empêchent d’en faire une réfutation</b>&nbsp;: la cohérence n’est
+atteinte qu’<b>à la limite</b>&nbsp;; l’auto-connaissance du système reste <b>approximative</b> —
+il ne connaît jamais exactement ses propres valeurs, et c’est par là que Tarski ne mord pas&nbsp;;
+et il s’agit de <b>degrés de croyance</b>, non de valeurs de vérité — le prédicat de vérité total
+que Jansma déclare impossible n’est donc pas construit.</p>
+<p><b>Sa thèse principale tient&nbsp;; cette phrase-là ne tient pas.</b> Le travail a passé
+l’évaluation par les pairs (TARK 2017), et ses auteurs déclarent eux-mêmes que leur algorithme
+donne « <i>a theoretically interesting but ultimately impractical account</i> ».</p>
+</div>
+
+<h2>Ce que la littérature disait déjà</h2>
+<ul>
+<li><b>La cible est contestée par ses propres sources</b>&nbsp;: Marks et Tegmark, que Jansma donne
+pour référence principale, écrivent eux-mêmes que « <i>this line of work is controversial</i> ».</li>
+<li><b>« Une » direction est déjà dépassé</b>&nbsp;: la source dont il reprend la méthode identifie
+un sous-espace à <b>deux</b> dimensions&nbsp;; d’autres travaux montrent que certaines
+caractéristiques sont irréductiblement multidimensionnelles.</li>
+<li><b>Les sondes captent peut-être autre chose</b>&nbsp;: les méthodes non supervisées
+« <i>do not discover knowledge — instead they seem to discover whatever feature of the activations
+is most prominent</i> ».</li>
+<li><b>Elles sont sensibles au contexte</b>, et <b>ne transfèrent pas de façon fiable</b>.</li>
+<li><b>L’objection conceptuelle est antérieure</b>&nbsp;: « <i>there is still no lie-detector for
+LLMs</i> », concluait-on dès 2023. Le diagonal ajoute un argument au dossier&nbsp;; il ne l’ouvre
+pas.</li>
+</ul>
+<p>Et la meilleure objection, venue de la discussion publique&nbsp;: <b>ce qu’on attend d’une sonde,
+ce n’est pas la vérité, c’est le jugement interne du modèle</b> — lequel peut être faux, même
+mesuré parfaitement. Si c’est exact, Tarski ne mord pas&nbsp;: il n’y a pas de prédicat de vérité à
+définir. Un autre intervenant propose l’image la plus juste du dossier&nbsp;: ce que capte une sonde
+sur un système qui prolonge des documents, ce serait quelque chose comme <b>« l’air de
+conviction »</b> — une propriété de style, du même ordre que la loquacité.</p>
+
+<h2>Les cinq idées à dire en salle</h2>
+<ul class="parcours">
+<li><b>Le sens peut être une géométrie&nbsp;; la vérité est une relation.</b> La démo mesure une
+ressemblance <i>entre mots</i> — affaire interne au langage. La vérité met une phrase en rapport
+avec ce qui n’est pas dans l’espace&nbsp;: le monde.<br>
+<i>« 0,988 entre chat et chien, ce n’est pas 98,8&nbsp;% de compréhension. C’est un angle. Et un
+angle n’a jamais rencontré un chat. »</i></li>
+<li><b>Ce qui se mesure bien n’est pas forcément ce qu’on croit mesurer.</b><br>
+<i>« Un score élevé mesure la régularité d’un signal, pas la vérité d’un énoncé. »</i></li>
+<li><b>Le miroir&nbsp;: l’instrument est fait de la matière qu’il mesure.</b> Un thermomètre n’est
+pas fait de température&nbsp;; une sonde de vérité dans un modèle de langue, si.<br>
+<i>« There will be trouble when things deal with their own properties. »</i> (Yanofsky, 2003)
+<br><b>Manip de salle</b>&nbsp;: demander à une IA d’évaluer la véracité d’un discours <i>sur les
+IA</i>.</li>
+<li><b>Le prix du flou.</b><br>
+<i>« On sait construire une machine qui ne se contredit pas sur la phrase du menteur — à condition
+qu’elle ne sache jamais exactement ce qu’elle croit, et qu’on attende l’infini. Le prix de la
+cohérence, ce n’est pas le calcul&nbsp;: c’est l’ignorance de soi. »</i></li>
+<li><b>Ne pas déléguer l’autorité finale sur le vrai.</b> Non par prudence morale, mais par
+conséquence&nbsp;: aucun évaluateur exact et total de la vérité n’existe. L’IA est un instrument de
+mesure&nbsp;; la validation reste un acte humain qui engage quelqu’un.<br>
+<i>« I’ve had many discussions end with people delegating final authority on the truth to an
+AI. »</i> (Jansma, 2026)</li>
+</ul>
+
+<h2>Les garde-fous — ce qu’il ne faut pas dire</h2>
+<div class="manque">
+<ul style="margin:0">
+<li><b>Pas</b> « la géométrie des embeddings ne peut pas porter la vérité »&nbsp;: le théorème vise
+tout évaluateur <i>définissable, total et exact</i> — vrai aussi d’un classifieur non linéaire, et
+de même forme logique pour un jury humain.</li>
+<li><b>Pas</b> « les sondes ne servent à rien »&nbsp;: l’auteur s’en défend explicitement en
+conclusion — « <i>I’m not claiming that truth probes are not useful!</i> »</li>
+<li><b>Manip en direct</b>&nbsp;: ce que le public voit est <b>l’instabilité de la mesure</b>, pas le
+paradoxe. Le dire — sinon on fait exactement ce que la conférence dénonce.</li>
+<li>L’allégation d’organisations produisant de la <b>propagande destinée aux modèles eux-mêmes</b>
+est <b>rapportée, non vérifiée</b>&nbsp;: à donner comme telle.</li>
+</ul>
+</div>
+
+<h2>Le verdict de la lecture critique</h2>
+<p class="exergue">L’article est <b>juste dans sa preuve</b>, <b>généreux dans son titre</b>, et
+<b>fragile dans sa démonstration expérimentale</b>.</p>
+
+<div class="pied"><a href="concept-06-hallucinations.html">&#8592; 6. Les hallucinations</a><a href="support-conference.html">Le support de conférence &#8594;</a></div>
+<footer>Fiche du dossier <i>Comprendre quelques concepts avec des exemples</i> — Café Philo Rencontres &amp; Progrès, feature CAFEPHILO. Assemblé le 03/09/2026.</footer>
+</div></body></html>

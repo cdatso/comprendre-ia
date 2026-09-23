@@ -1,0 +1,130 @@
+<meta name="robots" content="noindex, nofollow"><title>L'espace latent — le sens est un angle</title>
+<style>
+:root{--ardoise:#2b3134;--panneau:#343b3f;--craie:#f2efe9;--craie2:#b9bdb9;--corail:#e8735c;--trait:#4a5257;--serif:Georgia,'Times New Roman',serif;--sans:'Segoe UI',system-ui,Arial,sans-serif}
+html,body{margin:0;padding:0}
+body{background:var(--ardoise);color:var(--craie);font-family:var(--sans);min-height:100vh}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{max-width:1060px;margin:0 auto;padding:20px 24px 32px}
+header{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--trait);padding-bottom:12px;flex-wrap:wrap}
+.anneau{width:16px;height:16px;border-radius:50%;border:2.5px solid var(--corail);align-self:center;flex:none}
+.anneau.plein{background:var(--corail)}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--craie2)}
+h1{font-family:var(--serif);font-size:clamp(22px,3.4vw,32px);font-weight:400;margin:0}
+h1 em{color:var(--corail);font-style:italic}
+main{display:grid;grid-template-columns:1fr 300px;gap:24px;margin-top:20px}
+@media(max-width:820px){main{grid-template-columns:1fr}}
+.board{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:8px;overflow:hidden}
+.board svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.panel{display:flex;flex-direction:column;gap:16px}
+.carte{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:16px 18px}
+.lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--craie2);margin:0 0 6px}
+#cosv{font-family:var(--serif);font-style:italic;font-size:52px;line-height:1;font-variant-numeric:tabular-nums;margin:0}
+#theta{font-size:14px;color:var(--craie2);font-variant-numeric:tabular-nums}
+.jauge{height:10px;background:var(--ardoise);border:1px solid var(--trait);border-radius:5px;margin-top:12px;overflow:hidden}
+#fill{height:100%;background:var(--corail);width:98.8%}
+#verdict{font-size:14px;margin:10px 0 0;color:var(--craie)}
+.boutons{display:flex;flex-direction:column;gap:8px}
+button{font-family:var(--sans);font-size:14px;text-align:left;background:var(--ardoise);color:var(--craie);border:1px solid var(--trait);border-radius:8px;padding:10px 12px;cursor:pointer}
+button:hover{border-color:var(--corail)}
+button:focus-visible{outline:2px solid var(--corail);outline-offset:2px}
+button.actif{border-color:var(--corail);background:#3d3430}
+button b{font-variant-numeric:tabular-nums;color:var(--corail);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--corail)}
+footer{margin-top:20px;border-top:1px solid var(--trait);padding-top:12px;font-size:13.5px;color:var(--craie2);line-height:1.55}
+footer em{color:var(--craie)}
+@media(prefers-reduced-motion:no-preference){#fill{transition:width .25s ease}}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style>
+<h2 class="sr-only">Démonstration interactive : deux vecteurs de mots dans un plan ; faire varier l'angle change la similarité cosinus entre « chat » et un second mot.</h2>
+<div class="wrap">
+<header>
+<span class="anneau plein"></span><span class="anneau"></span>
+<div><div class="eyebrow">Café Philo · bonnes pratiques de travail avec l'IA</div>
+<h1>L'espace latent — <em>le sens est un angle</em></h1></div>
+</header>
+<main>
+<div class="board">
+<svg id="sv" viewBox="0 0 640 470" role="img" aria-label="Plan vectoriel : vecteur chat fixe, second vecteur orientable à la souris ou au doigt">
+<defs><marker id="fc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f2efe9"/></marker>
+<marker id="fo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e8735c"/></marker></defs>
+<g stroke="#4a5257" stroke-width="1">
+<line x1="70" y1="400" x2="620" y2="400"/><line x1="70" y1="400" x2="70" y2="30"/>
+<path d="M70 100 A300 300 0 0 1 370 400" fill="none" stroke-dasharray="3 6"/>
+</g>
+<text x="600" y="420" fill="#b9bdb9" font-size="13">dimension 1</text>
+<text x="80" y="42" fill="#b9bdb9" font-size="13">dimension 2</text>
+<path id="arc" d="" fill="none" stroke="#b9bdb9" stroke-width="1.5"/>
+<text id="arclbl" x="0" y="0" fill="#b9bdb9" font-size="15" font-style="italic">θ</text>
+<line id="vA" x1="70" y1="400" x2="0" y2="0" stroke="#f2efe9" stroke-width="3" marker-end="url(#fc)"/>
+<line id="vB" x1="70" y1="400" x2="0" y2="0" stroke="#e8735c" stroke-width="3" marker-end="url(#fo)"/>
+<text id="lA" x="0" y="0" fill="#f2efe9" font-size="19" font-family="Georgia,serif" font-style="italic">chat</text>
+<text id="lB" x="0" y="0" fill="#e8735c" font-size="19" font-family="Georgia,serif" font-style="italic">chien</text>
+<circle id="grip" cx="0" cy="0" r="14" fill="#e8735c" fill-opacity="0.25" stroke="#e8735c" style="cursor:grab"/>
+</svg>
+</div>
+<div class="panel">
+<div class="carte"><p class="lbl">Similarité cosinus</p>
+<p id="cosv">0,9880</p><div id="theta">θ = 8,9°</div>
+<div class="jauge"><div id="fill"></div></div>
+<p id="verdict">presque le même sens</p></div>
+<div class="carte"><p class="lbl">Essayez</p>
+<div class="boutons">
+<button id="b1" class="actif">chat · chien <b>0,9880</b></button>
+<button id="b2">chat · ordinateur <b>0,1813</b></button>
+<button id="b3">à vous — glissez la flèche corail</button>
+</div>
+<p class="lbl" style="margin-top:14px">ou au curseur</p>
+<input id="sl" type="range" min="0" max="175" step="0.1" value="8.9" aria-label="Angle entre les deux vecteurs, en degrés">
+</div>
+</div>
+</main>
+<footer>Chaque mot est une flèche dans un espace à des milliers de dimensions — ici réduit à deux. Le modèle ne « sait » pas ce qu'est un chat : il sait que la flèche <em>chat</em> pointe presque comme <em>chien</em> (cos ≈ 0,99) et presque pas comme <em>ordinateur</em> (cos ≈ 0,18). <em>Mesurer un angle n'est pas comprendre — et c'est déjà énorme.</em></footer>
+</div>
+<script>
+(function(){
+var ox=70,oy=400,L=310,aA=18,cur=8.9,libre=false;
+var vA=document.getElementById('vA'),vB=document.getElementById('vB'),
+lA=document.getElementById('lA'),lB=document.getElementById('lB'),
+grip=document.getElementById('grip'),arc=document.getElementById('arc'),
+arclbl=document.getElementById('arclbl'),cosv=document.getElementById('cosv'),
+theta=document.getElementById('theta'),fill=document.getElementById('fill'),
+verdict=document.getElementById('verdict'),sl=document.getElementById('sl'),
+sv=document.getElementById('sv'),
+b1=document.getElementById('b1'),b2=document.getElementById('b2'),b3=document.getElementById('b3');
+function pt(ang,r){var a=(aA+ang)*Math.PI/180;return[ox+r*Math.cos(a),oy-r*Math.sin(a)];}
+function fr(x,d){return x.toFixed(d).replace('.',',');}
+function verd(c){if(c>0.9)return"presque le même sens";if(c>0.6)return"sens voisins";if(c>0.3)return"un air de famille";if(c>0.05)return"presque rien à voir";if(c>-0.05)return"sans rapport (orthogonaux)";return"sens opposés";}
+function draw(){
+var pA=pt(0,L),pB=pt(cur,L);
+vA.setAttribute('x2',pA[0]);vA.setAttribute('y2',pA[1]);
+vB.setAttribute('x2',pB[0]);vB.setAttribute('y2',pB[1]);
+var tA=pt(0,L+30),tB=pt(cur,L+34);
+lA.setAttribute('x',tA[0]-16);lA.setAttribute('y',tA[1]+6);
+lB.setAttribute('x',tB[0]-20);lB.setAttribute('y',tB[1]+6);
+grip.setAttribute('cx',pB[0]);grip.setAttribute('cy',pB[1]);
+var r=64,p1=pt(0,r),p2=pt(cur,r),lg=cur>180?1:0;
+arc.setAttribute('d','M'+p1[0]+' '+p1[1]+' A'+r+' '+r+' 0 '+lg+' 0 '+p2[0]+' '+p2[1]);
+var pm=pt(cur/2,r+22);arclbl.setAttribute('x',pm[0]-5);arclbl.setAttribute('y',pm[1]+5);
+var c=Math.cos(cur*Math.PI/180);
+cosv.textContent=fr(c,4);theta.textContent='θ = '+fr(cur,1)+'°';
+fill.style.width=Math.max(0,c*100)+'%';verdict.textContent=verd(c);
+sl.value=cur;
+lB.textContent=libre?'votre mot':(Math.abs(cur-8.9)<0.3?'chien':(Math.abs(cur-79.553)<0.3?'ordinateur':'votre mot'));
+}
+function setA(a,lb){cur=Math.max(0,Math.min(175,a));libre=lb;
+b1.className=(!lb&&Math.abs(cur-8.9)<0.3)?'actif':'';
+b2.className=(!lb&&Math.abs(cur-79.553)<0.3)?'actif':'';
+b3.className=lb?'actif':'';draw();}
+b1.onclick=function(){setA(8.9,false)};
+b2.onclick=function(){setA(79.553,false)};
+b3.onclick=function(){setA(45,true)};
+sl.oninput=function(){setA(parseFloat(sl.value),true)};
+var drag=false;
+function angOf(e){var r=sv.getBoundingClientRect(),sx=640/r.width,sy=470/r.height;
+var x=(e.clientX-r.left)*sx-ox,y=oy-(e.clientY-r.top)*sy;
+var a=Math.atan2(y,x)*180/Math.PI-aA;return a;}
+sv.addEventListener('pointerdown',function(e){drag=true;sv.setPointerCapture(e.pointerId);setA(angOf(e),true);});
+sv.addEventListener('pointermove',function(e){if(drag)setA(angOf(e),true);});
+sv.addEventListener('pointerup',function(){drag=false;});
+draw();
+})();
+</script>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D’où vient cette matière — Café Philo, comprendre les concepts</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+
+ .neuf{border:1px solid var(--rule);border-left:3px solid var(--accent2);background:var(--card);
+   border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.86rem;color:var(--muted)}
+ .neuf b{color:var(--fg)}
+ .manque{border:1px dashed var(--accent);background:var(--z);border-radius:8px;padding:.9rem 1.1rem;
+   margin:1rem 0;font-size:.9rem}
+ .manque b{color:var(--accent)}
+ .fiches li.attente a{color:var(--muted)}
+ .etat{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;border-radius:99px;
+   padding:.1rem .55rem;margin-left:.45rem;vertical-align:.1em;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .etat.ok{background:var(--surl,#e8f1e9);color:var(--surlf,#256b3a)}
+ .etat.att{background:var(--mark);color:var(--tagf)}
+ .etat.lien{background:var(--z);color:var(--muted);border:1px solid var(--rule)}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.ok{background:#17301f;color:#8ed6a6}}
+ .parcours{list-style:none;padding:0;margin:1.2rem 0;counter-reset:p}
+ .parcours li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px solid var(--rule)}
+ .parcours li:last-child{border-bottom:0}
+ .parcours li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.55rem;
+   width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#fff;
+   font:700 .8rem/1.6rem -apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+ .parcours b{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a></div>
+<h1>D’où vient cette matière</h1>
+<p class="dias">PROVENANCE ET ÉTAT</p>
+<p class="chapeau">Quatre dossiers, trois sessions mandatées, et l’étude sur les hallucinations, livrée depuis. Ce qui est établi, ce qui ne l’est pas.</p>
+<h2>La feature CAFEPHILO</h2>
+<p>L’ensemble vient d’une même feature de la squad Montage Parallèle, ouverte le
+<b>29 juillet 2026</b> sur gate AH « go test étalon Café Philo ». Objet&nbsp;: une conférence au
+Café Philo Rencontres &amp; Progrès sur les <b>bonnes pratiques de travail avec l’IA</b>.</p>
+<div class="tbl"><table>
+<tr><th style="width:1%">Date</th><th>Session</th><th>Ce qu’elle a produit</th></tr>
+<tr><td class="an">29/07/2026</td><td><b>Ouverture CAFEPHILO</b><br>
+<span style="font-size:.85em">Fable, supervision</span></td>
+<td>Le cadrage&nbsp;: fiche feature, sept questions ouvertes arbitrées en séance, premier mandat
+exécutant. Aucun contenu.</td></tr>
+<tr><td class="an">30/07/2026</td><td><b>Démo vecteurs</b><br>
+<span style="font-size:.85em">script déposé par AH</span></td>
+<td>Le script d’origine, exécuté et vérifié <b>deux fois</b> — Python pur puis numpy, résultats
+identiques à la quatrième décimale. → <a href="concept-02-vecteurs.html">fiche 2</a></td></tr>
+<tr><td class="an">30/07 – 01/08/2026</td><td><b>CAFEPHILO 008 — Lecture Jansma</b><br>
+<span style="font-size:.85em">Opus</span></td>
+<td>Lecture critique sourcée de l’article « Truth is not a direction », fiche orateur, et
+vérification d’un article de logique. → <a href="concept-07-verite-direction.html">fiche 7</a></td></tr>
+<tr><td class="an">01/08/2026</td><td><b>CAFEPHILO 004 — Slides proto</b><br>
+<span style="font-size:.85em">Sonnet</span></td>
+<td>Le prototype de support, 7 diapositives, validé par gate AH le jour même.
+→ <a href="support-conference.html">le support</a></td></tr>
+<tr><td class="an">03/09/2026</td><td><b>Assemblage</b><br>
+<span style="font-size:.85em">la présente session</span></td>
+<td>Le point d’entrée unique, les liaisons vers les trois conférences déjà converties, et quatre
+fiches de concepts rédigées pour combler les trous.</td></tr>
+</table></div>
+
+<h2>Ce qui est de la matière d’AH, et ce qui ne l’est pas</h2>
+<div class="tbl"><table>
+<tr><th>Fiche</th><th style="width:1%">Statut</th><th>Origine</th></tr>
+<tr><td><a href="concept-02-vecteurs.html">2. Les vecteurs</a></td>
+<td class="an"><span class="etat ok">MATIÈRE</span></td>
+<td>Script d’AH, exécuté et vérifié par le greffe. Page interactive produite en séance.</td></tr>
+<tr><td><a href="concept-07-verite-direction.html">7. La vérité est-elle une direction&nbsp;?</a></td>
+<td class="an"><span class="etat ok">MATIÈRE</span></td>
+<td>Lecture critique sourcée — <b>document de travail non validé</b>, ses auteurs le disent.</td></tr>
+<tr><td><a href="support-conference.html">Le support de conférence</a></td>
+<td class="an"><span class="etat ok">MATIÈRE</span></td>
+<td>Prototype validé par gate AH le 01/08/2026.</td></tr>
+<tr><td><a href="concept-01-tokens.html">1. Les tokens</a></td>
+<td class="an"><span class="etat lien">RÉDIGÉ</span></td>
+<td>Fiche et démonstration écrites pour ce dossier. Illustration, pas pièce validée.</td></tr>
+<tr><td><a href="concept-04-contexte-attention.html">4. Contexte et attention</a></td>
+<td class="an"><span class="etat lien">RÉDIGÉ</span></td>
+<td>Idem.</td></tr>
+<tr><td><a href="concept-05-temperature.html">5. La température</a></td>
+<td class="an"><span class="etat lien">RÉDIGÉ</span></td>
+<td>Idem, avec démonstration exécutable.</td></tr>
+<tr><td><a href="concept-03-neurone-poids.html">3. Du neurone au poids</a></td>
+<td class="an"><span class="etat lien">LIAISON</span></td>
+<td>Ne contient aucune explication propre&nbsp;: renvoie aux trois conférences.</td></tr>
+<tr><td><a href="concept-06-hallucinations.html">6. Les hallucinations</a></td>
+<td class="an"><span class="etat ok">PRÊT</span></td>
+<td>Étude spécifique rattachée le 22/09/2026 (session mandatée)&nbsp;; la fiche garde son échafaudage d’origine.</td></tr>
+</table></div>
+
+<h2>L’étude sur les hallucinations</h2>
+<div class="manque"><b><code>étude surs les hallucinations de l’IA</code></b> — le dossier, longtemps
+vide, contient depuis le 22/09/2026 un mini-site autoporté&nbsp;:
+<a href="../etude-hallucinations-ia/index.html">Hallucinations et
+mémoire des agents IA — dossier préparatoire</a> (21 phénomènes observés, revue de la littérature
+académique et grand public, neuf pistes). La <a href="concept-06-hallucinations.html">fiche&nbsp;6</a>
+y renvoie.</p>
+<p style="margin:.5rem 0 0">Le nom du dossier porte une coquille (« surs »)&nbsp;: signalée, non
+corrigée.</div>
+
+<h2>Les matériaux non repris ici</h2>
+<div class="tbl"><table>
+<tr><th>Pièce</th><th>Pourquoi elle n’a pas sa fiche</th></tr>
+<tr><td><code>cafephilo-lecture-jansma/JansmaAbel_PhDThesis_corrected.pdf</code><br>
+<span style="font-size:.85em">28,4&nbsp;Mo</span></td>
+<td>La thèse de l’auteur, sur l’ordre supérieur en biologie. Elle sert à <i>situer</i> l’auteur, pas
+à l’argument. Seul son résumé a été consulté par la lecture critique.</td></tr>
+<tr><td><code>LogicalInduction_1609.03543v5.pdf</code> et
+<code>LogicalNonOmniscience_TARK2017_1707.08747.pdf</code></td>
+<td>Les deux articles de Garrabrant et al. Leur contenu utile est condensé dans la
+<a href="concept-07-verite-direction.html">fiche&nbsp;7</a>&nbsp;; les preuves n’ont pas été
+lues.</td></tr>
+<tr><td><code>ouverture-cafephilo/NOTE-DE-FIN.md</code></td>
+<td>Document de gouvernance de la squad — frictions de l’étalon PROGRAMME, routage des suites. Sans
+rapport avec le contenu de la conférence. Résumé dans le tableau ci-dessus.</td></tr>
+<tr><td>Les versions <code>.docx</code> des documents Jansma</td>
+<td>Doublons des <code>.md</code>, qui sont la source.</td></tr>
+</table></div>
+
+<h2>Ce qui reste à faire</h2>
+<ul>
+<li><b>Le conducteur de conférence</b> et la <b>fiche de débat</b> — items BKL-CAFEPHILO-003
+et 006, jamais produits.</li>
+<li><b>Les exemples vécus</b> promis par la diapositive 6 du support — « quand l’IA a bien fait,
+quand elle a dérapé, comment on l’a rattrapé ». C’est la matière la plus attendue et la seule
+totalement absente.</li>
+<li><b>L’épigraphe</b> de la diapositive 1.</li>
+</ul>
+
+<div class="pied"><a href="support-conference.html">&#8592; Le support de conférence</a><span></span></div>
+<footer>Fiche du dossier <i>Comprendre quelques concepts avec des exemples</i> — Café Philo Rencontres &amp; Progrès, feature CAFEPHILO. Assemblé le 03/09/2026.</footer>
+</div></body></html>
