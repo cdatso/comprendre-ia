@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Revue grand public — Hallucinations et mémoire des agents IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Hallucinations et mémoire des agents IA — dossier préparatoire</h1>
+    <p class="tagline">Dix semaines de travail humain-IA observées de près, une petite revue de littérature, des pistes : mini-site local, autoporté</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du dossier">
+  <div class="wrap">
+    <a href="index.html">Accueil</a>
+    <a href="phenomenes-observes.html">Phénomènes observés</a>
+    <a href="revue-academique.html">Revue académique</a>
+    <a href="revue-grand-public.html" aria-current="page">Revue grand public</a>
+    <a href="pistes.html">Pistes de recherche</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <h2 style="margin-top:0">Ce qu'on raconte au public</h2>
+  <p class="chapo">Le public s'étonne, souvent à raison, de ce qu'on lui dit de l'IA. Cette page fait deux choses. D'abord, elle relève les récits qui ont installé les « hallucinations » dans l'espace public. Ensuite, elle confronte neuf simplifications courantes à l'état de la recherche et à ce que montrent nos registres. Les sources sont numérotées [G1] à [G20] et détaillées en <a href="bibliographie.html#grand-public">bibliographie</a>.</p>
+
+  <h2 id="recits">1. Les récits fondateurs</h2>
+  <table>
+    <caption>Six épisodes médiatiques, par date</caption>
+    <thead><tr><th>Date</th><th>Épisode</th><th>Ce que le récit retient</th><th>Statut</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Date">08/02/2023</td><td data-label="Épisode">Une démonstration publicitaire d'un assistant conversationnel attribue au télescope James-Webb la « toute première » image d'une exoplanète, ce qui est faux (la première date de 2004). La valeur boursière de l'entreprise perd environ 100 milliards de dollars dans la journée [G1].</td><td data-label="Ce que le récit retient">L'erreur coûte cher, et elle est publique.</td><td data-label="Statut"><span class="statut statut-partiel">partiel</span></td></tr>
+      <tr><td data-label="Date">27/05/2023</td><td data-label="Épisode">Un avocat new-yorkais dépose un mémoire citant une demi-douzaine de décisions de justice qui n'existent pas, générées par un agent conversationnel. Le juge parle de « décisions judiciaires fictives » (<em>bogus judicial decisions</em>) [G2].</td><td data-label="Ce que le récit retient">L'IA « invente » des sources, et c'est l'humain qui paie.</td><td data-label="Statut"><span class="statut statut-partiel">partiel</span></td></tr>
+      <tr><td data-label="Date">11/2023</td><td data-label="Épisode">Le dictionnaire de Cambridge fait de <em>hallucinate</em> son mot de l'année, avec un nouveau sens : quand une IA « hallucine », elle « produit de fausses informations » [G3].</td><td data-label="Ce que le récit retient">Le mot entre dans la langue commune, avec sa métaphore psychiatrique.</td><td data-label="Statut"><span class="statut statut-confirme">vérifié</span></td></tr>
+      <tr><td data-label="Date">14/02/2024</td><td data-label="Épisode">Un tribunal canadien condamne une compagnie aérienne pour une information erronée donnée par son agent conversationnel sur un tarif de deuil. L'entreprise soutenait que l'agent était responsable de ses propres propos [G4].</td><td data-label="Ce que le récit retient">L'entreprise répond de ce que dit sa machine.</td><td data-label="Statut"><span class="statut statut-partiel">partiel</span></td></tr>
+      <tr><td data-label="Date">18/04/2025</td><td data-label="Épisode">Les nouveaux modèles de « raisonnement » d'un grand fournisseur hallucinent <em>davantage</em> que leurs prédécesseurs sur un test maison (33 % et 48 %, contre 16 % et 14,8 %). Le fournisseur écrit que « more research is needed » [G5].</td><td data-label="Ce que le récit retient">Le progrès n'est pas linéaire.</td><td data-label="Statut"><span class="statut statut-partiel">partiel</span></td></tr>
+      <tr><td data-label="Date">07/10/2025</td><td data-label="Épisode">Un grand cabinet de conseil rembourse une partie d'un rapport commandé par un gouvernement, qui contenait des références inexistantes et une citation judiciaire fabriquée [G6].</td><td data-label="Ce que le récit retient">Le problème touche aussi les professionnels outillés.</td><td data-label="Statut"><span class="statut statut-partiel">partiel</span></td></tr>
+    </tbody>
+  </table>
+  <p>Ces récits ont un point commun : l'hallucination y est toujours un <em>fait inventé</em> (une source, une date, une image), découvert par un tiers après coup. Aucun ne raconte les formes plus discrètes que montrent nos registres : une heure, un compte, un précédent, un « c'est fait ».</p>
+
+  <h2 id="cerveau">2. Un cas d'école de simplification : « l'étude du MIT »</h2>
+  <p>En juin 2025, un préprint du MIT Media Lab mesure par électroencéphalographie l'engagement cérébral de participants qui rédigent des essais avec un assistant, avec un moteur de recherche ou sans aide [A21]. La presse en tire, par exemple, que l'assistant « pourrait éroder l'esprit critique » (<em>TIME</em>, juin 2025) [G7].</p>
+  <p>Ce que dit la source : 54 participants aux trois premières séances, <strong>18</strong> à la quatrième, une tâche d'écriture d'essais, un préprint non évalué par les pairs, et des résultats présentés par les auteurs comme appelant une « deeper inquiry ». La note de lecture de l'équipe (07/09/2026) relève le double saut que font certains usages, y compris académiques : de la tâche à la capacité, et de l'engagement momentané à une atrophie durable.</p>
+
+  <h2 id="entreprises">3. Ce que disent les entreprises elles-mêmes</h2>
+  <p>Les fournisseurs publient aussi leur propre vulgarisation. Ces textes méritent la lecture, mais ce ne sont pas des études indépendantes :</p>
+  <ul>
+    <li>un billet de septembre 2025 résume le préprint [A7] : les modèles hallucinent parce que l'évaluation récompense la devinette, comme un examen à choix multiples où l'on gagne à répondre au hasard [G8] ;</li>
+    <li>l'annonce, en février 2024, d'une « mémoire » d'agent conversationnel qui retient des préférences d'une conversation à l'autre [G9]. Le mot « mémoire » y désigne des notes enregistrées et relues, pas un souvenir ;</li>
+    <li>un rapport technique d'une entreprise de bases de données (« Context Rot », juillet 2025) montre que les performances de 18 modèles se dégradent quand la longueur de l'entrée augmente, même sur des tâches triviales [G10] ;</li>
+    <li>un guide d'ingénierie de septembre 2025 recommande de traiter le contexte comme une ressource finie, de le <em>compacter</em> (le résumer) et de faire tenir à l'agent des notes hors de sa fenêtre [G11]. C'est, à peu de chose près, la doctrine que notre équipe avait construite par l'erreur deux mois plus tôt.</li>
+  </ul>
+
+  <h2 id="francophone">4. Côté francophone</h2>
+  <p>Un article de vulgarisation paru dans <em>The Conversation</em> France (08/06/2026) explique les hallucinations par la disponibilité et le référencement des sources, et par une représentation vectorielle du sens dépourvue de contexte pragmatique [G12]. L'explication par l'accès aux sources est utile, mais partielle : la recherche montre qu'un modèle calibré hallucine même sur des faits présents dans ses données, dès lors qu'ils y sont rares [A6]. Le titre lui-même (« les IA hallucinent ») garde la métaphore psychiatrique que le dictionnaire de Cambridge avait consacrée [G3].</p>
+  <p>Les autorités francophones ont repris le mot, avec des précautions. Selon la CNIL, ces systèmes peuvent produire des résultats « inexacts qui peuvent, pourtant, paraître plausibles » : on parle « souvent » d'hallucinations, en particulier quand la question porte sur une information absente des données d'entraînement [G13]. L'Office québécois de la langue française en fait un terme recommandé, « hallucination d'IA », et déconseille « confabulation » [G14]. L'exemple qu'il donne est l'erreur du télescope James-Webb, premier de nos récits fondateurs [G1]. Les deux textes situent la cause dans un <em>manque</em> de données. C'est la simplification relevée plus haut : un fait présent mais rare suffit [A6]. Quant à « confabulation », la recherche n'en fait pas un synonyme à écarter : elle y voit un sous-ensemble précis des hallucinations [A3].</p>
+  <p>Le récit le plus repris de 2025 vient des médias publics eux-mêmes. En octobre, 22 radiodiffuseurs de 18 pays, coordonnés par l'Union européenne de radio-télévision, publient une évaluation de quatre assistants interrogés sur l'actualité. 45 % des réponses présentent au moins un problème significatif, le plus souvent dans l'attribution des sources. La RTBF, la RTS et franceinfo en rendent compte le même jour, chacune avec son propre échantillon : 8 % d'inexactitudes significatives pour la RTBF, 44 % de réponses problématiques pour Radio France [G15, G16, G17]. Le vocabulaire varie d'un média à l'autre : « hallucinations » à la RTBF, « détails inventés » à la RTS, « problèmes significatifs » chez franceinfo. Deux exemples débordent le fait inventé. Un pape encore donné pour vivant après sa mort [G16] relève de la date de coupure des connaissances [A15]. Une chronique satirique présentée comme une information [G17] n'est pas inventée : elle est <em>déplacée</em>, ce qui la rapproche de ce que nos registres appellent <a href="phenomenes-observes.html#referent">le référent qui glisse</a>. La conclusion de la RTBF, qu'une validation humaine reste « absolument indispensable » [G15], est juste ; la recherche ajoute que cette validation, elle aussi, s'use [A18, A19, A20].</p>
+  <p>Les tribunaux fournissent le troisième récit, et il existe désormais en français. Au Québec, une première condamnation (5 000 $) sanctionne à l'automne 2025 des informations erronées produites par l'IA et présentées en cour. En août 2026, la Cour d'appel condamne un autre plaideur à verser 1 000 $ à la partie adverse : il se représentait seul, avait été averti de ses erreurs et avait maintenu les fausses décisions [G18]. En France, <em>Le Monde Informatique</em> relève trois décisions de décembre 2025. Le tribunal administratif de Grenoble constate des « références jurisprudentielles fantaisistes ». Le tribunal judiciaire de Périgueux invite à vérifier que les références citées ne sont pas des « hallucinations ». Le tribunal administratif d'Orléans ajoute le mot « confabulation » [G19]. Le juriste Damien Charlotin, qui recense ces affaires dans une base publique, en parle sur la RTS en mai 2026 [G20]. Deux traits distinguent ces affaires de celle de New York en 2023 [G2]. Les plaideurs y sont souvent des particuliers sans avocat. Et l'erreur, une fois signalée, peut être maintenue : un texte bien formé se lit comme un fait établi, ce que nos registres décrivent sous le nom de <a href="phenomenes-observes.html#seconde-main">fait de seconde main</a>.</p>
+  <p>Ce récit francophone rejoint le récit anglo-saxon plus qu'il ne s'en distingue : l'hallucination y reste un <em>fait inventé</em> (une décision, un détail, une date) que découvre un tiers. Il s'en écarte sur deux points. Le mot lui-même y est discuté : l'autorité québécoise écarte « confabulation », qu'un tribunal français emploie et que la recherche précise. Et le déplacement d'un contenu vrai y apparaît comme une erreur à part entière. Aucune de ces sources ne parle de mémoire ni de contexte : en français, le versant « mémoire » de ce dossier n'a pas de récit public dans ce que cette recherche a trouvé.</p>
+
+  <h2 id="simplifications">5. Neuf simplifications courantes</h2>
+  <table>
+    <caption>La simplification, ce qu'en dit la recherche, ce qu'en montrent nos registres</caption>
+    <thead><tr><th>On entend…</th><th>La recherche</th><th>Nos registres</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-label="On entend">« L'IA ment. »</td>
+        <td data-label="La recherche">Mentir suppose une intention. Les travaux parlent d'indifférence à la vérité [A5] et d'incitations d'entraînement et d'évaluation [A7].</td>
+        <td data-label="Nos registres">Aucune occurrence n'a l'allure d'un mensonge. Toutes ont celle d'une <em>complétion plausible</em> : l'heure, le compte, le succès.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« C'est un bug, il sera corrigé à la prochaine version. »</td>
+        <td data-label="La recherche">Il existe une borne statistique inférieure pour certains faits [A6], et une nouvelle génération a pu halluciner <em>plus</em> [G5].</td>
+        <td data-label="Nos registres">La plus ancienne famille (l'heure inventée) est toujours vivante deux mois après sa première règle.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Une hallucination, c'est un fait inventé. »</td>
+        <td data-label="La recherche">Les taxonomies distinguent déjà plusieurs types [A1, A2], et la confabulation n'en est qu'un sous-ensemble [A3].</td>
+        <td data-label="Nos registres">Nos vingt et un phénomènes incluent des décisions supposées, des précédents fabriqués, des identités mal déclarées, des textes devenus faux par déplacement.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« L'IA se souvient de vous. »</td>
+        <td data-label="La recherche">La « mémoire » commerciale consiste en notes enregistrées puis relues [G9]. Dans une conversation, le contexte est borné et inégalement utilisé [A9].</td>
+        <td data-label="Nos registres">Après un résumé, l'agent garde « les titres et conclusions, pas les corps ». Sa continuité est dans les registres, pas en lui.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Plus de contexte, c'est plus de mémoire. »</td>
+        <td data-label="La recherche">La performance se dégrade avec la longueur [A9, G10] et avec le nombre de tours [A10].</td>
+        <td data-label="Nos registres">Les quatre écarts d'une fenêtre de supervision sont tous postérieurs à son deuxième compactage. C'est une corrélation, et l'effectif est minuscule.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Il suffit de lui demander de vérifier. »</td>
+        <td data-label="La recherche">Sans retour extérieur, l'auto-correction échoue souvent [A12], et les explications peuvent être infidèles [A13, A14].</td>
+        <td data-label="Nos registres">Les parades qui tiennent sont externes : une horloge, une commande, un journal, une question à l'humain. « Faire attention » n'a jamais suffi.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Elle sait quand elle ne sait pas. »</td>
+        <td data-label="La recherche">C'est en partie vrai pour les faits [A11], et faux pour ce qui échappe à l'observation.</td>
+        <td data-label="Nos registres">Un agent ne voit ni ses compactages ni son identité de modèle, et il l'a déclarée faussement dans les deux sens.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Avec des sources branchées, plus d'hallucination. »</td>
+        <td data-label="La recherche">Des outils commerciaux vendus comme « sans hallucination » en produisent 17 à 33 % [A17].</td>
+        <td data-label="Nos registres">Le registre n'a pas empêché l'assertion d'absence. C'est l'<em>obligation de le consulter</em> qui l'a fait.</td>
+      </tr>
+      <tr>
+        <td data-label="On entend">« Un humain dans la boucle, et tout va bien. »</td>
+        <td data-label="La recherche">L'humain qui surveille se dégrade, par complaisance et fatigue d'approbation [A18, A19, A20].</td>
+        <td data-label="Nos registres">L'automatisme a été observé des deux côtés. Les parades ajoutent de la friction, et donc de la charge à l'humain.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="avertissement"><strong>Honnêteté du registre.</strong> Cette page ne prétend pas mesurer la couverture médiatique : les épisodes retenus sont les plus cités, choisis pour leur valeur d'exemple. Les statuts « partiel » signalent des faits confirmés par plusieurs médias et archives, sans consultation de la page d'origine quand elle est payante. Le volet francophone (section 4) rassemble huit sources de France, de Belgique, de Suisse et du Québec. Il reste partiel : l'Afrique francophone n'y figure pas, un seul podcast y est cité (sa page de présentation a été lue, l'émission n'a pas été écoutée), les décisions de justice sont connues par la presse et non par leur texte, et deux articles de presse québécoise, inaccessibles lors de la recherche, n'ont pas été retenus.</div>
+</main>
+<footer class="site-footer">
+  <p>Revue grand public établie le 22/09/2026 par recherche web. Les épisodes sont résumés, jamais reproduits ; les noms de particuliers mêlés aux affaires ne sont pas repris. Mini-site local, autoporté.</p>
+</footer>
+</body>
+</html>

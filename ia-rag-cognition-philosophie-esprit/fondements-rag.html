@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Fondements du RAG — Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Fondements du RAG</h1>
+    <p class="tagline">De l'article fondateur aux variantes actuelles — et les briques qui font tourner la machine</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html" aria-current="page">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html">Sciences cognitives</a>
+    <a href="philosophie-esprit.html">Philosophie de l'esprit</a>
+    <a href="debats.html">Débats</a>
+    <a href="vector-db-cinema.html">Vector DB — projet cinéma</a>
+    <a href="llm-local.html">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Le RAG — <em>retrieval-augmented generation</em>, génération augmentée par récupération — consiste à donner à un modèle de langage, au moment où on l'interroge, des passages de documents qu'il n'a pas mémorisés à l'entraînement. L'idée tient en une phrase ; presque tout le reste est une affaire de <strong>ce qu'on lui donne à lire</strong>.</p>
+
+  <h2>1. L'article fondateur : Lewis et al., 2020</h2>
+  <p>Le terme et l'architecture viennent de « <em>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</em> », par Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel et Douwe Kiela — arXiv:2005.11401, publié à NeurIPS 2020 (<em>Advances in Neural Information Processing Systems</em>, vol. 33, p. 9459-9474). <span class="statut statut-confirme">confirmé</span></p>
+
+  <p>Le concept que l'article introduit et qui compte le plus pour ce fonds n'est pas technique mais <strong>conceptuel</strong> : la distinction entre une <strong>mémoire paramétrique</strong> — ce que le modèle « sait » parce que c'est encodé dans ses poids — et une <strong>mémoire non paramétrique</strong> — un index externe qu'on consulte au moment de répondre. Le RAG est le mariage des deux. Cette distinction est le point où l'ingénierie touche la philosophie de l'esprit : elle est reprise en <a href="debats.html">page Débats</a> (débat n° 2) et en <a href="philosophie-esprit.html">page Philosophie de l'esprit</a>. <span class="statut statut-confirme">confirmé</span></p>
+
+  <h2>2. Les briques du pipeline</h2>
+  <p>Un RAG se décompose invariablement en trois temps — <strong>récupérer</strong>, <strong>assembler</strong>, <strong>générer</strong> — dont seul le troisième fait appel au modèle de langage. Le premier est le goulot, et c'est celui qu'on oublie.</p>
+
+  <h3>2.1 Récupération lexicale et récupération dense</h3>
+  <p>Deux familles s'opposent, et leur différence est <em>la</em> leçon technique retenue de la formation du 26/08/2026 :</p>
+  <ul>
+    <li><strong>Lexicale</strong> (BM25, <code>tsvector</code> de PostgreSQL) — on cherche les documents qui contiennent les <em>mots</em> de la question. La lemmatisation rattrape les variantes (« films » trouve « film »), mais pas les synonymes : « romantique » ne trouve pas un passage qui parle d'amour sans employer le mot.</li>
+    <li><strong>Dense</strong> — question et passages sont projetés dans un même espace vectoriel où la proximité géométrique approxime la proximité de sens. Les références fondatrices sont <strong>Sentence-BERT</strong> (Nils Reimers et Iryna Gurevych, EMNLP 2019) pour les représentations de phrases, et <strong>Dense Passage Retrieval</strong> (Vladimir Karpukhin <em>et al.</em>, EMNLP 2020) pour la récupération à double encodeur. <span class="statut statut-confirme">confirmé</span></li>
+  </ul>
+  <p>Aucune des deux ne domine l'autre partout : le lexical excelle sur les termes rares, les références et les noms propres — un numéro d'article de loi, un identifiant — là où le dense généralise. D'où la <strong>recherche hybride</strong>, qui combine les deux scores, devenue le défaut recommandé au-delà de quelques centaines de documents.</p>
+
+  <h3>2.2 Découpage (<i>chunking</i>)</h3>
+  <p>Avant d'indexer, il faut découper. Trois paramètres suffisent à décrire l'essentiel : la <strong>taille visée</strong>, le <strong>recouvrement</strong> entre segments voisins (pour ne pas couper une conclusion en deux) et un <strong>seuil minimal</strong> en dessous duquel un fragment est fusionné avec le précédent. Le corpus de démonstration de la formation retient 1 400 caractères, 220 de recouvrement et 120 de seuil, avec un découpage <em>conscient des pages</em> : le numéro de page voyage avec le texte. <span class="statut statut-confirme">confirmé</span> (lu dans <code>shared/chunk.js</code> du dépôt, 27/08/2026)</p>
+  <p>Ce détail du numéro de page n'est pas cosmétique. C'est lui qui transforme « le modèle affirme » en « allez vérifier page 8 » — la seule chose qui rend une réponse <em>vérifiable</em>, donc utilisable. Le même principe vaut pour un corpus de critiques de films : la localisation doit voyager avec le passage.</p>
+
+  <h3>2.3 Asymétrie question / passage</h3>
+  <p>Un même texte ne se code pas de la même façon selon qu'il sert de <em>question</em> ou de <em>réponse potentielle</em> : les questions sont courtes et interrogatives, les passages longs et assertifs. Les modèles d'embedding modernes exposent ce réglage — <code>input_type</code> chez Voyage AI (« query » / « document »), <code>taskType</code> chez Google (<code>RETRIEVAL_QUERY</code> / <code>RETRIEVAL_DOCUMENT</code>). L'écart de qualité est réel et le réglage est gratuit. <span class="statut statut-confirme">confirmé</span> (documentation Voyage AI relayée par la documentation Anthropic, consultée le 27/08/2026 ; et <code>netlify/lib/embed.ts</code> du corpus de formation)</p>
+
+  <h3>2.4 Index approché : HNSW</h3>
+  <p>Comparer une question à tous les vecteurs d'un corpus est exact mais coûteux. Les index approchés échangent une fraction de rappel contre plusieurs ordres de grandeur de vitesse. Le plus répandu est <strong>HNSW</strong> (<em>Hierarchical Navigable Small World</em>), de Yury Malkov et Dmitry Yashunin — arXiv:1603.09320 (2016), publié dans <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 42(4), p. 824-836, 2018. Le principe : un graphe de proximité à plusieurs couches, où la recherche descend du grossier au fin, avec une complexité logarithmique. <span class="statut statut-confirme">confirmé</span></p>
+  <p>Son avantage pratique sur l'alternative classique (IVFFlat) : <strong>pas de phase d'entraînement</strong> — l'index est correct dès le premier document inséré, ce qui compte pour un corpus qui grandit par ajouts.</p>
+
+  <div class="avertissement">
+    <strong>Ordre de grandeur à garder en tête.</strong> En dessous de quelques milliers de vecteurs, un index approché n'apporte rien : la comparaison exhaustive (« force brute ») répond en quelques millisecondes. L'index sert à partir du moment où le corpus devient grand, pas avant. Ce point est décisif pour le <a href="vector-db-cinema.html">projet cinéma</a>, dont le corpus se compte en centaines de passages.
+  </div>
+
+  <h3>2.5 Reclassement (<i>reranking</i>)</h3>
+  <p>Un récupérateur rapide ramène 20 à 50 candidats ; un <em>reranker</em> — modèle plus lourd qui lit ensemble la question et chaque passage — les réordonne et n'en garde que les meilleurs. C'est l'un des gains les plus rentables au-delà de quelques centaines de documents. Voyage AI publie <code>rerank-2.5</code> et <code>rerank-2.5-lite</code> ; des modèles ouverts existent dans les familles BGE et Jina. <span class="statut statut-confirme">confirmé</span> pour l'existence et les noms ; <span class="statut statut-partiel">partiellement recoupé</span> pour l'ampleur du gain, qui dépend fortement du corpus.</p>
+
+  <h2>3. Les variantes actuelles</h2>
+  <p>Depuis 2023, le « RAG naïf » — découper, indexer, prendre les cinq premiers, coller dans le prompt — s'est différencié en plusieurs familles. Les quatre les plus citées :</p>
+
+  <table>
+    <caption>Variantes de RAG les plus documentées, état au 27/08/2026</caption>
+    <thead>
+      <tr><th>Variante</th><th>Principe</th><th>Ce que ça coûte</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Variante"><strong>GraphRAG</strong></td>
+        <td data-label="Principe">On construit d'abord un graphe d'entités et de relations à partir du corpus, puis on le parcourt à la récupération. Gain net sur les questions « globales » (« quels thèmes traversent ce corpus ? »), auxquelles une recherche vectorielle répond mal.</td>
+        <td data-label="Coût">Coûteux à l'indexation : la construction du graphe demande de nombreux appels au modèle.</td>
+      </tr>
+      <tr>
+        <td data-label="Variante"><strong>Self-RAG</strong></td>
+        <td data-label="Principe">Le modèle décide lui-même s'il doit récupérer, et juge la pertinence de ce qu'il reçoit, via des jetons de réflexion appris.</td>
+        <td data-label="Coût">Suppose un modèle entraîné pour cela, ou une simulation par prompt.</td>
+      </tr>
+      <tr>
+        <td data-label="Variante"><strong>Corrective RAG</strong></td>
+        <td data-label="Principe">Un évaluateur léger classe les documents récupérés (corrects / ambigus / incorrects) et déclenche un repli — typiquement une recherche web — quand la confiance est basse.</td>
+        <td data-label="Coût">Un appel supplémentaire ; un repli à surveiller (le repli web fait sortir du corpus maîtrisé).</td>
+      </tr>
+      <tr>
+        <td data-label="Variante"><strong>RAG agentique</strong></td>
+        <td data-label="Principe">La récupération devient un <em>outil</em> dans une boucle d'agent : le système reformule, cherche plusieurs fois, croise, et décide quand s'arrêter.</td>
+        <td data-label="Coût">Latence et coût multipliés ; comportement plus difficile à borner et à auditer.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-confirme">confirmé</span> pour l'existence et le principe de chaque famille ; <span class="statut statut-partiel">partiellement recoupé</span> pour les comparaisons de performance annoncées, qui proviennent le plus souvent des équipes qui publient la méthode et se mesurent sur des jeux d'épreuves choisis par elles. Une synthèse de référence : « <em>Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG</em> », arXiv:2501.09136 (janvier 2025), qui propose une taxonomie selon le nombre d'agents, la structure de contrôle, l'autonomie et la représentation des connaissances.</p>
+
+  <h2>4. Une échelle d'améliorations, du moins cher au plus cher</h2>
+  <p>Formulée pendant la formation du 26/08/2026 et vérifiée depuis, cette échelle a l'avantage de classer les gains par coût croissant. Elle vaut pour n'importe quel corpus documentaire :</p>
+  <ol>
+    <li><strong>Reformuler la question par le modèle</strong> avant de chercher — un appel léger transforme une question libre en termes de recherche, et corrige au passage les fautes de frappe. Aucune dépendance nouvelle.</li>
+    <li><strong>Exposer les métadonnées comme seconde source</strong> — le système devient un routeur : question de classification vers le registre structuré, question de contenu vers les passages. C'est souvent la réponse la plus simple à une question qui semblait exiger de la sémantique.</li>
+    <li><strong>Recherche sémantique</strong> (embeddings + index vectoriel) — le vrai saut, et le vrai chantier : il faut indexer, choisir un modèle d'embedding, et accepter une dépendance ou en assumer l'exécution locale. Détaillé en <a href="vector-db-cinema.html">page Base vectorielle</a>.</li>
+    <li><strong>La conversation</strong> — mémoire du fil, questions de suite. Change la nature du produit, pas seulement sa qualité.</li>
+  </ol>
+  <p>Le point n° 2 mérite d'être souligné, car il est contre-intuitif : <em>beaucoup de questions qui paraissent sémantiques sont en réalité structurelles</em>. « Quels sont les films romantiques du catalogue ? » se répond par une requête sur un champ « genre », pas par une recherche vectorielle. Avant d'acheter de la sémantique, il vaut la peine de vérifier qu'on n'a pas simplement oublié d'exposer une colonne.</p>
+
+  <h2>5. Limites structurelles, honnêtement</h2>
+  <ul>
+    <li><strong>Sensibilité au bruit de récupération.</strong> Des passages hors sujet dégradent nettement la génération. Le système est aussi bon que sa récupération, jamais meilleur.</li>
+    <li><strong>Documents scannés.</strong> Sans couche de texte, l'extraction ne rend rien : il faut une reconnaissance optique en amont.</li>
+    <li><strong>Déduplication.</strong> Dédupliquer par nom de fichier laisse passer le même document sous deux noms.</li>
+    <li><strong>Découpage et unité de sens.</strong> Couper tous les 1 400 caractères convient à un article scientifique ; un texte réglementaire se coupe à l'article, un cours au chapitre. Le bon découpage dépend du genre du document — il n'y a pas de réglage universel.</li>
+    <li><strong>Ce que le système ne voit pas n'existe pas pour lui.</strong> Un fait présent dans un registre structuré mais absent des passages indexés est, du point de vue du modèle, un fait inexistant.</li>
+  </ul>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026, sauf mention contraire)
+    <ol>
+      <li>Lewis, P. <em>et al.</em>, « Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks », arXiv:2005.11401, NeurIPS 2020, <em>Advances in Neural Information Processing Systems</em> 33, p. 9459-9474. <a href="https://arxiv.org/abs/2005.11401">arxiv.org/abs/2005.11401</a></li>
+      <li>Karpukhin, V. <em>et al.</em>, « Dense Passage Retrieval for Open-Domain Question Answering », EMNLP 2020.</li>
+      <li>Reimers, N. et Gurevych, I., « Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks », EMNLP-IJCNLP 2019.</li>
+      <li>Malkov, Y. A. et Yashunin, D. A., « Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs », arXiv:1603.09320 (2016) ; <em>IEEE TPAMI</em> 42(4), p. 824-836, 2018. <a href="https://arxiv.org/abs/1603.09320">arxiv.org/abs/1603.09320</a></li>
+      <li>Singh, A. <em>et al.</em>, « Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG », arXiv:2501.09136, janvier 2025. <a href="https://arxiv.org/abs/2501.09136">arxiv.org/abs/2501.09136</a></li>
+      <li>Documentation Anthropic, « Embeddings » — <a href="https://platform.claude.com/docs/en/build-with-claude/embeddings">platform.claude.com/docs/en/build-with-claude/embeddings</a> (asymétrie <code>input_type</code>, modèles Voyage AI, rerankers).</li>
+      <li>Matériel de la formation AI-Shift du 26/08/2026, dépôt <code>corpus-rag-chatbot</code> de Diederick Legrain (licence MIT) : fichiers <code>shared/chunk.js</code>, <code>netlify/lib/embed.ts</code>, <code>netlify/lib/prompt.ts</code>, <code>netlify/functions/ingest.mts</code>, <code>supabase/schema.sql</code> — lus le 27/08/2026 comme données techniques, non reproduits.</li>
+      <li>Note interne de la squad, <code>LESSONS-LEARNED-FORMATION-2026-08-26.md</code> (leçon n° 1, frontière lexical/sémantique ; échelle des quatre marches).</li>
+    </ol>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

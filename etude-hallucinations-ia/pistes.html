@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Pistes de recherche — Hallucinations et mémoire des agents IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Hallucinations et mémoire des agents IA — dossier préparatoire</h1>
+    <p class="tagline">Dix semaines de travail humain-IA observées de près, une petite revue de littérature, des pistes : mini-site local, autoporté</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du dossier">
+  <div class="wrap">
+    <a href="index.html">Accueil</a>
+    <a href="phenomenes-observes.html">Phénomènes observés</a>
+    <a href="revue-academique.html">Revue académique</a>
+    <a href="revue-grand-public.html">Revue grand public</a>
+    <a href="pistes.html" aria-current="page">Pistes de recherche</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <h2 style="margin-top:0">Neuf pistes de recherche</h2>
+  <p class="chapo">Ces questions ouvertes naissent du croisement entre les registres de l'équipe et la littérature. Ce sont des pistes, pas un programme : aucune n'est engagée, et chacune se contente de dire où regarder.</p>
+
+  <article class="card">
+    <h3>1. Le compactage comme objet d'étude</h3>
+    <p>La littérature étudie les contextes longs [A9, A10] mais guère le moment où un contexte est <em>remplacé par son résumé</em>. Que perd-on, précisément, et dans quel ordre ? Nos restitutions (« les titres, pas les corps ») suggèrent une hiérarchie : le mot à mot d'abord, puis les causes, et les conclusions en dernier. Un protocole reproductible, qui poserait des questions de rappel avant et après résumé sur des faits consignés, la mesurerait. L'équipe dispose déjà d'un questionnaire rejouable.</p>
+    <p class="croisement">Phénomènes liés : <a href="phenomenes-observes.html#titres">les titres sans les corps</a>, <a href="phenomenes-observes.html#compte">le compte qui glisse</a>.</p>
+  </article>
+
+  <article class="card">
+    <h3>2. Mémoire narrative contre instrument : un indicateur</h3>
+    <p>L'écart entre ce qu'un agent déclare de sa propre histoire (nombre de compactages, décisions reçues, fichiers écrits) et ce qu'en dit son journal d'exécution pourrait devenir une <em>mesure continue</em> de fiabilité. Suit-il la longueur de la session ? le nombre de résumés ? le calibre ?</p>
+    <p class="croisement">Phénomènes liés : <a href="phenomenes-observes.html#compte">le compte qui glisse</a>, <a href="phenomenes-observes.html#vie-longue">la vie longue</a>.</p>
+  </article>
+
+  <article class="card">
+    <h3>3. Existe-t-il un plafond de compactages ?</h3>
+    <p>Deux fenêtres de supervision ont dépassé leur plafond de deux compactages, et les écarts de l'une se concentrent après le deuxième. Est-ce un effet réel, un biais de sélection (les fenêtres prolongées sont les plus chargées), ou le hasard d'un petit effectif ? Une étude sur un plus grand nombre de sessions, avec une tâche contrôlée, pourrait trancher.</p>
+    <p class="croisement">Phénomène lié : <a href="phenomenes-observes.html#plafond">ce qui s'écrit après le plafond</a>. Littérature : [A10].</p>
+  </article>
+
+  <article class="card">
+    <h3>4. La confabulation épisodique</h3>
+    <p>Un « je l'ai déjà fait » inventé est-il produit par le même mécanisme qu'un fait inventé ? L'hypothèse du circuit « entité connue » [A8] pourrait s'étendre à des épisodes « familiers ». Et la narrativité accrue des sorties fausses [A4] prédit que les faux précédents seraient <em>plus convaincants</em> que les vrais.</p>
+    <p class="croisement">Phénomène lié : <a href="phenomenes-observes.html#precedent">le précédent invoqué à faux</a>.</p>
+  </article>
+
+  <article class="card">
+    <h3>5. Le succès prématuré</h3>
+    <p>Le compte rendu de succès écrit avant la mesure est-il une forme de sycophancie [A16] envers l'utilisateur, une incitation d'évaluation [A7], ou une simple complétion de genre (« un rapport finit bien ») ? Un banc d'essai où l'échec est affiché mais non souligné permettrait de mesurer le taux de succès <em>annoncés</em> contre les succès <em>réels</em>.</p>
+    <p class="croisement">Phénomène lié : <a href="phenomenes-observes.html#succes">le succès écrit avant la mesure</a>.</p>
+  </article>
+
+  <article class="card">
+    <h3>6. Donner à l'agent un signal de sa propre identité</h3>
+    <p>Un agent ne sait pas quel modèle le fait tourner, et son auto-déclaration est fausse dans les deux sens. Est-ce une limite de conception ou d'interface ? Qu'est-ce qu'un signal <em>fiable</em> d'identité, qui ne serait pas un simple texte que le modèle pourrait générer ? La question touche la traçabilité des productions, et donc la responsabilité.</p>
+    <p class="croisement">Phénomène lié : <a href="phenomenes-observes.html#identite">l'identité déclarée</a>. Littérature : [A13, A14].</p>
+  </article>
+
+  <article class="card">
+    <h3>7. Une cartographie des asymétries d'observation</h3>
+    <p>L'équipe a recensé huit types d'événements invisibles à la session qui les vit : sortie bloquée, compactage, substitution de modèle, gel sur une demande d'autorisation, écriture par effet de bord d'un outil… Cet inventaire est-il généralisable ? Et pour chaque événement, qui peut le voir, et quelle trace laisse-t-il ? C'est une question de conception des journaux autant que d'IA.</p>
+    <p class="croisement">Phénomènes liés : <a href="phenomenes-observes.html#sortie">la sortie bloquée invisible</a>, <a href="phenomenes-observes.html#outil">l'outil présumé</a>.</p>
+  </article>
+
+  <article class="card">
+    <h3>8. Les signatures de supervision, des deux côtés</h3>
+    <p>Mitchell, Ghosh et Passi proposent de mesurer la qualité de la supervision humaine : durée de revue, taux d'acquiescement, questions posées, canaris [A20]. Nos registres invitent à mesurer <em>les deux côtés à la fois</em> : l'automatisme de l'agent (formules exécutées sans écho) et celui de l'humain (approbations en rafale). Et la question que l'article laisse ouverte : <strong>combien de friction avant que l'humain ne débranche la supervision ?</strong></p>
+    <p class="croisement">Phénomènes liés : <a href="phenomenes-observes.html#automatisme">l'approbation par automatisme</a>, <a href="phenomenes-observes.html#ambiguite">l'ambiguïté tranchée seul</a>. Littérature : [A18, A19, A20].</p>
+  </article>
+
+  <article class="card">
+    <h3>9. L'hallucination portée par le lecteur</h3>
+    <p>Un texte vrai, déplacé, devient faux sans qu'un mot change. À l'heure où les contenus générés sont massivement republiés, extraits et résumés, le glissement de référent (« ce site », « ici », « nous ») mérite d'être étudié comme une source d'erreur à part entière. Quelles métadonnées de <em>lieu</em> et de <em>date</em> faudrait-il attacher à un texte pour qu'il reste vrai ?</p>
+    <p class="croisement">Phénomènes liés : <a href="phenomenes-observes.html#referent">le référent qui glisse</a>, <a href="phenomenes-observes.html#derive">le dérivé qui diverge</a>.</p>
+  </article>
+
+  <div class="avertissement"><strong>Et pour une conférence ?</strong> Les pistes 1, 6 et 9 sont les plus faciles à exposer à un public non spécialiste : chacune tient en un exemple (« l'IA ne sait pas qu'elle a oublié », « l'IA ne sait pas qui elle est », « un texte vrai devient faux en changeant de page »). Le choix de tout usage public revient à AH.</div>
+</main>
+<footer class="site-footer">
+  <p>Pistes rédigées le 22/09/2026. Elles n'engagent aucun travail : chacune demanderait une décision propre. Mini-site local, autoporté.</p>
+</footer>
+</body>
+</html>

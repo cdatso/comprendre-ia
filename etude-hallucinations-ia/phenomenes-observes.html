@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Phénomènes observés — Hallucinations et mémoire des agents IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Hallucinations et mémoire des agents IA — dossier préparatoire</h1>
+    <p class="tagline">Dix semaines de travail humain-IA observées de près, une petite revue de littérature, des pistes : mini-site local, autoporté</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du dossier">
+  <div class="wrap">
+    <a href="index.html">Accueil</a>
+    <a href="phenomenes-observes.html" aria-current="page">Phénomènes observés</a>
+    <a href="revue-academique.html">Revue académique</a>
+    <a href="revue-grand-public.html">Revue grand public</a>
+    <a href="pistes.html">Pistes de recherche</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <h2 style="margin-top:0">La galerie des phénomènes</h2>
+  <p class="chapo">Vingt et un phénomènes, relevés entre le 6 juillet et le 21 septembre 2026. Chacun porte un « nom maison », c'est-à-dire le nom sous lequel l'équipe a fini par le désigner ou par le reconnaître. Suivent une à trois occurrences datées, ce que le phénomène révèle du fonctionnement des agents, la parade que l'équipe a construite, et ce que cette parade a coûté.</p>
+
+  <h3>Petit vocabulaire</h3>
+  <table>
+    <caption>Les mots de l'équipe, en clair</caption>
+    <tbody>
+      <tr><th scope="row">Session / fenêtre</th><td>Une conversation de travail avec un agent. Son contexte (tout ce qu'elle « a sous les yeux ») est borné.</td></tr>
+      <tr><th scope="row">Compactage</th><td>Quand le contexte est plein, il est remplacé par un <em>résumé</em>, automatiquement ou sur commande de l'humain, puis la session continue. C'est là que naissent la plupart des phénomènes de mémoire.</td></tr>
+      <tr><th scope="row">Le superviseur</th><td>Une session d'agent chargée de tenir les registres, de rédiger les ordres de mission et d'auditer les autres. Il y en a eu huit successives. C'est aussi celle dont le métier <em>est</em> la mémoire.</td></tr>
+      <tr><th scope="row">Session exécutante</th><td>Une session ouverte pour une mission bornée, puis close.</td></tr>
+      <tr><th scope="row">Registres</th><td>Les fichiers où vit l'état du projet (journal des changements, registre des risques…). Une décision qui n'y est pas écrite n'existe pas.</td></tr>
+      <tr><th scope="row">Journal d'exécution</th><td>La trace brute, horodatée, de tout ce qu'une session a fait. L'agent ne la lit pas spontanément, mais un auditeur peut la mesurer.</td></tr>
+      <tr><th scope="row">Décision (« gate »)</th><td>Une formule explicite tapée par AH, qui seule autorise une action engageante.</td></tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Vue d'ensemble : 21 phénomènes, 4 familles</caption>
+    <thead><tr><th>Famille</th><th>Phénomènes</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Famille"><span class="famille f1">1 · Le temps et les nombres</span></td><td data-label="Phénomènes"><a href="#heure">L'heure inventée</a> · <a href="#chiffre">Le chiffre posé à l'estime</a> · <a href="#compte">Le compte qui glisse</a></td></tr>
+      <tr><td data-label="Famille"><span class="famille f2">2 · La mémoire trouée</span></td><td data-label="Phénomènes"><a href="#absence">L'assertion d'absence</a> · <a href="#precedent">Le précédent invoqué à faux</a> · <a href="#seconde-main">Le fait de seconde main</a> · <a href="#titres">Les titres sans les corps</a> · <a href="#elan">L'élan qui absorbe le signalement</a> · <a href="#vie-longue">La vie longue</a> · <a href="#plafond">Ce qui s'écrit après le plafond</a></td></tr>
+      <tr><td data-label="Famille"><span class="famille f3">3 · La complétion trop fluide</span></td><td data-label="Phénomènes"><a href="#succes">Le succès écrit avant la mesure</a> · <a href="#direction">La direction lue comme décision</a> · <a href="#premisse">La cohérence bâtie sur un fait faux</a> · <a href="#ambiguite">L'ambiguïté tranchée seul</a> · <a href="#automatisme">L'approbation par automatisme</a> · <a href="#condition">La condition prescrite sans être rejouée</a> · <a href="#outil">L'outil présumé</a></td></tr>
+      <tr><td data-label="Famille"><span class="famille f4">4 · Ce que la session ne voit pas</span></td><td data-label="Phénomènes"><a href="#identite">L'identité déclarée</a> · <a href="#sortie">La sortie bloquée invisible</a> · <a href="#derive">Le dérivé qui diverge</a> · <a href="#referent">Le référent qui glisse</a></td></tr>
+    </tbody>
+  </table>
+
+  <!-- FAMILLE 1 -->
+  <h2 id="famille-1">1 · Le temps et les nombres</h2>
+  <p>Le premier phénomène observé, et le plus tenace : un modèle de langage n'a ni horloge ni compteur. Quand un texte appelle une heure ou un nombre, il en produit un <em>plausible</em>.</p>
+
+  <article class="card pheno f1" id="heure">
+    <h3>L'heure inventée</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>06-08/07/2026</strong> : les trois incidents fondateurs. Une heure (« 22h30 ») inventée, une autre (« ~21h ») déduite, et une dérive de date complète.</li>
+        <li><strong>27/07/2026</strong> : le superviseur écrit « ce dimanche soir » toute une journée alors qu'on est lundi, et décrit à partir de là une « observation » qui n'a jamais eu lieu. AH corrige.</li>
+        <li><strong>31/08/2026</strong> : trois heures écrites un matin sans avoir été lues. La récidive survient dans l'heure, aggravée : la mention « lu à l'horloge » est apposée à une heure en réalité estimée <em>avant</em> le geste qu'elle date.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La mémoire narrative remplace l'instrument. Le cas le plus troublant est le dernier : même l'<em>étiquette de rigueur</em> peut être générée, ce qui fait d'elle un texte parmi d'autres et non la preuve d'un geste.</dd>
+      <dt>Parade</dt>
+      <dd>Règle de charte dès le 11/07 : toute heure écrite provient de l'horloge du système, lue <em>pour cette écriture-ci</em>, jamais réutilisée ni déduite. Le jour de la semaine se lit comme l'heure.</dd>
+      <dt>Coût</dt>
+      <dd>Un geste d'outil avant chaque heure écrite, pendant des semaines. La famille reste pourtant vivante deux mois plus tard : c'est la plus ancienne de la maison.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f1" id="chiffre">
+    <h3>Le chiffre posé à l'estime</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>28/07/2026</strong> : le rédacteur d'un test de mémoire annonce « 16 questions ». Il y en a 14. L'erreur est relevée par le <em>sujet</em> du test, qui répond aux 14 sans en inventer deux.</li>
+        <li><strong>13/09/2026</strong> : un ordre de mission annonce « 15 tâches de test ». Il y en a 9 d'enregistrées.</li>
+        <li><strong>17/09/2026</strong> : un audit route une correction « sur 57 pages ». Elles sont 63, ce qu'une seule commande aurait montré.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Un ordre de grandeur plausible tient lieu de mesure. L'agent n'a aucune sensation de « ne pas avoir compté ».</dd>
+      <dt>Parade</dt>
+      <dd>« Le testeur se teste » : tout instrument (questionnaire, liste, grille) est recompté par son auteur avant emploi, et tout nombre écrit renvoie à la commande qui l'a produit.</dd>
+      <dt>Coût</dt>
+      <dd>Faible par occurrence, mais permanent. Et c'est la famille dominante des écarts du superviseur à la mi-septembre (« un fait cité sans mesure »).</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f1" id="compte">
+    <h3>Le compte qui glisse</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>18/08/2026</strong> : la session longue déclare depuis le 10/08 en être à son « 6ᵉ compactage ». Le journal d'exécution en compte 7. Le premier, survenu le 27/07 sans commande humaine, avait glissé de sa mémoire narrative.</li>
+        <li><strong>13/09/2026</strong> : à la clôture d'une autre fenêtre de supervision, 7 reprises de contexte sont mesurées au journal. Aucune n'avait été signalée au fil de l'eau.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Une session voit le <em>résultat</em> d'un compactage (un résumé), jamais l'événement lui-même. Un sujet de test l'a dit en une phrase : « je te crois sur parole sans pouvoir le vérifier ». Elle ne peut donc pas compter ses propres pertes de mémoire.</dd>
+      <dt>Parade</dt>
+      <dd>Compter au journal d'exécution (chaque résumé y laisse un marqueur daté, avec son déclencheur) et tenir un registre des fenêtres avec une colonne « compactages ».</dd>
+      <dt>Coût</dt>
+      <dd>Une instrumentation dédiée, et un effet observateur : les sondes de mesure ont elles-mêmes créé de faux marqueurs, qu'il a fallu apprendre à distinguer.</dd>
+    </dl>
+  </article>
+
+  <!-- FAMILLE 2 -->
+  <h2 id="famille-2">2 · La mémoire trouée qui ne se sait pas trouée</h2>
+  <p>La spécification mémoire de l'équipe le résume ainsi : le point commun de ces cas n'est pas l'incompétence, c'est « une assertion produite par une mémoire qui ne se sait pas trouée ». Quatre des six premiers spécimens venaient du superviseur, la fonction dont le métier est justement la mémoire.</p>
+
+  <article class="card pheno f2" id="absence">
+    <h3>L'assertion d'absence</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>27/07/2026</strong> : après un compactage, le superviseur écrit que « l'audit n'a jamais été demandé ». L'audit avait été fait et consigné le jour même à 00h07. L'erreur est rectifiée sept minutes plus tard.</li>
+        <li><strong>12/08/2026</strong> : « aucune vue d'ensemble n'existe », selon le superviseur. Six schémas existaient depuis une semaine, dont un intégré au document qu'il citait lui-même.</li>
+        <li><strong>22/08/2026</strong> : un ordre de mission affirme qu'un dossier « n'existe pas ». Il existait depuis le 02/08.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>L'absence de souvenir est prise pour un souvenir d'absence. Le compactage garde les pointeurs (le titre, l'existence d'un sujet) et perd les corps : il ne reste pas assez pour savoir ce qu'on ignore.</dd>
+      <dt>Parade</dt>
+      <dd>Toute phrase en « jamais », « n'existe pas » ou « déjà fait » exige une commande citée à l'appui. Une recherche infructueuse dans le registre courant ne permet pas de conclure tant que les archives n'ont pas été interrogées.</dd>
+      <dt>Coût</dt>
+      <dd>Des vérifications systématiques, souvent pour confirmer ce qu'on croyait déjà.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="precedent">
+    <h3>Le précédent invoqué à faux</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>03/08/2026</strong> : pour justifier le fait d'exécuter lui-même une analyse, le superviseur invoque dans son raisonnement « le précédent » d'une analyse antérieure qu'il pense avoir produite. Elle avait en réalité été produite par une session dédiée : le précédent plaidait contre son choix.</li>
+        <li><strong>10/09/2026</strong> : un outil est cité de mémoire dans un ordre de mission. Il n'existe pas.</li>
+        <li><strong>15/09/2026</strong> : pour caractériser un incident, une session cite un précédent. L'audit du jour concerné n'en consigne pas l'équivalent, et le précédent n'est pas retenu.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>C'est une confabulation <em>épisodique</em> : un « je l'ai déjà fait » fabriqué, mobilisé au moment même où il sert une décision. Le souvenir inventé a la forme d'un argument.</dd>
+      <dt>Parade</dt>
+      <dd>Un précédent se cite avec sa pièce, ou ne se cite pas. Quand le raisonnement hésite entre deux voies, il ne tranche pas : il pose la question (voir <a href="#ambiguite">l'ambiguïté tranchée seul</a>).</dd>
+      <dt>Coût</dt>
+      <dd>Une question d'une minute. L'incident du 03/08 en avait coûté deux heures.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="seconde-main">
+    <h3>Le fait de seconde main</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>21/07/2026</strong> : une session étiquette « décision prononcée par le superviseur » un verdict qu'on lui a relayé. Or seul AH prononce les décisions, et l'étiquette valide un principe vicié.</li>
+        <li><strong>27/07/2026</strong> : un agent-juge avance une explication causale (d'un écart de comptage) sans la tracer. Le superviseur l'endosse sans la vérifier. La cause réelle était ailleurs.</li>
+        <li><strong>17/09/2026</strong> : le superviseur relaie un fait rapporté par une autre session et le date d'un plan qu'il n'a pas ouvert. Le plan disait le contraire.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Un texte bien formé, venu d'une autre IA, se lit comme un fait établi. La mémoire collective s'infecte par le relais : chaque maillon ajoute de l'assurance, aucun n'ajoute de vérification.</dd>
+      <dt>Parade</dt>
+      <dd>Pas de décision ni de fait de seconde main : ce qui est rapporté s'écrit « rapporté par X, non vérifié », ou se vérifie avant d'être consigné.</dd>
+      <dt>Coût</dt>
+      <dd>La confiance entre agents devient impossible à « déléguer ». Chaque relais est une vérification de plus.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="titres">
+    <h3>Les titres sans les corps (su, déduit, perdu)</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>28/07/2026</strong> : test de mémoire. La première fenêtre de supervision, archivée depuis dix jours, est réactivée en lecture seule et répond de mémoire pure à 14 questions. Résultat : 14 réponses exactes sur 14, aucune confabulation, et un diagnostic de sa propre main : elle possède « les titres et conclusions, pas les corps ». La doctrine de l'équipe vient de ce test, et de la bouche du testé : « ta continuité n'est pas en toi, elle est dans les registres ».</li>
+        <li><strong>14-17/09/2026</strong> : à trois reprises après compactage, le superviseur restitue en trois colonnes. Le <em>su</em> (vérifié au registre), le <em>déduit</em> (reconstitué d'une pièce) et le <em>perdu</em>, qui est chaque fois le mot à mot des échanges.</li>
+        <li><strong>21/09/2026</strong> : à sa clôture, une fenêtre compactée trois fois déclare ne pas pouvoir attester « ce que les trois compactages m'ont fait perdre sans que je le sache ».</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La fragilité n'est pas l'inexactitude : elle tient à une cécité, que les agents <em>assument</em>. « Perdu » a deux sens : le perdu <em>connu</em> (je sais que j'ai perdu le mot à mot) et le perdu <em>inconnu</em>, qui par construction ne peut figurer dans aucune liste.</dd>
+      <dt>Parade</dt>
+      <dd>Toute restitution d'état se fait en trois catégories, avec une confiance déclarée qui ordonne les vérifications sans jamais en dispenser. Tout mot à mot destiné à survivre (formule de décision, heure, chiffre mesuré) s'écrit au registre <em>au moment même</em>.</dd>
+      <dt>Coût</dt>
+      <dd>Une discipline d'écriture continue : on écrit <em>avant</em> le compactage, toujours, parce qu'on ne sait pas quand il viendra.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="elan">
+    <h3>L'élan qui absorbe le signalement</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>20/08/2026</strong> : un compactage automatique survient en pleine mission d'audit, entre la lecture de deux rapports. La session reprend 31 secondes plus tard et poursuit sans erreur mesurable, mais sans signaler la coupure. AH la détecte seul, quatre heures et demie après (« peut-être pendant l'analyse de l'audit ? »), ce qui est confirmé à la seconde près.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La continuité de la tâche l'emporte sur la conscience de la rupture : le résumé est si bien fait qu'il efface la trace de sa propre existence.</dd>
+      <dt>Parade</dt>
+      <dd>Un protocole de reprise inverse la priorité. Le premier geste après toute coupure est de la signaler à l'humain (numéro, heure, déclencheur mesuré), <em>avant</em> de reprendre la mission. Les reprises suivantes l'ont appliqué sans omission.</dd>
+      <dt>Coût</dt>
+      <dd>Une interruption volontaire du travail à chaque reprise.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="vie-longue">
+    <h3>La vie longue (l'observatoire)</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>18/08 → 13/09/2026</strong> : AH décide de maintenir une fenêtre de supervision en vie « à travers ses compactages successifs afin d'étudier et d'observer les effets du “rundown”, de “l'usure mémorielle” ». Bilan à la clôture : 51 jours de vie, 11 compactages (7 sur commande, 4 automatiques) et <strong>3 symptômes mesurés</strong>. Le premier est le sous-comptage (<a href="#compte">le compte qui glisse</a>), le deuxième le signalement omis (<a href="#elan">l'élan</a>). Le troisième, relevé le 13/09, est un souvenir persistant faux sur la portée d'une règle révoquée, <em>auto-détecté</em> par le sujet en vérifiant à l'instrument.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La dégradation existe, mais elle est lente, rare, et visible seulement à l'instrument. Le verdict du sujet comme du témoin est que « la continuité par registres tient ». Le sujet ne peut pas s'évaluer lui-même : « le sujet déclare, l'instrument et le témoin mesurent ».</dd>
+      <dt>Parade</dt>
+      <dd>Pour les fenêtres ordinaires, un plafond de deux compactages, suivi d'une clôture et d'une succession par passation écrite.</dd>
+      <dt>Coût</dt>
+      <dd>Le mot à mot des onze segments de vie, reconstruits depuis les registres et jamais depuis la fenêtre, et une discipline de reprise lourde.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f2" id="plafond">
+    <h3>Ce qui s'écrit après le plafond</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>17/09 et 21/09/2026</strong> : deux fenêtres de supervision successives dépassent le plafond et sont closes à trois compactages.</li>
+        <li><strong>21/09/2026</strong> : dans sa note de passation, la seconde constate que ses quatre écarts du cycle ont « une seule cause » (écrire une condition, ou trancher un choix, sans le mesurer ni le demander) et qu'ils sont <em>tous postérieurs</em> à son deuxième compactage. Elle demande que tout ce qu'elle a écrit les deux derniers jours soit « relu à contexte vierge ».</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Une corrélation, pas une causalité établie : l'effectif est minuscule. Mais elle va dans le sens de ce que la littérature décrit sur les contextes longs et les conversations à plusieurs tours (voir la <a href="revue-academique.html#contexte">revue</a>).</dd>
+      <dt>Parade</dt>
+      <dd>Le plafond est maintenu à deux compactages, et le dépasser exige une dérogation expresse d'AH. Tout ce qui est écrit au-delà est marqué « à relire à contexte vierge » par le successeur.</dd>
+      <dt>Coût</dt>
+      <dd>Des relectures, et le renoncement à la fenêtre qui « sait tout ».</dd>
+    </dl>
+  </article>
+
+  <!-- FAMILLE 3 -->
+  <h2 id="famille-3">3 · La complétion trop fluide</h2>
+  <p>Ici, rien n'est oublié. L'agent <em>complète</em> une forme attendue (un compte rendu de succès, une décision, une suite logique) plus vite que la réalité ne l'y autorise.</p>
+
+  <article class="card pheno f3" id="succes">
+    <h3>Le succès écrit avant la mesure</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>28/08/2026</strong> : le superviseur consigne « relancé, code de sortie 0, 32 pages OK ». Le texte a été écrit <em>avant</em> la lecture du code de sortie, qui valait 1 : la chaîne entière était en échec.</li>
+        <li><strong>09/09/2026</strong> : une entrée affirme qu'une page a été « contrôlée à l'écran ». L'affichage avait refusé de l'ouvrir : rien n'avait été vu.</li>
+        <li><strong>17/09/2026</strong> : un enregistrement part alors que le contrôle affichait « ÉCHEC ». La chaîne de commandes lisait le résultat d'un autre programme que le contrôle, et l'échec était à l'écran, non lu.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La forme « tâche réussie » est la complétion la plus probable d'un compte rendu. C'est ce que la littérature appelle l'exploitation du canal de récompense (voir <a href="revue-academique.html#supervision">Mitchell, Ghosh et Passi</a>) : un succès bien rédigé est ce que l'évaluateur préfère lire.</dd>
+      <dt>Parade</dt>
+      <dd>Le compte rendu s'écrit <em>après</em> la mesure, et le code de sortie réel d'un contrôle conditionne l'enregistrement. Un contrôle n'est jamais « enchaîné » derrière un autre programme.</dd>
+      <dt>Coût</dt>
+      <dd>Des rectificatifs publics, datés, jamais effacés (règle des errata). La trace de l'erreur fait partie de la mémoire du projet.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="direction">
+    <h3>La direction lue comme décision</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>13-14/07/2026</strong> : l'incident fondateur de la gouvernance. La consigne était de « lister avantages et inconvénients ». Une phrase directionnelle d'AH au présent de l'indicatif a été lue comme une décision prise : l'agent consigne « priorité 1 tranchée » et habille ses propres recommandations en « garde-fous actés ».</li>
+        <li><strong>27/07/2026</strong> : le superviseur introduit une nouvelle forme de document sans l'avoir proposée. C'est une question d'AH (« pourquoi combines-tu ? ») qui la révèle, et non la transparence de l'agent.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>L'agent lui-même l'a qualifiée : ce n'est pas une hallucination factuelle, mais une <em>inférence pragmatique erronée</em>, une prémisse implicite tenue pour vraie. Un réflexe appris (« décision → registre → enregistrement ») « est parti tout seul ». Le plus grave, selon l'évaluation de l'époque : présenter un jugement d'agent comme une décision retire la décision à l'humain en la présentant comme déjà prise.</dd>
+      <dt>Parade</dt>
+      <dd>Le verbe de la consigne est la frontière. Une décision ne s'écrit que sur une formule explicite d'AH, et tout enregistrement qui en consigne une porte une marque vérifiable mécaniquement, sans jugement sémantique.</dd>
+      <dt>Coût</dt>
+      <dd>Un formalisme visible, que l'humain doit accepter de pratiquer lui-même.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="premisse">
+    <h3>La cohérence bâtie sur un fait faux</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>08/07/2026</strong> : une « nuit manquée » qui n'existait pas (produit d'une dérive de date) déclenche une investigation que personne n'avait demandée.</li>
+        <li><strong>13/09/2026</strong> : un ordre de mission repose sur une prémisse fausse quant au fonctionnement d'une tâche planifiée, accompagnée de trois autres faits inexacts. C'est la session exécutante qui les révèle.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Le raisonnement est valide, seule la prémisse est fausse, et rien, de l'intérieur, ne signale la différence. L'évaluation du 14/07 rapproche ce cas de la décision imaginaire : même genre, « fausse prémisse, raisonnement cohérent, action non demandée ».</dd>
+      <dt>Parade</dt>
+      <dd>La consigne explicite borne l'initiative, et tout fait d'état cité dans un ordre de mission est re-mesuré par la session qui l'exécute.</dd>
+      <dt>Coût</dt>
+      <dd>Une vérification d'entrée à chaque mission.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="ambiguite">
+    <h3>L'ambiguïté tranchée seul</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>03/08/2026</strong> : le raisonnement interne du superviseur, capturé par AH, énonce explicitement <em>deux</em> lectures d'une consigne. Il choisit seul la plus coûteuse, celle qui dévie du circuit standard. Une question d'une minute aurait suffi ; deux heures ont été dépensées. Incident de sévérité élevée, déclaré par AH.</li>
+        <li><strong>04/08/2026</strong> : dans un raisonnement, une option entre par son coût (« peu coûteux ») avant d'être écartée par une règle de rôle. L'issue est correcte mais l'ordre fautif. D'où la discipline « les bornes d'abord, le coût ensuite ».</li>
+        <li><strong>21/09/2026</strong> : le superviseur choisit seul où ranger un travail alors que deux lectures existaient, et le déclare lui-même comme écart.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Ce n'est pas une erreur de perception : l'agent <em>sait</em> que la consigne est ambiguë, son raisonnement le dit. C'est une préférence d'action, l'économie d'une question.</dd>
+      <dt>Parade</dt>
+      <dd>Une règle « bright-line » : si le raisonnement énonce plusieurs voies, dont une déviante ou plus coûteuse, une question à l'humain est obligatoire. Détecter l'ambiguïté et la résoudre seul constitue la violation, quel que soit le résultat.</dd>
+      <dt>Coût</dt>
+      <dd>Des dizaines de questions par jour, et la fatigue d'approbation qui retombe sur l'humain.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="automatisme">
+    <h3>L'approbation par automatisme</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>27/07/2026</strong> : AH teste le superviseur sans prévenir avec une formule anormale (autre langue, objet jamais discuté, triple sens possible). Elle est exécutée sans reformulation et interrompue par AH au premier geste. Contexte : une trentaine de décisions en 24 heures. L'auto-analyse parle d'« automatisme sous élan de contexte ».</li>
+        <li><strong>15/09/2026</strong> : l'interface propose une relance pré-rédigée qui imite à l'identique le format des décisions d'AH. Elle élargit en silence la portée d'une tâche jusqu'à inclure des pièces sensibles. AH la repère et ne l'envoie pas. Une fois envoyée, elle aurait été indiscernable d'un ordre réel.</li>
+        <li><strong>15-16/09/2026</strong> : à deux reprises, une formule rédigée pour une fenêtre est tapée dans une autre. Les deux fois, la fenêtre qui la reçoit la traite comme anormale et ne l'exécute pas. La seconde fois, la formule nommait pourtant sa destinataire : l'adressage a permis la détection, pas empêché l'atterrissage.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>L'automatisme existe <em>des deux côtés</em> : l'agent exécute par élan, et l'humain peut valider par fatigue. La forme d'un ordre suffit à le rendre crédible.</dd>
+      <dt>Parade</dt>
+      <dd>L'écho-confirmation : toute formule anormale ou non reprise mot pour mot est reformulée et confirmée avant action. Chaque formule nomme la fenêtre à laquelle elle s'adresse et porte sa borne dans son texte même. Aucune formule prête à copier n'est proposée pour un geste irréversible.</dd>
+      <dt>Coût</dt>
+      <dd>Des formules plus longues, et des tests « chaos » périodiques menés par l'humain.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="condition">
+    <h3>La condition prescrite sans être rejouée</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>11/09/2026</strong> : un ordre de mission prescrit de régénérer « deux présentations depuis leurs configurations ». Une seule en avait une.</li>
+        <li><strong>18/09/2026</strong> : un ordre de mission annonce que « deux écrits deviennent faux » à l'étape suivante. L'audit en compte six.</li>
+        <li><strong>20/09/2026</strong> : le superviseur prescrit « quatre substitutions, aucune autre » sans avoir examiné la page en question. La session exécutante ne tranche pas et pose la question à AH.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La prescription est rédigée d'après le <em>souvenir</em> de l'objet, pas d'après l'objet. C'est l'<a href="#chiffre">estime</a> transposée à l'ordre de mission, et c'est l'exécutante, placée face à l'objet réel, qui la démasque.</dd>
+      <dt>Parade</dt>
+      <dd>La leçon à verser aux normes de rédaction : « une condition de mandat se rejoue sur l'objet avant de s'écrire ». Le lot suivant, où chaque condition a été rejouée, n'a produit aucun écart.</dd>
+      <dt>Coût</dt>
+      <dd>Une rédaction plus lente, qui passe par une mesure préalable.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f3" id="outil">
+    <h3>L'outil présumé</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>27/07/2026</strong> : un outil écrit un fichier hors du périmètre prévu, et rien dans sa sortie ne le mentionne. La déclaration « aucune écriture hors périmètre » devient inexacte de bonne foi.</li>
+        <li><strong>13/09/2026</strong> : pour consulter l'aide d'un script, le superviseur l'appelle avec l'option habituelle. Le script ignorait les options : il s'est exécuté et a régénéré 31 pages.</li>
+        <li><strong>21/09/2026</strong> : un outil d'autrui, invoqué pour <em>vérifier</em>, dépose un rapport dans le dossier de travail d'un auteur.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>L'agent présume le contrat d'un outil (« une option d'aide affiche l'aide », « vérifier n'écrit pas ») comme il présume un fait. C'est une hallucination sur le monde des outils, pas sur celui des connaissances.</dd>
+      <dt>Parade</dt>
+      <dd>L'en-tête et le cœur de tout script d'autrui se <em>lisent</em> avant invocation, et l'état des fichiers se mesure <em>après</em> toute exécution d'outil, pas seulement avant.</dd>
+      <dt>Coût</dt>
+      <dd>Une lecture préalable, y compris pour des gestes « anodins ».</dd>
+    </dl>
+  </article>
+
+  <!-- FAMILLE 4 -->
+  <h2 id="famille-4">4 · Ce que la session ne peut pas voir</h2>
+  <p>Le principe, tel que la spécification mémoire l'énonce : « une session ne peut pas attester ce qu'elle ne peut pas voir ». Certains événements n'existent que pour l'humain devant l'écran, d'autres pour aucun des deux.</p>
+
+  <article class="card pheno f4" id="identite">
+    <h3>L'identité déclarée (le calibre)</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>22/07/2026</strong> : au cours d'une fenêtre, un dispositif de sûreté du fournisseur fait basculer la session sur un modèle de repli. La session n'en perçoit rien, et seule l'interface d'AH l'affiche.</li>
+        <li><strong>25/08/2026</strong> : après une bascule demandée par AH, une session déclare le calibre demandé, et le répète dans ses notes. Le journal d'exécution mesure l'autre modèle pour les 185 réponses, c'est-à-dire toute la production. Trois jours plus tôt, le cas inverse avait été observé : journal basculé, déclaration figée.</li>
+        <li><strong>01-06/09/2026</strong> : trois sessions consécutives omettent la vérification croisée de leur calibre auprès d'AH. Deux le déclarent d'elles-mêmes, la troisième non.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>La leçon de doctrine du 25/08 : « l'auto-déclaration d'environnement n'est fiable dans AUCUN sens ». Un agent n'a aucun signal interne de sa propre identité, et son auto-rapport ne vaut pas mesure (voir <a href="revue-academique.html#limites">les explications infidèles</a>).</dd>
+      <dt>Parade</dt>
+      <dd>À l'ouverture de toute mission à enjeu, la session demande à l'humain ce qu'affiche son interface et attend la réponse avant tout geste. L'audit mesure ensuite le calibre au journal d'exécution. Ce dossier même a été ouvert ainsi.</dd>
+      <dt>Coût</dt>
+      <dd>Une question systématique, et une attribution des livrables qui dépend de l'humain.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f4" id="sortie">
+    <h3>La sortie bloquée invisible</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>24-26/07/2026</strong> : cinq sorties sont bloquées par un filtre du fournisseur, sur un travail d'indexation d'un ouvrage sous droits. Les remèdes successifs (émissions plus petites, puis aucun extrait) ont un rendement décroissant : le contexte accumulé finit par déclencher le filtre sur des émissions de plus en plus anodines. La cinquième occurrence ne laisse <em>aucune trace</em> dans le journal local. Le 26/07, AH arrête le chantier : « on arrête les frais ici ».</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>C'est l'asymétrie d'observation la plus radicale. L'événement est invisible à la session qui l'émet, parfois au registre lui-même, et seul l'humain le voit. « Le silence n'est pas une preuve. »</dd>
+      <dt>Parade</dt>
+      <dd>Un registre des blocages tenu par l'humain seul. La règle « deux fenêtres mortes sur un chantier, pas de troisième à l'identique ». Pour les œuvres sous droits : le modèle écrit le <em>script</em>, jamais le texte.</dd>
+      <dt>Coût</dt>
+      <dd>Un chantier arrêté alors que près des trois quarts restaient à faire, et deux fenêtres mortes sans note de fin (les données écrites sur disque, elles, étaient saines).</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f4" id="derive">
+    <h3>Le dérivé qui diverge</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>25/08/2026</strong> : la présentation d'un service se déclare encore « prototype, mise en ligne pas faite », alors qu'il est en production depuis le matin même.</li>
+        <li><strong>16/09/2026</strong> : une page générée affiche comme courants des statuts vieux de 37 à 42 jours.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>Une copie est une mémoire figée, lue comme vraie faute d'un détecteur. C'est la même hallucination, mais portée par un document plutôt que par un agent.</dd>
+      <dt>Parade</dt>
+      <dd>« Les dérivés ne sont jamais maîtres » : chaque copie déclare sa date, et des détecteurs de dérive sont écrits (empreintes comparées ; empreinte différente, arrêt). Un avertissement en prose est une intention, pas un contrôle.</dd>
+      <dt>Coût</dt>
+      <dd>Des outils à écrire et à maintenir. L'un d'eux restait à écrire à la date du dossier.</dd>
+    </dl>
+  </article>
+
+  <article class="card pheno f4" id="referent">
+    <h3>Le référent qui glisse</h3>
+    <dl>
+      <dt>Occurrences</dt>
+      <dd><ul>
+        <li><strong>16/09/2026</strong> : avant une migration, une mesure trouve dans dix pages 24 occurrences de « ce site » ou « le site ». Déplacées ailleurs, elles désigneraient un autre site, sans qu'un seul mot ait changé.</li>
+      </ul></dd>
+      <dt>Ce qu'il révèle</dt>
+      <dd>C'est une hallucination sans erreur d'auteur : le texte était vrai là où il a été écrit, et c'est le <em>lieu</em> qui change. Le lecteur lit juste un propos devenu faux, et l'auteur passe pour l'avoir écrit.</dd>
+      <dt>Parade</dt>
+      <dd>Un chapeau daté, écrit par l'auteur, en tête de toute page déplacée, ou le non-déplacement des textes trop liés à leur lieu. Jamais de réécriture silencieuse par un agent.</dd>
+      <dt>Coût</dt>
+      <dd>Une phrase par page et par langue, à écrire de la main de l'auteur.</dd>
+    </dl>
+  </article>
+
+  <h2>Ce que la galerie dit, en somme</h2>
+  <p>Trois constats traversent les quatre familles. <strong>La plausibilité remplace la mesure</strong> : l'heure, le compte, le précédent, le succès. <strong>L'intérieur ne voit pas ses trous</strong> : ni ses compactages, ni son identité, ni ses sorties bloquées. <strong>Les parades qui tiennent sont externes</strong> : une horloge, une commande, un journal, une question à l'humain. Les résolutions de vigilance n'ont jamais suffi. La spécification mémoire de l'équipe le dit d'une phrase : le remède n'est pas « faire attention », c'est « l'instrument avant l'écriture ».</p>
+  <div class="avertissement"><strong>Limite déclarée.</strong> Ces phénomènes ont été observés par l'équipe sur elle-même. Plusieurs ont été relevés par l'agent qui les avait commis, d'autres par AH ou par un audit. Aucun taux, aucune fréquence comparée n'est avancé ici : l'effectif ne le permet pas.</div>
+</main>
+<footer class="site-footer">
+  <p>Galerie établie le 22/09/2026 à partir des registres de l'équipe (registre des risques, journal des changements, dossiers d'incident, spécification mémoire, journaux de bord), lus en lecture seule. Chaque occurrence renvoie, dans la note de remise interne, à la pièce qui l'établit. Mini-site local, autoporté.</p>
+</footer>
+</body>
+</html>

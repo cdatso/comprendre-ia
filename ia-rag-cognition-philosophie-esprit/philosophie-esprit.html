@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Philosophie de l'esprit — Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Philosophie de l'esprit</h1>
+    <p class="tagline">Turing, Searle, Harnad, Clark et Chalmers — les arguments qui structurent encore le débat sur les LLM</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html">Sciences cognitives</a>
+    <a href="philosophie-esprit.html" aria-current="page">Philosophie de l'esprit</a>
+    <a href="debats.html">Débats</a>
+    <a href="vector-db-cinema.html">Vector DB — projet cinéma</a>
+    <a href="llm-local.html">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Quatre textes suffisent à cadrer presque tout ce qui se dit aujourd'hui sur la compréhension des machines. Ils sont antérieurs aux modèles de langage — le plus récent a près de trente ans — et c'est précisément ce qui les rend utiles : ils portent sur des <strong>conditions conceptuelles</strong>, pas sur des performances datées.</p>
+
+  <h2>1. Turing (1950) : déplacer la question</h2>
+  <p>Alan Turing ouvre « <em>Computing Machinery and Intelligence</em> » (<em>Mind</em>, 1950) sur la question « les machines peuvent-elles penser ? », et la déclare aussitôt trop mal définie pour être utile. Il lui substitue un dispositif opératoire, le <strong>jeu de l'imitation</strong> : un interrogateur dialogue à l'aveugle avec un humain et une machine ; si la machine passe pour l'humain assez souvent, la question de fond est, sinon résolue, du moins remplacée par une épreuve tranchable. <span class="statut statut-confirme">confirmé</span></p>
+  <p>Deux lectures s'affrontent depuis, et l'ambiguïté vient du texte lui-même :</p>
+  <ul>
+    <li><strong>Lecture opérationnaliste</strong> — le comportement est tout ce dont nous disposons, y compris pour autrui ; exiger davantage d'une machine que d'un humain est un préjugé.</li>
+    <li><strong>Lecture déflationniste</strong> — Turing ne propose pas un critère de la pensée mais un <em>changement de sujet</em>, précisément parce qu'il juge la question initiale mal posée.</li>
+  </ul>
+  <p>La deuxième est aujourd'hui la plus défendue chez les commentateurs. <span class="statut statut-partiel">partiellement recoupé</span></p>
+
+  <h2>2. Searle (1980) : la chambre chinoise</h2>
+  <p>John Searle, « <em>Minds, Brains, and Programs</em> » (<em>Behavioral and Brain Sciences</em>, 1980). L'expérience de pensée : un homme enfermé dans une pièce reçoit des caractères chinois, applique un manuel de règles purement formelles et renvoie d'autres caractères. De l'extérieur, il paraît comprendre le chinois. De l'intérieur, il ne comprend rien.</p>
+  <p>La conclusion visée est structurelle : <strong>la syntaxe ne suffit pas à la sémantique</strong>. Manipuler des symboles selon leur forme ne produit pas, à soi seul, la compréhension de ce qu'ils signifient. Searle vise le « cognitivisme fort » — la thèse selon laquelle exécuter le bon programme <em>constitue</em> un esprit. <span class="statut statut-confirme">confirmé</span></p>
+
+  <h3>Les répliques, et leur importance pour aujourd'hui</h3>
+  <p>Searle a lui-même recensé et contesté les objections. Deux comptent particulièrement ici :</p>
+  <ul>
+    <li><strong>La réponse du système</strong> — que Searle identifie comme la plus fréquente : l'homme dans la pièce ne comprend pas, soit ; mais le <em>système entier</em> (homme + manuel + registres + procédure) comprend. Searle réplique que l'homme peut mémoriser tout le dispositif et l'exécuter dans sa tête sans rien comprendre davantage. Ses contradicteurs jugent la réplique insuffisante. <span class="statut statut-confirme">confirmé</span></li>
+    <li><strong>La réponse du robot</strong> — la compréhension exige un couplage causal au monde : donnez au système des capteurs et des effecteurs. Searle répond que rien ne change en substituant des entrées sensorielles à d'autres symboles. Jerry Fodor, dès 1980, objecte que Searle conclut abusivement de « <em>ce</em> couplage causal-là est mauvais » à « <em>aucun</em> couplage causal ne conviendrait ». <span class="statut statut-confirme">confirmé</span></li>
+  </ul>
+  <p>Ces deux répliques sont exactement celles que l'on redécouvre à propos des LLM : quand on dit qu'un modèle « comprend » parce que le système complet fait quelque chose de sensé, on reprend la première ; quand on plaide pour la multimodalité et l'incarnation, on reprend la seconde.</p>
+
+  <h2>3. Harnad (1990) : l'ancrage des symboles</h2>
+  <p>Stevan Harnad, « <em>The Symbol Grounding Problem</em> » (<em>Physica D</em>, 1990), reformule la difficulté de Searle en problème positif : comment un système peut-il élaborer <em>de lui-même</em> la dimension sémantique de ses symboles — comment la signification peut-elle lui être <strong>intrinsèque</strong> plutôt que prêtée de l'extérieur par un interprète ? Sa réponse esquissée passe par un ancrage sensorimoteur : les symboles de haut niveau doivent reposer, en dernière instance, sur des catégories issues de l'interaction perceptive avec le monde. <span class="statut statut-confirme">confirmé</span></p>
+
+  <h3>La reprise contemporaine — un débat vif</h3>
+  <p>La question a été relancée par le succès des LLM, qui n'ont pour toute expérience que du texte. Trois positions au moins sont défendues dans la littérature récente :</p>
+  <ul>
+    <li><strong>Le problème s'applique</strong> : les sorties d'un LLM sont entièrement gouvernées par des régularités statistiques de texte, sans contact causal avec ce qu'elles prétendent décrire.</li>
+    <li><strong>Les LLM le contournent</strong> plutôt qu'ils ne le résolvent — position défendue notamment dans une analyse catégorielle publiée en 2025.</li>
+    <li><strong>Le problème ne s'applique pas</strong> : « <em>Pragmatic Norms Are All You Need — Why The Symbol Grounding Problem Does Not Apply to LLMs</em> », EMNLP 2024, soutient que l'ancrage pertinent est fourni par les normes pragmatiques d'usage, non par la sensorimotricité. <span class="statut statut-confirme">confirmé</span> pour l'existence et la thèse de cet article.</li>
+  </ul>
+  <p>Ce débat est <strong>ouvert</strong> et ce fonds ne le tranche pas. Il est repris en <a href="debats.html">page Débats</a>, débat n° 1.</p>
+
+  <h2>4. Clark et Chalmers (1998) : l'esprit étendu</h2>
+  <p>Andy Clark et David Chalmers, « <em>The Extended Mind</em> » (<em>Analysis</em>, 58(1), 1998). L'argument, dit d'<strong>externalisme actif</strong> : quand un organisme est couplé à une entité externe dans une interaction bidirectionnelle, l'ensemble forme un système cognitif à part entière — et la partie externe est <em>constitutive</em> de la cognition, non un simple auxiliaire.</p>
+  <p>Le cas d'école : <strong>Inga</strong> veut aller au musée, consulte sa mémoire biologique, y trouve l'adresse et s'y rend. <strong>Otto</strong>, atteint d'Alzheimer, consulte le carnet qu'il porte toujours sur lui, y trouve l'adresse et s'y rend. Clark et Chalmers soutiennent qu'il n'y a pas de différence de principe entre les deux : le carnet joue, pour Otto, le rôle fonctionnel que la mémoire joue pour Inga. Les conditions posées : la ressource externe doit être <strong>disponible de façon fiable</strong>, <strong>utilisée systématiquement</strong>, et <strong>intégrée fonctionnellement</strong> à la cognition biologique. <span class="statut statut-confirme">confirmé</span></p>
+
+  <div class="avertissement">
+    <strong>Pourquoi ce texte est le plus directement pertinent des quatre.</strong> Un système RAG est, structurellement, un dispositif « Otto » : une mémoire externe consultée pour produire une réponse. La thèse de l'esprit étendu fournit donc un vocabulaire précis pour poser la question que la <a href="fondements-rag.html">page Fondements</a> laisse en suspens — <em>consulter, est-ce se souvenir ?</em> — et pour la poser <strong>dans les deux sens</strong> : celui de la machine, mais aussi celui de l'humain qui utilise la machine. Si le carnet d'Otto fait partie de son esprit, que dire d'un assistant conversationnel employé quotidiennement ? La question n'est pas rhétorique, et elle vaut pour le lecteur de ce fonds.
+  </div>
+  <p>L'article a suscité une littérature critique abondante — notamment sur le fait que les croyances d'Otto ne présentent pas les mêmes propriétés d'accessibilité, de révisabilité et d'appropriation que celles d'Inga. <span class="statut statut-partiel">partiellement recoupé</span> : ces objections sont attestées, mais ce fonds ne les a pas dépouillées.</p>
+
+  <h2>5. Le débat contemporain, en une référence pivot</h2>
+  <p>Pour prendre la mesure de l'état du débat sur les LLM, une référence domine : <strong>Melanie Mitchell et David C. Krakauer</strong>, « <em>The debate over understanding in AI's large language models », <em>PNAS</em>, vol. 120, n° 13, 28 mars 2023. <span class="statut statut-confirme">confirmé</span></p>
+  <p>Les auteurs recensent les arguments pour et contre l'attribution d'une compréhension « au sens humain », et proposent une issue qui n'est ni oui ni non : développer une <strong>science élargie de l'intelligence</strong> capable de reconnaître des <em>modes distincts</em> de compréhension, avec leurs forces et leurs limites propres, plutôt que de mesurer les machines à l'aune d'un unique étalon humain. C'est la position la plus citée aujourd'hui par ceux qui refusent le partage binaire.</p>
+
+  <h3>L'argument de l'octopus, et les perroquets</h3>
+  <p>Deux textes d'Emily Bender et de ses coauteurs structurent le versant critique :</p>
+  <ul>
+    <li><strong>Bender et Koller, « Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data »</strong> (ACL 2020) — dit « l'article de la pieuvre ». Une pieuvre hyper-intelligente intercepte un câble sous-marin et apprend à produire des réponses parfaitement plausibles sans rien savoir de ce dont il est question au-dessus de la mer. Thèse : un système qui n'a accès qu'à la <em>forme</em> ne peut, en principe, accéder au <em>sens</em>. <span class="statut statut-confirme">confirmé</span></li>
+    <li><strong>Bender, Gebru, McMillan-Major et Shmitchell, « On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? »</strong> (FAccT 2021) — déplace la critique du terrain sémantique vers le terrain des risques : biais amplifiés, coûts environnementaux, concentration de l'accès. <span class="statut statut-confirme">confirmé</span></li>
+  </ul>
+  <p>L'argument de la pieuvre a lui-même ses contradicteurs — voir par exemple « <em>Occam's Razor and Bender and Koller's Octopus</em> » (arXiv:2407.21070, 2024). <span class="statut statut-confirme">confirmé</span> pour l'existence de cette réplique ; <span class="statut statut-non-recoupe">non recoupé</span> pour sa réception.</p>
+
+  <h2>6. Une carte pour s'orienter</h2>
+  <table>
+    <caption>Les quatre textes, leur question, leur usage aujourd'hui</caption>
+    <thead>
+      <tr><th>Texte</th><th>Question posée</th><th>Ce qu'il sert à penser en 2026</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Texte">Turing, 1950</td>
+        <td data-label="Question">Peut-on remplacer « penser » par une épreuve tranchable ?</td>
+        <td data-label="Usage">Le statut des mesures de performance : que prouve exactement le fait de réussir une épreuve ?</td>
+      </tr>
+      <tr>
+        <td data-label="Texte">Searle, 1980</td>
+        <td data-label="Question">La syntaxe suffit-elle à la sémantique ?</td>
+        <td data-label="Usage">L'argument de fond de tous ceux qui refusent d'accorder une compréhension aux LLM.</td>
+      </tr>
+      <tr>
+        <td data-label="Texte">Harnad, 1990</td>
+        <td data-label="Question">D'où un système tiendrait-il un sens qui lui soit propre ?</td>
+        <td data-label="Usage">Le débat sur la multimodalité, l'incarnation, et sur ce que « ancrer » veut dire.</td>
+      </tr>
+      <tr>
+        <td data-label="Texte">Clark et Chalmers, 1998</td>
+        <td data-label="Question">Où s'arrête un esprit ?</td>
+        <td data-label="Usage">Le statut de la mémoire externe — celle du RAG, et la nôtre quand nous déléguons.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026)
+    <ol>
+      <li>Turing, A. M., « Computing Machinery and Intelligence », <em>Mind</em>, LIX(236), p. 433-460, 1950.</li>
+      <li>Searle, J. R., « Minds, Brains, and Programs », <em>Behavioral and Brain Sciences</em>, 3(3), p. 417-424, 1980. Pour le recensement des répliques (réponse du système, réponse du robot, objection de Fodor) : <em>Stanford Encyclopedia of Philosophy</em>, entrée « The Chinese Room Argument » — <a href="https://plato.stanford.edu/entries/chinese-room/">plato.stanford.edu/entries/chinese-room</a></li>
+      <li>Harnad, S., « The Symbol Grounding Problem », <em>Physica D: Nonlinear Phenomena</em>, 42(1-3), p. 335-346, 1990.</li>
+      <li>« Pragmatic Norms Are All You Need – Why The Symbol Grounding Problem Does Not Apply to LLMs », EMNLP 2024 — <a href="https://aclanthology.org/2024.emnlp-main.651/">aclanthology.org/2024.emnlp-main.651</a></li>
+      <li>Clark, A. et Chalmers, D., « The Extended Mind », <em>Analysis</em>, 58(1), p. 7-19, 1998.</li>
+      <li>Mitchell, M. et Krakauer, D. C., « The debate over understanding in AI's large language models », <em>PNAS</em>, 120(13), 28 mars 2023 — <a href="https://www.pnas.org/doi/10.1073/pnas.2215907120">pnas.org/doi/10.1073/pnas.2215907120</a></li>
+      <li>Bender, E. M. et Koller, A., « Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data », ACL 2020.</li>
+      <li>Bender, E. M., Gebru, T., McMillan-Major, A. et Shmitchell, S., « On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? », FAccT 2021.</li>
+      <li>« Occam's Razor and Bender and Koller's Octopus », arXiv:2407.21070 (2024) — <a href="https://arxiv.org/abs/2407.21070">arxiv.org/abs/2407.21070</a></li>
+    </ol>
+    <p><em>Note de méthode :</em> les articles princeps de Turing, Searle, Harnad, Clark et Chalmers sont cités d'après leurs références canoniques et les synthèses de référence (dont la <em>Stanford Encyclopedia of Philosophy</em>), non par consultation directe des originaux sous droits. Aucun texte n'est reproduit ici ; les formulations sont des synthèses.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

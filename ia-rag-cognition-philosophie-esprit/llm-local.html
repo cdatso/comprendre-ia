@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>LLM en local — Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>LLM en local — cartographie et critères</h1>
+    <p class="tagline">Ce qui existe, ce que ça exige, et ce qui vaudrait études et tests pour la squad</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html">Sciences cognitives</a>
+    <a href="philosophie-esprit.html">Philosophie de l'esprit</a>
+    <a href="debats.html">Débats</a>
+    <a href="vector-db-cinema.html">Vector DB — projet cinéma</a>
+    <a href="llm-local.html" aria-current="page">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Exécuter un modèle de langage sur sa propre machine est devenu, en 2026, une opération ordinaire. Cette page cartographie les voies disponibles, documente les exigences matérielles réelles et propose des critères pour trier ce qui mériterait une étude — <strong>sans rien installer et sans rien mesurer sur le poste</strong>.</p>
+
+  <div class="borne-capitale">
+    <strong>Borne dure de cette page : identifier n'est pas installer.</strong> Aucun moteur d'exécution n'a été installé, aucun fichier de poids téléchargé, aucun test exécuté. Les chiffres matériels ci-dessous proviennent de la documentation publique et du calcul, jamais d'une mesure sur la machine. Toute envie d'essayer relève d'un gate d'AH distinct — cette page est faite pour éclairer cette décision, pas pour la prendre.
+  </div>
+
+  <h2>1. Le mot « open source » ne veut pas dire ce qu'on croit</h2>
+  <p>C'est le préalable, parce qu'il commande tout le reste pour qui choisit ses outils sur des critères de souveraineté.</p>
+  <ul>
+    <li><strong>Poids ouverts</strong> (<i>open weights</i>) : le fichier de paramètres est téléchargeable et exécutable. C'est ce qui permet l'indépendance opérationnelle — le modèle tourne chez vous, sans réseau, indéfiniment.</li>
+    <li><strong>Open source</strong> au sens de l'<em>Open Source AI Definition</em> 1.0 de l'Open Source Initiative (publiée le 28 octobre 2024) : il faut en plus le code d'entraînement et d'exécution sous licence approuvée, et une <em>information</em> sur les données assez détaillée pour qu'une personne compétente puisse reconstituer le système. L'OSAID n'exige pas la publication du jeu de données lui-même. <span class="statut statut-confirme">confirmé</span></li>
+  </ul>
+  <p>Dans les faits, la quasi-totalité des modèles commercialisés comme « open source » — Llama, DeepSeek, Qwen, Gemma — sont des modèles à <strong>poids ouverts</strong>. On peut les exécuter ; on ne peut ni les reconstruire ni les auditer. La définition elle-même est contestée : voir <a href="debats.html">Débats</a>, débat n° 6.</p>
+  <p><strong>Conséquence pratique.</strong> Si l'objectif est l'<em>indépendance</em> — ne dépendre de personne pour faire tourner l'outil —, les poids ouverts suffisent. Si l'objectif est l'<em>auditabilité</em> — savoir sur quoi le modèle a été formé, pouvoir en rendre compte —, ils ne suffisent pas, et presque rien sur le marché ne suffit.</p>
+
+  <h2>2. Les moteurs d'exécution</h2>
+  <p>Distinction utile, et souvent brouillée dans les comparatifs : certains outils sont des <strong>moteurs</strong>, d'autres des <strong>couches d'expérience</strong> posées dessus.</p>
+  <table>
+    <caption>Voies d'exécution locale, état au 27/08/2026</caption>
+    <thead>
+      <tr><th>Outil</th><th>Nature</th><th>Pour qui</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Outil"><strong>llama.cpp</strong></td>
+        <td data-label="Nature">Le moteur. Exécution en C++, format de poids GGUF, fonctionne sur processeur seul comme sur carte graphique.</td>
+        <td data-label="Pour qui">Ceux qui veulent le contrôle et le minimum de couches. C'est ce qui tourne sous la plupart des autres outils.</td>
+      </tr>
+      <tr>
+        <td data-label="Outil"><strong>Ollama</strong></td>
+        <td data-label="Nature">Couche d'expérience au-dessus de llama.cpp : catalogue de modèles, ligne de commande, interface locale de type serveur.</td>
+        <td data-label="Pour qui">Prototypage sur poste, tous systèmes. Le plus simple à prendre en main.</td>
+      </tr>
+      <tr>
+        <td data-label="Outil"><strong>LM Studio</strong></td>
+        <td data-label="Nature">Couche d'expérience graphique, également sur llama.cpp (et MLX sur Mac).</td>
+        <td data-label="Pour qui">Ceux qui préfèrent explorer et comparer des modèles sans ligne de commande.</td>
+      </tr>
+      <tr>
+        <td data-label="Outil"><strong>vLLM</strong></td>
+        <td data-label="Nature">Système de service : traitement par lots continu, gestion paginée de l'attention.</td>
+        <td data-label="Pour qui">Service multi-utilisateurs sur carte graphique. <strong>Sans objet pour un usage à une personne.</strong></td>
+      </tr>
+      <tr>
+        <td data-label="Outil"><strong>MLX</strong></td>
+        <td data-label="Nature">Moteur d'Apple pour ses processeurs à mémoire unifiée.</td>
+        <td data-label="Pour qui">Postes Apple Silicon uniquement.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-confirme">confirmé</span> pour la nature et le positionnement de chaque outil.</p>
+
+  <div class="avertissement">
+    <strong>Un chiffre qu'il faut savoir lire.</strong> On lit partout que vLLM va « 16 à 20 fois plus vite » qu'Ollama, sur la foi d'une mesure à 793 jetons par seconde contre 41 sur le même matériel. L'écart est réel — <em>et il n'existe qu'à forte concurrence</em>. À un seul utilisateur, les deux terminent pratiquement à égalité. Pour un usage individuel, ce chiffre ne veut rien dire. <span class="statut statut-partiel">partiellement recoupé</span> : mesure très citée, reprise de synthèses secondaires.
+  </div>
+
+  <h2>3. Les familles de modèles à poids ouverts</h2>
+  <p>Le paysage change tous les trimestres ; ce qui suit vaut <strong>au 27/08/2026</strong> et doit être re-mesuré avant tout usage. La colonne qui vieillit le moins vite est celle des licences.</p>
+  <table>
+    <caption>Principales familles ouvertes et leur régime de licence</caption>
+    <thead>
+      <tr><th>Famille</th><th>Origine</th><th>Licence</th><th>Remarque</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Famille"><strong>Qwen</strong></td>
+        <td data-label="Origine">Alibaba</td>
+        <td data-label="Licence">Apache 2.0 pour l'essentiel de la gamme</td>
+        <td data-label="Remarque">Parmi les mieux classées en qualité brute ; déclinée sur une large plage de tailles, ce qui en fait un bon banc d'essai.</td>
+      </tr>
+      <tr>
+        <td data-label="Famille"><strong>Gemma</strong></td>
+        <td data-label="Origine">Google</td>
+        <td data-label="Licence">Apache 2.0 (bascule intervenue récemment)</td>
+        <td data-label="Remarque">Orientée petites tailles et exécution sur poste ; les variantes légères visent explicitement les environnements contraints en mémoire.</td>
+      </tr>
+      <tr>
+        <td data-label="Famille"><strong>Mistral</strong></td>
+        <td data-label="Origine">Mistral AI (France)</td>
+        <td data-label="Licence">Apache 2.0 sur une large part de la gamme</td>
+        <td data-label="Remarque">Licences parmi les plus permissives. Éditeur européen — critère non technique, mais pertinent au regard d'un cap de souveraineté.</td>
+      </tr>
+      <tr>
+        <td data-label="Famille"><strong>DeepSeek</strong></td>
+        <td data-label="Origine">DeepSeek (Chine)</td>
+        <td data-label="Licence">MIT</td>
+        <td data-label="Remarque">Très bien classée en raisonnement et en code ; les plus grandes tailles exigent une infrastructure hors de portée d'un poste.</td>
+      </tr>
+      <tr>
+        <td data-label="Famille"><strong>Llama</strong></td>
+        <td data-label="Origine">Meta</td>
+        <td data-label="Licence"><strong>Licence propriétaire</strong></td>
+        <td data-label="Remarque">Conserve un plafond d'utilisateurs actifs mensuels et des restrictions territoriales. Ce n'est pas une licence open source, quoi qu'en dise la communication de l'éditeur.</td>
+      </tr>
+      <tr>
+        <td data-label="Famille"><strong>GLM</strong>, <strong>gpt-oss</strong>, <strong>Kimi</strong></td>
+        <td data-label="Origine">Divers</td>
+        <td data-label="Licence">Variable — à lire au cas par cas</td>
+        <td data-label="Remarque">Familles actives en 2026. Certaines licences comportent des clauses à examiner avant tout usage professionnel.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-partiel">partiellement recoupé</span> : ce tableau est établi à partir de comparatifs publics de 2026 (blogs techniques, classements agrégés), non par lecture des textes de licence. <strong>Toute décision engageante suppose de lire la licence à sa source</strong> — les résumés de seconde main sont notoirement approximatifs sur ce point, et les licences changent.</p>
+
+  <h2>4. Ce que ça exige de la machine</h2>
+  <p>La contrainte dominante est la <strong>mémoire</strong> — vidéo si l'on passe par une carte graphique, vive sinon. Elle dépend de la taille du modèle et de la <strong>quantification</strong>.</p>
+
+  <h3>4.1 Quantification, en deux phrases</h3>
+  <p>Un modèle est entraîné en flottants 16 ou 32 bits. La quantification réduit la précision des poids — typiquement à 4 bits — pour diviser l'empreinte mémoire d'environ quatre, au prix d'une dégradation limitée. Le format répandu côté llama.cpp est <strong>GGUF</strong>, et le réglage le plus recommandé est <strong>Q4_K_M</strong>, présenté comme le meilleur compromis entre empreinte, vitesse et qualité. <span class="statut statut-confirme">confirmé</span></p>
+
+  <h3>4.2 L'ordre de grandeur, par le calcul</h3>
+  <p>Une règle simple circule et se vérifie : en Q4_K_M, compter environ <strong>0,55 à 0,56 gigaoctet par milliard de paramètres</strong>, majoré d'environ 20 % pour les surcoûts d'exécution, plus 1 à 2 Go pour le cache d'attention aux longueurs de contexte usuelles.</p>
+  <table>
+    <caption>Mémoire nécessaire en Q4_K_M — calcul direct à partir de la règle ci-dessus</caption>
+    <thead>
+      <tr><th>Taille du modèle</th><th>Poids seuls</th><th>Avec surcoûts et cache</th></tr>
+    </thead>
+    <tbody>
+      <tr><td data-label="Taille">7-8 milliards</td><td data-label="Poids">≈ 4 à 4,5 Go</td><td data-label="Total">≈ <strong>6 à 7 Go</strong></td></tr>
+      <tr><td data-label="Taille">13-14 milliards</td><td data-label="Poids">≈ 7 à 8 Go</td><td data-label="Total">≈ <strong>10 à 12 Go</strong></td></tr>
+      <tr><td data-label="Taille">32 milliards</td><td data-label="Poids">≈ 18 Go</td><td data-label="Total">≈ <strong>22 à 24 Go</strong></td></tr>
+      <tr><td data-label="Taille">70 milliards</td><td data-label="Poids">≈ 39 Go</td><td data-label="Total">≈ <strong>45 à 48 Go</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="avertissement">
+    <strong>Incohérence relevée dans les sources — signalée plutôt que masquée.</strong> Plusieurs guides de 2026 affirment qu'une carte de 24 Go « fait tourner un modèle de 70 milliards en Q4 ». Ce chiffre est <strong>incompatible</strong> avec la règle des 0,55 Go par milliard que les mêmes guides énoncent : 70 × 0,55 ≈ 39 Go, avant même le cache. L'affirmation n'est plausible qu'en déchargeant une partie des couches vers la mémoire vive — au prix d'un effondrement de la vitesse — ou avec une quantification plus agressive que Q4. <span class="statut statut-non-recoupe">non recoupé</span> : ne pas fonder de décision d'achat dessus sans vérification indépendante. Les lignes du tableau ci-dessus, elles, sont calculées et cohérentes.
+  </div>
+
+  <p><strong>Deux points souvent tus.</strong> D'abord, un modèle tourne <em>aussi</em> sur processeur seul, sans carte graphique : c'est lent — quelques jetons par seconde — mais parfaitement praticable pour du traitement par lots qui n'attend pas de réponse immédiate. Ensuite, sur les machines Apple à mémoire unifiée, la distinction mémoire vive / mémoire vidéo s'efface, ce qui change complètement les seuils.</p>
+
+  <h2>5. Critères de pertinence — ce qui vaudrait études et tests</h2>
+  <p>La question du mandat n'est pas « quel est le meilleur modèle », mais <strong>ce qui mériterait qu'on y consacre du temps</strong>. Cinq critères, dans cet ordre.</p>
+
+  <h3>Critère 1 — La tâche a-t-elle besoin de rester locale ?</h3>
+  <p>C'est le seul critère qui justifie à lui seul l'effort. Il est rempli quand les données ne doivent pas sortir, quand l'outil doit fonctionner sans réseau, ou quand la pérennité à dix ans compte plus que la qualité de pointe. Il n'est <em>pas</em> rempli par « ce serait moins cher » : à faible volume, l'exécution locale n'est pas moins chère en temps humain.</p>
+
+  <h3>Critère 2 — La tâche est-elle à la portée d'un modèle de poste ?</h3>
+  <p>Les tâches bien servies par un modèle de 7 à 14 milliards de paramètres sont plus nombreuses qu'on ne le croit : classer, extraire des champs, reformuler, résumer un texte court, produire des variantes. Les tâches qui exigent de croiser plusieurs sources, de tenir un raisonnement long ou d'écrire finement le sont beaucoup moins. Un tri honnête de ce qu'on demande évite la déception.</p>
+
+  <h3>Critère 3 — Y a-t-il un usage récurrent, ou une curiosité ?</h3>
+  <p>Une curiosité ponctuelle ne justifie pas un environnement d'exécution à maintenir. Un traitement répété — même modeste — le justifie très vite.</p>
+
+  <h3>Critère 4 — La licence supporte-t-elle l'usage envisagé ?</h3>
+  <p>À lire à la source, pas dans un comparatif. Apache 2.0 et MIT ne posent pas de question ; les licences propriétaires d'éditeur, si.</p>
+
+  <h3>Critère 5 — Qu'est-ce qu'on apprend en le faisant ?</h3>
+  <p>Critère spécifique à une squad qui pratique aussi le café-philo : <strong>l'exécution locale est un instrument de compréhension</strong>. Voir un modèle produire ses jetons sur sa propre machine, constater ce que la quantification abîme, mesurer ce qu'un modèle de 7 milliards sait et ne sait pas — cela déplace la discussion sur les LLM du registre de l'opinion à celui de l'expérience. À ce titre, la valeur pédagogique peut suffire à justifier une étude, même sans besoin opérationnel.</p>
+
+  <h2>6. Trois pistes, si un gate venait à être prononcé</h2>
+  <p>Formulées comme options, sans recommandation d'ordre — c'est un arbitrage d'AH.</p>
+  <ol>
+    <li><strong>Embeddings locaux.</strong> C'est la piste la plus mûre et la moins coûteuse : un modèle d'embedding est petit devant un modèle génératif, tourne confortablement sur processeur, et supprime une dépendance externe réelle. Elle rejoint directement la recommandation de la <a href="vector-db-cinema.html">page Base vectorielle</a> — c'est le même geste, vu sous un autre angle.</li>
+    <li><strong>Un petit modèle génératif comme banc d'essai pédagogique.</strong> Un modèle de 7 à 14 milliards, sur une tâche déjà maîtrisée, pour établir un point de comparaison honnête entre le local et le distant. Valeur d'étude élevée, valeur opérationnelle faible.</li>
+    <li><strong>Ne rien faire, et re-mesurer dans six mois.</strong> Option qui doit rester sur la table : le paysage bouge assez vite pour qu'attendre soit parfois la décision la mieux informée.</li>
+  </ol>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026)
+    <ol>
+      <li>Open Source Initiative, <em>Open Source AI Definition</em> 1.0, 28 octobre 2024 ; « Open Weights: not quite what you've been told » — <a href="https://opensource.org/ai/open-weights">opensource.org/ai/open-weights</a></li>
+      <li>Comparatifs de moteurs d'exécution locale 2026 (llama.cpp, Ollama, LM Studio, vLLM, MLX), dont Red Hat Developer, « llama.cpp vs. vLLM: Choosing the right local LLM inference engine », juin 2026 — <a href="https://developers.redhat.com/articles/2026/06/15/llamacpp-vs-vllm-choosing-right-local-llm-inference-engine">developers.redhat.com</a>. <span class="statut statut-partiel">partiellement recoupé</span> pour les mesures de débit.</li>
+      <li>Comparatifs de modèles à poids ouverts 2026 et régimes de licence : synthèses publiques agrégées. <span class="statut statut-partiel">partiellement recoupé</span> — licences non lues à la source.</li>
+      <li>Quantification GGUF et empreinte mémoire : guides techniques 2026 énonçant la règle de ~0,55 Go par milliard de paramètres en Q4_K_M. Les valeurs du tableau de la section 4.2 sont <strong>calculées à partir de cette règle</strong>, non reprises telles quelles ; l'incohérence relevée sur le cas « 70 milliards sur 24 Go » est signalée en encadré.</li>
+      <li>Documentation Anthropic, « Embeddings » — pour <code>voyage-4-nano</code>, modèle d'embedding à poids ouverts sous Apache 2.0 : <a href="https://platform.claude.com/docs/en/build-with-claude/embeddings">platform.claude.com/docs/en/build-with-claude/embeddings</a></li>
+    </ol>
+    <p><em>Déclaration :</em> aucune des sources ci-dessus n'a donné lieu à un téléchargement de logiciel ou de modèle. Aucune mesure n'a été faite sur le poste. Les besoins matériels indiqués sont documentaires et calculés.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. Cartographie seule : rien installé, rien téléchargé, rien testé. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

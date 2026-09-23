@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Sciences cognitives — Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Sciences cognitives</h1>
+    <p class="tagline">Mémoire, schémas, prédiction — ce que la psychologie sait, et ce qu'elle ne dit pas des machines</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html" aria-current="page">Sciences cognitives</a>
+    <a href="philosophie-esprit.html">Philosophie de l'esprit</a>
+    <a href="debats.html">Débats</a>
+    <a href="vector-db-cinema.html">Vector DB — projet cinéma</a>
+    <a href="llm-local.html">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Cette page rassemble ce que la psychologie et les neurosciences cognitives établissent sur la mémoire humaine — <em>indépendamment</em> de toute machine. C'est délibéré. La comparaison n'a d'intérêt que si l'un des deux termes est décrit pour lui-même ; sinon, on ne compare pas, on projette.</p>
+
+  <div class="avertissement">
+    <strong>Sens de lecture.</strong> Rien ici n'est un modèle de ce que font les systèmes d'IA, et rien ici n'est réfuté par eux. Les rapprochements — quand il y en a — sont signalés comme tels et renvoyés à la <a href="debats.html">page Débats</a>, où ils sont discutés contradictoirement.
+  </div>
+
+  <h2>1. Bartlett (1932) : la mémoire est reconstructive</h2>
+  <p>Le psychologue anglais <strong>Frederic Bartlett</strong> publie en 1932 <em>Remembering: A Study in Experimental and Social Psychology</em>. Sa démonstration la plus célèbre — faire raconter et re-raconter à des sujets britanniques un récit issu d'une tradition culturelle étrangère (« La guerre des fantômes ») — montre que les rappels successifs ne s'affaiblissent pas seulement : ils se <strong>transforment</strong>. Les éléments inhabituels sont rationalisés, omis ou remplacés par des éléments familiers.</p>
+  <p>Bartlett en tire le concept de <strong>schéma</strong> — terme qu'il reprend au neurologue Henry Head (1918) : une organisation active de l'expérience passée, à partir de laquelle le souvenir est <em>reconstruit</em> plutôt que relu. La mémoire n'est pas un magasin ; c'est une reconstruction gouvernée par des attentes. <span class="statut statut-confirme">confirmé</span></p>
+  <p>La portée est considérable et souvent sous-estimée : elle signifie qu'un souvenir peut être <em>sincère et faux</em>, sans mensonge ni pathologie. C'est le fondement expérimental de la psychologie cognitive moderne, et c'est aussi ce qui rend suspecte toute métaphore de la mémoire comme « stockage et récupération fidèles ».</p>
+
+  <h2>2. Tulving (1972) : épisodique et sémantique</h2>
+  <p><strong>Endel Tulving</strong> introduit en 1972 une distinction devenue structurante en neurosciences cognitives, dans un chapitre de l'ouvrage <em>Organization of Memory</em> :</p>
+  <ul>
+    <li>la <strong>mémoire épisodique</strong> — un système qui « reçoit et stocke des informations sur des épisodes ou événements datés temporellement, et sur les relations spatio-temporelles entre ces événements ». Tulving insiste sur un point que les reprises techniques laissent presque toujours de côté : l'importance de <strong>l'expérience subjective du souvenir</strong>, le fait de <em>revivre</em> l'épisode ;</li>
+    <li>la <strong>mémoire sémantique</strong> — faits, idées, concepts, règles, indépendants du temps et du lieu de leur acquisition. Vous savez que Paris est en France sans vous souvenir de l'avoir appris.</li>
+  </ul>
+  <p><span class="statut statut-confirme">confirmé</span>. La distinction reste discutée : plusieurs travaux récents plaident pour un continuum plutôt qu'une frontière nette, et pour une interaction constante entre les deux registres — un souvenir épisodique se reconstruit avec l'aide de connaissances sémantiques, qui elles-mêmes se sédimentent à partir d'épisodes. <span class="statut statut-partiel">partiellement recoupé</span> (relecture critique publiée dans <em>Memory &amp; Cognition</em>, 2022, consultée par notice).</p>
+
+  <h3>Pourquoi cela compte ici</h3>
+  <p>La littérature sur les agents a repris ces deux mots pour désigner deux structures de données (voir <a href="agents.html">page Agents</a>). L'emprunt élimine précisément ce que Tulving jugeait essentiel — la dimension subjective de la remémoration. Ce n'est pas une objection : c'est une <strong>précision de vocabulaire</strong>, et elle vaut d'être posée avant toute discussion.</p>
+
+  <h2>3. Le traitement prédictif</h2>
+  <p>Un courant majeur des trente dernières années propose que le cerveau soit fondamentalement une <strong>machine à prédire</strong> : il génère en permanence des attentes sur ses entrées sensorielles et ne traite activement que l'<em>erreur</em> — l'écart entre attendu et reçu.</p>
+  <ul>
+    <li><strong>Karl Friston</strong> (University College London) en donne, dans les années 2000, une formalisation sous le nom de <strong>principe d'énergie libre</strong> : tout système adaptatif, cerveaux biologiques compris, peut être décrit comme minimisant une quantité — l'« énergie libre variationnelle » — qui mesure formellement la surprise. <span class="statut statut-confirme">confirmé</span> pour la paternité et la formulation ; <span class="statut statut-partiel">partiellement recoupé</span> pour sa portée réelle : le principe est aussi critiqué pour sa généralité — un cadre qui décrit tout court le risque d'interdire peu.</li>
+    <li><strong>Andy Clark</strong> (université d'Édimbourg) en propose l'exposé philosophique dans <em>Surfing Uncertainty: Prediction, Action, and the Embodied Mind</em> (Oxford University Press, 2015), prolongé par <em>The Experience Machine</em> (2023). Sa formule : nous ne percevons pas tant la réalité que nous « surfons l'incertitude », ajustant sans cesse nos modèles internes pour tenir debout. <span class="statut statut-confirme">confirmé</span></li>
+  </ul>
+
+  <div class="avertissement">
+    <strong>Le rapprochement qu'on entend partout — et sa limite.</strong> « Le cerveau prédit ; les modèles de langage prédisent le mot suivant ; donc… » Le raccourci est tentant et il est fautif sur deux plans au moins. D'abord, la prédiction dont parle Friston porte sur des entrées <em>sensorimotrices</em> couplées à un corps qui agit sur son monde, non sur des jetons d'un texte. Ensuite, le traitement prédictif est un cadre <em>explicatif</em> proposé pour le vivant, pas un critère d'appartenance : partager une description mathématique n'établit aucune parenté de nature. Ce raccourci est instruit contradictoirement en <a href="debats.html">page Débats</a>, débat n° 5.
+  </div>
+
+  <h2>4. Trois autres notions utiles au café-philo</h2>
+  <table>
+    <caption>Notions transversales, avec leur source et ce qu'elles éclairent ici</caption>
+    <thead>
+      <tr><th>Notion</th><th>Origine</th><th>Ce qu'elle éclaire</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Notion"><strong>Décharge cognitive</strong> (<i>cognitive offloading</i>)</td>
+        <td data-label="Origine">Psychologie cognitive contemporaine ; s'articule directement à l'esprit étendu de Clark et Chalmers (1998).</td>
+        <td data-label="Éclaire">Déléguer une part de sa mémoire ou de son calcul à un support externe — carnet, moteur de recherche, assistant. Question ouverte : à partir de quel seuil la délégation modifie-t-elle la compétence elle-même ?</td>
+      </tr>
+      <tr>
+        <td data-label="Notion"><strong>Illusion de savoir</strong></td>
+        <td data-label="Origine">Travaux sur la métacognition ; réactivée par la recherche sur l'usage des assistants conversationnels.</td>
+        <td data-label="Éclaire">Avoir accès à une réponse produit un sentiment de compréhension supérieur à la compréhension réelle. Directement pertinent pour l'usage d'un fonds documentaire — celui-ci compris.</td>
+      </tr>
+      <tr>
+        <td data-label="Notion"><strong>Effet de génération</strong></td>
+        <td data-label="Origine">Psychologie de la mémoire, littérature expérimentale classique.</td>
+        <td data-label="Éclaire">On retient mieux ce qu'on a produit soi-même que ce qu'on a lu. Argument de fond, et non de nostalgie, en faveur d'un usage des outils qui laisse l'effort de formulation à l'humain.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-partiel">partiellement recoupé</span> pour ce tableau : les trois notions sont établies dans la littérature, mais les formulations ci-dessus sont des synthèses rédigées pour ce fonds à partir de sources secondaires, sans retour aux articles princeps. À creuser avant tout usage en conférence.</p>
+
+  <h2>5. Ce que les sciences cognitives ne tranchent pas</h2>
+  <p>Il faut le dire nettement, parce que l'inverse se dit souvent : <strong>aucun résultat de psychologie ou de neurosciences ne décide si une machine comprend</strong>. Ces disciplines décrivent des mécanismes chez des organismes ; la question de savoir ce qu'il faut pour comprendre — et si un système non biologique peut y satisfaire — est conceptuelle avant d'être empirique. Elle relève de la <a href="philosophie-esprit.html">philosophie de l'esprit</a>, où elle est traitée.</p>
+  <p>Ce que les sciences cognitives apportent au débat est plus modeste et plus solide : un <strong>répertoire de distinctions</strong> — reconstruire n'est pas relire, savoir n'est pas se souvenir, prédire n'est pas comprendre — sans lesquelles la discussion tourne à vide.</p>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026)
+    <ol>
+      <li>Bartlett, F. C., <em>Remembering: A Study in Experimental and Social Psychology</em>, Cambridge University Press, 1932. Sur la reprise du terme « schéma » à Henry Head (1918) : Wagoner, B., « Bartlett's concept of schema in reconstruction », <em>Theory &amp; Psychology</em>, 2013.</li>
+      <li>Tulving, E., « Episodic and semantic memory », in Tulving, E. et Donaldson, W. (dir.), <em>Organization of Memory</em>, Academic Press, 1972.</li>
+      <li>Perspective historique sur la distinction : « An historical perspective on Endel Tulving's episodic-semantic distinction », <em>Neuropsychologia</em>, 2020 — <a href="https://www.sciencedirect.com/science/article/abs/pii/S0028393220300373">sciencedirect.com</a> (consulté par notice).</li>
+      <li>Relecture critique : « Rethinking the distinction between episodic and semantic memory: Insights from the past, present, and future », <em>Memory &amp; Cognition</em>, 2022 — <a href="https://link.springer.com/article/10.3758/s13421-022-01299-x">link.springer.com</a> (consulté par notice).</li>
+      <li>Friston, K., travaux sur le principe d'énergie libre (années 2000) ; discussion critique : « How particular is the physics of the free energy principle? », arXiv:2105.11203.</li>
+      <li>Clark, A., <em>Surfing Uncertainty: Prediction, Action, and the Embodied Mind</em>, Oxford University Press, 2015 ; <em>The Experience Machine</em>, 2023.</li>
+      <li>Sur la décharge cognitive et l'illusion de savoir : « Doom Researching: A Conceptual Framework for Repetitive AI-Assisted Information Seeking, Cognitive Offloading, and the Illusion of Knowing », arXiv:2607.02723 (2026) — <span class="statut statut-non-recoupe">non recoupé</span>, cité pour la piste, non pour ses conclusions.</li>
+    </ol>
+    <p><em>Note de méthode :</em> plusieurs sources de cette page ont été consultées par notice bibliographique et résumé, non dans leur intégralité — c'est indiqué au cas par cas. Les ouvrages de Bartlett, Tulving et Clark sont cités d'après leurs références canoniques.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

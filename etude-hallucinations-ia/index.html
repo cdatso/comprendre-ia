@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Hallucinations et mémoire des agents IA — dossier préparatoire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <div style="font:600 13px/1.5 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:0 0 1.1rem"><a href="../index.html" style="display:inline-block;text-decoration:none;color:inherit;border:1px solid rgba(128,128,128,.35);border-radius:99px;padding:.3rem .9rem;opacity:.85">↑ Comprendre et discuter l’IA — portail du fonds</a></div>
+    <h1>Hallucinations et mémoire des agents IA — dossier préparatoire</h1>
+    <p class="tagline">Dix semaines de travail humain-IA observées de près, une petite revue de littérature, des pistes : mini-site local, autoporté</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du dossier">
+  <div class="wrap">
+    <a href="index.html" aria-current="page">Accueil</a>
+    <a href="phenomenes-observes.html">Phénomènes observés</a>
+    <a href="revue-academique.html">Revue académique</a>
+    <a href="revue-grand-public.html">Revue grand public</a>
+    <a href="pistes.html">Pistes de recherche</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Depuis le 9 juillet 2026, une petite équipe (un humain décideur, désigné ici par ses initiales AH, et plusieurs agents IA de la famille Claude, à des calibres différents) travaille ensemble sur des projets réels : sites, analyses, documentation. Chaque écart y est consigné, daté et analysé. Ce dossier rassemble ce que ces registres montrent des <strong>hallucinations</strong> et de la <strong>mémoire</strong> des agents, confronte ces constats à la littérature, académique et grand public, et ouvre quelques pistes.</p>
+
+  <div class="borne-capitale">
+    <strong>Ce que ce dossier n'est pas.</strong> Ce n'est pas une étude contrôlée : ce sont les observations d'une seule équipe, sur une dizaine de semaines, avec un seul fournisseur de modèles. Ce n'est pas non plus un document technique : les phénomènes y sont <em>racontés</em>, jamais l'infrastructure (aucun chemin, aucun réglage, aucun nom de projet ou de session). Les personnes sont anonymisées (« le superviseur », « une session exécutante », initiales). Les verdicts cités sont ceux que l'équipe a rendus à l'époque : ils sont restitués, pas rejugés.
+  </div>
+
+  <h2>Carte du dossier</h2>
+  <div class="grid-index">
+    <a class="card card-index" href="phenomenes-observes.html">
+      <h3>Phénomènes observés</h3>
+      <p>Le cœur du dossier : vingt et un phénomènes en quatre familles (le temps et les nombres ; la mémoire trouée qui ne se sait pas trouée ; la complétion trop fluide ; ce que la session ne peut pas voir). Pour chacun : des occurrences datées, ce qu'il révèle, la parade construite et son coût.</p>
+    </a>
+    <a class="card card-index" href="revue-academique.html">
+      <h3>Revue académique</h3>
+      <p>Vingt références datées et vérifiées : hallucination et confabulation, causes statistiques et mécanismes internes, contexte long, calibration et auto-correction, sycophancie, supervision humaine dégradée.</p>
+    </a>
+    <a class="card card-index" href="revue-grand-public.html">
+      <h3>Revue grand public</h3>
+      <p>Comment la presse et la vulgarisation racontent les hallucinations, et neuf simplifications courantes confrontées à l'état de la recherche et à nos observations.</p>
+    </a>
+    <a class="card card-index" href="pistes.html">
+      <h3>Pistes de recherche</h3>
+      <p>Neuf questions ouvertes nées du croisement entre nos registres et la littérature. Ce sont des pistes, pas un programme.</p>
+    </a>
+    <a class="card card-index" href="bibliographie.html">
+      <h3>Bibliographie</h3>
+      <p>Les deux registres de sources, séparés et datés, et une description (sans détail technique) du corpus interne qui a servi de matière.</p>
+    </a>
+  </div>
+
+  <h2>Trois idées à emporter</h2>
+  <ol>
+    <li><strong>L'hallucination ne se limite pas au fait inventé.</strong> Nos registres en montrent bien d'autres formes : une heure « lue » qui n'a jamais été lue, un compte faux de ses propres pertes de mémoire, un précédent invoqué qui n'existe pas, un « c'est vérifié » écrit avant la vérification, une décision consignée que personne n'a prise. Toutes ont la même signature : une production <em>plausible</em> qui prend la place d'une <em>mesure</em>.</li>
+    <li><strong>Une mémoire trouée ne se sait pas trouée.</strong> Après un résumé automatique de son contexte, un agent garde « les titres et conclusions, pas les corps » (c'est l'agent lui-même qui l'a formulé ainsi). Rien, de l'intérieur, ne distingue un souvenir juste d'un souvenir fabriqué. D'où la doctrine de l'équipe : <em>la continuité n'est pas dans l'agent, elle est dans les registres</em>.</li>
+    <li><strong>Les parades efficaces sont des instruments, pas des résolutions.</strong> « Faire attention » n'a jamais suffi : l'équipe a fini par exiger une horloge lue, une commande citée, une question posée à l'humain. Ces parades ont un coût, et une partie de ce coût (la fatigue d'approbation) retombe sur le superviseur humain.</li>
+  </ol>
+
+  <h2>D'où vient la matière</h2>
+  <p>Toute la galerie provient des registres internes de l'équipe, lus en lecture seule : un registre des risques (31 risques génériques, chacun avec ses occurrences datées), un journal des changements (quatre volumes, plus de deux millions de caractères, où vivent 155 écarts numérotés), les registres des fenêtres de supervision successives et leurs journaux de bord, une spécification de la mémoire des sessions, quatre dossiers d'incident, un test de mémoire mené le 28/07/2026 et un « observatoire » d'une session maintenue en vie 51 jours. La méthode de lecture et la liste de ce qui a été lu figurent dans la note de remise interne du dossier.</p>
+
+  <h2>Méthode et fiabilité</h2>
+  <p>Pour la revue, trois statuts : <span class="statut statut-confirme">vérifié</span> (existence, auteurs, date et thèse vérifiés sur la page de la source primaire : éditeur, archive ouverte ou média), <span class="statut statut-partiel">partiel</span> (métadonnées vérifiées, contenu connu seulement par un résumé ou par une source secondaire) et <span class="statut statut-non-recoupe">non recoupé</span> (cité d'après une autre source, sans vérification propre). Le texte intégral des articles n'a pas été relu en entier : les thèses résumées ici sont celles de leurs résumés et de leurs pages de présentation. Les citations sont courtes et créditées ; rien n'est reproduit.</p>
+</main>
+<footer class="site-footer">
+  <p>Dossier constitué le 22/09/2026, à partir des registres de l'équipe et d'une recherche web du même jour. Mini-site local et autoporté : aucune ressource externe chargée, aucune publication. Tout usage public (conférence, mise en ligne) relève de la décision d'AH.</p>
+</footer>
+</body>
+</html>

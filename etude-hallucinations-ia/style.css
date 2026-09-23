@@ -1,0 +1,261 @@
+/* Dossier « Hallucinations et mémoire des agents IA » — feuille de style locale
+   Autoportée : aucune police distante, aucun CDN. Structure reprise du fonds
+   documentaire afrofuturisme (canon de forme de la squad), palette propre. */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #eef4f5;
+  --bg-card: #f7fafb;
+  --text: #1a1a1a;
+  --muted: #4a4f52;
+  --accent: #0b4f5c;
+  --accent-dark: #06323a;
+  --header-bg: #0d2429;
+  --header-text: #ffffff;
+  --border: #c9dcdf;
+  --fam-1: #7a2e00;
+  --fam-2: #1f3f8a;
+  --fam-3: #6a0a3a;
+  --fam-4: #00553a;
+  --maxw: 62rem;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", "Liberation Serif", serif;
+  line-height: 1.6;
+}
+
+header.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem 1rem;
+}
+
+header.site-header .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+header.site-header h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  color: var(--header-text);
+}
+
+header.site-header p.tagline { margin: 0; font-size: 0.95rem; color: #cfe3e6; }
+
+nav.site-nav { background: var(--accent-dark); border-top: 1px solid #1d4a52; }
+
+nav.site-nav .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  padding: 0.6rem 1rem;
+}
+
+nav.site-nav a {
+  color: #eaf4f5;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 3px;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a:focus { text-decoration: underline; outline: 2px solid #eaf4f5; }
+
+nav.site-nav a[aria-current="page"] {
+  background: #eaf4f5;
+  color: var(--accent-dark);
+  font-weight: bold;
+}
+
+main { max-width: var(--maxw); margin: 0 auto; padding: 1.5rem 1rem 3rem 1rem; }
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--accent-dark);
+  line-height: 1.25;
+}
+
+h2 { border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin-top: 2.5rem; }
+h3 { margin-top: 1.8rem; }
+
+a { color: var(--accent); }
+a:visited { color: #3d4f7a; }
+a:hover, a:focus { color: var(--accent-dark); }
+
+p.chapo {
+  font-size: 1.05rem;
+  color: var(--muted);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.9rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+
+.card-index { display: block; text-decoration: none; color: var(--text); }
+.card-index h3 { margin-top: 0; color: var(--accent); }
+.card-index:hover h3, .card-index:focus h3 { text-decoration: underline; }
+
+.grid-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* Fiches de phénomènes */
+.pheno { border-left: 5px solid var(--accent); }
+.pheno.f1 { border-left-color: var(--fam-1); }
+.pheno.f2 { border-left-color: var(--fam-2); }
+.pheno.f3 { border-left-color: var(--fam-3); }
+.pheno.f4 { border-left-color: var(--fam-4); }
+.pheno h3 { margin-top: 0; }
+.pheno dl { margin: 0.4rem 0 0 0; }
+.pheno dt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+.pheno dd { margin: 0.15rem 0 0 0; }
+.pheno ul { margin: 0.2rem 0 0 1.1rem; padding: 0; }
+
+.famille {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  white-space: nowrap;
+}
+.famille.f1 { color: var(--fam-1); }
+.famille.f2 { color: var(--fam-2); }
+.famille.f3 { color: var(--fam-3); }
+.famille.f4 { color: var(--fam-4); }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+
+caption {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: var(--bg-alt); font-family: Arial, Helvetica, sans-serif; font-size: 0.85rem; }
+
+.statut {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.05rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+.statut-confirme { background: #e1f5ea; color: #00532f; }
+.statut-partiel { background: #fdf1d8; color: #6b4a00; }
+.statut-non-recoupe { background: #fbe4e4; color: #7a1414; }
+
+.croisement {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  margin: 0.6rem 0 0 0;
+}
+
+.sources {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-top: 1px dashed var(--border);
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+}
+.sources ol, .sources ul { margin: 0.3rem 0 0 1.1rem; padding: 0; }
+.sources li, .biblio li { margin-bottom: 0.35rem; word-break: break-word; }
+
+.avertissement {
+  background: #fdf1d8;
+  border: 1px solid #e8c976;
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  margin: 1.2rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+.avertissement strong { color: #6b4a00; }
+
+.borne-capitale {
+  background: #fbe4e4;
+  border: 2px solid #b23a3a;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+.borne-capitale strong { color: #7a1414; }
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.3rem 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+  font-style: italic;
+}
+
+footer.site-footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--accent-dark);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+@media (max-width: 600px) {
+  header.site-header h1 { font-size: 1.2rem; }
+  table, thead, tbody, th, td, tr { display: block; }
+  th { display: none; }
+  td { border: none; border-bottom: 1px solid var(--border); padding: 0.4rem 0; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Base vectorielle — projet cinéma | Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Base vectorielle — dans le cadre du projet cinéma</h1>
+    <p class="tagline">État de l'art, dépendances, effort — et une recommandation bornes d'abord, coût ensuite</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html">Sciences cognitives</a>
+    <a href="philosophie-esprit.html">Philosophie de l'esprit</a>
+    <a href="debats.html">Débats</a>
+    <a href="vector-db-cinema.html" aria-current="page">Vector DB — projet cinéma</a>
+    <a href="llm-local.html">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Cette page fait un état de l'art des bases vectorielles et en tire une recommandation <strong>pour le cas concret du projet cinéma</strong> — un corpus de l'ordre de 462 passages issus de 46 analyses de films. Elle recommande ; <strong>elle ne construit rien</strong>.</p>
+
+  <div class="borne-capitale">
+    <strong>Bornes de cette page.</strong> Aucune base n'a été créée, aucun paquet installé, aucun modèle téléchargé, aucun service contacté hors recherche web documentaire. Le chantier technique « chatbot v2 » — qui porterait une éventuelle mise en œuvre — est <strong>cité et non rouvert</strong> : il relève d'un mandat distinct, à gater séparément. Ce qui suit est une note d'orientation, pas un plan d'exécution.
+  </div>
+
+  <h2>1. Le fait qui doit être posé en premier</h2>
+  <p>Le corpus du projet cinéma se compte en <strong>centaines de passages</strong>, pas en millions. Cette seule donnée retourne la question habituelle. Chiffrons-la :</p>
+  <table>
+    <caption>Ordres de grandeur pour ~462 passages (calculs directs, 27/08/2026)</caption>
+    <thead>
+      <tr><th>Grandeur</th><th>En 768 dimensions</th><th>En 1024 dimensions</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Grandeur">Taille des vecteurs (flottants 32 bits)</td>
+        <td data-label="768 dims">462 × 768 × 4 o ≈ <strong>1,4 Mo</strong></td>
+        <td data-label="1024 dims">462 × 1024 × 4 o ≈ <strong>1,9 Mo</strong></td>
+      </tr>
+      <tr>
+        <td data-label="Grandeur">Coût d'une recherche exhaustive (sans index)</td>
+        <td data-label="768 dims" colspan="2">≈ 355 000 à 473 000 multiplications-additions par requête — <strong>quelques millisecondes</strong>, même en code interprété.</td>
+      </tr>
+      <tr>
+        <td data-label="Grandeur">Gain apporté par un index HNSW</td>
+        <td data-label="768 dims" colspan="2"><strong>Nul, voire négatif</strong> à cette échelle : le coût de construction et de maintenance dépasse le temps qu'il fait gagner.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-confirme">confirmé</span> par calcul direct ; l'affirmation « en dessous de quelques milliers de vecteurs, l'index approché n'apporte rien » est <span class="statut statut-confirme">confirmée</span> par la littérature technique de 2026 sur les moteurs embarqués.</p>
+
+  <div class="avertissement">
+    <strong>Conséquence à ne pas manquer.</strong> À cette échelle, « choisir une base vectorielle » n'est pas le problème — n'importe laquelle conviendrait, y compris aucune. Le vrai choix, celui qui engage les valeurs et les dépendances, est <strong>celui du modèle d'embedding</strong>. Toute discussion qui commence par comparer des bases se trompe de question.
+  </div>
+
+  <h2>2. Le paysage, pour mémoire</h2>
+  <p>État au 27/08/2026, à re-mesurer avant toute décision.</p>
+  <table>
+    <caption>Options de stockage vectoriel, classées par pertinence pour ce cas</caption>
+    <thead>
+      <tr><th>Option</th><th>Nature</th><th>Pertinence ici</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Option"><strong>Aucune base dédiée</strong></td>
+        <td data-label="Nature">Vecteurs stockés dans un fichier, comparaison exhaustive en mémoire.</td>
+        <td data-label="Pertinence"><strong>Adapté.</strong> À 462 vecteurs, c'est correct — pas un compromis. Zéro dépendance nouvelle, zéro service à administrer.</td>
+      </tr>
+      <tr>
+        <td data-label="Option"><strong>sqlite-vec</strong></td>
+        <td data-label="Nature">Extension SQLite, sans dépendance, recherche exacte par force brute (aucun index approché implémenté début 2026).</td>
+        <td data-label="Pertinence"><strong>Très adapté.</strong> Un seul fichier, du SQL ordinaire, rien à héberger. Compétitif jusqu'à ~1 M de vecteurs en force brute.</td>
+      </tr>
+      <tr>
+        <td data-label="Option"><strong>pgvector</strong></td>
+        <td data-label="Nature">Extension PostgreSQL : type <code>vector</code>, index IVFFlat et HNSW.</td>
+        <td data-label="Pertinence"><strong>Adapté si et seulement si</strong> un PostgreSQL est déjà en place pour d'autres raisons — auquel cas c'est le choix évident : pas de système supplémentaire, jointures avec les métadonnées dans la même requête.</td>
+      </tr>
+      <tr>
+        <td data-label="Option"><strong>Qdrant</strong></td>
+        <td data-label="Nature">Base vectorielle dédiée, auto-hébergeable, vecteurs creux et multi-vecteurs.</td>
+        <td data-label="Pertinence"><strong>Surdimensionné.</strong> Un service de plus à administrer pour un corpus de 1,9 Mo.</td>
+      </tr>
+      <tr>
+        <td data-label="Option"><strong>LanceDB</strong></td>
+        <td data-label="Nature">Moteur embarqué orienté local et périphérie, sans serveur.</td>
+        <td data-label="Pertinence"><strong>Plausible</strong> comme alternative à sqlite-vec si le format colonnaire présente un intérêt propre. Sinon, dépendance sans contrepartie.</td>
+      </tr>
+      <tr>
+        <td data-label="Option"><strong>Milvus, Weaviate, Chroma</strong></td>
+        <td data-label="Nature">Milvus vise le milliard de vecteurs ; Weaviate offre la recherche hybride intégrée ; Chroma cible le prototypage.</td>
+        <td data-label="Pertinence"><strong>Hors sujet ici</strong> — cités pour la complétude de l'état de l'art, non comme candidats.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span class="statut statut-confirme">confirmé</span> pour la nature de chaque option ; <span class="statut statut-partiel">partiellement recoupé</span> pour les seuils de bascule annoncés (« pgvector tient jusqu'à ~50 M de vecteurs », « sqlite-vec compétitif jusqu'à ~1 M ») : ces chiffres proviennent de comparatifs commerciaux ou de billets d'éditeurs, non d'évaluations indépendantes. La colonne « pertinence ici » est une <strong>appréciation rédigée pour ce fonds</strong>.</p>
+
+  <h3>Un détail technique qui piège</h3>
+  <p>pgvector plafonne l'indexation HNSW et IVFFlat à <strong>2 000 dimensions</strong> sur le type <code>vector</code> standard. Les contournements documentés : le type <code>halfvec</code> (flottants 16 bits) qui porte la limite à 4 000 dimensions en divisant le stockage par deux, ou la réduction de dimension. Sans conséquence pour ce projet — les modèles envisagés produisent 768 ou 1 024 dimensions — mais bon à savoir avant de choisir un modèle à 3 072 dimensions. <span class="statut statut-confirme">confirmé</span></p>
+
+  <h2>3. Les dépendances — le point qui décide</h2>
+  <p>Une base vectorielle ne produit pas de vecteurs. Il faut un <strong>modèle d'embedding</strong>, et c'est là que se joue la question de souveraineté.</p>
+
+  <h3>3.1 Le fait établi, et sa nuance de 2026</h3>
+  <p><strong>Anthropic ne propose pas d'endpoint d'embeddings.</strong> Sa documentation l'écrit sans ambiguïté et renvoie vers Voyage AI comme fournisseur recommandé, tout en invitant à comparer plusieurs vendeurs. Ce fait — établi de longue date dans la squad sous la référence PRG-017 — est <span class="statut statut-confirme">confirmé</span> par lecture directe de la documentation le 27/08/2026.</p>
+  <p><strong>Mais il ne signifie plus ce qu'il signifiait.</strong> La même documentation nomme <code>voyage-4-nano</code> comme un modèle <strong>à poids ouverts, sous licence Apache 2.0, distribué sur Hugging Face</strong>. Autrement dit : un modèle d'embedding de qualité industrielle peut désormais être exécuté <em>sur la machine</em>, sans appel réseau et sans clé d'interface. <span class="statut statut-confirme">confirmé</span> (documentation Anthropic / Voyage AI, consultée le 27/08/2026)</p>
+  <p>La conclusion pratique change du tout au tout : <em>l'embedding exige un tiers</em> reste vrai pour la voie par interface ; il est <strong>faux</strong> comme énoncé général. Il existe une voie souveraine, et elle n'est plus exotique.</p>
+
+  <h3>3.2 Les deux voies, mises à plat</h3>
+  <table>
+    <caption>Voie par interface distante contre voie locale, pour ce projet</caption>
+    <thead>
+      <tr><th>Critère</th><th>Interface distante (Voyage, Google, OpenAI…)</th><th>Modèle exécuté en local</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Critère"><strong>Souveraineté</strong></td>
+        <td data-label="Distant">Le texte des analyses sort de la machine à chaque indexation et à chaque question. Dépendance à un fournisseur, à ses conditions et à sa politique de conservation.</td>
+        <td data-label="Local">Rien ne sort. Le corpus reste sur le disque. Aucun compte, aucune clé, aucune condition d'usage.</td>
+      </tr>
+      <tr>
+        <td data-label="Critère"><strong>Pérennité</strong></td>
+        <td data-label="Distant">Un modèle retiré ou modifié invalide l'index : les vecteurs d'un modèle ne sont pas comparables à ceux d'un autre. Il faut tout réindexer.</td>
+        <td data-label="Local">Le fichier de poids conservé localement fonctionne indéfiniment. La réindexation reste possible à l'identique dans dix ans.</td>
+      </tr>
+      <tr>
+        <td data-label="Critère"><strong>Effort de mise en place</strong></td>
+        <td data-label="Distant">Faible : créer un compte, obtenir une clé, appeler.</td>
+        <td data-label="Local">Modéré : installer un environnement d'exécution, récupérer les poids une fois, vérifier les performances en français.</td>
+      </tr>
+      <tr>
+        <td data-label="Critère"><strong>Qualité en français</strong></td>
+        <td data-label="Distant">Élevée sur les modèles multilingues récents.</td>
+        <td data-label="Local">Élevée également sur les modèles multilingues ouverts (BGE-M3, famille E5 multilingue, jina-embeddings-v3, nomic-embed-text-v2). <span class="statut statut-partiel">partiellement recoupé</span> — les classements consultés sont des comparatifs d'éditeurs, à vérifier sur le corpus réel.</td>
+      </tr>
+      <tr>
+        <td data-label="Critère"><strong>Coût monétaire</strong></td>
+        <td data-label="Distant">Négligeable à cette échelle : quelques centimes pour indexer l'ensemble, une fraction de centime par question.</td>
+        <td data-label="Local">Nul en argent ; quelques minutes de calcul processeur pour l'indexation complète.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Recommandation — bornes d'abord, coût ensuite</h2>
+  <p>L'ordre de raisonnement est celui qu'impose la doctrine de la squad : les bornes filtrent, le coût arbitre ensuite entre ce que les bornes ont laissé passer.</p>
+
+  <h3>Étape 1 — Ce que les bornes filtrent</h3>
+  <ol>
+    <li><strong>Indépendance du cloud.</strong> C'est un cap posé, pas une préférence. Il élimine les bases vectorielles hébergées en service géré et disqualifie l'appel systématique à une interface d'embedding distante pour un corpus qu'on peut traiter chez soi.</li>
+    <li><strong>Pas de service supplémentaire à administrer.</strong> Un corpus de 1,9 Mo ne justifie pas un démon de plus, avec ses sauvegardes, ses montées de version et sa surface d'attaque. Cela élimine Qdrant, Milvus, Weaviate.</li>
+    <li><strong>Vérifiabilité de la réponse.</strong> La localisation — quel film, quelle section — doit voyager avec le passage. C'est une exigence de conception, indépendante de l'outil retenu, et la seule chose qui rende une réponse contrôlable.</li>
+  </ol>
+  <p>Après ce filtre, il reste deux candidats de stockage : <strong>aucune base dédiée</strong> (fichier + comparaison exhaustive) et <strong>sqlite-vec</strong> ; plus <strong>pgvector</strong> dans le seul cas où un PostgreSQL existe déjà pour d'autres raisons.</p>
+
+  <h3>Étape 2 — Ce que le coût arbitre ensuite</h3>
+  <p>Entre les candidats restants, l'écart de coût monétaire est nul et l'écart de coût en effort est faible. Le critère qui départage n'est donc pas financier mais <strong>ergonomique</strong> : sqlite-vec offre le SQL, la persistance et l'inspection manuelle du contenu pour un coût d'adoption proche de zéro — un fichier, pas un service. C'est la recommandation.</p>
+
+  <div class="card">
+    <h3>Recommandation, en trois lignes</h3>
+    <ol>
+      <li><strong>Embeddings :</strong> modèle multilingue à poids ouverts exécuté localement — <code>voyage-4-nano</code> (Apache 2.0) ou <code>BGE-M3</code> (MIT) sont les deux candidats à évaluer <em>sur le corpus réel</em>, en français. Rien ne sort de la machine.</li>
+      <li><strong>Stockage :</strong> <code>sqlite-vec</code>, ou un simple fichier de vecteurs si l'on préfère encore moins de dépendances. <strong>Pas d'index approché</strong> : inutile à cette échelle.</li>
+      <li><strong>Conception :</strong> conserver la recherche lexicale existante en repli et croiser les deux scores. Le lexical reste supérieur sur les titres, les noms de cinéastes et les termes rares — c'est-à-dire sur une bonne partie des questions réelles d'un catalogue de films.</li>
+    </ol>
+    <p><em>Ce que cette recommandation ne dit pas :</em> quand le faire, ni par qui, ni si cela vaut la peine. Ce sont des décisions d'AH, et elles relèvent du mandat « chatbot v2 », pas de ce fonds.</p>
+  </div>
+
+  <h3>Étape 3 — L'effort réel, honnêtement</h3>
+  <p>Le travail d'indexation lui-même est <strong>mineur</strong> : découper, vectoriser, écrire. Les difficultés sont ailleurs, et il vaut mieux les nommer :</p>
+  <ul>
+    <li><strong>Le choix du modèle ne se tranche pas sur un classement.</strong> Les palmarès publics mesurent des corpus qui ne ressemblent pas à des critiques de films en français. Il faut construire une petite série de questions réelles et comparer les modèles dessus — c'est le seul juge valable, et c'est quelques heures de travail.</li>
+    <li><strong>Le découpage dépend du genre.</strong> Une analyse de film est un texte argumentatif à sections : la découper tous les 1 400 caractères couperait au milieu d'un raisonnement. Le découpage par section, avec le titre de section conservé, est plus vraisemblable ici. À valider sur pièce.</li>
+    <li><strong>Ce qui est réellement demandé n'est pas toujours sémantique.</strong> Un cas réel du 26/08/2026 le montre : une faute de frappe dans un titre de film a suffi à faire échouer l'appariement avec le catalogue — l'appariement normalise la casse et les articles, pas les fautes. Ce cas se règle par une correspondance approximative sur les titres, pas par une base vectorielle. Vérifier la nature réelle des échecs avant d'acheter la solution la plus lourde reste la première économie disponible.</li>
+    <li><strong>Le point de non-retour :</strong> changer de modèle d'embedding oblige à tout réindexer. Ce n'est pas grave pour 462 passages ; c'est une raison de plus de préférer un modèle dont on garde les poids sous la main.</li>
+  </ul>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026)
+    <ol>
+      <li>Documentation Anthropic, « Embeddings » — <a href="https://platform.claude.com/docs/en/build-with-claude/embeddings">platform.claude.com/docs/en/build-with-claude/embeddings</a> : absence d'endpoint d'embeddings chez Anthropic, recommandation Voyage AI, table des modèles (dont <code>voyage-4-nano</code>, poids ouverts Apache 2.0 sur Hugging Face), dimensions disponibles, rerankers, paramètre <code>input_type</code>.</li>
+      <li>Limites de dimension pgvector et contournement par <code>halfvec</code> : documentation pgvector et synthèses techniques de 2026 — <a href="https://github.com/pgvector/pgvector/issues/461">github.com/pgvector/pgvector/issues/461</a></li>
+      <li>Comparatifs de bases vectorielles 2026 (pgvector, Qdrant, Milvus, Weaviate, Chroma, LanceDB) : synthèses d'éditeurs et de cabinets — <span class="statut statut-partiel">partiellement recoupé</span>, aucune évaluation indépendante consultée.</li>
+      <li>sqlite-vec : recherche exacte par force brute, absence d'index approché début 2026, ordres de grandeur de performance — synthèses techniques 2026, <span class="statut statut-partiel">partiellement recoupé</span>.</li>
+      <li>Modèles d'embedding multilingues ouverts (BGE-M3, E5 multilingue, jina-embeddings-v3, nomic-embed-text-v2) : comparatifs 2026 — <span class="statut statut-partiel">partiellement recoupé</span>.</li>
+      <li>Matériel de la formation du 26/08/2026, dépôt <code>corpus-rag-chatbot</code> de Diederick Legrain (licence MIT) : <code>supabase/schema.sql</code> (pgvector, index HNSW cosinus, fonction de recherche, RLS), <code>netlify/lib/embed.ts</code> (embeddings <code>gemini-embedding-001</code> en 768 dimensions, asymétrie question/passage, normalisation), <code>shared/chunk.js</code> (découpage), <code>netlify/functions/ingest.mts</code>, <code>netlify/lib/prompt.ts</code>. Lus le 27/08/2026 comme données techniques, non reproduits. <em>À noter :</em> ce corpus de référence utilise une interface d'embedding distante — c'est un choix pédagogique cohérent pour une formation d'une journée, et c'est précisément le point où la présente recommandation s'en écarte, pour des raisons de souveraineté.</li>
+      <li>Note interne de la squad, <code>LESSONS-LEARNED-FORMATION-2026-08-26.md</code> : frontière lexical/sémantique (leçon n° 1), cas de la faute de frappe déjouant l'appariement (leçon n° 7), corpus de 462 passages.</li>
+    </ol>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. Recommandation d'orientation : rien n'a été construit, installé ni connecté. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

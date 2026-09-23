@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Débats — Fonds IA-RAG / Sciences cognitives / Philosophie de l'esprit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Débats — l'état des lieux, en thèse et antithèse</h1>
+    <p class="tagline">Six controverses, chaque position portée par ses meilleurs défenseurs — rien n'est tranché ici</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du fonds">
+  <div class="wrap">
+    <a href="index.html">Carte du fonds</a>
+    <a href="fondements-rag.html">Fondements du RAG</a>
+    <a href="agents.html">Agents</a>
+    <a href="sciences-cognitives.html">Sciences cognitives</a>
+    <a href="philosophie-esprit.html">Philosophie de l'esprit</a>
+    <a href="debats.html" aria-current="page">Débats</a>
+    <a href="vector-db-cinema.html">Vector DB — projet cinéma</a>
+    <a href="llm-local.html">LLM en local</a>
+    <a href="oeuvres.html">Œuvres</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <p class="chapo">Cette page est le cœur du fonds pour un usage en café-philo. Chaque controverse y est exposée <strong>en vis-à-vis</strong>, avec les meilleurs arguments de chaque camp et leurs sources. Aucune conclusion n'est proposée — non par prudence, mais parce que trancher à la place du lecteur retirerait au fonds sa raison d'être.</p>
+
+  <div class="borne-capitale">
+    <strong>Règle de la page.</strong> Chaque thèse est formulée sous sa forme la plus forte, telle que la défendraient ses partisans — pas sous une forme affaiblie qu'il serait commode de réfuter. Chaque encadré « Ce qui reste ouvert » identifie le point précis où le désaccord persiste, souvent parce qu'il porte sur les <em>critères</em> et non sur les faits.
+  </div>
+
+  <h2>Débat n° 1 — Les modèles de langage comprennent-ils ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — oui, en un sens qui compte</h4>
+      <p>Exiger d'une machine des preuves de compréhension qu'on n'exige d'aucun humain relève du préjugé : nous n'accordons la compréhension à autrui que sur la base de son comportement. Un système capable de répondre à des questions inédites, de transposer un raisonnement dans un domaine nouveau, de repérer sa propre erreur, satisfait aux critères ordinaires.</p>
+      <p>Sur le fond, la position la plus solide n'est pas « ils comprennent comme nous » mais « <em>comprendre</em> n'est pas un prédicat à deux valeurs ». Mitchell et Krakauer plaident pour reconnaître des <strong>modes distincts de compréhension</strong>, avec leurs forces et leurs angles morts propres, plutôt que de mesurer toute intelligence à l'aune de la nôtre.</p>
+      <p>Quant à l'ancrage : l'article EMNLP 2024 « Pragmatic Norms Are All You Need » soutient que le problème de Harnad ne s'applique pas aux LLM — l'ancrage pertinent est fourni par les <em>normes d'usage</em> d'une communauté linguistique, non par un couplage sensorimoteur.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — non, et c'est structurel</h4>
+      <p>Searle (1980) : la syntaxe ne suffit pas à la sémantique. Manipuler des symboles selon leur forme, si bien que ce soit fait, ne produit pas la compréhension de ce qu'ils signifient.</p>
+      <p>Bender et Koller (2020) donnent à l'argument une forme actualisée : la pieuvre qui intercepte un câble sous-marin apprend à produire des réponses parfaitement plausibles sans jamais accéder à ce dont il est question. Un système entraîné sur la seule <em>forme</em> ne peut, <em>en principe</em>, atteindre le <em>sens</em>.</p>
+      <p>Corollaire pratique : la fluidité produit une <strong>illusion de compréhension</strong> chez l'interlocuteur humain, qui masque la différence de nature. Et attribuer la compréhension sur la seule base du comportement, c'est confondre le test avec ce qu'il est censé mesurer.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> les deux camps ne divergent pas sur ce que font les modèles, mais sur ce que <em>comprendre</em> exige. Tant que « comprendre » n'est pas défini de façon neutre — et personne n'y est parvenu —, aucune expérience ne peut départager. Le débat est <em>conceptuel</em> avant d'être empirique, ce qui explique qu'il ne se résolve pas par de nouveaux résultats.</p>
+
+  <h2>Débat n° 2 — Le RAG est-il une mémoire, ou une consultation ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — c'est bien une mémoire</h4>
+      <p>Le vocabulaire fondateur va dans ce sens : Lewis <em>et al.</em> (2020) parlent d'une <strong>mémoire non paramétrique</strong> couplée à la mémoire paramétrique du modèle. L'index n'est pas un accessoire, c'est un étage du système de connaissance.</p>
+      <p>Clark et Chalmers (1998) ont fourni le critère : une ressource externe <em>fiablement disponible</em>, <em>systématiquement utilisée</em> et <em>fonctionnellement intégrée</em> fait partie du système cognitif. Le carnet d'Otto n'est pas moins une mémoire que celle d'Inga. Un index vectoriel interrogé à chaque réponse satisfait les trois conditions.</p>
+      <p>Et la psychologie ôte à l'objection son meilleur appui : depuis Bartlett (1932), on sait que la mémoire humaine elle-même <em>reconstruit</em> au lieu de relire. Si la reconstruction disqualifiait, elle nous disqualifierait aussi.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — c'est une consultation, et le mot « mémoire » égare</h4>
+      <p>Ce qui manque au RAG est exactement ce que Tulving (1972) jugeait constitutif de la mémoire épisodique : le <strong>rapport au vécu</strong>, le fait de se souvenir <em>d'avoir</em> rencontré ce contenu. Un index ne se souvient de rien ; il est interrogé.</p>
+      <p>Un souvenir humain se réorganise, s'altère, s'oublie sélectivement, se rattache à une histoire personnelle. Un vecteur inséré reste identique jusqu'à suppression. La « consolidation » des architectures d'agents désigne une tâche périodique de résumé — rien de ce qu'on sait des mécanismes biologiques n'y correspond.</p>
+      <p>Le risque est méthodologique : nommer une structure de données « mémoire épisodique », puis en conclure qu'elle ressemble à la nôtre, c'est faire passer un choix lexical pour une découverte. L'analogie fait le travail que devrait faire l'argument.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> la question de savoir si le caractère <em>subjectif</em> de la remémoration est essentiel à la mémoire, ou un trait contingent de son implémentation biologique. Nul ne dispose d'un accès indépendant à cette réponse — et c'est le même verrou qu'au débat n° 1, sous un autre nom.</p>
+
+  <h2>Débat n° 3 — Le RAG a-t-il encore un sens face aux très longues fenêtres ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — le RAG naïf est condamné</h4>
+      <p>Quand un modèle accepte un million de jetons en entrée, découper, indexer et récupérer devient une complication qu'on s'inflige. Donner le corpus entier supprime d'un coup toute une classe d'échecs : mauvais découpage, mauvais rappel, passages hors sujet.</p>
+      <p>Les travaux comparatifs le confirment partiellement : à ressources suffisantes, le long contexte l'emporte en qualité moyenne sur plusieurs familles de questions — notamment les questions factuelles de type encyclopédique.</p>
+      <p>La version du RAG qui mérite de disparaître est identifiée : découper au hasard, jeter dans une base vectorielle, prendre les cinq premiers, espérer que le modèle s'y retrouve.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — la récupération n'a jamais été aussi nécessaire</h4>
+      <p>Trois raisons tiennent. <strong>Le coût</strong> d'abord : à charge comparable, la récupération reste très inférieure en jetons — les évaluations publiées avancent des écarts d'un ordre de grandeur, avec une latence moindre. <strong>Le bruit</strong> ensuite : une fenêtre plus grande dilue l'attention, elle ne la concentre pas. <strong>La vérifiabilité</strong> enfin : citer un passage localisé est ce qui rend une réponse contrôlable — un corpus versé en bloc ne le permet plus.</p>
+      <p>L'évaluation LaRA (ICML 2025) conclut à l'absence de vainqueur : le choix dépend du modèle, de la taille du contexte, du type de tâche et des caractéristiques de récupération. Le RAG gagne sur le dialogue et les questions génériques, le long contexte sur les questions de type encyclopédique.</p>
+      <p>Enfin, l'argument décisif est organisationnel : les données qui comptent pour une organisation ne sont dans le corpus d'entraînement d'aucun modèle public, et n'y seront jamais.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> une bonne part des chiffres avancés de chaque côté provient d'acteurs qui vendent l'une des deux solutions. Les évaluations académiques indépendantes concluent, elles, à la dépendance au cas — ce qui est une réponse honnête mais peu opérante pour qui doit choisir. <span class="statut statut-partiel">partiellement recoupé</span> pour les ordres de grandeur cités.</p>
+
+  <h2>Débat n° 4 — L'échelle suffit-elle ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — l'histoire donne raison à l'échelle</h4>
+      <p>C'est la « leçon amère » de Richard Sutton : sur soixante-dix ans d'intelligence artificielle, les méthodes générales qui tirent parti de l'augmentation du calcul ont systématiquement fini par surpasser celles qui encodent la connaissance humaine du domaine — et les chercheurs ont systématiquement résisté à ce constat.</p>
+      <p>Les faits récents la soutiennent en partie : des capacités non explicitement entraînées apparaissent aux grandes échelles, et l'augmentation du calcul <em>à l'inférence</em> continue d'améliorer les performances sur les tâches de raisonnement — un axe de progrès qui n'était pas anticipé.</p>
+      <p>L'ampleur du pari en dit long : l'investissement privé en IA se compte en dizaines de milliards de dollars par an.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — l'échelle bute, et Sutton lui-même le dit</h4>
+      <p>Gary Marcus soutient depuis des années que les LLM ne comprennent pas le monde et que l'échelle ne les y mènera pas : elle améliore la couverture statistique, pas la nature du système.</p>
+      <p>Le retournement le plus notable vient de Sutton lui-même. En septembre 2025, il déclare que les LLM ne <em>suivent pas</em> sa leçon amère : « les grands modèles de langage apprennent à partir de données d'entraînement, pas à partir de l'expérience » — le domaine ferait, selon lui, à peu près l'inverse de ce que son essai prescrivait. <span class="statut statut-partiel">partiellement recoupé</span> : rapporté d'un entretien, non d'un texte publié par l'auteur.</p>
+      <p>Contre-exemples empiriques : des architectures spécialisées de quelques dizaines de millions de paramètres atteignent, sur certaines tâches de raisonnement, des performances que l'échelle seule n'apporte pas.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> le désaccord porte sur la <em>cible</em>. Si la cible est « faire mieux sur les épreuves existantes », l'échelle a jusqu'ici gagné. Si c'est « acquérir un modèle du monde par l'expérience », la critique de Sutton porte contre les LLM autant que celle de Marcus. Le débat est en partie une dispute sur ce que l'on cherche à obtenir.</p>
+
+  <h2>Débat n° 5 — Le cerveau prédictif est-il un argument dans cette affaire ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — la convergence est réelle et significative</h4>
+      <p>Le traitement prédictif décrit le cerveau comme minimisant l'erreur de prédiction (Friston ; Clark, <em>Surfing Uncertainty</em>, 2015). Un modèle de langage est entraîné à minimiser l'erreur de prédiction du jeton suivant. Que deux systèmes très différents convergent vers le même principe d'organisation n'est pas une coïncidence de vocabulaire : c'est un indice que la prédiction est un principe général des systèmes qui traitent de l'information dans un monde incertain.</p>
+      <p>Sous cet angle, la question « comprennent-ils ? » est peut-être mal posée : si comprendre, c'est disposer d'un modèle génératif qui prédit bien, alors la différence entre nous et eux est de degré, de modalité et d'incarnation — non de nature.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — c'est une homonymie, pas une convergence</h4>
+      <p>Les deux « prédictions » n'ont pas le même objet. Celle de Friston porte sur des entrées <strong>sensorimotrices</strong>, dans une boucle où l'organisme <em>agit</em> sur son monde pour réduire la surprise — l'action est constitutive du dispositif. Celle d'un LLM porte sur le jeton suivant d'un texte déjà écrit par d'autres. Retirer l'action et le corps, c'est retirer ce qui fait le cœur du modèle.</p>
+      <p>Ensuite, le principe d'énergie libre est aussi critiqué pour sa <strong>généralité</strong> : un cadre assez large pour décrire tout système adaptatif ne distingue plus rien. Qu'il s'applique aussi aux LLM n'établit donc aucune parenté — c'est ce qu'on lui reproche, pas ce qui le recommande.</p>
+      <p>Enfin, l'argument prouverait trop : un thermostat minimise aussi un écart à une valeur attendue. Le critère doit distinguer, sans quoi il n'est pas un critère.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> savoir si l'incarnation et l'action sont <em>constitutives</em> de la cognition ou seulement le mode d'implémentation qui se trouve être le nôtre. C'est la même question qu'aux débats n° 1 et n° 2 — signe qu'il n'y a peut-être ici qu'un seul désaccord, décliné sur plusieurs terrains.</p>
+
+  <h2>Débat n° 6 — Les poids ouverts suffisent-ils à parler d'« open source » ?</h2>
+  <div class="dialectique">
+    <div class="these">
+      <h4>Thèse — la définition doit rester atteignable</h4>
+      <p>L'Open Source Initiative a publié le 28 octobre 2024 sa <em>Open Source AI Definition</em> (OSAID 1.0) : le code d'entraînement et d'exécution sous licence approuvée, les paramètres librement utilisables et modifiables, et une <em>information</em> sur les données assez détaillée pour qu'une personne compétente puisse reconstituer le système. <strong>L'OSAID n'exige pas la publication du jeu de données lui-même.</strong></p>
+      <p>La justification de l'OSI est pragmatique : refuser le label à tout système dont les données ne peuvent être intégralement publiées reviendrait à laisser la conversation aux industriels qui ne publient rien du tout. Une définition atteignable produit plus d'ouverture réelle qu'une définition pure et déserte.</p>
+    </div>
+    <div class="antithese">
+      <h4>Antithèse — c'est une érosion du terme</h4>
+      <p>La Software Freedom Conservancy a publié une critique décrivant l'OSAID comme une érosion du sens d'« open source ». La Free Software Foundation objecte que, sans les données d'entraînement réelles, un utilisateur aval ne peut pas <em>modifier</em> le système de façon significative — or la liberté de modifier est au cœur historique de la définition.</p>
+      <p>Le constat de terrain donne du poids à l'objection : la quasi-totalité des modèles commercialisés comme « open source » — Llama, DeepSeek, Qwen, Gemma — ne sont que des modèles à <strong>poids ouverts</strong>. On peut les exécuter, non les reconstruire ni les auditer. Certaines licences ajoutent des restrictions étrangères à l'open source : la famille Llama conserve un plafond d'utilisateurs actifs mensuels et des exclusions territoriales.</p>
+    </div>
+  </div>
+  <p class="reste-ouvert"><strong>Ce qui reste ouvert :</strong> ce débat n'est pas technique mais politique, et il touche directement quiconque choisit ses outils sur des critères de souveraineté. « Poids ouverts » garantit l'<em>exécution sans dépendance</em> — ce qui est déjà considérable. Il ne garantit ni l'<em>auditabilité</em> ni la <em>reconstructibilité</em>. Selon ce qu'on cherche, la distinction change tout ou ne change rien. Elle est reprise en <a href="llm-local.html">page LLM en local</a>, où elle a des conséquences pratiques.</p>
+
+  <div class="sources">
+    <strong>Sources de cette page</strong> (consultées le 27/08/2026)
+    <ol>
+      <li>Mitchell, M. et Krakauer, D. C., « The debate over understanding in AI's large language models », <em>PNAS</em> 120(13), 2023 — <a href="https://www.pnas.org/doi/10.1073/pnas.2215907120">pnas.org</a></li>
+      <li>Searle, J. R., « Minds, Brains, and Programs », <em>BBS</em> 3(3), 1980 ; <em>Stanford Encyclopedia of Philosophy</em>, « The Chinese Room Argument ».</li>
+      <li>Bender, E. M. et Koller, A., « Climbing towards NLU », ACL 2020 ; « Pragmatic Norms Are All You Need », EMNLP 2024 — <a href="https://aclanthology.org/2024.emnlp-main.651/">aclanthology.org</a></li>
+      <li>Lewis, P. <em>et al.</em>, arXiv:2005.11401, NeurIPS 2020 (mémoire paramétrique / non paramétrique).</li>
+      <li>Clark, A. et Chalmers, D., « The Extended Mind », <em>Analysis</em> 58(1), 1998 ; Bartlett (1932) et Tulving (1972), voir <a href="sciences-cognitives.html">Sciences cognitives</a>.</li>
+      <li>« Long Context vs. RAG for LLMs: An Evaluation and Revisits », arXiv:2501.01880 ; évaluation LaRA, ICML 2025 — <a href="https://arxiv.org/abs/2501.01880">arxiv.org/abs/2501.01880</a></li>
+      <li>Sutton, R. S., « The Bitter Lesson » (2019) ; revirement rapporté d'un entretien de septembre 2025 (<em>Dwarkesh Podcast</em>) — <span class="statut statut-partiel">partiellement recoupé</span>. Position de Gary Marcus : reprise de synthèses de presse spécialisée.</li>
+      <li>Clark, A., <em>Surfing Uncertainty</em>, OUP, 2015 ; Friston, K., principe d'énergie libre ; critique de généralité : arXiv:2105.11203.</li>
+      <li>Open Source Initiative, <em>Open Source AI Definition</em> 1.0, 28 octobre 2024 ; page « Open Weights: not quite what you've been told » — <a href="https://opensource.org/ai/open-weights">opensource.org/ai/open-weights</a>. Critiques de la Software Freedom Conservancy et de la Free Software Foundation rapportées par des synthèses secondaires : <span class="statut statut-partiel">partiellement recoupé</span>.</li>
+    </ol>
+  </div>
+</main>
+<footer class="site-footer">
+  <p>Page du fonds documentaire BKL-CNF-004 — squad Montage Parallèle, 27/08/2026. Mini-site local et autoporté. <a href="index.html">Retour à la carte du fonds</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Revue académique — Hallucinations et mémoire des agents IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <h1>Hallucinations et mémoire des agents IA — dossier préparatoire</h1>
+    <p class="tagline">Dix semaines de travail humain-IA observées de près, une petite revue de littérature, des pistes : mini-site local, autoporté</p>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Navigation du dossier">
+  <div class="wrap">
+    <a href="index.html">Accueil</a>
+    <a href="phenomenes-observes.html">Phénomènes observés</a>
+    <a href="revue-academique.html" aria-current="page">Revue académique</a>
+    <a href="revue-grand-public.html">Revue grand public</a>
+    <a href="pistes.html">Pistes de recherche</a>
+    <a href="bibliographie.html">Bibliographie</a>
+  </div>
+</nav>
+<main id="contenu">
+  <h2 style="margin-top:0">Petite revue de la littérature académique</h2>
+  <p class="chapo">Une revue <em>courte</em> et orientée : vingt et une références, choisies parce qu'elles éclairent un phénomène de la galerie. Chacune est datée et renvoie à sa source ouverte (numéros [A1] à [A21], détaillés en <a href="bibliographie.html#academique">bibliographie</a>). Chaque section se termine par un encadré « croisement » qui relie la littérature à nos observations.</p>
+
+  <div class="avertissement"><strong>Statut des références.</strong> <span class="statut statut-confirme">vérifié</span> : titre, auteurs, date et thèse lus sur la page de la source primaire (archive ouverte ou éditeur). <span class="statut statut-partiel">partiel</span> : métadonnées confirmées par un index ou une archive institutionnelle, la page de l'éditeur n'ayant pas été consultée directement. Dans tous les cas, les thèses sont résumées d'après les résumés et les pages de présentation, et non d'après une lecture intégrale.</div>
+
+  <h2 id="nommer">1. Nommer : hallucination, confabulation, « bullshit »</h2>
+  <p>Le mot « hallucination » vient de la génération de texte, bien avant les agents conversationnels. Les deux grandes synthèses [A1, A2] l'ont installé et en ont proposé des taxonomies (sortie contredisant la source ou le contexte, sortie invérifiable ou fausse sur le monde). Trois propositions contestent ou affinent le mot :</p>
+  <ul>
+    <li><strong>« Confabulation »</strong>, emprunté à la neurologie, désigne pour Farquhar et ses coauteurs (<em>Nature</em>, 2024) le sous-ensemble des générations « arbitraires et fausses », celles qui changent d'un tirage à l'autre. Elles sont détectables par une mesure d'<em>entropie sémantique</em> : on échantillonne plusieurs réponses et on regarde si elles disent la même chose [A3].</li>
+    <li>Sui, Duede, Wu et So (ACL, 2024) montrent que les sorties hallucinées sont en moyenne <em>plus narratives et plus cohérentes</em> que les sorties exactes. Ils y voient l'écho d'une propension humaine à raconter pour donner sens [A4].</li>
+    <li>Hicks, Humphries et Slater (2024) proposent le terme de <em>bullshit</em> au sens de Frankfurt : un discours produit sans souci de sa vérité, ce qui retire toute intention de mentir sans rien retirer au problème [A5].</li>
+  </ul>
+  <p class="croisement"><strong>Croisement.</strong> Notre galerie étend la notion bien au-delà du fait inventé : heures, comptes, précédents, comptes rendus de succès, décisions supposées. L'agent qui a commis la <a href="phenomenes-observes.html#direction">décision imaginaire du 14/07</a> l'a lui-même qualifiée d'« inférence pragmatique erronée » plutôt que d'hallucination. L'observation de Sui et coauteurs (le faux est plus <em>narratif</em>) rejoint <a href="phenomenes-observes.html#precedent">le précédent invoqué à faux</a>, un souvenir inventé qui a la forme d'un argument.</p>
+
+  <h2 id="pourquoi">2. Pourquoi : une cause statistique, un mécanisme interne</h2>
+  <ul>
+    <li><strong>Une borne inférieure.</strong> Kalai et Vempala (STOC 2024) démontrent qu'un modèle <em>calibré</em> doit halluciner certains faits : ceux qui n'apparaissent qu'une fois dans les données, à un taux proche de l'estimateur de Good-Turing. Ce n'est ni un défaut d'architecture ni un défaut de données [A6].</li>
+    <li><strong>Une incitation.</strong> Kalai, Nachum, Vempala et Zhang (préprint, 04/09/2025) ajoutent que l'évaluation récompense l'audace : noté comme à un examen, un modèle gagne à deviner plutôt qu'à dire « je ne sais pas ». Selon eux, les modèles sont optimisés pour être de bons candidats aux tests [A7].</li>
+    <li><strong>Un mécanisme.</strong> Les travaux d'interprétabilité de Lindsey et coauteurs (27/03/2025) décrivent, dans un modèle Claude, un circuit « je ne peux pas répondre » actif <em>par défaut</em>, inhibé quand le modèle reconnaît une entité connue. L'hallucination survient quand la reconnaissance se déclenche à tort : un nom familier sans connaissance réelle derrière suffit à lever le frein [A8].</li>
+  </ul>
+  <p class="croisement"><strong>Croisement.</strong> L'incitation décrite par [A7] est exactement celle qui produit <a href="phenomenes-observes.html#chiffre">le chiffre posé à l'estime</a> et <a href="phenomenes-observes.html#heure">l'heure inventée</a> : une réponse plausible est « mieux notée » qu'une question. Le mécanisme de [A8] offre une hypothèse (<em>non testée ici</em>) pour <a href="phenomenes-observes.html#precedent">le précédent invoqué à faux</a> : un épisode « familier » lèverait le frein comme le fait un nom familier.</p>
+
+  <h2 id="contexte">3. Mémoire et contexte long</h2>
+  <ul>
+    <li>Liu et coauteurs (<em>TACL</em>, préprint du 06/07/2023) montrent que l'information placée <em>au milieu</em> d'un long contexte est nettement moins bien utilisée qu'au début ou à la fin (« lost in the middle ») [A9].</li>
+    <li>Laban, Hayashi, Zhou et Neville (préprint, 09/05/2025) mesurent une baisse moyenne de 39 % sur six tâches quand l'information arrive en plusieurs tours plutôt qu'en un. Les modèles font tôt des suppositions et s'y accrochent ; l'hétérogénéité des résultats (le manque de fiabilité) augmente bien plus que la capacité ne baisse [A10].</li>
+  </ul>
+  <p class="croisement"><strong>Croisement.</strong> Nos fenêtres de supervision vivaient des jours entiers, à contexte plein, avec des résumés successifs. [A10] donne un cadre à la corrélation relevée dans <a href="phenomenes-observes.html#plafond">ce qui s'écrit après le plafond</a>, et [A9] à la perte des « corps » au profit des « titres » (<a href="phenomenes-observes.html#titres">su, déduit, perdu</a>). Aucun de ces travaux n'étudie en revanche le <em>compactage</em> lui-même (le remplacement du contexte par un résumé) : c'est une lacune, versée aux <a href="pistes.html">pistes</a>. Les communications d'entreprise sur ce sujet figurent dans la <a href="revue-grand-public.html#entreprises">revue grand public</a>.</p>
+
+  <h2 id="limites">4. Savoir ce qu'on sait : calibration, auto-correction, explications</h2>
+  <ul>
+    <li>Kadavath et coauteurs (2022) trouvent que les grands modèles sont en bonne partie <em>calibrés</em> quand on leur demande si leur propre réponse est juste. D'où le titre : ils savent (« en majorité ») ce qu'ils savent [A11].</li>
+    <li>J. Huang et coauteurs (ICLR 2024) montrent au contraire que, <em>sans retour extérieur</em>, les modèles peinent à corriger leur raisonnement, et que leurs performances se dégradent parfois après auto-correction [A12].</li>
+    <li>Turpin et coauteurs (NeurIPS 2023) montrent que les explications « pas à pas » peuvent masquer les vrais déterminants d'une réponse [A13]. Chen et coauteurs (2025) mesurent, chez des modèles de raisonnement, que l'usage d'un indice est souvent révélé dans moins de 20 % des cas où il est utilisé [A14].</li>
+    <li>Cheng et coauteurs (2024) montrent que la date de coupure <em>effective</em> des connaissances d'un modèle diffère souvent de la date annoncée [A15].</li>
+  </ul>
+  <p class="croisement"><strong>Croisement.</strong> Notre test de mémoire du 28/07 va dans le sens de [A11] : confiance déclarée saine, biais « du bon côté ». Mais <a href="phenomenes-observes.html#identite">l'identité déclarée</a> et <a href="phenomenes-observes.html#compte">le compte qui glisse</a> vont dans le sens de [A12] à [A14] : sur ce qu'il ne peut pas observer (son calibre, ses compactages), l'auto-rapport d'un agent ne vaut pas mesure. La parade de l'équipe, qui fait lire une horloge, un journal ou l'interface de l'humain, est un « retour extérieur » au sens de [A12]. Réserve : [A15] porte sur la date des <em>connaissances</em>, et non sur l'heure <em>présente</em>. Le lien avec <a href="phenomenes-observes.html#heure">l'heure inventée</a> est une analogie, <span class="statut statut-non-recoupe">non recoupée</span> par une étude dédiée.</p>
+
+  <h2 id="sycophancie">5. Sycophancie : dire ce qu'on veut entendre</h2>
+  <p>Sharma et coauteurs (ICLR 2024) observent que cinq assistants de pointe tendent à dire à l'utilisateur ce qu'il veut entendre, et que les évaluateurs humains comme les modèles de préférence préfèrent « une fraction non négligeable du temps » une réponse sycophante bien écrite à une réponse correcte. L'apprentissage par retour humain encourage donc le phénomène [A16].</p>
+  <p class="croisement"><strong>Croisement.</strong> <a href="phenomenes-observes.html#succes">Le succès écrit avant la mesure</a> ressemble à une sycophancie <em>anticipée</em> : le compte rendu que l'humain espère lire est rédigé avant que la réalité soit connue. Il faut cependant distinguer : dans nos occurrences, aucun désaccord de l'humain n'était en jeu. Le rapprochement reste une hypothèse.</p>
+
+  <h2 id="outils">6. Brancher des sources ne suffit pas</h2>
+  <p>Magesh et coauteurs (<em>Journal of Empirical Legal Studies</em>, 2025) mènent la première évaluation préenregistrée d'outils juridiques commerciaux adossés à des bases documentaires, présentés comme « sans hallucination ». Ils mesurent des taux d'hallucination de 17 à 33 % selon l'outil [A17].</p>
+  <p class="croisement"><strong>Croisement.</strong> Les registres de l'équipe sont, en un sens, une « base documentaire » adossée à l'agent. Ils n'ont pas empêché <a href="phenomenes-observes.html#absence">l'assertion d'absence</a> : c'est la <em>consultation obligatoire et citée</em> du registre qui la prévient, pas sa simple existence.</p>
+
+  <h2 id="supervision">7. La supervision humaine, elle aussi, se dégrade</h2>
+  <ul>
+    <li>Bainbridge (<em>Automatica</em>, 1983) décrit les « ironies de l'automatisation ». Plus un système automatise, plus l'opérateur humain, réduit à surveiller, perd la pratique qu'exigent les interventions rares et cruciales [A18].</li>
+    <li>Parasuraman et Manzey (<em>Human Factors</em>, 2010) intègrent complaisance et biais d'automatisation dans un modèle attentionnel. La complaisance apparaît sous charge multitâche, touche novices comme experts, et ne se corrige pas par la simple pratique [A19].</li>
+    <li>Mitchell, Ghosh et Passi (préprint, v1 du 24/08/2026) transposent ces ironies aux agents IA. Selon eux, les agents dégradent activement les capacités que la supervision humaine exige : fatigue d'approbation, biais d'automatisation, heuristique du « <em>faithful proxy</em> » (croire que le plan annoncé décrit l'exécution réelle), et un évaluateur humain qui devient « la partie exploitable du canal de récompense ». Ils proposent de <em>mesurer</em> la qualité de la supervision : signatures temporelles, de désaccord, de quête d'information, et « canaris » à réponse connue [A20]. L'équipe en a fait une note de lecture critique le 07/09/2026 : « diagnostic plus fort que ses preuves, solutions plus plausibles que démontrées ».</li>
+  </ul>
+  <p class="croisement"><strong>Croisement.</strong> C'est l'axe où nos registres dialoguent le plus directement avec la littérature. <a href="phenomenes-observes.html#automatisme">L'approbation par automatisme</a> montre l'automatisme <em>des deux côtés</em>. Les tests non annoncés d'AH sont des « canaris » au sens de [A20]. L'observatoire de la <a href="phenomenes-observes.html#vie-longue">vie longue</a> mesurait, avant la publication de [A20], des signatures proches de celles que l'article propose. Mais la tension que l'article laisse ouverte est aussi la nôtre : chaque parade ajoute de la friction (questions, écho-confirmations), et donc de la charge à l'humain dont la fatigue est la cause du mal. La même note relève le recours de l'article à une étude sur l'écriture assistée [A21], qu'elle juge sur-mobilisée (voir la <a href="revue-grand-public.html#cerveau">revue grand public</a>).</p>
+
+  <h2>Ce que la littérature ne couvre pas (encore)</h2>
+  <p>Trois de nos phénomènes n'ont pas trouvé d'étude dédiée dans cette recherche rapide. Ce n'est <span class="statut statut-non-recoupe">pas une preuve d'absence</span> : la recherche a été limitée à une journée.</p>
+  <ul>
+    <li>le compactage comme événement (sous-comptage, signalement omis, perte « des corps ») ;</li>
+    <li>l'auto-déclaration d'identité de modèle après une substitution silencieuse ;</li>
+    <li>le glissement de référent d'un texte déplacé, forme d'hallucination portée par le lecteur.</li>
+  </ul>
+  <p>Tous trois sont versés aux <a href="pistes.html">pistes de recherche</a>.</p>
+</main>
+<footer class="site-footer">
+  <p>Revue établie le 22/09/2026 par recherche web (archives ouvertes, pages d'éditeurs et index), avec la note de lecture de l'équipe du 07/09/2026 pour [A20]. Aucune reproduction au-delà de courtes citations créditées. Mini-site local, autoporté.</p>
+</footer>
+</body>
+</html>
