@@ -1,0 +1,101 @@
+{
+  "_lisez_moi": [
+    "Tous les textes français injectés par assemble.py vivent ici, en UTF-8, pour que le script",
+    "reste ASCII pur (borne du mandat BKL-CNF-012 §3 L1). Corriger un mot d'AH se fait DANS CE",
+    "FICHIER puis en rejouant assemble.py — jamais à la main dans les pages de l'export.",
+    "Les champs marqués ARRETE_PAR_AH attendent l'arrêt dur n°1 (lecture de l'export en local)."
+  ],
+
+  "date_export": "2026-09-23",
+
+  "provenance": {
+    "_source": "Décision 9 d'AH (cadrage §3 bis) : « Une mention unique, esprit R3 ». Forme inspirée de SPEC-SITE-V2 §5.3, régime R3. ARRETE_PAR_AH à l'arrêt dur n°1.",
+    "texte": "Pages produites avec des agents IA (Claude d'Anthropic), révision et validation par Christo Datso."
+  },
+
+  "chapeau": {
+    "_source": "Parade R-027 (chapeau daté d'auteur), choisie par AH en élicitation q.9 le 22/09/2026 : sur l'accueil seul. ARRETE_PAR_AH à l'arrêt dur n°1.",
+    "texte": "Ce fonds a été écrit entre janvier 2025 et septembre 2026 pour un usage local, sur le poste de travail de son auteur. Il est publié ici tel quel, le 23 septembre 2026, sans réécriture : certaines pages citent donc les dossiers où elles ont été écrites, et renvoient à des pièces qui ne sont pas en ligne."
+  },
+
+  "bandeau_jansma": {
+    "_source": "Décision 4 d'AH : « Entre en v1 avec un bandeau \"document de travail\" ». Les auteurs de la lecture critique la déclarent eux-mêmes non validée (en-tête du .md, « v1 amendée — document de travail, non validé »).",
+    "titre": "Document de travail",
+    "texte": "Cette lecture critique est un document de travail. Elle n'a pas été validée par l'auteur de l'article qu'elle discute, ni par aucun des auteurs cités. Version v1 amendée du 1er août 2026, publiée telle quelle."
+  },
+
+  "titre_jansma": "Lecture critique sourcée — « Truth is not a direction : a Tarski attack on LLM probes »",
+
+  "retraits": [
+    {
+      "_pourquoi": "Élicitation q.5 : la figure TINAD_diagonals.png est une figure d'Abel Jansma (tiers) — elle n'entre pas. L'img et son lien disparaissent ; la légende descriptive reste.",
+      "cible": "concepts/concept-07-verite-direction.html",
+      "motif": "<a href=\"cafephilo-lecture-jansma/TINAD_diagonals\\.png\"><img[^>]*>\\s*</a>\\s*",
+      "remplacement": "",
+      "attendu": 1
+    },
+    {
+      "_pourquoi": "Élicitation q.5 : la phrase parle d'un dossier local que le lecteur du web n'a pas, et justifie une figure désormais absente (R-027).",
+      "cible": "concepts/concept-07-verite-direction.html",
+      "motif": "<br><span style=\"font-size:\\.95em\">Figure de l.auteur, conserv.e dans le dossier local . des fins de\\s+lecture critique\\.</span>",
+      "remplacement": "",
+      "attendu": 1
+    }
+  ],
+
+  "retraits_jansma": [
+    {
+      "_pourquoi": "Élicitation q.11 du 22/09 : la référence [24] de la bibliographie cite le chemin absolu d'une note interne sur le poste — seule occurrence de `C:\\` de tout l'export, elle fait tomber V4. AH : « Chemin remplacé par une mention neutre ». Appliqué au Markdown AVANT la conversion pandoc.",
+      "motif": "`C:\\\\Users\\\\cdats\\\\Claude\\\\_scratch\\\\cafephilo-demo-vecteurs\\\\README\\.md`",
+      "remplacement": "note interne de la squad, non publiée",
+      "attendu": 1
+    }
+  ],
+
+  "redirections": {
+    "_pourquoi": "Deux cas où un lien n'est PAS retiré mais renvoyé vers une page neuve de l'export. (a) Le fonds SEP : décision 6 d'AH (« la porte Fonds demeure ») + élicitation q.10 du 22/09. (b) La lecture critique Jansma : décision 4 d'AH, le .md entre CONVERTI en HTML — le lien pointe donc la page convertie.",
+    "CAFE-PHILO-II/SEP/index.html": "fonds-sep.html",
+    "CAFE-PHILO-II/SEP/recherche-ai-and-consciousness.html": "fonds-sep.html",
+    "CAFE-PHILO-I/cafephilo-lecture-jansma/LECTURE-CRITIQUE-JANSMA-v1.md": "concepts/cafephilo-lecture-jansma/lecture-critique-jansma.html"
+  },
+
+  "fonds_sep": {
+    "titre": "Le fonds SEP — copie de travail privée",
+    "bandeau": "Cette porte ne mène pas à un fonds en ligne.",
+    "chapeau": "Le portail s'appuie sur un fonds de consultation constitué d'entrées de la <i>Stanford Encyclopedia of Philosophy</i>, copiées localement pour l'étude. Ce fonds n'est pas publié, et il ne le sera pas.",
+    "corps": [
+      "<p><b>Pourquoi.</b> La licence de la <i>Stanford Encyclopedia of Philosophy</i> autorise la copie locale à des fins d'étude et <b>interdit la redistribution</b>. Republier ces entrées ici serait une redistribution. Le fonds reste donc ce qu'il a toujours été : une copie de travail privée, sur le poste de son lecteur.</p>",
+      "<p><b>Ce que cela change pour vous.</b> Rien de ce que le portail affirme ne repose sur une lecture que vous ne pourriez pas refaire : chaque entrée consultée est en accès libre sur le site de la <i>SEP</i>, gratuitement et sans compte. La liste ci-dessous vous y mène, entrée par entrée.</p>",
+      "<p>Le <code>robots.txt</code> de la <i>SEP</i> autorise <code>/entries/</code> avec un délai de cinq secondes entre requêtes — respecté à la capture — et interdit <code>/archives/</code>.</p>"
+    ],
+    "colonnes": ["#", "Entrée", "Auteur", "Version consultée", "En ligne"],
+    "titre_liste": "Les entrées consultées",
+    "chapeau_liste": "Titre, auteur et date de la version consultée, tels que la page de la <i>SEP</i> les portait au jour de la copie. Le lien mène à la version courante en ligne, qui peut avoir changé depuis.",
+    "pied": "Page écrite pour l'export public. Elle remplace la porte « Fonds » du portail local, qui menait à la copie privée."
+  },
+
+  "p404": {
+    "titre": "Page introuvable",
+    "chapeau": "Cette adresse ne correspond à aucune page de ce fonds.",
+    "corps": "<p>Le fonds a été réorganisé au moment de sa mise en ligne : les dossiers de travail ont été renommés, et certaines pièces — documents de tiers, transcriptions, fonds sous licence restrictive — n'ont pas été publiées. Un lien ancien peut donc ne plus aboutir.</p><p>L'accueil du fonds répertorie tout ce qui est en ligne.</p>",
+    "lien": "Retour à l'accueil"
+  },
+
+  "nav": {
+    "_pourquoi": "Libellés de la barre de navigation des pages NEUVES. Ils vivent ici parce que assemble.py est en ASCII pur et ne peut pas porter d'accent.",
+    "accueil": "&#8592; Retour à l'accueil",
+    "pieces": "Pièces récurrentes",
+    "provenance": "Provenance et licences",
+    "jansma_dossier": "&#8592; Le dossier des concepts",
+    "jansma_concept7": "7. La vérité est-elle une direction ?"
+  },
+
+  "style_liens_retires": {
+    "_pourquoi": "Élicitation q.12 du 22/09 : un <a> sans href s'affiche comme un lien vivant. Cette règle, posée dans chaque page, rend les 39 libellés dont le lien a été retiré en couleur de texte ordinaire. Présentation seule — aucun mot n'est touché.",
+    "css": "<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style>"
+  },
+
+  "noindex": "<meta name=\"robots\" content=\"noindex, nofollow\">",
+
+  "titre_site": "Comprendre et discuter l'IA"
+}

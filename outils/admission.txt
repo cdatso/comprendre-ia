@@ -1,0 +1,165 @@
+# LISTE D'ADMISSION -- export public du portail « Comprendre et discuter l'IA » (BKL-CNF-012)
+#
+# CE QUI N'EST PAS NOMME ICI N'ENTRE PAS. Un depot public n'oublie rien : la soustraction
+# se fait par liste d'admission, jamais par liste d'exclusion (cadrage du 21/09, fait n.1).
+#
+# Format : <chemin source, relatif a C:\Users\cdats\Claude\CNF\>  ->  <chemin d'export>
+# Encodage UTF-8 : les noms sources portent des accents et des espaces ; ils ne sont JAMAIS
+# retapes, ils ont ete releves par Get-ChildItem / os.listdir.
+#
+# Bornes citees : mandat MANDAT-2026-09-22-CNF-012-PUBLICATION-PORTAIL-opus.md par. 3,
+# amende par l'elicitation d'AH du 22/09/2026 (9 questions, journal d'execution) :
+#   + IA\top-5-experiences-de-pensee.html (q.1)
+#   + cafephilo-demo-vecteurs\ESPACE-LATENT-INTERACTIF.html (q.2)
+#   + cafephilo-slides\apercus\Slide1..7.PNG (q.6)
+#   - architecture-portail-cnf-2026-09-06.html (q.8 : cartographie l'atelier prive)
+#   - TINAD_diagonals.png, figure de tiers (q.5)
+#
+# N'ENTRENT PAS, et le rappeler est le but de ce fichier : le fonds SEP, NotebookLM, le
+# mini-site NDBI « Cinema, IA et conscience », la conference de sensibilisation et son quiz,
+# l'afrofuturisme, les transcriptions (.srt), le livre de Searle (hors CNF\), et tout
+# .pdf .mp4 .m4a .pptx .docx .xlsx .py .txt .md non converti.
+#
+# PAGES NEUVES, ecrites par la session et donc absentes de cette liste (voir textes.json) :
+#   fonds-sep.html . 404.html . concepts/cafephilo-lecture-jansma/lecture-critique-jansma.html
+#
+index.html  ->  index.html
+pieces-recurrentes.html  ->  pieces-recurrentes.html
+provenance-licences.html  ->  provenance-licences.html
+IA/top-5-experiences-de-pensee.html  ->  top-5-experiences-de-pensee.html
+CAFE-PHILO-I/concept-01-tokens.html  ->  concepts/concept-01-tokens.html
+CAFE-PHILO-I/concept-02-vecteurs.html  ->  concepts/concept-02-vecteurs.html
+CAFE-PHILO-I/concept-03-neurone-poids.html  ->  concepts/concept-03-neurone-poids.html
+CAFE-PHILO-I/concept-04-contexte-attention.html  ->  concepts/concept-04-contexte-attention.html
+CAFE-PHILO-I/concept-05-temperature.html  ->  concepts/concept-05-temperature.html
+CAFE-PHILO-I/concept-06-hallucinations.html  ->  concepts/concept-06-hallucinations.html
+CAFE-PHILO-I/concept-07-verite-direction.html  ->  concepts/concept-07-verite-direction.html
+CAFE-PHILO-I/index.html  ->  concepts/index.html
+CAFE-PHILO-I/provenance.html  ->  concepts/provenance.html
+CAFE-PHILO-I/support-conference.html  ->  concepts/support-conference.html
+CAFE-PHILO-I/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html  ->  concepts/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide1.PNG  ->  concepts/cafephilo-slides/apercus/Slide1.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide2.PNG  ->  concepts/cafephilo-slides/apercus/Slide2.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide3.PNG  ->  concepts/cafephilo-slides/apercus/Slide3.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide4.PNG  ->  concepts/cafephilo-slides/apercus/Slide4.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide5.PNG  ->  concepts/cafephilo-slides/apercus/Slide5.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide6.PNG  ->  concepts/cafephilo-slides/apercus/Slide6.PNG
+CAFE-PHILO-I/cafephilo-slides/apercus/Slide7.PNG  ->  concepts/cafephilo-slides/apercus/Slide7.PNG
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/bibliographie.html  ->  etude-hallucinations-ia/bibliographie.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/index.html  ->  etude-hallucinations-ia/index.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/phenomenes-observes.html  ->  etude-hallucinations-ia/phenomenes-observes.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/pistes.html  ->  etude-hallucinations-ia/pistes.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-academique.html  ->  etude-hallucinations-ia/revue-academique.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-grand-public.html  ->  etude-hallucinations-ia/revue-grand-public.html
+CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/style.css  ->  etude-hallucinations-ia/style.css
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/agents.html  ->  ia-rag-cognition-philosophie-esprit/agents.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/bibliographie.html  ->  ia-rag-cognition-philosophie-esprit/bibliographie.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/debats.html  ->  ia-rag-cognition-philosophie-esprit/debats.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/fondements-rag.html  ->  ia-rag-cognition-philosophie-esprit/fondements-rag.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/index.html  ->  ia-rag-cognition-philosophie-esprit/index.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/llm-local.html  ->  ia-rag-cognition-philosophie-esprit/llm-local.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/oeuvres.html  ->  ia-rag-cognition-philosophie-esprit/oeuvres.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/philosophie-esprit.html  ->  ia-rag-cognition-philosophie-esprit/philosophie-esprit.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/sciences-cognitives.html  ->  ia-rag-cognition-philosophie-esprit/sciences-cognitives.html
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/style.css  ->  ia-rag-cognition-philosophie-esprit/style.css
+CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/vector-db-cinema.html  ->  ia-rag-cognition-philosophie-esprit/vector-db-cinema.html
+IA/export de la conférence Reduiste du 10 janvier 2025/correspondance-diapositives.html  ->  conference-reduiste-2025-01-10/correspondance-diapositives.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-01-ouverture.html  ->  conference-reduiste-2025-01-10/fiche-01-ouverture.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-02-ce-qui-inquiete.html  ->  conference-reduiste-2025-01-10/fiche-02-ce-qui-inquiete.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-03-regarder-penser.html  ->  conference-reduiste-2025-01-10/fiche-03-regarder-penser.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-04-thema-1-quest-ce-que-lia.html  ->  conference-reduiste-2025-01-10/fiche-04-thema-1-quest-ce-que-lia.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-05-ai-ml-dl.html  ->  conference-reduiste-2025-01-10/fiche-05-ai-ml-dl.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-06-narrow-general-super.html  ->  conference-reduiste-2025-01-10/fiche-06-narrow-general-super.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-07-sous-le-capot.html  ->  conference-reduiste-2025-01-10/fiche-07-sous-le-capot.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-08-chronologie.html  ->  conference-reduiste-2025-01-10/fiche-08-chronologie.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-09-outils-generatifs.html  ->  conference-reduiste-2025-01-10/fiche-09-outils-generatifs.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-10-risques-regulation.html  ->  conference-reduiste-2025-01-10/fiche-10-risques-regulation.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-11-aller-plus-loin.html  ->  conference-reduiste-2025-01-10/fiche-11-aller-plus-loin.html
+IA/export de la conférence Reduiste du 10 janvier 2025/fiche-12-films-livres-fin.html  ->  conference-reduiste-2025-01-10/fiche-12-films-livres-fin.html
+IA/export de la conférence Reduiste du 10 janvier 2025/index.html  ->  conference-reduiste-2025-01-10/index.html
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-13.jpg  ->  conference-reduiste-2025-01-10/images/dia-13.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-14.jpg  ->  conference-reduiste-2025-01-10/images/dia-14.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-16.jpg  ->  conference-reduiste-2025-01-10/images/dia-16.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-18.jpg  ->  conference-reduiste-2025-01-10/images/dia-18.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-19.jpg  ->  conference-reduiste-2025-01-10/images/dia-19.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-21.jpg  ->  conference-reduiste-2025-01-10/images/dia-21.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-26.jpg  ->  conference-reduiste-2025-01-10/images/dia-26.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-27.jpg  ->  conference-reduiste-2025-01-10/images/dia-27.jpg
+IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-28.jpg  ->  conference-reduiste-2025-01-10/images/dia-28.jpg
+IA/export de la conférence Café Philo du 23 février 2025/correspondance-diapositives.html  ->  conference-cafe-philo-2025-02-23/correspondance-diapositives.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-01-ouverture.html  ->  conference-cafe-philo-2025-02-23/fiche-01-ouverture.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-02-stargate.html  ->  conference-cafe-philo-2025-02-23/fiche-02-stargate.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-03-deepseek.html  ->  conference-cafe-philo-2025-02-23/fiche-03-deepseek.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-04-paris.html  ->  conference-cafe-philo-2025-02-23/fiche-04-paris.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-05-genres-especes.html  ->  conference-cafe-philo-2025-02-23/fiche-05-genres-especes.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-06-ani-agi-asi.html  ->  conference-cafe-philo-2025-02-23/fiche-06-ani-agi-asi.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-07-leviathan.html  ->  conference-cafe-philo-2025-02-23/fiche-07-leviathan.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-08-mensonges.html  ->  conference-cafe-philo-2025-02-23/fiche-08-mensonges.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-09-ethique-ai-act.html  ->  conference-cafe-philo-2025-02-23/fiche-09-ethique-ai-act.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-10-histoire.html  ->  conference-cafe-philo-2025-02-23/fiche-10-histoire.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-11-methodes.html  ->  conference-cafe-philo-2025-02-23/fiche-11-methodes.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-12-table-orientation.html  ->  conference-cafe-philo-2025-02-23/fiche-12-table-orientation.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-13-limites-physiques.html  ->  conference-cafe-philo-2025-02-23/fiche-13-limites-physiques.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-14-sous-le-capot.html  ->  conference-cafe-philo-2025-02-23/fiche-14-sous-le-capot.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-15-ia-et-travail.html  ->  conference-cafe-philo-2025-02-23/fiche-15-ia-et-travail.html
+IA/export de la conférence Café Philo du 23 février 2025/fiche-16-bibliographie.html  ->  conference-cafe-philo-2025-02-23/fiche-16-bibliographie.html
+IA/export de la conférence Café Philo du 23 février 2025/index.html  ->  conference-cafe-philo-2025-02-23/index.html
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-10.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-10.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-12.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-12.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-16.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-16.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-19.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-19.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-20.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-20.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-22.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-22.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-26.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-26.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-30.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-30.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-31.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-31.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-32.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-32.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-34.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-34.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-38.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-38.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-42.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-42.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-43.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-43.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-46.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-46.jpg
+IA/export de la conférence Café Philo du 23 février 2025/images/dia-51.jpg  ->  conference-cafe-philo-2025-02-23/images/dia-51.jpg
+IA/export de la conférence NDBI du 12 février 2026/correspondance-diapositives.html  ->  conference-ndbi-2026-02-12/correspondance-diapositives.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-01-ouverture.html  ->  conference-ndbi-2026-02-12/fiche-01-ouverture.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-02-degre-zero.html  ->  conference-ndbi-2026-02-12/fiche-02-degre-zero.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-03-machines-xenophobes.html  ->  conference-ndbi-2026-02-12/fiche-03-machines-xenophobes.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-04-ice.html  ->  conference-ndbi-2026-02-12/fiche-04-ice.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-05-consensus.html  ->  conference-ndbi-2026-02-12/fiche-05-consensus.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-06-reconnaissance-faciale.html  ->  conference-ndbi-2026-02-12/fiche-06-reconnaissance-faciale.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-07-belgique.html  ->  conference-ndbi-2026-02-12/fiche-07-belgique.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-08-trois-lunettes.html  ->  conference-ndbi-2026-02-12/fiche-08-trois-lunettes.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-09-trois-verdicts.html  ->  conference-ndbi-2026-02-12/fiche-09-trois-verdicts.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-10-mensonges.html  ->  conference-ndbi-2026-02-12/fiche-10-mensonges.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-11-exfiltration.html  ->  conference-ndbi-2026-02-12/fiche-11-exfiltration.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-12-religion-agents.html  ->  conference-ndbi-2026-02-12/fiche-12-religion-agents.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-13-alignement.html  ->  conference-ndbi-2026-02-12/fiche-13-alignement.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-14-critiques.html  ->  conference-ndbi-2026-02-12/fiche-14-critiques.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-15-se-former.html  ->  conference-ndbi-2026-02-12/fiche-15-se-former.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-16-ai-act.html  ->  conference-ndbi-2026-02-12/fiche-16-ai-act.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-17-fracture-numerique.html  ->  conference-ndbi-2026-02-12/fiche-17-fracture-numerique.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-18-ressources.html  ->  conference-ndbi-2026-02-12/fiche-18-ressources.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-19-conference-precedente.html  ->  conference-ndbi-2026-02-12/fiche-19-conference-precedente.html
+IA/export de la conférence NDBI du 12 février 2026/fiche-20-bibliographie.html  ->  conference-ndbi-2026-02-12/fiche-20-bibliographie.html
+IA/export de la conférence NDBI du 12 février 2026/index.html  ->  conference-ndbi-2026-02-12/index.html
+IA/export de la conférence NDBI du 12 février 2026/images/dia-19.jpg  ->  conference-ndbi-2026-02-12/images/dia-19.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-20.jpg  ->  conference-ndbi-2026-02-12/images/dia-20.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-25.jpg  ->  conference-ndbi-2026-02-12/images/dia-25.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-27.jpg  ->  conference-ndbi-2026-02-12/images/dia-27.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-33.jpg  ->  conference-ndbi-2026-02-12/images/dia-33.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-35.jpg  ->  conference-ndbi-2026-02-12/images/dia-35.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-40.jpg  ->  conference-ndbi-2026-02-12/images/dia-40.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-42.jpg  ->  conference-ndbi-2026-02-12/images/dia-42.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-44.jpg  ->  conference-ndbi-2026-02-12/images/dia-44.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-45.jpg  ->  conference-ndbi-2026-02-12/images/dia-45.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-49.jpg  ->  conference-ndbi-2026-02-12/images/dia-49.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-52.jpg  ->  conference-ndbi-2026-02-12/images/dia-52.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-53.jpg  ->  conference-ndbi-2026-02-12/images/dia-53.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-64.jpg  ->  conference-ndbi-2026-02-12/images/dia-64.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-68.jpg  ->  conference-ndbi-2026-02-12/images/dia-68.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-77.jpg  ->  conference-ndbi-2026-02-12/images/dia-77.jpg
+IA/export de la conférence NDBI du 12 février 2026/images/dia-89.jpg  ->  conference-ndbi-2026-02-12/images/dia-89.jpg
+IA/Philosophy of AI/fiche-trois-livres-philosophie-ia-2026-09-06.html  ->  philosophy-of-ai/fiche-trois-livres-philosophie-ia-2026-09-06.html
+IA/Philosophy of AI/note-lecture-mitchell-ghosh-passi-2026-09-07.html  ->  philosophy-of-ai/note-lecture-mitchell-ghosh-passi-2026-09-07.html
+IA/Philosophy of AI/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html  ->  philosophy-of-ai/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html
+IA/Philosophy of AI/resume-entretien-vergauwen-2026-09-06.html  ->  philosophy-of-ai/resume-entretien-vergauwen-2026-09-06.html

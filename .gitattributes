@@ -1,0 +1,22 @@
+# .gitattributes -- comprendre-ia (cree le 23/09/2026, BKL-CNF-012)
+#
+# POURQUOI : ce poste a core.autocrlf = true. Sans attribut, un checkout rend les fichiers en
+# CRLF, et les empreintes SHA-256 de l'inventaire (outils/INVENTAIRE-EXPORT.md) ne
+# correspondent plus aux fichiers du disque -- or l'egalite entre l'inventaire, le depot et le
+# servi est la verification de sortie de ce depot. Modele : claude-config/.gitattributes.
+#
+# PAR EXTENSION, JAMAIS `**` : ce depot porte 49 IMAGES (7 PNG, 42 JPG) qu'un attribut `text`
+# corromprait.
+*.html text eol=lf
+*.css  text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+.nojekyll text eol=lf
+#
+# Les binaires sont declares explicitement : aucune conversion, jamais.
+*.png binary
+*.PNG binary
+*.jpg binary
+*.jpeg binary
