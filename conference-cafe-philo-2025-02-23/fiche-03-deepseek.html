@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. DeepSeek : la réponse chinoise — Rise of the Machines, Café Philo 2025</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>3. DeepSeek&nbsp;: la réponse chinoise</h1>
+<p class="dias">DIAPOSITIVES 4, puis 36</p>
+<p class="chapeau">Six jours après Stargate, une firme de Hangzhou fait perdre 590&nbsp;milliards de dollars à NVIDIA en une journée.</p>
+<div class="ecarte"><b>Regroupement signalé.</b> Comme pour Stargate, l’exposé annonce
+DeepSeek en ouverture (dia.&nbsp;4) et l’analyse plus tard (dia.&nbsp;36). Réunis ici.</div>
+
+<h2>L’annonce&nbsp;: 27 janvier 2025</h2>
+<p>La réponse vient de <b>High-Flyer</b>, un fonds spéculatif basé à Hangzhou&nbsp;: <b>DeepSeek</b>,
+dirigé par <b>Liang Wenfeng</b>. La firme avait écrit dans un article que l’entraînement de
+<b>DeepSeek-V3</b> avait demandé <b>moins de 6&nbsp;millions de dollars</b> de puissance de calcul,
+sur des puces NVIDIA <b>H800</b>.</p>
+
+<h2>La conséquence, en trois cours de bourse</h2>
+<div class="tbl"><table>
+<tr><th>Date</th><th>Cours à l’ouverture (NVIDIA)</th><th>Variation</th></tr>
+<tr><td class="an">24 janvier</td><td>148,37&nbsp;€</td><td>&nbsp;</td></tr>
+<tr><td class="an">27 janvier</td><td>124,80&nbsp;€</td><td>&nbsp;</td></tr>
+<tr><td class="an">28 janvier</td><td>121,81&nbsp;€</td><td><b>−&nbsp;18&nbsp;%</b></td></tr>
+</table></div>
+<div class="chiffres">
+<div class="ch"><span class="v">590&nbsp;Md&nbsp;$</span>
+<span class="l">de capitalisation perdue par NVIDIA en un jour</span></div>
+<div class="ch"><span class="v">&lt;&nbsp;6&nbsp;M&nbsp;$</span>
+<span class="l">de calcul annoncés pour l’entraînement</span></div>
+</div>
+<p>L’écart entre les 500&nbsp;milliards de Stargate et les 6&nbsp;millions de DeepSeek est le fait
+brut de la séquence&nbsp;: c’est l’hypothèse des lois d’échelle elle-même qui vacille.</p>
+
+<h2>Les trois points de l’argumentaire</h2>
+<p>L’orateur retient trois éléments, en prévenant qu’il faudra « soulever le capot de la
+machine » pour y voir clair&nbsp;:</p>
+<ol>
+<li><b>La portabilité</b> — un modèle léger, compact, installable sur un PC.</li>
+<li><b>Une compétence comparable</b> — les tests confirment le niveau du modèle.</li>
+<li><b>Un coût beaucoup plus faible</b> — d’un facteur cent au moins, voire mille.</li>
+</ol>
+<div class="note"><b>La réserve, posée par l’orateur lui-même.</b> Le coût annoncé est celui de
+<b>la phase finale d’entraînement</b> du modèle V3 (décembre 2024), réalisée avec l’aide des
+modèles <i>open source</i> de <b>Llama&nbsp;3</b> (Meta) et de <b>Qwen</b> (Alibaba). Ce n’est pas
+le coût total du développement. Le détail technique est en
+<a href="fiche-14-sous-le-capot.html">fiche&nbsp;14</a>.</div>
+
+<h2>Lire la machine réfléchir</h2>
+<p>DeepSeek expose par défaut un mode <code>&lt;Thinking&gt;</code> — les fameuses « chaînes de
+raisonnement ». L’orateur lui pose la question « <i>how does your model work?</i> » et lit à la
+salle ce que le modèle se dit avant de répondre&nbsp;:</p>
+<pre>Okay, the user asked, "how does your model work?" Let me break this down.
+
+First, they want to understand the technical side of how I operate. But I need to
+consider the previous conversation. [...] Now, they're diving into the model's mechanics.
+
+They might be a student, researcher, or someone interested in AI technology. Since
+they're asking for a detailed explanation, they probably have some background knowledge,
+but maybe not too deep. I should explain in a clear, non-technical way without jargon.
+
+Looking at the history, the user seems persistent in getting specific information. They
+wanted a short answer before, so conciseness is key. [...]
+
+The user might need this information for a project, presentation, or just personal
+curiosity. They might also be evaluating the model's reliability or capabilities. [...]
+
+I need to avoid proprietary details since the company might not disclose specifics.
+[...] The user might not know terms like RLHF, so a brief explanation is necessary.
+
+Finally, direct them to official resources if they want more details. That covers their
+possible need for further information without violating any confidentiality</pre>
+<p>Ce qui est projeté n’est pas la réponse mais <b>la délibération sur l’interlocuteur</b>&nbsp;:
+qui est-il, que sait-il, jusqu’où aller. L’orateur note que DeepSeek est « plus détaillé dans
+son raisonnement que le modèle d’OpenAI ».</p>
+<p>La réponse effectivement rendue était, elle, sage et générique&nbsp;: pré-entraînement massif,
+<i>fine-tuning</i>, apprentissage par renforcement à partir de retours humains (RLHF),
+architecture <i>transformer</i>.</p>
+<p>La séquence fait écho à celle de la <a href="fiche-08-mensonges.html">fiche&nbsp;8</a>&nbsp;:
+deux fois dans le même exposé, on projette à la salle ce qu’un modèle « se dit ». Une fois pour
+montrer sa prudence, une fois pour montrer sa dissimulation.</p>
+
+<div class="pied"><a href="fiche-02-stargate.html">&#8592; 2. Stargate</a><a href="fiche-04-paris.html">4. Paris et le contre-sommet &#8594;</a></div>
+<footer>Fiche du mini-site <i>Rise of the Machines — Café Philo, 23 février 2025</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

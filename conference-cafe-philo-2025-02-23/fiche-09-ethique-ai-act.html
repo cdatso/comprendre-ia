@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Développer l’IA sur des bases éthiques : l’AI Act — Rise of the Machines, Café Philo 2025</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>9. Développer l’IA sur des bases éthiques&nbsp;: l’AI Act</h1>
+<p class="dias">DIAPOSITIVES 19 et 20</p>
+<p class="chapeau">La réponse juridique européenne, et ce qu’elle interdit exactement.</p>
+<figure><a href="images/dia-19.jpg"><img src="images/dia-19.jpg" alt="Diapositive 19"></a><figcaption>« Tableau de bord — développer l’IA sur des bases éthiques »&nbsp;: les lois sur l’IA de part et d’autre de l’Atlantique (réglementations européennes d’un côté, cadre NIST et <i>AI Government Act</i> de l’autre) et les règles de bonne gestion — obligations de transparence, évaluations de conformité.</figcaption></figure>
+<p>La carte tient les deux versants ensemble&nbsp;: la <b>norme juridique</b> (AI Act, RGPD,
+Data Governance Act, Data Act, législations d’État américaines) et la <b>bonne gestion</b>
+(transparence, conformité). Elle détaille aussi ce qu’il faut définir pour pouvoir réguler&nbsp;:
+la définition même d’un système d’IA, son autonomie, son adaptabilité, ses objectifs explicites
+ou implicites — et la classification des IA <b>selon le degré de risque</b>.</p>
+
+<h2>Le socle&nbsp;: six textes européens sur les données</h2>
+<div class="tbl"><table>
+<tr><th>Texte</th><th>Portée</th></tr>
+<tr><td><b>RGPD</b><br><span style="font-size:.85em">Règlement (UE) 2016/679</span></td>
+<td>Protection des personnes physiques à l’égard du traitement des données à caractère
+personnel, et libre circulation de ces données.</td></tr>
+<tr><td><b>LED</b><br><span style="font-size:.85em">Directive (UE) 2016/680</span></td>
+<td>Même protection pour les traitements liés aux infractions pénales et à l’exécution des
+peines.</td></tr>
+<tr><td><b>EUDPR</b><br><span style="font-size:.85em">Règlement 2018/1725</span></td>
+<td>Règles applicables aux institutions, organes et agences de l’Union. Aligné sur le RGPD et
+la LED.</td></tr>
+<tr><td><b>Data Governance Act</b></td>
+<td>Confiance dans le partage des données, disponibilité accrue, levée des obstacles techniques à
+la réutilisation. Soutient les espaces européens de données.</td></tr>
+<tr><td><b>Data Act</b></td>
+<td>Accès équitable aux données et usage de celles-ci. En vigueur depuis le
+11&nbsp;janvier&nbsp;2024.</td></tr>
+<tr><td><b>AI Act</b></td><td>Le règlement sur l’intelligence artificielle — ci-dessous.</td></tr>
+</table></div>
+<div class="rappel">Ce même socle avait été présenté à La Réduiste&nbsp;:
+<a href="../conference-reduiste-2025-01-10/fiche-10-risques-regulation.html">« Risques, sept questions, régulation
+européenne »</a>. Ce qui est nouveau ici, c’est le détail de l’AI Act lui-même.</div>
+
+<h2>L’approche par le risque</h2>
+<figure><a href="images/dia-20.jpg"><img src="images/dia-20.jpg" alt="Diapositive 20"></a><figcaption>La pyramide de l’AI Act&nbsp;: quatre niveaux de risque, les exemples de systèmes concernés pour chacun, et le montant des sanctions. Le sommet — risque inacceptable, article&nbsp;5 — est le plus étroit&nbsp;; la base — risque minimal, article&nbsp;69 — couvre la quasi-totalité des systèmes et n’impose rien.</figcaption></figure>
+<div class="tbl"><table>
+<tr><th>Niveau</th><th>Ce qu’il vise</th><th>Mesure</th></tr>
+<tr><td><b>Risque inacceptable</b><br><span style="font-size:.85em">art.&nbsp;5</span></td>
+<td>Manipulation comportementale, exploitation de personnes vulnérables, notation sociale par les
+autorités publiques, identification biométrique à distance en temps réel pour le maintien de
+l’ordre.</td>
+<td><b>Interdiction</b><br>jusqu’à 35&nbsp;M&nbsp;€ ou 7&nbsp;% du chiffre d’affaires mondial</td></tr>
+<tr><td><b>Risque élevé</b><br><span style="font-size:.85em">art.&nbsp;6</span></td>
+<td>Santé, sécurité, environnement et droits fondamentaux&nbsp;: accès au crédit, à l’assurance,
+aux prestations publiques&nbsp;; analyse de candidatures.</td>
+<td><b>Évaluation de conformité</b><br>jusqu’à 15&nbsp;M&nbsp;€ ou 3&nbsp;%</td></tr>
+<tr><td><b>Risque limité</b><br><span style="font-size:.85em">art.&nbsp;52</span></td>
+<td>Risque d’usurpation ou de tromperie&nbsp;: systèmes qui interagissent avec des personnes, IA
+générative produisant ou manipulant image, son ou vidéo.</td>
+<td><b>Obligation de transparence</b><br>jusqu’à 15&nbsp;M&nbsp;€ ou 1,5&nbsp;%</td></tr>
+<tr><td><b>Risque minimal</b><br><span style="font-size:.85em">art.&nbsp;69</span></td>
+<td>Filtres anti-spam, jeux vidéo dotés d’IA — <b>la grande majorité des systèmes</b>.</td>
+<td><b>Aucune obligation</b></td></tr>
+</table></div>
+<p>Deux remarques que l’exposé tient à faire passer. D’abord, l’AI&nbsp;Act <b>n’interdit pas
+l’IA</b>&nbsp;: il classe, et la base de la pyramide — celle qui n’impose rien — est de très loin
+la plus large. Ensuite, l’obligation la plus visible pour le public relève du risque
+<i>limité</i>&nbsp;: <b>un agent conversationnel doit dire qu’il est une machine</b>.</p>
+
+<h2>Les autres points du règlement</h2>
+<ul>
+<li><b>Transparence et traçabilité</b>&nbsp;: documentation claire pour les systèmes à haut
+risque, notification des utilisateurs, explication des décisions, surveillance continue.</li>
+<li><b>Gouvernance des données</b>&nbsp;: jeux de données de qualité pour réduire biais et
+discriminations, conformité au RGPD.</li>
+<li><b>Contrôle humain</b>&nbsp;: exigé dans les domaines à haut risque, pour empêcher une IA
+d’agir de façon autonome et dommageable.</li>
+<li><b>Application</b>&nbsp;: un Comité européen de l’intelligence artificielle&nbsp;; pleine
+applicabilité prévue en <b>2026</b>.</li>
+<li><b>Innovation</b>&nbsp;: des <b>bacs à sable réglementaires</b> pour tester en environnement
+contrôlé, et un soutien aux PME et jeunes pousses.</li>
+</ul>
+<div class="ecarte">Les notes de l’orateur portent, sur les sanctions, deux jeux de chiffres
+différents — « jusqu’à 7&nbsp;% ou 35&nbsp;M&nbsp;€ » dans un passage, « jusqu’à 30&nbsp;M&nbsp;€
+ou 6&nbsp;% » dans un autre. Le tableau ci-dessus suit la pyramide projetée, qui est la source
+la plus précise&nbsp;; le second jeu correspond à un état antérieur du texte.</div>
+
+<h2>Cinq familles de pratiques interdites, avec leurs exemples</h2>
+<p>C’est la partie la plus concrète, et elle ne figure que dans les notes.</p>
+<div class="tbl"><table>
+<tr><th style="width:34%">Famille</th><th>Exemples donnés</th></tr>
+<tr><td><b>1. Techniques manipulatrices et trompeuses</b></td>
+<td>Un agent conversationnel utilisant la voix synthétique d’un proche pour se faire passer pour
+lui&nbsp;—&nbsp;un système qui cache son comportement indésirable pendant l’évaluation pour le
+reprendre ensuite&nbsp;—&nbsp;la manipulation sensorielle par stimuli audio ou visuels pour altérer
+l’humeur.</td></tr>
+<tr><td><b>2. Surveillance et catégorisation biométrique</b></td>
+<td>Collecte d’images de visages sur les réseaux sociaux sans consentement&nbsp;—&nbsp;système
+inférant la race à partir de la voix&nbsp;—&nbsp;suivi des expressions faciales pour la
+reconnaissance des émotions.</td></tr>
+<tr><td><b>3. Éducation et travail</b></td>
+<td>Détection des émotions par webcam dans un centre d’appels&nbsp;—&nbsp;surveillance d’examens par
+suivi oculaire.</td></tr>
+<tr><td><b>4. Scoring social et commercial</b></td>
+<td>Modification des primes d’assurance selon la conduite&nbsp;—&nbsp;détection de fraudes
+financières à partir de données comportementales.</td></tr>
+<tr><td><b>5. Moissonnage de données</b></td>
+<td>Extraction d’images sur les réseaux sociaux pour identifier des victimes de traite
+humaine&nbsp;—&nbsp;moteur de recherche inversé pour correspondance faciale.</td></tr>
+</table></div>
+<p>Les exemples sont volontairement <b>appariés</b>&nbsp;: dans chaque famille, un cas manifestement
+condamnable côtoie un cas dont la légitimité se discute — la détection de fraude, la recherche de
+victimes de traite. C’est là que se joue la difficulté réelle du règlement, et l’exposé ne la
+masque pas.</p>
+<p>L’orateur signale enfin le pendant américain&nbsp;: le
+<a class="lien-ext" href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management
+Framework</a> du NIST — un cadre volontaire, là où l’Europe légifère.</p>
+
+<div class="pied"><a href="fiche-08-mensonges.html">&#8592; 8. Mensonges &amp; C<sup>ie</sup></a><a href="fiche-10-histoire.html">10. Une brève histoire de l’IA &#8594;</a></div>
+<footer>Fiche du mini-site <i>Rise of the Machines — Café Philo, 23 février 2025</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>

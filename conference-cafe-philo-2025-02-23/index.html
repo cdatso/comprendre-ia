@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>« Rise of the Machines » — Café Philo, 23 février 2025</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div style="font:600 13px/1.5 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:0 0 1.1rem"><a href="../index.html" style="display:inline-block;text-decoration:none;color:inherit;border:1px solid rgba(128,128,128,.35);border-radius:99px;padding:.3rem .9rem;opacity:.85">↑ Comprendre et discuter l’IA — portail du fonds</a></div>
+<h1>« Rise of the Machines » — Café Philo, 23 février 2025</h1>
+<p class="chapeau">Restitution en seize fiches de l’exposé-débat <i>L’intelligence artificielle
+entre peurs et démystification</i>, présenté par Christo Datso au Carpe Diem pour le Café Philo
+Rencontres &amp; Progrès.</p>
+
+<div class="note">
+<p><b>Ce que contient ce mini-site.</b> Les <b>53 diapositives</b> de la présentation, regroupées en
+<b>16 fiches</b> — douze pour le corps de l’exposé, quatre pour l’appendice que l’auteur avait
+joint sans le présenter en séance. Une fiche&nbsp;= une idée qui se tient, pas une diapositive.</p>
+<p><b>Ce que l’exposé projetait, et ce qu’il disait.</b> Ce deck est d’une nature particulière&nbsp;:
+<b>38 diapositives sur 53 portent des notes d’orateur</b>, pour un total de près de
+<b>57&nbsp;000 caractères</b> — souvent plus de matière que ce qui était à l’écran. Ces notes sont
+reprises ici et signalées comme telles. C’est la part invisible de la conférence.</p>
+<p><b>Ce qu’il ne contient pas.</b> Aucune actualisation. Les fiches restituent l’exposé du
+23&nbsp;février&nbsp;2025 — un moment où Stargate avait un mois et DeepSeek quatre semaines. Là où
+c’est daté, la fiche le dit&nbsp;; elle ne le corrige pas.</p>
+<p><b>Où est passée la diapositive&nbsp;N&nbsp;?</b> La
+<a href="correspondance-diapositives.html">table de correspondance</a> répond pour les 53.</p>
+</div>
+
+<h2>Le corps de l’exposé</h2>
+<ul class="fiches">
+<li><a href="fiche-01-ouverture.html">1. Ouverture&nbsp;: l’IA devenue question géopolitique</a><span class="d">dia. 1–2</span><p>Le cadre, la licence, et le propos de l’auteur repris intégralement — puis la nuit du 21&nbsp;janvier&nbsp;2025, qui fait basculer l’exposé de la pédagogie vers la géopolitique.</p></li>
+<li><a href="fiche-02-stargate.html">2. Stargate&nbsp;: le pari américain</a><span class="d">dia. 3, 34–35</span><p>500&nbsp;milliards de dollars, quatre partenaires, et la facture que personne n’affiche&nbsp;: 10 à 20 centrales nucléaires, l’équivalent d’un pays de 15 à 20&nbsp;millions d’habitants.</p></li>
+<li><a href="fiche-03-deepseek.html">3. DeepSeek&nbsp;: la réponse chinoise</a><span class="d">dia. 4, 36</span><p>Six jours plus tard, moins de 6&nbsp;millions de dollars de calcul font perdre 590&nbsp;milliards à NVIDIA en une journée. Et le modèle laisse lire sa délibération.</p></li>
+<li><a href="fiche-04-paris.html">4. Le sommet de Paris, et son contre-sommet</a><span class="d">dia. 5–6</span><p>InvestAI, les 200&nbsp;milliards européens, la fracture avec Washington et Londres, la critique de Michael Jordan — puis les deux écoles, techno-optimistes contre « doomers ».</p></li>
+<li><a href="fiche-05-genres-especes.html">5. Faut-il avoir peur de l’IA&nbsp;? Genres et espèces</a><span class="d">dia. 8–11</span><p>Une définition qui ne parle pas d’humain, la vallée de l’étrange de Mori, et la distinction décisive&nbsp;: une machine à règles ne se trompe pas comme une machine statistique.</p></li>
+<li><a href="fiche-06-ani-agi-asi.html">6. De l’ANI à l’ASI — et quatre questions épistémologiques</a><span class="d">dia. 12–13</span><p>Le cœur philosophique&nbsp;: faut-il encore dire « artificielle », ou parler d’une intelligence « autre », aussi autre que celle de la chauve-souris&nbsp;? Et le problème de l’exponentielle.</p></li>
+<li><a href="fiche-07-leviathan.html">7. Leviathan Redux&nbsp;: le problème du contrôle</a><span class="d">dia. 14–15</span><p>Hobbes convoqué pour poser l’alignement&nbsp;: oracles, génies, souverains, outils&nbsp;; mise en boîte, <i>stunting</i>, <i>tripwires</i> et <i>kill-switch</i>.</p></li>
+<li><a href="fiche-08-mensonges.html">8. Mensonges &amp; C<sup>ie</sup> chez les IA — et que faire</a><span class="d">dia. 16–17</span><p>Deux publications de fin 2024&nbsp;: un modèle qui s’exfiltre puis nie, et la ligne rouge de l’auto-réplication franchie — non par les modèles de pointe, mais par de plus petits.</p></li>
+<li><a href="fiche-09-ethique-ai-act.html">9. Développer l’IA sur des bases éthiques&nbsp;: l’AI Act</a><span class="d">dia. 19–20</span><p>Les six textes européens, la pyramide des quatre niveaux de risque avec ses sanctions, et les cinq familles de pratiques interdites, exemples à l’appui.</p></li>
+<li><a href="fiche-10-histoire.html">10. Une brève histoire de l’IA, et ses prix</a><span class="d">dia. 21–28</span><p>De l’ENIAC aux trois Nobel de 2024, avec ce que la frise escamote&nbsp;: les deux hivers de l’IA. Et une session d’ELIZA reproduite ligne à ligne.</p></li>
+<li><a href="fiche-11-methodes.html">11. Les méthodes de l’IA, et le « cerveau » qui les porte</a><span class="d">dia. 29–32</span><p>Cinq familles de méthodes, la carte de l’apprentissage automatique, la planche des architectures — et pourquoi l’hallucination n’est pas un défaut mais le mécanisme même.</p></li>
+<li><a href="fiche-12-table-orientation.html">12. Table d’orientation, et pour aller plus loin</a><span class="d">dia. 38–40</span><p>La carte récapitulative promise dès l’ouverture, les conseils pratiques en cinq rubriques, et les conditions de diffusion sous licence CC&nbsp;BY-NC-SA.</p></li>
+</ul>
+
+<h2>L’appendice</h2>
+<p class="chapeau">Sous le titre « Rise of the Machines — Appendix », l’auteur avait joint des
+documents supplémentaires qui n’ont pas été présentés en séance.</p>
+<ul class="fiches">
+<li><a href="fiche-13-limites-physiques.html">13. Appendice&nbsp;: les limites physiques</a><span class="d">dia. 41–45</span><p>Loi de Moore, loi d’Amdahl et rendements décroissants&nbsp;: la contrepartie physique du pari du gigantisme. Et ce que « paramètre » veut dire — mille milliards de dimensions.</p></li>
+<li><a href="fiche-14-sous-le-capot.html">14. Appendice&nbsp;: sous le capot de DeepSeek, et le moteur</a><span class="d">dia. 46–48</span><p>Distillation, PTX, <i>Mixture of Experts</i>, perroquet stochastique — et l’exemple « combien y a-t-il de 5 dans 100&nbsp;? », qui règle la question en trois lignes.</p></li>
+<li><a href="fiche-15-ia-et-travail.html">15. Appendice&nbsp;: l’IA, le travail et les risques</a><span class="d">dia. 49–52</span><p>Dix secteurs, dix statistiques d’emploi, l’Anthropic Economic Index, et le classement mondial des risques à dix ans — où l’IA vient au sixième rang.</p></li>
+<li><a href="fiche-16-bibliographie.html">16. Références bibliographiques, films, sources</a><span class="d">dia. 53</span><p>Vingt et un livres en quatre familles — techniques, critiques, spéculatifs, science-fiction — et treize films.</p></li>
+</ul>
+
+<h2>Ce que la relecture dégage</h2>
+<p><b>Une conférence bâtie sur une actualité de quatre semaines.</b> Stargate est annoncé le
+21&nbsp;janvier, DeepSeek le 27, le sommet de Paris se tient les 10 et 11&nbsp;février&nbsp;; l’exposé
+est donné le 23. Cette fraîcheur est sa force et sa fragilité&nbsp;: elle donne à la salle
+l’impression de penser en direct, et elle date le document plus vite que n’importe quel exposé de
+définitions.</p>
+<p><b>Un débat interne qui n’est pas tranché.</b> La <a href="fiche-05-genres-especes.html">fiche
+5</a> pose une définition <i>species-neutral</i> de l’intelligence, purement comportementale.
+La <a href="fiche-06-ani-agi-asi.html">fiche 6</a> demande six diapositives plus loin s’il ne
+faudrait pas parler d’une intelligence « autre », aussi autre que celle de la chauve-souris ou du
+champignon — ce qui ruine la neutralité d’espèce. L’exposé n’arbitre pas, et c’est probablement
+volontaire&nbsp;: c’est un café philo, la contradiction est le programme.</p>
+<p><b>Les faits contre les positions.</b> Là où la conférence de janvier montrait des outils, celle
+de février cite des publications&nbsp;: Apollo Research, l’article sur la ligne rouge de
+l’auto-réplication, l’index d’Anthropic, le rapport du Forum économique mondial, les trois
+observations de Sam Altman. Le partage « techno-optimistes contre doomers » de la
+<a href="fiche-04-paris.html">fiche&nbsp;4</a> sert précisément à montrer que ni l’un ni l’autre
+camp ne suffit&nbsp;: l’argument de l’exponentielle est <i>épistémique</i> — on ne peut pas savoir
+où l’on se trouve sur la courbe — et non prophétique.</p>
+<p><b>Une réponse constante&nbsp;: l’analogie nucléaire.</b> Elle revient trois fois — les
+centrales qu’il faudrait pour alimenter Stargate, les traités de désarmement comme modèle de
+gouvernance, et les barres de graphite qui n’empêchent pas le réacteur de fonctionner mais
+l’empêchent d’exploser. C’est le fil qui tient l’exposé, et il ne dit pas la peur&nbsp;: il dit
+qu’on a déjà su encadrer une technologie de cette échelle.</p>
+
+<h2>Un même orateur, deux conférences</h2>
+<div class="rappel"><b>Six semaines plus tôt.</b> Le 10&nbsp;janvier&nbsp;2025, le même auteur
+donnait à La Réduiste un exposé d’introduction à l’IA pour un public général. Plusieurs pièces
+sont communes aux deux — la carte « The AI Universe », le schéma du neurone, le cas Opus-3, les
+règlements européens, la page « Pour aller plus loin », la filmographie. Elles sont signalées au
+fil des fiches plutôt que dupliquées.<br>
+Le mini-site correspondant&nbsp;: <a href="../conference-reduiste-2025-01-10/index.html">Conférence « IA » — La Réduiste,
+10 janvier 2025</a>.</div>
+<p>La comparaison est instructive. En janvier, l’exposé <b>montre</b>&nbsp;: il convoque l’outil
+comme pièce à conviction — une dystopie générée par DALL·E, un schéma raté par ChatGPT, un résumé
+de l’AI&nbsp;Act rédigé par la machine. En février, il <b>cite</b>&nbsp;: publications, cours de
+bourse, textes réglementaires, rapports. Six semaines et un changement de public — d’une salle
+généraliste à un café philo — ont suffi à faire passer le même orateur de la démonstration à
+l’argumentation.</p>
+
+<h2>La conférence suivante</h2>
+<div class="note">
+<p><b>Un an plus tard, presque jour pour jour.</b> Le 12&nbsp;février&nbsp;2026, le même auteur
+donnait au bâtiment de la COCOF, pour l’institut NeuroDivergent Brain Intelligences et le Café
+Philo, un troisième exposé — <i>L’éthique et l’intelligence artificielle</i> — sur une question
+plus resserrée&nbsp;: les risques de l’IA sont-ils techniques ou politiques&nbsp;?</p>
+<p>Cet exposé-là <b>renvoie explicitement à celui-ci</b> plutôt que de refaire l’introduction
+technique, ce qui lui permet d’attaquer directement l’éthique. Le cas Opus-3, les règlements
+européens et la page « Pour aller plus loin » y reviennent.</p>
+<p><a href="../conference-ndbi-2026-02-12/index.html">L’éthique et
+l’intelligence artificielle — NDBI, 12 février 2026</a> — 97 diapositives en 20 fiches.</p>
+</div>
+
+<h2>Comprendre les mécanismes</h2>
+<div class="rappel"><b>Un dossier voisin</b> rassemble la matière pratique — ce que la machine lit,
+comment elle range le sens, comment elle choisit un mot — avec des démonstrations qu’on peut
+exécuter soi-même. Il renvoie à cette conférence pour tout ce qu’elle explique déjà, plutôt que de
+le réexpliquer.<br><br>
+<a href="../concepts/index.html"><b>Comprendre quelques concepts avec des exemples</b></a>
+— tokens, vecteurs, du neurone au poids, fenêtre de contexte, température, hallucinations, et la
+question de savoir si la vérité est une direction.</div>
+
+<h2>Ressources citées dans la conférence</h2>
+<div class="tbl"><table>
+<tr><th>Ressource</th><th style="width:1%">Fiche</th></tr>
+<tr><td><a class="lien-ext" href="https://cafephilorp.eu">cafephilorp.eu</a> — Café Philo
+Rencontres &amp; Progrès</td><td>1</td></tr>
+<tr><td><a class="lien-ext" href="https://blog.samaltman.com/three-observations">Sam Altman —
+<i>Three Observations</i></a></td><td>2</td></tr>
+<tr><td><a class="lien-ext" href="https://www.elysee.fr/sommet-pour-l-action-sur-l-ia/gouvernance-mondiale-de-lia">Sommet
+pour l’action sur l’IA — gouvernance mondiale</a></td><td>4</td></tr>
+<tr><td><a class="lien-ext" href="https://ec.europa.eu/commission/presscorner/detail/en/ip_25_467">InvestAI —
+200&nbsp;milliards d’euros (Commission européenne)</a></td><td>4</td></tr>
+<tr><td><a class="lien-ext" href="https://theatredelaconcorde.paris/evenements/contre-sommet-de-lia-pour-un-humanisme-de-notre-temps/">Contre-sommet
+de l’IA — Théâtre de la Concorde</a></td><td>4</td></tr>
+<tr><td><a class="lien-ext" href="https://github.com/ggerganov/llama.cpp/pull/11453/files">llama.cpp —
+la <i>pull request</i> citée</a></td><td>6</td></tr>
+<tr><td><a class="lien-ext" href="https://www.youtube.com/watch?v=xfMQ7hzyFW4&amp;list=PPSV"><i>Writing
+Doom</i> — court-métrage</a></td><td>7</td></tr>
+<tr><td><a class="lien-ext" href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations">Apollo
+Research — <i>Scheming reasoning evaluations</i></a></td><td>8</td></tr>
+<tr><td><a class="lien-ext" href="https://arxiv.org/abs/2412.12140"><i>Frontier AI systems have
+surpassed the self-replicating red line</i></a></td><td>8</td></tr>
+<tr><td><a class="lien-ext" href="https://atlas.mindmup.com/cdatso/eu_artificial_intelligence_act_april_20/index.html">Atlas
+mindmup — <i>EU Artificial Intelligence Act</i></a></td><td>9</td></tr>
+<tr><td><a class="lien-ext" href="https://www.nist.gov/itl/ai-risk-management-framework">NIST —
+<i>AI Risk Management Framework</i></a></td><td>9</td></tr>
+<tr><td><a class="lien-ext" href="https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act">Commission
+européenne — lignes directrices sur les pratiques interdites</a></td><td>9</td></tr>
+<tr><td><a class="lien-ext" href="https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon">Cornell —
+le Perceptron de Rosenblatt</a></td><td>10</td></tr>
+<tr><td><a class="lien-ext" href="https://developer.nvidia.com/discover/convolutional-neural-network">NVIDIA —
+les réseaux convolutifs</a></td><td>10</td></tr>
+<tr><td><a class="lien-ext" href="https://www.mql5.com/en/blogs/post/724245">mql5.com</a> — source
+du schéma du neurone</td><td>13</td></tr>
+<tr><td><a class="lien-ext" href="https://www.datafranca.org/wiki/Perroquet_stochastique">Datafranca —
+le perroquet stochastique</a></td><td>14</td></tr>
+<tr><td><a class="lien-ext" href="https://www.anthropic.com/news/the-anthropic-economic-index">The
+Anthropic Economic Index</a></td><td>15</td></tr>
+<tr><td><a class="lien-ext" href="https://www.weforum.org/publications/global-risks-report-2025/">Global
+Risks Report 2025 — World Economic Forum</a></td><td>15</td></tr>
+<tr><td><a class="lien-ext" href="https://fr.slideshare.net/ChristoDatso">Slideshare — la
+présentation d’origine, sous licence CC&nbsp;BY-NC-SA</a></td><td>12</td></tr>
+</table></div>
+
+<h2>Comment ce mini-site a été fait</h2>
+<ul>
+<li><b>Source.</b> <code>Rise of the Machines 2025-02-23.pptx</code> (29,8&nbsp;Mo, 53 diapositives,
+aucune masquée), dans le dossier <code>@Café Philo 2025-02-23</code>.</li>
+<li><b>Texte.</b> Extrait du <code>.pptx</code> avec les niveaux de hiérarchie et les notes de
+l’orateur, reproduit sans réécriture. Les notes sont signalées comme telles.</li>
+<li><b>Images.</b> Seize visuels, ceux dont la disparition coûterait du sens&nbsp;: cartes
+heuristiques, courbes, schémas, pyramide de l’AI&nbsp;Act. Ils sont rendus depuis un PDF
+<b>exporté par PowerPoint</b>, et non depuis le PDF présent dans le dossier — celui-ci ne compte
+que 49 pages pour 53 diapositives, il correspond à une autre version du deck et sa numérotation
+est décalée.</li>
+<li><b>Transcriptions plutôt qu’images.</b> Trois diapositives gagnaient à être transcrites qu’à
+être photographiées&nbsp;: la session ELIZA (fiche&nbsp;10), le tableau des statistiques d’emploi
+et le classement des risques mondiaux (fiche&nbsp;15).</li>
+<li><b>Regroupements signalés.</b> Deux fiches réunissent des diapositives séparées dans l’exposé —
+Stargate (3 + 34-35) et DeepSeek (4 + 36). C’est indiqué en tête de ces fiches.</li>
+</ul>
+
+<h2>Limites</h2>
+<ul>
+<li><b>Cinq diapositives ne font pas page</b>&nbsp;: trois « Questions&nbsp;? » identiques, un
+« This is the End », un titre d’appendice. Elles sont signalées dans la
+<a href="correspondance-diapositives.html">table de correspondance</a> comme temps de parole ou
+marqueurs de section.</li>
+<li><b>Trois chiffres divergent à l’intérieur même des sources</b> — le nombre de signataires du
+sommet de Paris, le montant levé par Safe SuperIntelligence, le plafond des sanctions de
+l’AI&nbsp;Act. Les écarts sont signalés à l’endroit où ils tombent, et non tranchés.</li>
+<li><b>Droits.</b> La présentation est sous licence <b>CC&nbsp;BY-NC-SA</b> de Christo Datso, ce
+qui autorise le partage avec attribution, sans usage commercial et dans les mêmes conditions. Les
+visuels qu’elle emprunte à des tiers — couvertures d’ouvrages, captures d’écran, schémas — relèvent
+de leurs auteurs respectifs.</li>
+<li><b>Liens sortants non vérifiés</b>&nbsp;: repris tels quels de la présentation.</li>
+<li><b>Portabilité.</b> Les renvois vers le mini-site de La Réduiste sont des liens relatifs&nbsp;:
+ils supposent que les deux dossiers restent voisins sous <code>CNF\IA\</code>.</li>
+</ul>
+
+<div class="pied"><span></span><a href="fiche-01-ouverture.html">1. Ouverture &#8594;</a></div>
+<footer>Mini-site produit le 03/09/2026 à partir de la présentation du 23 février 2025. 16 fiches, 16 visuels, une table de correspondance. Présentation d’origine sous licence CC BY-NC-SA de Christo Datso. Restitution sans actualisation.</footer>
+</div></body></html>

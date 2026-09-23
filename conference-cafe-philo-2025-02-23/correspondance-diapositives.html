@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Table de correspondance — Rise of the Machines, Café Philo 2025</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>Table de correspondance</h1>
+<p class="dias">LES 53 DIAPOSITIVES, ET OÙ CHACUNE SE RETROUVE</p>
+<p class="chapeau">Aucune diapositive n’a disparu en silence. Cinq ne font pas page — trois
+« Questions&nbsp;? », un « This is the End », un titre d’appendice — et trois sont déplacées vers
+une autre fiche que leur voisinage d’origine. Chacune est motivée ci-dessous.</p>
+
+<div class="note">
+<p><b>reprise</b> — le contenu passe dans la fiche indiquée.<br>
+<b>vignette</b> — la diapositive est en plus reproduite en image (l’un des seize visuels retenus).<br>
+<b>signalée</b> — mentionnée sans faire contenu&nbsp;: temps de parole ou marqueur de section.</p>
+</div>
+
+<div class="tbl"><table>
+<tr><th style="width:1%">Dia.</th><th>Ce que c’est</th><th style="width:1%">Sort</th>
+<th style="width:1%">Fiche</th><th>Précision</th></tr>
+<tr><td class="an">1</td><td>Diapositive de titre — <i>Rise of the Machines</i>, licence CC BY-NC-SA</td><td class="an">reprise</td><td class="an"><a href="fiche-01-ouverture.html">1</a></td><td>Les notes portent le propos complet de la conférence.</td></tr>
+<tr><td class="an">2</td><td>« D’un seul coup, dans la nuit du 21 janvier 2025… »</td><td class="an">reprise</td><td class="an"><a href="fiche-01-ouverture.html">1</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">3</td><td>L’annonce du projet Stargate (capture X / OpenAI)</td><td class="an">reprise</td><td class="an"><a href="fiche-02-stargate.html">2</a></td><td>Texte de l’annonce transcrit.</td></tr>
+<tr><td class="an">4</td><td>DeepSeek — « … 27 janvier 2025 »</td><td class="an">reprise</td><td class="an"><a href="fiche-03-deepseek.html">3</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">5</td><td>Le sommet de Paris, 10-11 février 2025</td><td class="an">reprise</td><td class="an"><a href="fiche-04-paris.html">4</a></td><td>Notes les plus longues du deck (7&nbsp;389 caractères).</td></tr>
+<tr><td class="an">6</td><td>Contre-sommet — Théâtre de la Concorde, Eric Sadin</td><td class="an">reprise</td><td class="an"><a href="fiche-04-paris.html">4</a></td><td>Les deux écoles reprises des notes.</td></tr>
+<tr><td class="an">7</td><td>« Questions ? »</td><td class="an">signalée</td><td class="an"><a href="fiche-01-ouverture.html">1</a></td><td>Première des trois respirations de l’exposé. Pas de contenu.</td></tr>
+<tr><td class="an">8</td><td>« Faut-il avoir peur de l’IA ? » (intertitre)</td><td class="an">reprise</td><td class="an"><a href="fiche-05-genres-especes.html">5</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">9</td><td><i>Terminator 3</i> — « différents genres et espèces d’IA »</td><td class="an">reprise</td><td class="an"><a href="fiche-05-genres-especes.html">5</a></td><td>Définition <i>species-neutral</i> reprise des notes.</td></tr>
+<tr><td class="an">10</td><td>La vallée de l’étrange, Masahiro Mori, 1970</td><td class="an">vignette</td><td class="an"><a href="fiche-05-genres-especes.html">5</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">11</td><td>Les cinq termes, et « The AI Universe »</td><td class="an">reprise</td><td class="an"><a href="fiche-05-genres-especes.html">5</a></td><td>La carte n’est pas reproduite&nbsp;: elle figure déjà au mini-site de La Réduiste.</td></tr>
+<tr><td class="an">12</td><td>ANI → AGI → ASI</td><td class="an">vignette</td><td class="an"><a href="fiche-06-ani-agi-asi.html">6</a></td><td>Les quatre questions épistémologiques sont dans les notes.</td></tr>
+<tr><td class="an">13</td><td>Bostrom, <i>Superintelligence</i> — « Are we doomed? »</td><td class="an">reprise</td><td class="an"><a href="fiche-06-ani-agi-asi.html">6</a></td><td>Le développement sur l’exponentielle est dans les notes.</td></tr>
+<tr><td class="an">14</td><td>« Leviathan Redux » — le problème du contrôle</td><td class="an">reprise</td><td class="an"><a href="fiche-07-leviathan.html">7</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">15</td><td>Contrôler la « détonation » ? + <i>Writing Doom</i></td><td class="an">reprise</td><td class="an"><a href="fiche-07-leviathan.html">7</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">16</td><td>Captures Apollo Research — <i>Self-Exfiltration</i> / <i>Doubling Down</i></td><td class="an">vignette</td><td class="an"><a href="fiche-08-mensonges.html">8</a></td><td>Notes de 3&nbsp;384 caractères, dont l’article sur la ligne rouge.</td></tr>
+<tr><td class="an">17</td><td>« Mensonges &amp; C<sup>ie</sup> chez les IA ! Que faire ? »</td><td class="an">reprise</td><td class="an"><a href="fiche-08-mensonges.html">8</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">18</td><td>« Questions ? »</td><td class="an">signalée</td><td class="an"><a href="fiche-08-mensonges.html">8</a></td><td>Deuxième respiration.</td></tr>
+<tr><td class="an">19</td><td>Tableau de bord — développer l’IA sur des bases éthiques</td><td class="an">vignette</td><td class="an"><a href="fiche-09-ethique-ai-act.html">9</a></td><td>Notes de 5&nbsp;831 caractères&nbsp;: les six textes européens et l’explication de l’AI Act.</td></tr>
+<tr><td class="an">20</td><td>La pyramide de risque de l’AI Act</td><td class="an">vignette</td><td class="an"><a href="fiche-09-ethique-ai-act.html">9</a></td><td>Les cinq familles de pratiques interdites sont dans les notes.</td></tr>
+<tr><td class="an">21</td><td>« une brève histoire de l’IA » (photographie d’archives)</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>Les huit dates sont dans les notes.</td></tr>
+<tr><td class="an">22</td><td>Tableau de bord — étapes du développement de l’IA</td><td class="an">vignette</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>Ajoute les deux hivers de l’IA, absents de la frise.</td></tr>
+<tr><td class="an">23</td><td>Une session d’ELIZA</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td><b>Transcrite</b> plutôt que reproduite en image.</td></tr>
+<tr><td class="an">24</td><td>Le Perceptron (1958) — Frank Rosenblatt</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">25</td><td>« What’s the difference ? » — Deep Blue / AlphaGo</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">26</td><td>Prix Turing 2019 + réseau convolutif</td><td class="an">vignette</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">27</td><td>Prix Nobel de physique 2024 — Hopfield et Hinton</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">28</td><td>Prix Nobel de chimie 2024 — Baker, Hassabis, Jumper</td><td class="an">reprise</td><td class="an"><a href="fiche-10-histoire.html">10</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">29</td><td>Méthodes de l’IA — les cinq familles</td><td class="an">reprise</td><td class="an"><a href="fiche-11-methodes.html">11</a></td><td>La diapositive la plus dense du corps de l’exposé.</td></tr>
+<tr><td class="an">30</td><td>Carte des méthodes de l’apprentissage automatique</td><td class="an">vignette</td><td class="an"><a href="fiche-11-methodes.html">11</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">31</td><td>Réseaux de neurones artificiels — les architectures</td><td class="an">vignette</td><td class="an"><a href="fiche-11-methodes.html">11</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">32</td><td>Neurone biologique / modèle de neurone artificiel</td><td class="an">vignette</td><td class="an"><a href="fiche-11-methodes.html">11</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">33</td><td>« Questions ? »</td><td class="an">signalée</td><td class="an"><a href="fiche-11-methodes.html">11</a></td><td>Troisième et dernière respiration.</td></tr>
+<tr><td class="an">34</td><td>Tableau de bord n° 1 — mise en contexte de Stargate</td><td class="an">vignette</td><td class="an"><a href="fiche-02-stargate.html">2</a></td><td><b>Déplacée</b>&nbsp;: réunie avec l’annonce de la dia. 3.</td></tr>
+<tr><td class="an">35</td><td>Stargate — un enjeu industriel massif</td><td class="an">reprise</td><td class="an"><a href="fiche-02-stargate.html">2</a></td><td><b>Déplacée</b>. Notes de 4&nbsp;414 caractères&nbsp;: l’énergie, le nucléaire, les lois d’échelle.</td></tr>
+<tr><td class="an">36</td><td>DeepSeek — le challenger ?</td><td class="an">reprise</td><td class="an"><a href="fiche-03-deepseek.html">3</a></td><td><b>Déplacée</b>. Notes de 4&nbsp;389 caractères, dont le raisonnement « DeepThink » intégral.</td></tr>
+<tr><td class="an">37</td><td>« This is the End »</td><td class="an">signalée</td><td class="an"><a href="fiche-12-table-orientation.html">12</a></td><td>Transition de fin de corps d’exposé. Pas de contenu.</td></tr>
+<tr><td class="an">38</td><td>Table d’orientation (carte récapitulative)</td><td class="an">vignette</td><td class="an"><a href="fiche-12-table-orientation.html">12</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">39</td><td>« Pour aller plus loin. Jusqu’où &amp; comment ? »</td><td class="an">reprise</td><td class="an"><a href="fiche-12-table-orientation.html">12</a></td><td><b>Identique</b> à la dia. 42 du 10 janvier.</td></tr>
+<tr><td class="an">40</td><td>Diffusion, Slideshare, licence CC BY-NC-SA</td><td class="an">reprise</td><td class="an"><a href="fiche-12-table-orientation.html">12</a></td><td>Également reprise par l’index.</td></tr>
+<tr><td class="an">41</td><td>Titre — « Rise of the Machines : Appendix »</td><td class="an">signalée</td><td class="an"><a href="fiche-13-limites-physiques.html">13</a></td><td>Marqueur de section. Ouvre l’appendice.</td></tr>
+<tr><td class="an">42</td><td>La loi de Moore (graphique semi-logarithmique)</td><td class="an">vignette</td><td class="an"><a href="fiche-13-limites-physiques.html">13</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">43</td><td>Rendements décroissants et loi d’Amdahl</td><td class="an">vignette</td><td class="an"><a href="fiche-13-limites-physiques.html">13</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">44</td><td>Le neurone artificiel et son tableur</td><td class="an">reprise</td><td class="an"><a href="fiche-13-limites-physiques.html">13</a></td><td><b>Identique</b> à la dia. 26 du 10 janvier&nbsp;: renvoi plutôt que doublon. Notes sur le nombre de paramètres reprises.</td></tr>
+<tr><td class="an">45</td><td>Réseau des années 1980 contre réseau profond</td><td class="an">reprise</td><td class="an"><a href="fiche-13-limites-physiques.html">13</a></td><td>Décrite&nbsp;; l’image est une capture vidéo redondante avec la dia. 26.</td></tr>
+<tr><td class="an">46</td><td><i>Model distillation</i> — enseignant et étudiant</td><td class="an">vignette</td><td class="an"><a href="fiche-14-sous-le-capot.html">14</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">47</td><td>« DeepSeek secrets »</td><td class="an">reprise</td><td class="an"><a href="fiche-14-sous-le-capot.html">14</a></td><td>Notes de 1&nbsp;870 caractères, dont l’exemple « combien y a-t-il de 5 dans 100 ? ».</td></tr>
+<tr><td class="an">48</td><td>Le moteur du <i>deep learning</i> — matériel, programmation, architecture</td><td class="an">reprise</td><td class="an"><a href="fiche-14-sous-le-capot.html">14</a></td><td>Notes de 2&nbsp;691 caractères.</td></tr>
+<tr><td class="an">49</td><td>Les secteurs les plus concernés par l’IA</td><td class="an">reprise</td><td class="an"><a href="fiche-15-ia-et-travail.html">15</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">50</td><td>Dix statistiques sur l’emploi</td><td class="an">reprise</td><td class="an"><a href="fiche-15-ia-et-travail.html">15</a></td><td><b>Transcrit</b> plutôt que reproduit en image.</td></tr>
+<tr><td class="an">51</td><td>The Anthropic Economic Index</td><td class="an">vignette</td><td class="an"><a href="fiche-15-ia-et-travail.html">15</a></td><td>&nbsp;</td></tr>
+<tr><td class="an">52</td><td><i>Global Risks Report 2025</i> — World Economic Forum</td><td class="an">reprise</td><td class="an"><a href="fiche-15-ia-et-travail.html">15</a></td><td><b>Transcrit</b> en tableau&nbsp;: les dix risques classés.</td></tr>
+<tr><td class="an">53</td><td>« Références bibliographiques, films, sources… »</td><td class="an">reprise</td><td class="an"><a href="fiche-16-bibliographie.html">16</a></td><td>Toute la bibliographie est dans les notes&nbsp;: 21 livres, 13 films.</td></tr>
+</table></div>
+<p class="chapeau">Total&nbsp;: 53 diapositives — 32 reprises, 16 vignettes, 5 signalées. Les diapositives 34, 35 et 36 sont remontées vers les fiches&nbsp;2 et&nbsp;3, pour réunir Stargate et DeepSeek avec leurs annonces respectives.</p>
+
+<div class="pied"><a href="fiche-16-bibliographie.html">&#8592; 16. Bibliographie et sources</a><span></span></div>
+<footer>Fiche du mini-site <i>Rise of the Machines — Café Philo, 23 février 2025</i>. Restitution de l’exposé d’origine, sans actualisation. Présentation sous licence CC&nbsp;BY-NC-SA de Christo Datso. Conversion du 03/09/2026.</footer>
+</div></body></html>
