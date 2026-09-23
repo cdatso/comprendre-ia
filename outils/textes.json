@@ -95,7 +95,8 @@
     "css": "<style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style>"
   },
 
-  "noindex": "<meta name=\"robots\" content=\"noindex, nofollow\">",
+  "_noindex_leve": "Leve le 23/09/2026 sur gate AH << go lot visibilite comprendre-ia -- fenetre superviseur >> (decision 8 du 22/09 : noindex a l'ouverture, leve par gate). Valeur d'avant : <meta name=\"robots\" content=\"noindex, nofollow\">. Pour reposer le noindex : remettre cette valeur ici et rejouer assemble.py.",
+  "noindex": "",
 
   "titre_site": "Comprendre et discuter l'IA"
 }

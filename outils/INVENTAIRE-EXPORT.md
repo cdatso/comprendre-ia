@@ -11,7 +11,7 @@
 | Liens internes reecrits | 1097 |
 | Liens renvoyes vers `fonds-sep.html` | 7 |
 | Attributs `href` RETIRES (texte conserve) | 39 |
-| Poids des fichiers copies | 6761904 octets |
+| Poids des fichiers copies | 6757632 octets |
 
 ## 2. Liens retires -- page, texte du lien, cible exclue
 
@@ -69,21 +69,21 @@
 
 | Source (sous `CNF\`) | Export | Octets | SHA-256 |
 |---|---|---:|---|
-| `index.html` | `index.html` | 26453 | `8a72470213308e3b1d9d8c80f52ba5f0f45d0f5d4aad854c3a32858d40f94d73` |
-| `pieces-recurrentes.html` | `pieces-recurrentes.html` | 18467 | `04a11566d88d1506ae6d1272aac19134e2162833fb15e18e28ad3357bb0db3b7` |
-| `provenance-licences.html` | `provenance-licences.html` | 16721 | `579f2c44154aea0e8b7bbcb4d278666c8e40a909c3bae24ebc6fd431603ccbf5` |
-| `IA/top-5-experiences-de-pensee.html` | `top-5-experiences-de-pensee.html` | 49370 | `3a80b69c8cfd41ed193f822f7e05b4548f919fa8bb90e6931093518207f1db44` |
-| `CAFE-PHILO-I/concept-01-tokens.html` | `concepts/concept-01-tokens.html` | 14789 | `357ae91c5c368ecdee7223144af577534b5c741b04062e38258a2afce5a798ae` |
-| `CAFE-PHILO-I/concept-02-vecteurs.html` | `concepts/concept-02-vecteurs.html` | 18445 | `d2cf60cc7e718b3d0aabca57dbe58fe763215e44375c6aab7ffb22b118473de0` |
-| `CAFE-PHILO-I/concept-03-neurone-poids.html` | `concepts/concept-03-neurone-poids.html` | 13758 | `93732fe1d5e233bb9742bf3381d172ee19fd63b526e36d21aa20b77761aef28c` |
-| `CAFE-PHILO-I/concept-04-contexte-attention.html` | `concepts/concept-04-contexte-attention.html` | 12551 | `1a7fb7288d1b17cb52f1ff4168a610af32f11d8a682ca6890105d470cf1dd5c2` |
-| `CAFE-PHILO-I/concept-05-temperature.html` | `concepts/concept-05-temperature.html` | 13298 | `e9b4547048f9c1268a43844da5255b70e76a9b405225c72b55f73063f574ba3f` |
-| `CAFE-PHILO-I/concept-06-hallucinations.html` | `concepts/concept-06-hallucinations.html` | 13776 | `c8b95713f7832ec6b0c3cddcf10af7491091e58341acec563d4d4bb67a59a57d` |
-| `CAFE-PHILO-I/concept-07-verite-direction.html` | `concepts/concept-07-verite-direction.html` | 21161 | `58c807b3800efdd78c1b372721ce6e27778959147b97ae892e7c40e18462cfcb` |
-| `CAFE-PHILO-I/index.html` | `concepts/index.html` | 16843 | `16283c7fd836016a6b1957b5084f69fe344ce64d197ce9b603e7940df24bf67d` |
-| `CAFE-PHILO-I/provenance.html` | `concepts/provenance.html` | 14040 | `c3e5d6f92b93376a71efa6b835c29cf66f89c743d326153cc56f434419dde557` |
-| `CAFE-PHILO-I/support-conference.html` | `concepts/support-conference.html` | 13114 | `2acad201b1a14609e2c83adcbb61c0d67d9bd1c848039196240a515c79475e1f` |
-| `CAFE-PHILO-I/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html` | `concepts/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html` | 8902 | `12a8523f13fe05612ff743e688b0b448b0b4c74dc779b952ec3d06c7d614a660` |
+| `index.html` | `index.html` | 26405 | `9bd3382b9270b0491697f26b18ab0f23cee7940bd3304db04cab8778f4fff0b5` |
+| `pieces-recurrentes.html` | `pieces-recurrentes.html` | 18419 | `be52eead965490e4b1a27c5fb35fda5f3d2847927bf207dd80df721479be2f8d` |
+| `provenance-licences.html` | `provenance-licences.html` | 16673 | `eac1d597614729d437bfebbcc9e3a9ef97cfdb9ab19970a0e07f22155c0b65f8` |
+| `IA/top-5-experiences-de-pensee.html` | `top-5-experiences-de-pensee.html` | 49322 | `c7e014f387906e967d53887a15a6959f7bf998c6ca931e5ce91825e9c6c92c2d` |
+| `CAFE-PHILO-I/concept-01-tokens.html` | `concepts/concept-01-tokens.html` | 14741 | `1f0cd6794d46515be155ba819aff755d3bc69a15f654f9d3d2feafcde90780d4` |
+| `CAFE-PHILO-I/concept-02-vecteurs.html` | `concepts/concept-02-vecteurs.html` | 18397 | `6b313758aebf43a19cfc0a1aed85e7a4a547570747a702dbf3f6a35f933f7c1d` |
+| `CAFE-PHILO-I/concept-03-neurone-poids.html` | `concepts/concept-03-neurone-poids.html` | 13710 | `00444174c2072a16259a01a9c6fce8bdebfdee0786031862511d7fcb1979fc32` |
+| `CAFE-PHILO-I/concept-04-contexte-attention.html` | `concepts/concept-04-contexte-attention.html` | 12503 | `f4430ff2312c39ca4074c67aa73176156ba3b57124f02393b0204b8c9e45b83c` |
+| `CAFE-PHILO-I/concept-05-temperature.html` | `concepts/concept-05-temperature.html` | 13250 | `f9d03acd1f0f1d3b1bdb6b4e83afdda196ffa6d6ca754f5b8883fdc293d0ee10` |
+| `CAFE-PHILO-I/concept-06-hallucinations.html` | `concepts/concept-06-hallucinations.html` | 13728 | `02753620ea878aeb2dddbde5f18983eb7b51fc9bc3368c061e5e5fa720e1c732` |
+| `CAFE-PHILO-I/concept-07-verite-direction.html` | `concepts/concept-07-verite-direction.html` | 21113 | `e32e59c8ded25a096d4d70937c6d1c036264de71f1c58047963d960af7f1a2ba` |
+| `CAFE-PHILO-I/index.html` | `concepts/index.html` | 16795 | `3e7eb4251a4e7298f527e5a8d153e4dacb87b5eac0475d0eff0f97ee81ad85a5` |
+| `CAFE-PHILO-I/provenance.html` | `concepts/provenance.html` | 13992 | `f1c85138e7f405d31cc975b7f722daa6477398b3a0cb609e243bd7dbc6c79957` |
+| `CAFE-PHILO-I/support-conference.html` | `concepts/support-conference.html` | 13066 | `e657e76250fb09d29cb4eeb395e528f831ef4b333e0780c196da15aaecb7ab8f` |
+| `CAFE-PHILO-I/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html` | `concepts/cafephilo-demo-vecteurs/ESPACE-LATENT-INTERACTIF.html` | 8854 | `b40f9d4c1066978248b7b383c7c50368a4961315561d54c7e4a77d71e4f9472f` |
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide1.PNG` | `concepts/cafephilo-slides/apercus/Slide1.PNG` | 19096 | `a953e7e9b948867a0ff586e3292e5dcab851e9755d7d2beb19466c6d8ce55e90` |
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide2.PNG` | `concepts/cafephilo-slides/apercus/Slide2.PNG` | 16578 | `ac3df9d0ae4961fce5aa1143f16da5fccd36ed5f4651f96fadd0dc72b2bd86fd` |
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide3.PNG` | `concepts/cafephilo-slides/apercus/Slide3.PNG` | 17988 | `9b678172ce91823e3e32cdcb9de5a8fe4753772baceda6ef8e34018cca76486a` |
@@ -91,38 +91,38 @@
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide5.PNG` | `concepts/cafephilo-slides/apercus/Slide5.PNG` | 19955 | `fe478b633f9b9b65b57edde9a76294b6f8dbc77abf91b8936c7f95c2fc50f028` |
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide6.PNG` | `concepts/cafephilo-slides/apercus/Slide6.PNG` | 21811 | `5cc7061882ce0312a05e14b12f31ee665e82e810f373c3a3245a86e6e08c78bc` |
 | `CAFE-PHILO-I/cafephilo-slides/apercus/Slide7.PNG` | `concepts/cafephilo-slides/apercus/Slide7.PNG` | 16357 | `9731600b42d1708b06daaa8894b4617638b48458f59d60630c037c1d582f94fb` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/bibliographie.html` | `etude-hallucinations-ia/bibliographie.html` | 18928 | `9f643f1b473e33b2991ede2ded1f2139ff281f4de5e86d893fecc3d140792e25` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/index.html` | `etude-hallucinations-ia/index.html` | 7498 | `8c4f1e2e5334339820ce5e2908dd882b9bda85a0a99fb4fb009e281eeac47417` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/phenomenes-observes.html` | `etude-hallucinations-ia/phenomenes-observes.html` | 38151 | `3336feefd64c9790db56376fb787027f7a62d9d2b846245e772e51f73af71c21` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/pistes.html` | `etude-hallucinations-ia/pistes.html` | 8203 | `ed0a8cb10a5c50e9a5fbb5e3bb28c0a8d4059d2a0e5a8679a2883afe745103fe` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-academique.html` | `etude-hallucinations-ia/revue-academique.html` | 14380 | `624790d00768ee92850f0090cf46d4ea3cdcea2a5d0839ad77dbb09ed25752c1` |
-| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-grand-public.html` | `etude-hallucinations-ia/revue-grand-public.html` | 17724 | `cb944a074ab0ce1b6866dfbd4db09b1624578186d8284477100990fba806326a` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/bibliographie.html` | `etude-hallucinations-ia/bibliographie.html` | 18880 | `9981d432d148c6dd7259cb7a58f6dbbffeb9cc3e6ae32e71fecbf89d7fbd9d7c` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/index.html` | `etude-hallucinations-ia/index.html` | 7450 | `362f4afd1267c6dd0f7af4baa67a804b66115cb2f848f6440ebce94b66793ac5` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/phenomenes-observes.html` | `etude-hallucinations-ia/phenomenes-observes.html` | 38103 | `bf6ed81ddde9c034c909e092dc527c9a25b947ddb442f94690c291f1e9379777` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/pistes.html` | `etude-hallucinations-ia/pistes.html` | 8155 | `1f7dec95499c58366ae0fc3af970c073269ca67035ad0eee4a31209ddb3cd5cc` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-academique.html` | `etude-hallucinations-ia/revue-academique.html` | 14332 | `197f06524233c77c4e1c521f39a8cc4d25993a8fbd9ea44edf53733515ccbb7d` |
+| `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/revue-grand-public.html` | `etude-hallucinations-ia/revue-grand-public.html` | 17676 | `640137f740f3dad3c21c98741bc8e71d6aca128dc856fcec588af5884c1c9da9` |
 | `CAFE-PHILO-I/étude surs les hallucinations de l'IA/site/style.css` | `etude-hallucinations-ia/style.css` | 6533 | `ed94fb19036fb79fc2904e2455ed30bf4e05690862a13abb34209780a44b86ce` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/agents.html` | `ia-rag-cognition-philosophie-esprit/agents.html` | 12900 | `e90c11a5db6b21243b182015daa83b07ea978025f71b17747003a2b74cca7c1e` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/bibliographie.html` | `ia-rag-cognition-philosophie-esprit/bibliographie.html` | 23895 | `04a1bf7f7031457fdb70683817543244d179521178e74859011876667c318aba` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/debats.html` | `ia-rag-cognition-philosophie-esprit/debats.html` | 19568 | `2eb1b627eb45f0c5b66dca1a162ffdd00b047ee4f58c207012f6d5cd0ea43805` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/fondements-rag.html` | `ia-rag-cognition-philosophie-esprit/fondements-rag.html` | 16502 | `d8c4d51e765e59d44c796a12e1229b418e472ed8f4be7573bbb807ef4e4ad169` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/index.html` | `ia-rag-cognition-philosophie-esprit/index.html` | 9366 | `ac15a065169e7866c68f67230d185aa342159db53d43d1de36462f43683eb186` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/llm-local.html` | `ia-rag-cognition-philosophie-esprit/llm-local.html` | 18746 | `71d6abc2ad320b96a47c951f28dbb1ddbc4a970744f750a5187fa4dc6632969b` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/oeuvres.html` | `ia-rag-cognition-philosophie-esprit/oeuvres.html` | 22044 | `2aba207713c60bd7f34d9b90a088b95ef5bf1de7724c3236d4686aa3bd9fb41d` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/philosophie-esprit.html` | `ia-rag-cognition-philosophie-esprit/philosophie-esprit.html` | 15736 | `96a387bc31453d02e63141098cfb6ff5b1f1e79e304dafd5409850fb5ff79665` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/sciences-cognitives.html` | `ia-rag-cognition-philosophie-esprit/sciences-cognitives.html` | 12937 | `ef9526df35c0ea342a89861e88e9e1a175fb3dae076bf4fe48464ab9131a22e3` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/agents.html` | `ia-rag-cognition-philosophie-esprit/agents.html` | 12852 | `e40f3bc4da63d61a02e12f4c8919546877273a230547aa09a2da443f6462a5db` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/bibliographie.html` | `ia-rag-cognition-philosophie-esprit/bibliographie.html` | 23847 | `5201f22a716ca865a3d5bfd46af8cbaff90b623da1fdb942dba8d518b7fb63ce` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/debats.html` | `ia-rag-cognition-philosophie-esprit/debats.html` | 19520 | `2d83d9d23079f8187d3b0605354505bd205310f7d9534588cb9c36cec1d029d8` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/fondements-rag.html` | `ia-rag-cognition-philosophie-esprit/fondements-rag.html` | 16454 | `35530d5225031bd2fa5475d18571deb0cea5c2072aa746ae36c0454f7432aa3d` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/index.html` | `ia-rag-cognition-philosophie-esprit/index.html` | 9318 | `234cda634b7b0f152b23a7d53d3a284d16523285b3d83b25a9106e959bea6850` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/llm-local.html` | `ia-rag-cognition-philosophie-esprit/llm-local.html` | 18698 | `7d1b7bf02c566153688be77a1e4fb42d38a476a022225212cb4356bac168a66c` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/oeuvres.html` | `ia-rag-cognition-philosophie-esprit/oeuvres.html` | 21996 | `aebbc67788d4e3579bce7c33c5ff444987a6d377c2c11d912dbef11a6dd523e0` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/philosophie-esprit.html` | `ia-rag-cognition-philosophie-esprit/philosophie-esprit.html` | 15688 | `aa19319d13ad930baa46f77e4d73b878b4cac640c388f423025372acee529274` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/sciences-cognitives.html` | `ia-rag-cognition-philosophie-esprit/sciences-cognitives.html` | 12889 | `d2d2c11d72e315bd8e1d76b26bb3e93149316c79ddb046da33d83708e4719807` |
 | `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/style.css` | `ia-rag-cognition-philosophie-esprit/style.css` | 6974 | `bcf6c55d6e9f75860e1d38524bbc4ed0421d74491c145bda5730a299b3a665b4` |
-| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/vector-db-cinema.html` | `ia-rag-cognition-philosophie-esprit/vector-db-cinema.html` | 19481 | `acb24cea41a0cb2ce287e04d1355c09743da4c45ca897a9bbb8495ac1335baaf` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/correspondance-diapositives.html` | `conference-reduiste-2025-01-10/correspondance-diapositives.html` | 17030 | `f7d8f347b63d2d1b90b350c739baa7b74216d4b3ecf2639889cee86cd55cece5` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-01-ouverture.html` | `conference-reduiste-2025-01-10/fiche-01-ouverture.html` | 6981 | `286a5c8419499789547d2d87c80cef7e89b8cd90a333bee43132c9c2af9109f2` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-02-ce-qui-inquiete.html` | `conference-reduiste-2025-01-10/fiche-02-ce-qui-inquiete.html` | 8381 | `e5c791af8440112af5634d1426e923b8f02a844cf3e93112ebd0650a72cdf61b` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-03-regarder-penser.html` | `conference-reduiste-2025-01-10/fiche-03-regarder-penser.html` | 8186 | `852f08bd369fc96cffcff141b305cf7a645d5306a6c76616e90f77b928d853b2` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-04-thema-1-quest-ce-que-lia.html` | `conference-reduiste-2025-01-10/fiche-04-thema-1-quest-ce-que-lia.html` | 8236 | `fe9a77ffb98cb239544767c76bcded2c2289121ce1abe927946f2c3d0fd81acd` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-05-ai-ml-dl.html` | `conference-reduiste-2025-01-10/fiche-05-ai-ml-dl.html` | 9281 | `706302839f824e4cb3b6f2ba8bd72615141ea24723b65640fa3a968a5aeaa5cb` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-06-narrow-general-super.html` | `conference-reduiste-2025-01-10/fiche-06-narrow-general-super.html` | 7536 | `a883e4cd329878d15cce29d19eb1922949c259779622d61dfea6e14fb80c4cbb` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-07-sous-le-capot.html` | `conference-reduiste-2025-01-10/fiche-07-sous-le-capot.html` | 8009 | `f9950e5e5f4e4608dc0a9cf67ebf6b5dc4763fd4a94af5ed530f1389f5df627c` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-08-chronologie.html` | `conference-reduiste-2025-01-10/fiche-08-chronologie.html` | 7282 | `471d6efd6a1392439b0ebccb50486a4364b49f68da7e53f2d513801ab8e1df55` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-09-outils-generatifs.html` | `conference-reduiste-2025-01-10/fiche-09-outils-generatifs.html` | 7780 | `259e5a397da0f47dcb8ff5621bad2764a5cc84a849f33d141b96c4e3cd2a0be0` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-10-risques-regulation.html` | `conference-reduiste-2025-01-10/fiche-10-risques-regulation.html` | 10509 | `040b7786ff75d454022cc180c423502e120dea7cf6d8297280e3b52492ef6432` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-11-aller-plus-loin.html` | `conference-reduiste-2025-01-10/fiche-11-aller-plus-loin.html` | 7727 | `545f0d01efe00d0cb2663609d8b50c9a5d4eaa4c412e04d5db6482043d500acd` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-12-films-livres-fin.html` | `conference-reduiste-2025-01-10/fiche-12-films-livres-fin.html` | 8645 | `7ba2e60dc0cf184e0e5dc9510bef18668e44e7f782b39cee3837c0a799298709` |
-| `IA/export de la conférence Reduiste du 10 janvier 2025/index.html` | `conference-reduiste-2025-01-10/index.html` | 17168 | `98268c47e7320de9ac5a0981e9fd882449ec5c36198c03f73192ee3f43c89f43` |
+| `CAFE-PHILO-II/IA-RAG Agents  Cognitive Science  Philosophy of Mind/site/vector-db-cinema.html` | `ia-rag-cognition-philosophie-esprit/vector-db-cinema.html` | 19433 | `90cb9337a4c2dac409f37775611cc9a85d33415a13fa489698cabb54b4a89f6d` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/correspondance-diapositives.html` | `conference-reduiste-2025-01-10/correspondance-diapositives.html` | 16982 | `458e2cfdc5af3f76e1f7e1fc1a4813e83965eb08f143026083b41be01193b174` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-01-ouverture.html` | `conference-reduiste-2025-01-10/fiche-01-ouverture.html` | 6933 | `8c2fffbd1549de3e5978251d1599c9d13936200c87841f74da55aab3804cfc64` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-02-ce-qui-inquiete.html` | `conference-reduiste-2025-01-10/fiche-02-ce-qui-inquiete.html` | 8333 | `53a86cbc435d155bd929d137c5e6db2f7703122fabfe35d4f93349db7dd57f62` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-03-regarder-penser.html` | `conference-reduiste-2025-01-10/fiche-03-regarder-penser.html` | 8138 | `0599b0891fa6b612e93e8e2b7b34d07ab7a146c2a1075211916326f7e9a3ba41` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-04-thema-1-quest-ce-que-lia.html` | `conference-reduiste-2025-01-10/fiche-04-thema-1-quest-ce-que-lia.html` | 8188 | `ef239526aa1dd750a6eec7a6b7c9357b866f130c5c3f9af7be4dcf7e27224aa5` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-05-ai-ml-dl.html` | `conference-reduiste-2025-01-10/fiche-05-ai-ml-dl.html` | 9233 | `f0a511b07f027f49fb534840b09b6aaba9d02e39b08a788a486bd646e9334db3` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-06-narrow-general-super.html` | `conference-reduiste-2025-01-10/fiche-06-narrow-general-super.html` | 7488 | `8f08235c125a1ac8415c001138f68ae6adb9c91d3760ea122ec9449b8cececcd` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-07-sous-le-capot.html` | `conference-reduiste-2025-01-10/fiche-07-sous-le-capot.html` | 7961 | `fddb72522c2a71725d52269fe10d2010b639792089a4fea56c4dc0b77c52a019` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-08-chronologie.html` | `conference-reduiste-2025-01-10/fiche-08-chronologie.html` | 7234 | `bf2e5247e576ab087dd3cfe9d86b5ab5cbaec38424319abaf059bae6fd4ade3b` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-09-outils-generatifs.html` | `conference-reduiste-2025-01-10/fiche-09-outils-generatifs.html` | 7732 | `f94f03adae45998b75d1e7a77528838734a846ccb03a93ef93c17f15b6a554e5` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-10-risques-regulation.html` | `conference-reduiste-2025-01-10/fiche-10-risques-regulation.html` | 10461 | `5c6756cd1d2717cb1f7c486a7f610776c8863d086adedcac1c769b3926b69532` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-11-aller-plus-loin.html` | `conference-reduiste-2025-01-10/fiche-11-aller-plus-loin.html` | 7679 | `c9c220cfd6a44c5f5c4b520d333f241b482e96e372e6b327ac5fe16d5dc56044` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/fiche-12-films-livres-fin.html` | `conference-reduiste-2025-01-10/fiche-12-films-livres-fin.html` | 8597 | `9a9349f342164f5202c260891dce3973d2ab7e30e7bb7a663b6310e0fc4d80eb` |
+| `IA/export de la conférence Reduiste du 10 janvier 2025/index.html` | `conference-reduiste-2025-01-10/index.html` | 17120 | `5e00cede4a7c7340df09e6640392051690fd485e555819d10effdf20b0dbe96e` |
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-13.jpg` | `conference-reduiste-2025-01-10/images/dia-13.jpg` | 193155 | `b0ddaa24fb02cff3124d4c3a76ab9b991a673e21ac03b197d16b79af5adb5453` |
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-14.jpg` | `conference-reduiste-2025-01-10/images/dia-14.jpg` | 150625 | `3c2f487edf00faa458410b1e6553cb46a5284e8f6c2ab67bb977c1a94a612c91` |
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-16.jpg` | `conference-reduiste-2025-01-10/images/dia-16.jpg` | 204142 | `723a1afa2204c337c93e553ead27277cbad79ef82ff0bcadb62c483c38ebcfe1` |
@@ -132,24 +132,24 @@
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-26.jpg` | `conference-reduiste-2025-01-10/images/dia-26.jpg` | 83467 | `0a4e15b5522ddd1c6cc66d0dacfe90a59ef66ee02e98b1524d9624856f0ef2ae` |
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-27.jpg` | `conference-reduiste-2025-01-10/images/dia-27.jpg` | 79947 | `169b83f685b577b9ff53f23f2ae6435c6ba14ff0da736bfd6be804938ed54a9e` |
 | `IA/export de la conférence Reduiste du 10 janvier 2025/images/dia-28.jpg` | `conference-reduiste-2025-01-10/images/dia-28.jpg` | 101034 | `a1b9c084f19fd64c132039c7b0fe2f5744474464aa2592ba6b1f9b866ef5895a` |
-| `IA/export de la conférence Café Philo du 23 février 2025/correspondance-diapositives.html` | `conference-cafe-philo-2025-02-23/correspondance-diapositives.html` | 19216 | `f433dfcdefe995f4ee8eb337ad368f79ff8fd8cfc82fe17a6af5ea0214d788e4` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-01-ouverture.html` | `conference-cafe-philo-2025-02-23/fiche-01-ouverture.html` | 10243 | `2706521602770cf9ca08bb23fa5a0b462d151b16987c43b7d221e237afe9af49` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-02-stargate.html` | `conference-cafe-philo-2025-02-23/fiche-02-stargate.html` | 13752 | `38a1fd84ecc7844b668694f3963e77309dd150e36319bf44a44f0885570ce34f` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-03-deepseek.html` | `conference-cafe-philo-2025-02-23/fiche-03-deepseek.html` | 11179 | `b80deb36a33e4eedda195eb550a8ddfd0610a6ea056d6a56811565fc3b1842ed` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-04-paris.html` | `conference-cafe-philo-2025-02-23/fiche-04-paris.html` | 13360 | `6bcc49e7f49cbfe9ceb4f4be89b1f40e184e86df1074e1c58a301ce571202014` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-05-genres-especes.html` | `conference-cafe-philo-2025-02-23/fiche-05-genres-especes.html` | 11058 | `d9bb08e59a5620ce4146385d2487bf50f6ec521e1e417923f549fd9440453e63` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-06-ani-agi-asi.html` | `conference-cafe-philo-2025-02-23/fiche-06-ani-agi-asi.html` | 11992 | `78179c8d0d452690a512bb729a15edd80e4f389bd84a12e9cb53fadbe9c02ffe` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-07-leviathan.html` | `conference-cafe-philo-2025-02-23/fiche-07-leviathan.html` | 9640 | `c99113d2dfa4512e2929105f3f2769ede9f8b518ea49fcb7b6ebc6c120e2b985` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-08-mensonges.html` | `conference-cafe-philo-2025-02-23/fiche-08-mensonges.html` | 11290 | `72401782892b877e63bdaa7177701d05333b59fe3b09a612bb484b7c3f2682c9` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-09-ethique-ai-act.html` | `conference-cafe-philo-2025-02-23/fiche-09-ethique-ai-act.html` | 14739 | `be5bbc3457b4e1b69dd4e12b0dc9d7c2d436d9c98d337f9d2316c795282e3306` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-10-histoire.html` | `conference-cafe-philo-2025-02-23/fiche-10-histoire.html` | 13550 | `17e993b2a2b0946f4a3321a0ba05d5210c4fb412f75572f65a9f278269ad5e75` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-11-methodes.html` | `conference-cafe-philo-2025-02-23/fiche-11-methodes.html` | 11855 | `1cd90f3a234db145633c5c7bf2f3a9f86941177c278c5129679ed7fc3e464397` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-12-table-orientation.html` | `conference-cafe-philo-2025-02-23/fiche-12-table-orientation.html` | 12266 | `25e573690755ab899bff39768e1011d0ec92fab698e62a40d6030dd20e742179` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-13-limites-physiques.html` | `conference-cafe-philo-2025-02-23/fiche-13-limites-physiques.html` | 11774 | `ea5db098ea59ca03ff6dcd9c54523786e9652f3f53820d5007380f298985abe4` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-14-sous-le-capot.html` | `conference-cafe-philo-2025-02-23/fiche-14-sous-le-capot.html` | 12860 | `7b069ab585efe43f58a72adb5de2af4ecfef048de2f558817eb06beab54e058b` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-15-ia-et-travail.html` | `conference-cafe-philo-2025-02-23/fiche-15-ia-et-travail.html` | 13669 | `7787a34d7c44dbd395bcae94f13614fcd15fc7df5269bef5dc9caa1e61a08ee3` |
-| `IA/export de la conférence Café Philo du 23 février 2025/fiche-16-bibliographie.html` | `conference-cafe-philo-2025-02-23/fiche-16-bibliographie.html` | 12765 | `8b1aa16e7ea642c53ec97a57cd3bf73a115052cf6d09f5577e01035ee34bd78f` |
-| `IA/export de la conférence Café Philo du 23 février 2025/index.html` | `conference-cafe-philo-2025-02-23/index.html` | 24102 | `9083b858795811efecb9198f7368da555d4e18ce2f0d6a886b0a7916e217a436` |
+| `IA/export de la conférence Café Philo du 23 février 2025/correspondance-diapositives.html` | `conference-cafe-philo-2025-02-23/correspondance-diapositives.html` | 19168 | `884fb47fcf5a3167b503bb3332c14d6cb69106db2adaa036fd698b4c18799350` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-01-ouverture.html` | `conference-cafe-philo-2025-02-23/fiche-01-ouverture.html` | 10195 | `04a23d14359649d1cf3213639c935c7a9d0b47c12da0159be2f6a67222e62b30` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-02-stargate.html` | `conference-cafe-philo-2025-02-23/fiche-02-stargate.html` | 13704 | `c415912b63d84f7eafb28b87112957dafc0fe3ea896b5dcdefbb615867259b73` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-03-deepseek.html` | `conference-cafe-philo-2025-02-23/fiche-03-deepseek.html` | 11131 | `16e115405394bb39b134b9973fb93e541de44a2e7318440f14d8fa98f05d7e06` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-04-paris.html` | `conference-cafe-philo-2025-02-23/fiche-04-paris.html` | 13312 | `ed9576c5fa9426e67a40641509fecc9db1631fdc4022d81ce4638dde7616d309` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-05-genres-especes.html` | `conference-cafe-philo-2025-02-23/fiche-05-genres-especes.html` | 11010 | `0d9e0fed3048e0e9c45ea0dd79518e1321099b0b1626c244dfdb949c4a81b197` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-06-ani-agi-asi.html` | `conference-cafe-philo-2025-02-23/fiche-06-ani-agi-asi.html` | 11944 | `0b3e98142b43a49d611f7380ffea5d0fdb60017465b1d397b6edcb0fe013045c` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-07-leviathan.html` | `conference-cafe-philo-2025-02-23/fiche-07-leviathan.html` | 9592 | `a3002b0db1dec238a4229aa68e6c55472299bf00f1919fb405eb5af3b1ae86a9` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-08-mensonges.html` | `conference-cafe-philo-2025-02-23/fiche-08-mensonges.html` | 11242 | `ad5191f3ee74ab9207d36487bad77b830050882b88e1db1d295456a0b46bd772` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-09-ethique-ai-act.html` | `conference-cafe-philo-2025-02-23/fiche-09-ethique-ai-act.html` | 14691 | `231a17c180b62a4023f1b37d2d5a065261751f427c5f90f6840d2b8e078e4f21` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-10-histoire.html` | `conference-cafe-philo-2025-02-23/fiche-10-histoire.html` | 13502 | `5f0b2256242c31752970a3d97243448002e1771779ea82112dc87b21b58f1b60` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-11-methodes.html` | `conference-cafe-philo-2025-02-23/fiche-11-methodes.html` | 11807 | `6b0185ef97bfee44b95778b2d470d46c07ccf1c9ee7d5a3de0e61f015ff6ed1b` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-12-table-orientation.html` | `conference-cafe-philo-2025-02-23/fiche-12-table-orientation.html` | 12218 | `12d0b695a2f0a2f9032de93a391085eddc9b84d70b87922ae3d276a9fe1b7da3` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-13-limites-physiques.html` | `conference-cafe-philo-2025-02-23/fiche-13-limites-physiques.html` | 11726 | `03b4f75be9924dca456ec68b15d06f965237532a870445055117c220e0772510` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-14-sous-le-capot.html` | `conference-cafe-philo-2025-02-23/fiche-14-sous-le-capot.html` | 12812 | `3ee1a7cebfbf0fde1b8fb55ab0fbed9a495818ff5879b268e4a186e4a0eccf47` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-15-ia-et-travail.html` | `conference-cafe-philo-2025-02-23/fiche-15-ia-et-travail.html` | 13621 | `d89593eb1a8fc404bab407cd55033bb9503dea673b84c2dc773f7d9337618b59` |
+| `IA/export de la conférence Café Philo du 23 février 2025/fiche-16-bibliographie.html` | `conference-cafe-philo-2025-02-23/fiche-16-bibliographie.html` | 12717 | `8d3255d0525511b39d3dc5a603d764efa7a3835a1d87cc38ef44c57f4d46cf69` |
+| `IA/export de la conférence Café Philo du 23 février 2025/index.html` | `conference-cafe-philo-2025-02-23/index.html` | 24054 | `e0d8877799c178a64c63a13431d753488cfdc24e1c26896caacf639f8df79ba6` |
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-10.jpg` | `conference-cafe-philo-2025-02-23/images/dia-10.jpg` | 91590 | `21a9e998ffebd9c6b52eebf0b1cd7727c70fdfff964c3eb97b5baf918fd62347` |
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-12.jpg` | `conference-cafe-philo-2025-02-23/images/dia-12.jpg` | 63563 | `b61013c0c8b70025780d365ec5bc07b890873108a30df35abee9f5ad21516dd9` |
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-16.jpg` | `conference-cafe-philo-2025-02-23/images/dia-16.jpg` | 220246 | `2076b7ea53c8704180417eea8816bf782165c76891756b30b8824fd39cce1040` |
@@ -166,28 +166,28 @@
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-43.jpg` | `conference-cafe-philo-2025-02-23/images/dia-43.jpg` | 109525 | `5a42e4f5cbdc9f153e2d0e17c2cf108270c7e42a43fa8c5c7d7a24fa38ff49a8` |
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-46.jpg` | `conference-cafe-philo-2025-02-23/images/dia-46.jpg` | 69676 | `454d48e293829539fbd7de4ea46ab8c3fcc66b8787469c8b595653af768c4399` |
 | `IA/export de la conférence Café Philo du 23 février 2025/images/dia-51.jpg` | `conference-cafe-philo-2025-02-23/images/dia-51.jpg` | 66911 | `87967761bf90c726b8da2a78675617954cc100a32b2bf28f5f3ceba12869c23a` |
-| `IA/export de la conférence NDBI du 12 février 2026/correspondance-diapositives.html` | `conference-ndbi-2026-02-12/correspondance-diapositives.html` | 27826 | `92626129b4e5f4c63b42cf3b170810aed8f4bf7fdab6e46ecfb9f5d23f7d1d61` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-01-ouverture.html` | `conference-ndbi-2026-02-12/fiche-01-ouverture.html` | 11782 | `8c0c76842916567d3635c7495158c7e0964c92ba21f1caa06bfbaff32af647ae` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-02-degre-zero.html` | `conference-ndbi-2026-02-12/fiche-02-degre-zero.html` | 10287 | `a0798d1c9013639f89943e624812cfe26428250bda77f7bb21bf1e784ed01691` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-03-machines-xenophobes.html` | `conference-ndbi-2026-02-12/fiche-03-machines-xenophobes.html` | 11382 | `51a6e0c2d967f6653aeb3f16dd8fdd8885659babb0c311a4556cae9179213175` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-04-ice.html` | `conference-ndbi-2026-02-12/fiche-04-ice.html` | 10724 | `6ac8b72032d1c60bc161a6d352e4fad4b8753b07170bc058408bea4c8f83c28a` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-05-consensus.html` | `conference-ndbi-2026-02-12/fiche-05-consensus.html` | 10677 | `980271ded72957b2689487d74b4e481a943a6b826076327b16a2122cabcdad21` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-06-reconnaissance-faciale.html` | `conference-ndbi-2026-02-12/fiche-06-reconnaissance-faciale.html` | 12978 | `9179ce4b4fb6e14fe0f0a571e7c3b09501942120d349daacc14d4db0b93d6935` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-07-belgique.html` | `conference-ndbi-2026-02-12/fiche-07-belgique.html` | 15147 | `1b43b603d6060e68bc29e6b56e30fb1c9454132212d3a7a50e9d5c96e11a506f` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-08-trois-lunettes.html` | `conference-ndbi-2026-02-12/fiche-08-trois-lunettes.html` | 15275 | `ab5ec2912d71dc56ffc3a277f2a321428dd755ebfdbb9fe487981fda916da380` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-09-trois-verdicts.html` | `conference-ndbi-2026-02-12/fiche-09-trois-verdicts.html` | 11435 | `1f3a9e93d2881a97396be5d0077e0f04bf40bd7ea5006526bf41637e8237e25a` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-10-mensonges.html` | `conference-ndbi-2026-02-12/fiche-10-mensonges.html` | 10193 | `91d0621f084b317811f5ca66983846e3c4032eb655c4bdb8cc86af13a7142493` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-11-exfiltration.html` | `conference-ndbi-2026-02-12/fiche-11-exfiltration.html` | 12771 | `43329cab410406afa1a4dfae9ecf539c8242a6c889d26818b963afa1fba75509` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-12-religion-agents.html` | `conference-ndbi-2026-02-12/fiche-12-religion-agents.html` | 10256 | `59636e28c5c03268249b8239b5cc59f631bbe91d20a59aff4b509a9ae7871e69` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-13-alignement.html` | `conference-ndbi-2026-02-12/fiche-13-alignement.html` | 13097 | `24a8f828da743a73edf0a5772c840707c17e29416d70d1620ec370fc558ecbea` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-14-critiques.html` | `conference-ndbi-2026-02-12/fiche-14-critiques.html` | 10916 | `b3375e597e9ee5f1c68a43d710fb726dd8e29e12633be4756060e9a0b43e8eb4` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-15-se-former.html` | `conference-ndbi-2026-02-12/fiche-15-se-former.html` | 11816 | `2b2c59130c8545d3e0b80cecf0fe16bef87f9376d8aa2020dd8bbb2205a24b26` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-16-ai-act.html` | `conference-ndbi-2026-02-12/fiche-16-ai-act.html` | 11523 | `8bb2874d4cc0549e941241108dde62baddc15dc1c43149119e6e38b105709334` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-17-fracture-numerique.html` | `conference-ndbi-2026-02-12/fiche-17-fracture-numerique.html` | 9370 | `7b7980ec930e35c5138c444c96141cfb676f0554554b2432d8abcb4517f0e15b` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-18-ressources.html` | `conference-ndbi-2026-02-12/fiche-18-ressources.html` | 16499 | `964bbcbe47c5ca44e309f1ae7255229120606a2f3b6eafd30bcb8fa4ae205606` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-19-conference-precedente.html` | `conference-ndbi-2026-02-12/fiche-19-conference-precedente.html` | 10421 | `46694b7a4bb59a246ae46effe29d06f0b94448589a518139f37e3d55c2f779b4` |
-| `IA/export de la conférence NDBI du 12 février 2026/fiche-20-bibliographie.html` | `conference-ndbi-2026-02-12/fiche-20-bibliographie.html` | 13071 | `4bc3ba0df4da14fea5f39059784403a246b21ef0adab562fa69700008421787e` |
-| `IA/export de la conférence NDBI du 12 février 2026/index.html` | `conference-ndbi-2026-02-12/index.html` | 25333 | `914f784f555182afe36ff5f14f3f0046d0d26f7412a515589732e5ded3f896de` |
+| `IA/export de la conférence NDBI du 12 février 2026/correspondance-diapositives.html` | `conference-ndbi-2026-02-12/correspondance-diapositives.html` | 27778 | `79ecbf3cd730257f4e68c9ee13b4ebd03ddd9b0fed2e62fb1841ae78e8d64919` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-01-ouverture.html` | `conference-ndbi-2026-02-12/fiche-01-ouverture.html` | 11734 | `3f9731e1eb06cbfac57b23d6e152e8af07adcae875ecb51a0cb7257feea32260` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-02-degre-zero.html` | `conference-ndbi-2026-02-12/fiche-02-degre-zero.html` | 10239 | `81b71a5a8c96d0f40c8e9120dcb3964ea87801880e7b956876f165e92876bc88` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-03-machines-xenophobes.html` | `conference-ndbi-2026-02-12/fiche-03-machines-xenophobes.html` | 11334 | `b7e8395a626291b98c3119df3214746abe8bfba885dfa18b998bcc838b870c9c` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-04-ice.html` | `conference-ndbi-2026-02-12/fiche-04-ice.html` | 10676 | `74c6e0442d3419d5c0dfb82cd4d31fd52af3e074336df9de208a1a832316d362` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-05-consensus.html` | `conference-ndbi-2026-02-12/fiche-05-consensus.html` | 10629 | `5377f8620f9886914340317f894ddb253dcc5b1227d464e84f8943ce47d2eb82` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-06-reconnaissance-faciale.html` | `conference-ndbi-2026-02-12/fiche-06-reconnaissance-faciale.html` | 12930 | `f598d8dab8ba1ac7a53504fb166ee77691cf313c324baaa256accc3368970e71` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-07-belgique.html` | `conference-ndbi-2026-02-12/fiche-07-belgique.html` | 15099 | `e96bbdd2b431b82aa194fc5c6beed5270520bb263e93d2787f20fc1b967a87f1` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-08-trois-lunettes.html` | `conference-ndbi-2026-02-12/fiche-08-trois-lunettes.html` | 15227 | `9523048ed349355edb1292ade2c23eba276c1900a3c36f2e1bdaad18f23c0a8d` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-09-trois-verdicts.html` | `conference-ndbi-2026-02-12/fiche-09-trois-verdicts.html` | 11387 | `f639ba4cc7325bf43bd1e9f43c5d866ea712b13b2082c8cd8960d333ce206b23` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-10-mensonges.html` | `conference-ndbi-2026-02-12/fiche-10-mensonges.html` | 10145 | `2d8fcb98d9d33dac295a8b9f5f9e603d793bd9f334eab20b32a8f2eb45be6574` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-11-exfiltration.html` | `conference-ndbi-2026-02-12/fiche-11-exfiltration.html` | 12723 | `2f93dc49cc58c789c6a2c524f1d83df050a86227bfc1013fa099ea93d81011dd` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-12-religion-agents.html` | `conference-ndbi-2026-02-12/fiche-12-religion-agents.html` | 10208 | `1aba97204fbbee703811ebe6a8b1b786f008cd0e25142909683113b74a7f11cd` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-13-alignement.html` | `conference-ndbi-2026-02-12/fiche-13-alignement.html` | 13049 | `40cf07e4e526f0049312c3dd4776ff1e96f509bab60e18f19984f12a7cb00b80` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-14-critiques.html` | `conference-ndbi-2026-02-12/fiche-14-critiques.html` | 10868 | `4d83350c534a8994e4db77e61eb6f809d2d8946ea6430c4725ac4a4b32a4f353` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-15-se-former.html` | `conference-ndbi-2026-02-12/fiche-15-se-former.html` | 11768 | `a6c5ed0cea18c5f7724f7db130e1a7e13412f467a7341e27c6fdea1a49db83c6` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-16-ai-act.html` | `conference-ndbi-2026-02-12/fiche-16-ai-act.html` | 11475 | `25d52ce22bca6410a9838fe6477bb3e511b53515366212066c32dcdd3a87db5f` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-17-fracture-numerique.html` | `conference-ndbi-2026-02-12/fiche-17-fracture-numerique.html` | 9322 | `9f9a44818e4fef714bb436a177fa8f0b91e683a20e8906786ad99b7f85986e56` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-18-ressources.html` | `conference-ndbi-2026-02-12/fiche-18-ressources.html` | 16451 | `b22c6b813eed197476f5f22b5092d035430d3b1ecdb9ea8dd32500f0100cc70f` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-19-conference-precedente.html` | `conference-ndbi-2026-02-12/fiche-19-conference-precedente.html` | 10373 | `227770f9054ba6c8ea35e30141aeb18194d819351e0c064babfb6de021d532da` |
+| `IA/export de la conférence NDBI du 12 février 2026/fiche-20-bibliographie.html` | `conference-ndbi-2026-02-12/fiche-20-bibliographie.html` | 13023 | `e066a895fd03a21208d717d53946f850a36439e601b5be1a5ebb1d9ae748d29b` |
+| `IA/export de la conférence NDBI du 12 février 2026/index.html` | `conference-ndbi-2026-02-12/index.html` | 25285 | `7acd9c0b3b6a4ac567aac8af9701e2e4999940f7cfd976979055557ac578cad7` |
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-19.jpg` | `conference-ndbi-2026-02-12/images/dia-19.jpg` | 96841 | `66cc046d758b8d0d948cd564c1fd97c75aa6c53f40957a80b16d6694ac56c5cd` |
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-20.jpg` | `conference-ndbi-2026-02-12/images/dia-20.jpg` | 110289 | `c5b1b0f58584e4737a89a00f864335bf8f776c8f4f3dfcb08b39c8b81868615d` |
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-25.jpg` | `conference-ndbi-2026-02-12/images/dia-25.jpg` | 60149 | `b13402f64aff23e291dd0341f75d10099d65f38c80fbe1c6df11f6bacaa7b9cf` |
@@ -205,8 +205,8 @@
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-68.jpg` | `conference-ndbi-2026-02-12/images/dia-68.jpg` | 136173 | `4d70b11c044d39941ca2aba6c4cc223de2f9d0af154bef4e2fa569b06f20d6ff` |
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-77.jpg` | `conference-ndbi-2026-02-12/images/dia-77.jpg` | 158303 | `346710bf53bc9adccda289f7f38391f8e17546edc2542c1ca2867250f4d457f6` |
 | `IA/export de la conférence NDBI du 12 février 2026/images/dia-89.jpg` | `conference-ndbi-2026-02-12/images/dia-89.jpg` | 131513 | `0c0588cf11ac02a7b5fd3612860ce0d3c3d120e716c56b8619c9447906de9c8f` |
-| `IA/Philosophy of AI/fiche-trois-livres-philosophie-ia-2026-09-06.html` | `philosophy-of-ai/fiche-trois-livres-philosophie-ia-2026-09-06.html` | 42482 | `63d0cc7ba3fb14196598b72df0b6561a977a075e51e8e7e7cb8abe13945b1bf5` |
-| `IA/Philosophy of AI/note-lecture-mitchell-ghosh-passi-2026-09-07.html` | `philosophy-of-ai/note-lecture-mitchell-ghosh-passi-2026-09-07.html` | 12892 | `500dbcdd41eaec1cf0084ffa3da3baf51bd2c7ee7d2c3414db1cdedefdaa8465` |
-| `IA/Philosophy of AI/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html` | `philosophy-of-ai/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html` | 12143 | `b207a60740ac34679809e97a7d397464dd1ffc697b83065fb44cceb52535e3be` |
-| `IA/Philosophy of AI/resume-entretien-vergauwen-2026-09-06.html` | `philosophy-of-ai/resume-entretien-vergauwen-2026-09-06.html` | 17283 | `3c4c321d951059fdb422becd27a46479637e2d5f083e230a1772df57865eea2a` |
+| `IA/Philosophy of AI/fiche-trois-livres-philosophie-ia-2026-09-06.html` | `philosophy-of-ai/fiche-trois-livres-philosophie-ia-2026-09-06.html` | 42434 | `c3e21e4595a6adf097e93748f1cb7db5380364937ef05230f9e09bad07a10b6e` |
+| `IA/Philosophy of AI/note-lecture-mitchell-ghosh-passi-2026-09-07.html` | `philosophy-of-ai/note-lecture-mitchell-ghosh-passi-2026-09-07.html` | 12844 | `6ab8cddec28b813762962bd544fe040d6ae797ddf6b38d83f2f6742e72deb7a7` |
+| `IA/Philosophy of AI/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html` | `philosophy-of-ai/reading-note-mitchell-ghosh-passi-2026-09-07-EN.html` | 12095 | `789fec15822f4f9c0ed6ae14fc711cff7948c6dcc38ac8a306791ec5456a8115` |
+| `IA/Philosophy of AI/resume-entretien-vergauwen-2026-09-06.html` | `philosophy-of-ai/resume-entretien-vergauwen-2026-09-06.html` | 17235 | `d52b51f8a4790f54df81ff90f1a6480a08d5c50aaf248759ed3593afb04fd85d` |
 

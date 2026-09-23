@@ -39,6 +39,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--export', required=True)
     ap.add_argument('--outils', default=None)
+    # Depuis le 23/09/2026 (lot << mise en visibilite >>, gate AH) : le noindex est ATTENDU
+    # (defaut, etat de la v1 a l'ouverture) ou ABSENT (etat apres la levee). L'un ou l'autre
+    # se prouve ; un melange est un echec.
+    ap.add_argument('--noindex', choices=('attendu', 'absent'), default='attendu')
     a = ap.parse_args()
     export = os.path.abspath(a.export)
     outils = a.outils or os.path.join(export, 'outils')
@@ -81,7 +85,11 @@ def main():
         txt = open(os.path.join(export, p.replace('/', os.sep)),
                    encoding='utf-8', errors='replace').read()
         i_rob = txt.find('name="robots"')
-        if i_rob < 0 or 'noindex' not in txt:
+        if a.noindex == 'absent':
+            # apres la levee : aucune page ne doit plus porter le meta
+            if i_rob >= 0 and 'noindex' in txt:
+                sans_noindex.append((p, 'ENCORE PRESENT'))
+        elif i_rob < 0 or 'noindex' not in txt:
             sans_noindex.append((p, 'absent'))
         else:
             # le meta doit etre dans la TETE : avant tout contenu de corps.
