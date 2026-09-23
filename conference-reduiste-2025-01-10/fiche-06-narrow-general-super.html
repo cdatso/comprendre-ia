@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Narrow → General → Super : le schéma demandé à la machine — Conférence IA, La Réduiste 2025</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Retour à l’index</a><a href="correspondance-diapositives.html">Table de correspondance</a></div>
+<h1>6. Narrow → General → Super&nbsp;: le schéma demandé à la machine</h1>
+<p class="dias">DIAPOSITIVES 20 et 21</p>
+<p class="chapeau">Une démonstration en acte, fautes comprises — c’est le propos.</p>
+<h2>La demande</h2>
+<div class="bloc">
+<p><i>« Hi can you help me build a simple diagram? I would like to show an arrow or vector with
+three data points&nbsp;: 1/ Narrow AI 2/ General AI 3/ SuperIntelligence. Can you do that? »</i></p>
+<p class="chapeau" style="margin:0">Réponse&nbsp;: <i>« Here’s the diagram representing the
+progression of artificial intelligence with the three data points: Narrow AI, General AI, and
+SuperIntelligence. Let me know if you’d like any adjustments or additional elements! »</i></p>
+</div>
+
+<h2>Le résultat</h2>
+<figure><a href="images/dia-21.jpg"><img src="images/dia-21.jpg" alt="Diapositive 21"></a><figcaption>L’image produite par le modèle, reprise telle quelle.</figcaption></figure>
+<p>Le résultat est <b>faux</b>, et c’est pour cela qu’il est projeté. On y lit&nbsp;:</p>
+<ul>
+<li><b>« SUPERNTELLIGENCE »</b> — une lettre manquante&nbsp;;</li>
+<li><b>« General AI » écrit deux fois</b>, en haut et en bas, tandis que « Narrow AI » devient
+en bas « AI General Intelligence »&nbsp;;</li>
+<li>des <b>dates illisibles</b> et inventées sous deux des trois points.</li>
+</ul>
+<p>La progression demandée — trois points sur un vecteur — n’est donc pas rendue&nbsp;: l’outil
+produit une <i>image d’un schéma</i>, pas un schéma. Sur un support qui vient d’expliquer ce
+qu’est un modèle génératif, l’erreur vaut mieux qu’un long avertissement.</p>
+<p>Le triptyque lui-même — <b>Narrow → General → Super</b> — reste, lui, l’échelle
+qu’utilise l’exposé, dans le prolongement de Bostrom
+(<a href="fiche-04-thema-1-quest-ce-que-lia.html">fiche 4</a>).</p>
+
+<div class="pied"><a href="fiche-05-ai-ml-dl.html">&#8592; 5. AI | ML | DL, puis GenAI</a><a href="fiche-07-sous-le-capot.html">7. Sous le capot &#8594;</a></div>
+<footer>Fiche du mini-site <i>Conférence « IA » — La Réduiste, 10 janvier 2025</i>. Restitution de l’exposé d’origine, sans actualisation. Conversion du 03/09/2026.</footer>
+</div></body></html>
