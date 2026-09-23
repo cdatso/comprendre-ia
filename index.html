@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprendre et discuter l’IA — conférences, dossiers et documentation</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+
+ .neuf{border:1px solid var(--rule);border-left:3px solid var(--accent2);background:var(--card);
+   border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.86rem;color:var(--muted)}
+ .neuf b{color:var(--fg)}
+ .manque{border:1px dashed var(--accent);background:var(--z);border-radius:8px;padding:.9rem 1.1rem;
+   margin:1rem 0;font-size:.9rem}
+ .manque b{color:var(--accent)}
+ .fiches li.attente a{color:var(--muted)}
+ .etat{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;border-radius:99px;
+   padding:.1rem .55rem;margin-left:.45rem;vertical-align:.1em;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .etat.ok{background:var(--surl,#e8f1e9);color:var(--surlf,#256b3a)}
+ .etat.att{background:var(--mark);color:var(--tagf)}
+ .etat.lien{background:var(--z);color:var(--muted);border:1px solid var(--rule)}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.ok{background:#17301f;color:#8ed6a6}}
+ .parcours{list-style:none;padding:0;margin:1.2rem 0;counter-reset:p}
+ .parcours li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px solid var(--rule)}
+ .parcours li:last-child{border-bottom:0}
+ .parcours li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.55rem;
+   width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#fff;
+   font:700 .8rem/1.6rem -apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+ .parcours b{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+
+ .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.9rem;margin:1.4rem 0}
+ .porte{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem}
+ .porte h3{margin:0 0 .35rem;font-size:.98rem}
+ .porte p{margin:0 0 .6rem;font-size:.88rem;color:var(--muted)}
+ .porte a.go{display:inline-block;font-size:.82rem;font-weight:700;text-decoration:none;
+   border:1px solid var(--rule);border-radius:99px;padding:.25rem .8rem;background:var(--bg);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .porte a.go:hover{border-color:var(--accent2)}
+ .site{border-bottom:1px solid var(--rule);padding:.8rem 0}
+ .site:last-child{border-bottom:0}
+ .site .t{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:1.02rem;
+   text-decoration:none}
+ .site .t:hover{text-decoration:underline}
+ .site .meta{color:var(--muted);font-size:.75rem;margin-left:.5rem;white-space:nowrap;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .site p{margin:.3rem 0 0;font-size:.9rem}
+ .liste{list-style:none;padding:0;margin:1rem 0}
+ .etat.loc{background:#f3e3e3;color:#8a2b2b}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.loc{background:#3a2020;color:#e59a9a}}
+ .quand{display:inline-block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:.72rem;letter-spacing:.04em;color:var(--accent);min-width:6.2rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<h1>Comprendre et discuter l’IA</h1>
+<p class="chapeau">Conférences, dossiers et documentation — 2025-2026. Le fonds de travail de la
+squad Montage Parallèle sur l’intelligence artificielle, rassemblé en un point d’entrée.</p>
+
+<div class="note"><p>Ce fonds a été écrit entre janvier 2025 et septembre 2026 pour un usage local, sur le poste de travail de son auteur. Il est publié ici tel quel, le 23 septembre 2026, sans réécriture : certaines pages citent donc les dossiers où elles ont été écrites, et renvoient à des pièces qui ne sont pas en ligne.</p></div>
+<div class="note">
+<p><b>Ce que contient ce fonds.</b> <b>95 pages</b> de production propre, soit environ
+<b>121 200 mots</b> — l’équivalent d’un livre de 400 pages — plus un fonds de consultation de
+41 pages recopiées de la <i>Stanford Encyclopedia of Philosophy</i>. Le tout produit entre
+janvier 2025 et septembre 2026, à partir de quatre conférences et de trois fonds documentaires.</p>
+<p><b>Ce qu’il n’est pas.</b> Ni un cours, ni un manuel, ni un site d’actualité. C’est un
+<b>fonds daté</b>&nbsp;: chaque restitution de conférence porte l’état des choses au jour où elle a
+été donnée, et n’est pas actualisée.</p>
+</div>
+
+<h2>Par où entrer</h2>
+<div class="portes">
+<div class="porte">
+<h3>Vous avez assisté à une conférence</h3>
+<p>Les quatre exposés sont restitués fiche par fiche, avec une table qui dit où est passée chaque
+diapositive.</p>
+<a class="go" href="#conferences">Les conférences ↓</a>
+</div>
+<div class="porte">
+<h3>Un mot vous arrête</h3>
+<p><i>Token</i>, <i>embedding</i>, poids, hallucination, température. Sept fiches courtes, chacune
+adossée à une démonstration qu’on peut exécuter.</p>
+<a class="go" href="concepts/index.html">Comprendre les mécanismes →</a>
+</div>
+<div class="porte">
+<h3>Vous préparez quelque chose</h3>
+<p>Cinéma et conscience, IA et emploi, RAG et philosophie de l’esprit. Des dossiers sourcés, avec
+leurs corpus et leurs bibliographies.</p>
+<a class="go" href="#dossiers">Les dossiers ↓</a>
+</div>
+</div>
+
+<h2 id="conferences">A. Les conférences</h2>
+<p class="chapeau">Trois données, trois en préparation. Dans l’ordre chronologique — c’est la
+colonne vertébrale du fonds.</p>
+<ul class="liste">
+
+<li class="site"><span class="quand">10/01/2025</span>
+<a class="t" href="conference-reduiste-2025-01-10/index.html">Conférence « IA » — La Réduiste</a>
+<span class="meta">49 diapositives → 12 fiches</span>
+<p>Introduction pour un public général. Le neurone et son calcul déroulé dans un tableur, les
+cercles AI&nbsp;|&nbsp;ML&nbsp;|&nbsp;DL, « <i>predict the next available word</i> ». L’orateur y
+<b>montre</b>&nbsp;: il convoque l’outil comme pièce à conviction — une dystopie générée par
+DALL·E, un schéma raté par ChatGPT.</p></li>
+
+<li class="site"><span class="quand">23/02/2025</span>
+<a class="t" href="conference-cafe-philo-2025-02-23/index.html">« Rise of the Machines » — Café Philo</a>
+<span class="meta">53 diapositives → 16 fiches</span>
+<p>Bâtie sur quatre semaines d’actualité&nbsp;: Stargate, DeepSeek, le sommet de Paris. Avec un
+appendice technique — méthodes, architectures, limites physiques. L’orateur y <b>cite</b>&nbsp;:
+publications, cours de bourse, textes réglementaires.</p></li>
+
+<li class="site"><span class="quand">12/02/2026</span>
+<a class="t" href="conference-ndbi-2026-02-12/index.html">L’éthique et l’intelligence artificielle — NDBI</a>
+<span class="meta">97 diapositives → 20 fiches</span>
+<p>« Les risques de l’IA&nbsp;: techniques ou politiques&nbsp;? » Trois cas — un chatbot à
+650&nbsp;$, le scandale des allocations néerlandais, l’ICE — puis les trois lunettes éthiques.
+L’orateur y <b>fait délibérer</b>&nbsp;: la salle vote.</p></li>
+
+<li class="site"><span class="quand">01/12/2026</span>
+<a class="t">Cinéma, IA et conscience — NDBI</a>
+<span class="meta">en préparation · 7 pages</span>
+<p>Un corpus de <b>177 films</b> croisé avec 66 expériences de pensée sur la conscience et
+16 positions théoriques sur les LLM. L’orateur y <b>croisera</b>. Le dossier préparatoire est
+consultable dès maintenant.</p></li>
+
+<li class="site"><span class="quand">date à fixer</span>
+<a class="t" href="concepts/support-conference.html">Bonnes pratiques de travail avec l’IA — Café Philo</a>
+<span class="meta">en préparation · support validé</span>
+<p>Sept diapositives « Ardoise &amp; Craie », prototype validé le 1<sup>er</sup> août 2026. Le
+support est prêt&nbsp;; le conducteur, la fiche de débat et les exemples vécus restent à écrire.</p></li>
+
+<li class="site"><span class="quand">date à fixer</span>
+<a class="t">IA et emploi — sensibilisation</a>
+<span class="meta">en préparation · revue de littérature · présentation en ligne · quiz écrit</span>
+<p>64 références collectées auprès d’institutions publiques, <b>18 retenues, 14 écartées avec leur
+motif</b> — dont toutes les études de cabinets de conseil et de fournisseurs d’IA. La règle&nbsp;:
+« quiconque vend le produit dont il projette la demande est écarté de l’argumentaire ».</p>
+<p><a>La présentation elle-même</a>, vingt diapositives
+en images avec le fil de parole et la source de chaque chiffre — désormais l’entrée unique de la conférence.</p>
+<p>Préparation du quiz « idées reçues sur l’IA » (10 minutes, en fin d’exposé)&nbsp;:
+<a>les dix questions suggérées</a>, sourcées et
+commentées, et <a>le dispositif en salle</a>
+(vote anonyme par téléphone, options examinées, décision et plan B).</p></li>
+</ul>
+
+<h2>B. Comprendre les mécanismes</h2>
+<p class="chapeau">Le versant conceptuel du fonds : ce que la machine fait, et les questions que ça pose.</p>
+<ul class="liste">
+<li class="site">
+<a class="t" href="concepts/index.html">Comprendre quelques concepts avec des exemples</a>
+<span class="meta">10 pages</span>
+<p>Le versant <b>pratique</b> du fonds, dans l’ordre où la machine rencontre les
+choses&nbsp;: <a href="concepts/concept-01-tokens.html">les tokens</a> →
+<a href="concepts/concept-02-vecteurs.html">les vecteurs</a> →
+<a href="concepts/concept-03-neurone-poids.html">du neurone au poids</a> →
+<a href="concepts/concept-04-contexte-attention.html">contexte et attention</a> →
+<a href="concepts/concept-05-temperature.html">la température</a> →
+<a href="concepts/concept-06-hallucinations.html">les hallucinations</a> →
+<a href="concepts/concept-07-verite-direction.html">la vérité est-elle une direction&nbsp;?</a></p>
+<p>Chaque concept est adossé à quelque chose qu’on peut lancer&nbsp;: un script de vingt lignes
+sans aucune dépendance, ou une page interactive où le cosinus se recalcule à la souris. Cette
+section renvoie aux trois conférences pour tout ce qu’elles expliquent déjà.</p></li>
+
+<li class="site">
+<a class="t" href="top-5-experiences-de-pensee.html">Quatre modèles, une même question</a>
+<span class="meta">1 page · 4 700 mots</span>
+<p>La même question — <i>quelles expériences de pensée sur l’intelligence ou la conscience servent
+à comprendre l’IA&nbsp;?</i> — posée à <b>Gemini, Copilot, ChatGPT et Claude</b>. Les quatre
+réponses traduites et reprises intégralement, plus la comparaison.</p>
+<p>Vingt places, <b>neuf expériences distinctes</b>&nbsp;: trois font l’unanimité — la chambre
+chinoise, la chambre de Mary, le jeu de l’imitation — et la cinquième place n’est jamais partagée.
+Aucun des quatre n’a retenu la chauve-souris de Nagel, pourtant la plus citée du domaine.</p></li>
+</ul>
+
+<h2 id="dossiers">C. Les dossiers de fond</h2>
+<p class="chapeau">Deux d’entre eux préparent une conférence (section A)&nbsp;; ils se consultent
+aussi seuls.</p>
+<ul class="liste">
+
+<li class="site">
+<a class="t">Cinéma, IA et conscience</a>
+<span class="meta">7 pages · 35 000 mots</span>
+<p>Six pages d’analyse&nbsp;: le corpus de 177 films et leurs angles IA, l’inventaire de
+66 expériences de pensée sur la conscience en 13 parties, deux croisements (angles × expériences,
+puis 16 positions × films), et une bibliographie de 273 références classées par auteur.</p></li>
+
+<li class="site">
+<a class="t">IA et emploi — ce que disent les sources publiques</a>
+<span class="meta">6 pages · UE, FR, BE, LU, NL, DE</span>
+<p>La distinction que le débat public confond le plus souvent&nbsp;: <b>l’exposition</b> (les
+tâches qui <i>peuvent</i> être touchées), <b>l’adoption</b> (ce qui est effectivement utilisé, un
+fait mesuré) et <b>la projection d’emploi</b> (rare, toujours sous scénario, jamais certaine).
+<a>La présentation en 20 diapositives commentées</a>,
+et deux pages de préparation du quiz&nbsp;: <a>les
+dix questions</a> et <a>le dispositif</a>.</p></li>
+
+<li class="site">
+<a class="t" href="ia-rag-cognition-philosophie-esprit/index.html">IA-RAG · Sciences cognitives · Philosophie de l’esprit</a>
+<span class="meta">10 pages · 18 000 mots</span>
+<p>Le seul dossier qui croise l’<b>ingénierie</b> — RAG, architectures d’agents, bases
+vectorielles, LLM exécutés en local — et la <b>pensée</b> — mémoire et représentation, débats sur
+la compréhension et l’intentionnalité. Il recommande et cartographie&nbsp;; il n’installe
+rien.</p></li>
+</ul>
+
+<h2>D. Les fonds documentaires</h2>
+<ul class="liste">
+
+<li class="site">
+<a class="t" href="fonds-sep.html">Fonds SEP local</a>
+<span class="etat loc">LOCAL SEULEMENT</span>
+<span class="meta">41 pages · 465 000 mots</span>
+<p>24 entrées de la <i>Stanford Encyclopedia of Philosophy</i> copiées avec leurs notes et
+suppléments, plus <a href="fonds-sep.html">les 78 résultats de la
+recherche « AI and consciousness »</a> avec les résumés du site.</p>
+<p class="chapeau" style="margin:.3rem 0 0"><b>Copie privée.</b> La licence de la SEP autorise
+l’usage local et <b>interdit la redistribution</b>&nbsp;: ce fonds sort du périmètre le jour d’une
+mise en ligne. Voir <a href="provenance-licences.html">Provenance et licences</a>.</p></li>
+
+<li class="site">
+<a class="t">Le corpus de films</a>
+<span class="meta">177 titres · 77 angles</span>
+<p>Triable et filtrable. <b>C’est le lieu canonique de la filmographie</b>, qui apparaît par
+ailleurs dans les trois conférences sous forme abrégée — voir
+<a href="pieces-recurrentes.html">les pièces récurrentes</a>.</p></li>
+
+<li class="site">
+<a class="t">La bibliographie unifiée</a>
+<span class="meta">273 références · 152 auteurs</span>
+<p>Classée par ordre alphabétique d’auteur, tous dossiers confondus.</p></li>
+
+<li class="site">
+<a class="t" href="philosophy-of-ai/note-lecture-mitchell-ghosh-passi-2026-09-07.html">« AI Agents Push Humans Out of the Loop » — note de lecture critique</a>
+<span class="meta">1 page · ~1 100 mots · arXiv 2608.23642v2</span>
+<p>Mitchell, Ghosh (Hugging Face) &amp; Passi (Data &amp; Society), 02/09/2026 : les agents dégradent les capacités cognitives que leur supervision exige. Diagnostic, faiblesses, et confrontation avec la pratique de la squad — renvois BKL-CNF-004 et BKL-CNF-006.</p></li>
+
+<li class="site">
+<a class="t" href="philosophy-of-ai/fiche-trois-livres-philosophie-ia-2026-09-06.html">Trois livres de philosophie de l’IA (Springer, 2025-2026)</a>
+<span class="meta">1 page · 3 800 mots · 22 sources</span>
+<p>Fiche de repérage sur les collectifs Müller &amp; al. (Synthese Library 533, 25 chapitres) et Pantsar &amp; al.
+(SAPERE 75, 12 chapitres) et sur l’essai de Bencivenga : identité bibliographique, sommaires intégraux,
+argumentaires éditeur, genèse, prix, et relevé des versions auteur en accès libre (9 chapitres sur 37,
+dépôts légaux seulement). <b>Aucun des trois n’a été lu</b> : la fiche décrit ce que les sommaires
+établissent, pas la valeur des textes. Ajoutée le 06/09/2026.</p></li>
+
+<li class="site">
+<a class="t">« The Mystery of Consciousness » (Searle, 1997) — synthèse du livre et de ses commentaires</a>
+<span class="etat loc">LOCAL SEULEMENT</span>
+<span class="meta">2 pages · + compte-rendu par chapitre et revue de littérature</span>
+<p>Le livre-document de la « décennie de la conscience », lu en intégralité : naturalisme biologique,
+les six positions recensées (Crick, Edelman, Penrose, Dennett, Chalmers, Rosenfield), les deux échanges,
+et les commentaires — Araujo 2013, l'épreuve du programme trente ans après (<i>Nature</i> 2025), la
+chambre chinoise à l'ère des LLM. La synthèse renvoie au compte-rendu détaillé et à la revue de
+littérature du 09/09/2026 (dossier CDC, hors périmètre de publication du portail). Ajoutée le 09/09/2026.</p></li>
+
+<li class="site">
+<a class="t">Carnet NotebookLM « AI and consciousness »</a>
+<span class="etat loc">GÉNÉRÉ PAR IA</span>
+<span class="meta">5 pièces · 54 arguments · 43 sources web · audio 21 min</span>
+<p>Exports d’un carnet Google NotebookLM (04/09/2026) : table de 54 arguments et concepts classiques
+sur l’IA et la conscience, diaporama de 13 images, résumé audio. Page de référence avec le lien du
+carnet, les 43 sources et les empreintes des fichiers. <b>Matériel d’exploration, non vérifié</b> : à
+confronter à l’inventaire canonique avant tout usage. Ajouté le 06/09/2026.</p></li>
+</ul>
+
+<h2>Les deux pages de service</h2>
+<ul class="liste">
+<li class="site"><a class="t" href="pieces-recurrentes.html">Les pièces récurrentes</a>
+<p>Douze pièces reviennent dans plusieurs sites — la filmographie, le cas Opus-3, les règlements
+européens, « Pour aller plus loin »… Cette table dit <b>où est le lieu canonique de chacune</b>, et
+où elle réapparaît. C’est ce qui empêche la douzième duplication.</p></li>
+<li class="site"><a class="t" href="provenance-licences.html">Provenance et licences</a>
+<p>Qui a produit quoi, sous quelle licence, et <b>ce qui est publiable</b>. À lire avant toute mise
+en ligne.</p></li>
+</ul>
+
+<h2>Un site frère</h2>
+<div class="rappel"><b>Afrofuturisme / Africanfuturisme</b> — un fonds documentaire de 8 pages
+(généalogie, œuvres, recherche académique, politique et actualité, bibliographie sourcée), au
+service des travaux d’écriture d’AH&nbsp;: une nouvelle pour la revue <i>Marginales</i> n°&nbsp;315
+et des recensions pour le fanzine <i>KWS</i>.<br><br>
+Son objet n’est pas l’IA — mais il croise les imaginaires techniques et le corpus de films. Il
+garde donc sa propre porte d’entrée, et les deux fonds se citent&nbsp;:
+<a>Afrofuturisme / Africanfuturisme — fonds documentaire</a>.</div>
+
+<h2>Ce que la série dégage</h2>
+<p>Une remarque qu’aucun des sites ne peut faire seul, et qui n’apparaît qu’en les mettant côte à
+côte&nbsp;: <b>les quatre conférences dessinent une trajectoire</b>.</p>
+<div class="tbl"><table>
+<tr><th style="width:1%">Date</th><th style="width:1%">Ce que fait l’orateur</th><th>Sa matière</th></tr>
+<tr><td class="an">10/01/2025</td><td><b>il montre</b></td>
+<td>L’outil convoqué comme pièce à conviction&nbsp;: une dystopie générée par DALL·E, un schéma
+demandé à ChatGPT — et raté, fautes comprises.</td></tr>
+<tr><td class="an">23/02/2025</td><td><b>il cite</b></td>
+<td>Publications, cours de bourse, textes réglementaires, les trois observations de Sam Altman.</td></tr>
+<tr><td class="an">12/02/2026</td><td><b>il fait délibérer</b></td>
+<td>Cas juridiques documentés, un modèle d’analyse à trois grilles, un vote de la salle.</td></tr>
+<tr><td class="an">01/12/2026</td><td><b>il croisera</b></td>
+<td>161 films × 16 positions théoriques sur la conscience (croisement calculé sur l’état du 30/08 ; corpus à 177 films depuis le 06/09, 66 entrées depuis le 07/09).</td></tr>
+</table></div>
+<p>De la démonstration à l’argumentation, puis à la délibération, puis au croisement. <b>Et une
+seule diapositive traverse les trois premières sans changer d’une ligne</b>&nbsp;: « Pour aller
+plus loin. Jusqu’où &amp; comment&nbsp;? »</p>
+
+<h2>État du fonds, et ce qui manque</h2>
+<div class="tbl"><table>
+<tr><th>Ce qui manque</th><th>Où</th></tr>
+<tr><td><b>Les exemples vécus</b> — « quand l’IA a bien fait, quand elle a dérapé, comment on l’a
+rattrapé »</td><td>promis par le support Café Philo&nbsp;; jamais déposés</td></tr>
+<tr><td><b>Le conducteur et la fiche de débat</b> de la conférence Café Philo</td>
+<td>items BKL-CAFEPHILO-003 et 006</td></tr>
+<tr><td><b>Les dates</b> des deux conférences en préparation</td><td>—</td></tr>
+</table></div>
+
+<h2>Comment ce portail est fait</h2>
+<ul>
+<li><b>Rien n’a été déplacé.</b> Les neuf sites sont reliés là où ils sont&nbsp;; les
+<b>44 liens croisés</b> qui les relient déjà entre eux continuent de fonctionner.</li>
+<li><b>Le regroupement physique viendra plus tard</b>, quand la réorganisation de
+<code>\Claude</code> sera tranchée. Ce portail est un fichier généré&nbsp;: il se réécrit en une
+heure sur la nouvelle arborescence.</li>
+<li><b>Cinq sites sur neuf partagent déjà l’identité visuelle</b> — bordeaux, fond clair, mode
+sombre — sans que ç’ait été planifié&nbsp;: ils sont de la même série. Les quatre autres ne sont pas
+de la même main et n’ont pas été touchés.</li>
+</ul>
+
+<footer><i>Comprendre et discuter l’IA</i> — portail du fonds de la squad Montage Parallèle, assemblé le 03/09/2026. Neuf sites, 94 pages de production propre. Les restitutions de conférences sont sous licence CC BY-NC-SA de Christo Datso.<br>Pages produites avec des agents IA (Claude d'Anthropic), révision et validation par Christo Datso.</footer>
+</div></body></html>

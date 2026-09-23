@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quatre modèles, une même question — les expériences de pensée qui éclairent l’IA</title>
+<style>
+ :root{--fg:#1c1c1e;--bg:#fdfdfc;--muted:#63676e;--rule:#dfe3e8;--accent:#7a1f2b;
+       --accent2:#1f4e79;--card:#fff;--z:#f5f6f8;--mark:#fdf3d4;--tagf:#6b4a2f;
+       --code:#f3f4f6;--codef:#24292f}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fg:#e7e5e2;--bg:#15161a;
+   --muted:#9aa0a8;--rule:#2f333a;--accent:#e08a96;--accent2:#7fb2e0;--card:#1c1e23;--z:#1a1c21;
+   --mark:#3a3320;--tagf:#d9b88f;--code:#1f2228;--codef:#d8dde3}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.62 Georgia,"Iowan Old Style",serif}
+ .wrap{max-width:52rem;margin:0 auto;padding:1rem 1.25rem 5rem}
+ h1{font-size:1.75rem;line-height:1.18;margin:.3rem 0 .4rem}
+ h2{font-size:1.18rem;margin:2rem 0 .5rem;padding-bottom:.25rem;border-bottom:1px solid var(--rule)}
+ h3{font-size:1rem;margin:1.3rem 0 .35rem}
+ h1,h2,h3,.nav,.dias,.pied,.note b,.avert b,.ecarte,figcaption,table,.plan,.fiches b{
+   font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+ a{color:var(--accent2)}
+ .nav{margin:0 0 1.1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+ .nav a{display:inline-block;font-size:.82rem;text-decoration:none;border:1px solid var(--rule);
+        border-radius:99px;padding:.28rem .8rem;background:var(--card)}
+ .nav a:hover{border-color:var(--accent2)}
+ .dias{display:inline-block;background:var(--mark);color:var(--tagf);border-radius:99px;
+       padding:.15rem .7rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+ .chapeau{color:var(--muted);font-size:.98rem;margin:0 0 1rem}
+ p{margin:0 0 .8rem}
+ ul,ol{padding-left:1.35rem;margin:0 0 .9rem}
+ li{margin:.2rem 0}
+ li>ul{margin:.25rem 0 .4rem}
+ blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.1rem 0 .1rem 1rem;color:var(--fg)}
+ .bloc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0}
+ .bloc>:last-child{margin-bottom:0}
+ .note,.avert,.ecarte{border:1px solid var(--rule);border-left:3px solid var(--accent);
+   background:var(--card);border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.88rem}
+ .note{color:var(--muted)} .note b,.avert b{color:var(--fg)}
+ .ecarte{border-left-color:var(--muted);color:var(--muted);font-size:.83rem}
+ figure{margin:1.2rem 0}
+ figure img{width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block}
+ figcaption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+ pre{background:var(--code);color:var(--codef);border:1px solid var(--rule);border-radius:6px;
+     padding:.8rem 1rem;overflow-x:auto;font:13px/1.55 ui-monospace,Consolas,"Courier New",monospace;
+     margin:1rem 0;white-space:pre-wrap;word-break:break-word}
+ .exergue{font-size:1.08rem;font-style:italic;border-left:3px solid var(--accent);
+          margin:1.4rem 0;padding:.3rem 0 .3rem 1.1rem}
+ .exergue .sig{display:block;font-style:normal;font-size:.85rem;color:var(--muted);margin-top:.5rem}
+ table{border-collapse:collapse;width:100%;font-size:.88rem;margin:1rem 0}
+ th,td{border:1px solid var(--rule);padding:.4rem .6rem;text-align:left;vertical-align:top}
+ th{background:var(--z);font-weight:700}
+ td.an{white-space:nowrap;color:var(--muted);width:1%}
+ .tbl{overflow-x:auto}
+ .frise{list-style:none;padding:0;margin:1rem 0;border-left:2px solid var(--rule)}
+ .frise li{padding:.35rem 0 .35rem 1.1rem;position:relative;margin:0}
+ .frise li::before{content:"";position:absolute;left:-5px;top:.95rem;width:8px;height:8px;
+   border-radius:50%;background:var(--accent)}
+ .frise .an{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;color:var(--accent);
+   font-size:.85rem;margin-right:.4rem}
+ .fiches{list-style:none;padding:0;margin:1rem 0}
+ .fiches li{border-bottom:1px solid var(--rule);padding:.75rem 0}
+ .fiches li:last-child{border-bottom:0}
+ .fiches a{font-weight:700;text-decoration:none;font-size:1.02rem;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .fiches a:hover{text-decoration:underline}
+ .fiches .d{color:var(--muted);font-size:.75rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+   margin-left:.5rem;white-space:nowrap}
+ .fiches p{margin:.25rem 0 0;font-size:.9rem;color:var(--fg)}
+ .pied{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;
+   justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+ .pied a{text-decoration:none}
+ footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--muted);
+   font-size:.8rem;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .lien-ext::after{content:" \2197";font-size:.8em;color:var(--muted)}
+
+ .rappel{background:var(--z);border:1px dashed var(--rule);border-radius:8px;padding:.7rem 1rem;
+   margin:1rem 0;font-size:.85rem;color:var(--muted)}
+ .rappel b{color:var(--fg)}
+ .chiffres{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+ .ch{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;flex:1 1 8rem}
+ .ch .v{display:block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:1.25rem;color:var(--accent)}
+ .ch .l{display:block;font-size:.75rem;color:var(--muted);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif;margin-top:.15rem}
+
+ .neuf{border:1px solid var(--rule);border-left:3px solid var(--accent2);background:var(--card);
+   border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0;font-size:.86rem;color:var(--muted)}
+ .neuf b{color:var(--fg)}
+ .manque{border:1px dashed var(--accent);background:var(--z);border-radius:8px;padding:.9rem 1.1rem;
+   margin:1rem 0;font-size:.9rem}
+ .manque b{color:var(--accent)}
+ .fiches li.attente a{color:var(--muted)}
+ .etat{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.06em;border-radius:99px;
+   padding:.1rem .55rem;margin-left:.45rem;vertical-align:.1em;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .etat.ok{background:var(--surl,#e8f1e9);color:var(--surlf,#256b3a)}
+ .etat.att{background:var(--mark);color:var(--tagf)}
+ .etat.lien{background:var(--z);color:var(--muted);border:1px solid var(--rule)}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.ok{background:#17301f;color:#8ed6a6}}
+ .parcours{list-style:none;padding:0;margin:1.2rem 0;counter-reset:p}
+ .parcours li{position:relative;padding:.55rem 0 .55rem 2.4rem;border-bottom:1px solid var(--rule)}
+ .parcours li:last-child{border-bottom:0}
+ .parcours li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:.55rem;
+   width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:#fff;
+   font:700 .8rem/1.6rem -apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+ .parcours b{font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+
+ .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.9rem;margin:1.4rem 0}
+ .porte{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem}
+ .porte h3{margin:0 0 .35rem;font-size:.98rem}
+ .porte p{margin:0 0 .6rem;font-size:.88rem;color:var(--muted)}
+ .porte a.go{display:inline-block;font-size:.82rem;font-weight:700;text-decoration:none;
+   border:1px solid var(--rule);border-radius:99px;padding:.25rem .8rem;background:var(--bg);
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .porte a.go:hover{border-color:var(--accent2)}
+ .site{border-bottom:1px solid var(--rule);padding:.8rem 0}
+ .site:last-child{border-bottom:0}
+ .site .t{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:1.02rem;
+   text-decoration:none}
+ .site .t:hover{text-decoration:underline}
+ .site .meta{color:var(--muted);font-size:.75rem;margin-left:.5rem;white-space:nowrap;
+   font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+ .site p{margin:.3rem 0 0;font-size:.9rem}
+ .liste{list-style:none;padding:0;margin:1rem 0}
+ .etat.loc{background:#f3e3e3;color:#8a2b2b}
+ @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .etat.loc{background:#3a2020;color:#e59a9a}}
+ .quand{display:inline-block;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;
+   font-size:.72rem;letter-spacing:.04em;color:var(--accent);min-width:6.2rem}
+
+ .modele{border:1px solid var(--rule);border-radius:10px;background:var(--card);
+   padding:1rem 1.2rem;margin:1.4rem 0}
+ .modele>h2{margin-top:0;border-bottom:2px solid var(--accent);padding-bottom:.3rem}
+ .modele h3{color:var(--accent2)}
+ .oui{color:var(--accent);font-weight:700}
+ .non{color:var(--muted)}
+ .score{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700}
+ .vo{font-size:.86rem;color:var(--muted);font-style:italic;
+   border-left:2px solid var(--rule);padding-left:.7rem;margin:.4rem 0 .8rem}
+</style><style>a:not([href]){color:inherit;font-weight:inherit;cursor:default;text-decoration:none}a:not([href]):hover{text-decoration:none}</style></head>
+<body><div class="wrap">
+<div class="nav"><a href="index.html">&#8592; Portail du fonds</a><a href="conference-ndbi-2026-02-12/index.html">Conférence NDBI 2026</a><a href="concepts/index.html">Comprendre les concepts</a></div>
+<h1>Quatre modèles, une même question</h1>
+<p class="dias">LES EXPÉRIENCES DE PENSÉE QUI ÉCLAIRENT L’IA · UNE COMPARAISON</p>
+<p class="chapeau">La même question a été posée à quatre assistants — Gemini, Copilot, ChatGPT et
+Claude. Chacun devait nommer <b>cinq</b> expériences de pensée sur l’intelligence ou la conscience
+qui servent à comprendre l’IA. Voici leurs réponses, et ce que leur comparaison fait apparaître.</p>
+
+<div class="bloc">
+<p><b>La question, telle qu’elle a été posée&nbsp;:</b></p>
+<p class="vo" style="font-size:1rem">« Which are top 5 thought experiments related to the
+definition of intelligence or consciousness which have applicability for understanding AI&nbsp;? »</p>
+<p class="chapeau" style="margin:0">« Quelles sont les cinq principales expériences de pensée
+relatives à la définition de l’intelligence ou de la conscience, qui trouvent une application dans
+la compréhension de l’IA&nbsp;? »</p>
+</div>
+
+<div class="note">
+<p><b>Ce que contient cette page.</b> Les quatre réponses, <b>traduites en français</b> et reprises
+intégralement — aucune n’est résumée ni tronquée. Elles sont présentées telles qu’elles ont été
+produites, y compris là où elles se trompent ou divergent.</p>
+<p><b>Ce qu’elle ne contient pas.</b> La réponse de <b>NotebookLM</b>, qui figure dans le document
+source. Elle relève d’un livrable distinct, avec ses fichiers média.</p>
+<p><b>Source.</b> <code>Top 5 Thought Experiments.docx</code>, dossier <code>CNF\IA\</code> —
+document de collecte constitué par AH, 45&nbsp;Ko, cinq réponses dont une écartée ici.</p>
+</div>
+
+<h2>Ce que la comparaison montre</h2>
+<p>C’est le résultat le plus intéressant, et il n’apparaît qu’en mettant les quatre réponses côte à
+côte&nbsp;: <b>vingt places disponibles, neuf expériences distinctes retenues</b>.</p>
+
+<div class="tbl"><table>
+<tr><th>Expérience de pensée</th><th style="width:1%">Gemini</th><th style="width:1%">Copilot</th>
+<th style="width:1%">ChatGPT</th><th style="width:1%">Claude</th><th style="width:1%">Total</th></tr>
+<tr><td><b>La chambre chinoise</b> — Searle, 1980</td>
+<td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td>
+<td class="an score">4/4</td></tr>
+<tr><td><b>La chambre de Mary</b> — Jackson, 1982</td>
+<td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td>
+<td class="an score">4/4</td></tr>
+<tr><td><b>Le jeu de l’imitation</b> — Turing, 1950</td>
+<td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td>
+<td class="an score">4/4</td></tr>
+<tr><td><b>Le zombie philosophique</b> — Chalmers, années 1990</td>
+<td class="an oui">●</td><td class="an oui">●</td><td class="an oui">●</td><td class="an non">—</td>
+<td class="an score">3/4</td></tr>
+<tr><td>La machine à expériences — Nozick, 1974</td>
+<td class="an oui">●</td><td class="an non">—</td><td class="an non">—</td><td class="an non">—</td>
+<td class="an">1/4</td></tr>
+<tr><td>Le moulin de Leibniz — 1714</td>
+<td class="an non">—</td><td class="an oui">●</td><td class="an non">—</td><td class="an non">—</td>
+<td class="an">1/4</td></tr>
+<tr><td>La nation chinoise — Block, 1978</td>
+<td class="an non">—</td><td class="an non">—</td><td class="an oui">●</td><td class="an non">—</td>
+<td class="an">1/4</td></tr>
+<tr><td>Blockhead — Block, 1981</td>
+<td class="an non">—</td><td class="an non">—</td><td class="an non">—</td><td class="an oui">●</td>
+<td class="an">1/4</td></tr>
+<tr><td>Qualia évanescents et dansants — Chalmers, 1995</td>
+<td class="an non">—</td><td class="an non">—</td><td class="an non">—</td><td class="an oui">●</td>
+<td class="an">1/4</td></tr>
+</table></div>
+
+<h3>Six observations</h3>
+<div class="bloc">
+<p><b>1. Un noyau unanime de trois.</b> La chambre chinoise, la chambre de Mary et le jeu de
+l’imitation figurent dans les quatre réponses. Ce sont aussi les trois plus célèbres — la
+convergence mesure donc autant la notoriété que la pertinence.</p>
+<p><b>2. La cinquième place est le différenciateur.</b> Une fois le noyau posé, <b>aucune</b> des
+cinq expériences restantes n’est partagée par deux modèles. Chacun met sa singularité dans le
+dernier fauteuil, et ces singularités ne se recoupent jamais.</p>
+<p><b>3. Personne n’a retenu Nagel.</b> « Qu’est-ce que ça fait d’être une chauve-souris&nbsp;? »
+(1974) est probablement l’expérience de pensée la plus citée du domaine. Elle n’apparaît dans
+<b>aucun</b> des quatre <i>top 5</i>. Claude la place explicitement en sixième et s’en explique —
+elle énonce le problème sans fournir de test discriminant. Les trois autres ne la mentionnent pas
+du tout.</p>
+<p><b>4. Une intruse assumée.</b> La machine à expériences de Nozick ne porte ni sur l’intelligence
+ni sur la conscience, mais sur <b>la valeur de l’authenticité</b>. Gemini la justifie par l’éthique
+des compagnons artificiels — défendable, mais hors du sujet strict de la question.</p>
+<p><b>5. Trois siècles d’écart.</b> Le moulin de Leibniz (1714) est la seule antérieure au
+XX<sup>e</sup> siècle. Tout le reste tient en <b>trente-deux ans</b>, de 1950 à 1982, à l’exception
+des qualia dansants (1995).</p>
+<p><b>6. Un seul modèle cite ses sources.</b> Copilot renvoie à des articles d’arXiv et à la
+<i>Stanford Encyclopedia of Philosophy</i> — dont le
+<a href="fonds-sep.html">fonds local</a> existe précisément dans ce dossier. Les trois autres
+répondent sans référence.</p>
+</div>
+
+<h3>Ce que les quatre réponses ont en commun sur le fond</h3>
+<p>Au-delà du choix des expériences, les quatre convergent sur <b>une même mise en garde</b>, formulée
+différemment&nbsp;: il ne faut pas confondre des propositions distinctes qu’une performance
+impressionnante incite à confondre. Copilot en distingue quatre&nbsp;:</p>
+<div class="tbl"><table>
+<tr><td><b>compétence</b></td><td>produire des réponses appropriées</td></tr>
+<tr><td><b>intelligence</b></td><td>apprendre, raisonner, s’adapter</td></tr>
+<tr><td><b>compréhension</b></td><td>posséder des représentations internes qui ont un sens</td></tr>
+<tr><td><b>conscience</b></td><td>avoir une expérience subjective</td></tr>
+</table></div>
+<p>ChatGPT en fait une chaîne d’implications qui ne tiennent pas&nbsp;:</p>
+<p class="exergue">L’IA produit un comportement intelligent → <i>n’implique pas</i> → elle comprend ce
+qu’elle fait → <i>n’implique pas</i> → elle possède un esprit → <i>n’implique pas</i> → elle est
+consciente → <i>n’implique pas</i> → il y a « quelque chose que cela fait » d’être cette IA.</p>
+<p>C’est, sous deux formes, le même avertissement — et c’est probablement le seul point sur lequel
+les quatre modèles sont réellement d’accord.</p>
+
+<h2>Les quatre réponses</h2>
+<p class="chapeau">Traduites de l’anglais, reprises intégralement. L’ordre est celui du document
+source.</p>
+
+<div class="modele">
+<h2>1. Gemini <span class="meta">— Chrome, mode IA</span></h2>
+<p>« Voici les cinq principales expériences de pensée explorant les frontières de l’intelligence et
+de la conscience, chacune fournissant un cadre profond pour comprendre l’intelligence artificielle
+et les grands modèles de langue. »</p>
+
+<h3>1 · L’argument de la chambre chinoise</h3>
+<p>Proposée par le philosophe <b>John Searle en 1980</b>, cette expérience de pensée met en question
+le fait qu’un système imitant parfaitement le langage puisse être considéré comme intelligent.</p>
+<p><b>Le scénario.</b> Imaginez une personne qui ne connaît pas le chinois, seule dans une pièce.
+Elle dispose d’un manuel de règles en anglais — un programme — qui lui dit exactement comment
+répondre à des suites de caractères chinois. Pour quelqu’un placé à l’extérieur, elle paraît parler
+couramment le chinois. Mais à l’intérieur, elle ne fait que manipuler des symboles sans en
+comprendre le sens.</p>
+<p><b>Application à l’IA.</b> C’est la critique fondatrice de l’IA générative et des LLM. Elle
+soutient qu’exécuter du code ou prédire le prochain <i>token</i> relève de la <b>syntaxe</b> — la
+manipulation de symboles — et non de la <b>sémantique</b> — la compréhension véritable. Elle nous
+force à demander&nbsp;: une IA comprend-elle réellement ce qu’elle vous dit, ou n’est-elle qu’une
+chambre chinoise très sophistiquée&nbsp;?</p>
+
+<h3>2 · La chambre de Mary (l’argument de la connaissance)</h3>
+<p>Proposée par <b>Frank Jackson en 1982</b>, elle examine la nature de l’expérience subjective —
+les <i>qualia</i>.</p>
+<p><b>Le scénario.</b> Mary est une brillante scientifique qui a vécu toute sa vie dans une pièce en
+noir et blanc. Elle a appris tout ce qu’il y a à savoir sur la physique et la neurobiologie de la
+vision — elle sait exactement quelles longueurs d’onde stimulent la rétine pour voir le rouge. Un
+jour, on la libère et elle voit une pomme rouge pour la première fois. Apprend-elle quelque chose
+de nouveau&nbsp;?</p>
+<p><b>Application à l’IA.</b> Si Mary apprend quelque chose, cela prouve que les données objectives
+ne peuvent pas capturer entièrement l’expérience subjective. Pour l’IA, cela signifie que même si
+une machine traite l’intégralité du savoir humain sur une émotion ou une sensation — la douleur, la
+joie — il lui manque l’expérience subjective. Cela met en lumière la barrière entre le traitement
+de données d’une IA et une véritable sensibilité.</p>
+
+<h3>3 · Le jeu de l’imitation (le test de Turing)</h3>
+<p>Proposé par <b>Alan Turing en 1950</b>, il contourne les questions métaphysiques de la conscience
+pour se concentrer purement sur l’intelligence comportementale.</p>
+<p><b>Le scénario.</b> Un juge humain converse par écrit avec deux entités cachées&nbsp;: un humain
+et une machine. Si le juge ne peut pas dire de façon fiable laquelle est la machine au terme d’une
+durée donnée, la machine réussit le test.</p>
+<p><b>Application à l’IA.</b> Turing soutenait que demander « les machines peuvent-elles
+penser&nbsp;? » est une question inutile. Il faut plutôt regarder l’<b>équivalence
+fonctionnelle</b>. Si les LLM modernes réussissent régulièrement des variantes du test, celui-ci
+oblige les chercheurs à mettre en balance la capacité comportementale et la cognition réelle — et
+montre que réussir le test peut signifier qu’une machine est un excellent imitateur, pas
+nécessairement un penseur.</p>
+
+<h3>4 · La machine à expériences</h3>
+<p>Proposée par <b>Robert Nozick en 1974</b>, elle explore la valeur que nous accordons au réel par
+rapport au simulé.</p>
+<p><b>Le scénario.</b> Imaginez une machine capable de vous procurer n’importe quelle expérience
+désirée&nbsp;: écrire un grand roman, nouer des amitiés durables, gravir l’Everest — pendant que
+vous flottez dans une cuve, des électrodes branchées au cerveau. Vous ne sauriez pas que c’est une
+illusion. Vous brancheriez-vous à vie&nbsp;?</p>
+<p><b>Application à l’IA.</b> À mesure que les agents deviennent empathiques, persuasifs et capables
+de simuler de véritables relations humaines, l’humanité se trouve devant le dilemme de Nozick. Cela
+aide à comprendre les limites psychologiques et éthiques de l’alignement et des IA de compagnie —
+en demandant si une interaction parfaitement simulée a la même valeur qu’une relation humaine
+authentique et désordonnée.</p>
+
+<h3>5 · Le zombie philosophique</h3>
+<p>Popularisé par <b>David Chalmers dans les années 1990</b>, il s’attaque au « problème difficile »
+de la conscience.</p>
+<p><b>Le scénario.</b> Imaginez une réplique physique d’un être humain. Ce « zombie » se comporte
+exactement comme un humain&nbsp;: il rit aux blagues, pleure aux films tristes, argumente sur la
+philosophie. Mais il ne possède absolument aucune expérience subjective interne. <b>Il n’y a
+personne derrière ses yeux.</b></p>
+<p><b>Application à l’IA.</b> C’est la métaphore ultime de l’IA générale. Si nous construisons une
+IA qui reproduit parfaitement le comportement humain, la prise de décision et l’expression
+émotionnelle, elle peut malgré tout rester un zombie. Cela nous avertit que la performance
+convaincante d’empathie ou de douleur d’une IA ne garantit aucun paysage moral interne — ce qui
+complique la manière dont nous pourrions attribuer des droits ou un statut moral aux machines.</p>
+
+<h3>La table de comparaison de Gemini</h3>
+<div class="tbl"><table>
+<tr><th>Expérience</th><th>Question centrale</th><th>Enjeu principal pour l’IA</th></tr>
+<tr><td><b>La chambre chinoise</b></td>
+<td>La manipulation de symboles équivaut-elle à la compréhension&nbsp;?</td>
+<td>Syntaxe contre sémantique dans les LLM</td></tr>
+<tr><td><b>La chambre de Mary</b></td>
+<td>Les données peuvent-elles capturer l’expérience subjective&nbsp;?</td>
+<td>Les limites de la connaissance par apprentissage automatique</td></tr>
+<tr><td><b>Le test de Turing</b></td>
+<td>Le comportement externe est-il la vraie mesure de l’esprit&nbsp;?</td>
+<td>Capacité fonctionnelle contre imitation</td></tr>
+<tr><td><b>La machine à expériences</b></td>
+<td>L’authenticité importe-t-elle si la simulation est parfaite&nbsp;?</td>
+<td>Éthique des relations avec l’IA et des mondes virtuels</td></tr>
+<tr><td><b>Le zombie philosophique</b></td>
+<td>Une entité peut-elle agir en pleine conscience tout en étant vide à l’intérieur&nbsp;?</td>
+<td>Alignement de l’IAG et statut moral des robots</td></tr>
+</table></div>
+</div>
+
+<div class="modele">
+<h2>2. Microsoft Copilot</h2>
+<p>« Il n’existe pas de <i>top 5</i> universellement accepté, mais celles-ci sont sans doute les
+plus utiles parce que <b>chacune isole une signification possible différente</b> de l’intelligence
+ou de la conscience. Ensemble, elles montrent pourquoi un comportement impressionnant d’une IA ne
+règle pas automatiquement les questions de compréhension ou d’expérience subjective. »</p>
+
+<h3>1 · Le jeu de l’imitation de Turing</h3>
+<p><b>Ce qu’il teste.</b> Une définition opérationnelle de l’intelligence fondée sur le comportement
+linguistique observable, plutôt que sur la composition matérielle du système ou ses états internes
+cachés.</p>
+<p><b>Application.</b> Il permet d’évaluer la compétence conversationnelle, l’adaptabilité et le
+raisonnement social. Mais il soulève une limitation cruciale&nbsp;: un système peut imiter une
+conversation intelligente <b>sans posséder de modèle robuste du réel</b>, de compréhension
+véritable ni de conscience. Des travaux récents opposent explicitement la réussite du comportement
+extérieur à l’organisation interne qui le soutient. <span class="chapeau">[arXiv]</span></p>
+<p class="vo">Question centrale&nbsp;: se comporter intelligemment suffit-il à être
+intelligent&nbsp;?</p>
+
+<h3>2 · La chambre chinoise de Searle</h3>
+<p><b>Ce qu’elle teste.</b> La distinction entre la <b>syntaxe</b> — la manipulation de symboles —
+et la <b>sémantique</b> — la compréhension de ce que ces symboles signifient.</p>
+<p><b>Application.</b> Elle se transpose directement à la question de savoir si un modèle de langue
+comprend ses propres sorties ou n’effectue qu’une manipulation de motifs extrêmement sophistiquée.
+Searle visait la thèse selon laquelle <b>exécuter le bon programme suffit</b> à comprendre — un
+argument qui a suscité plusieurs réponses importantes, dont la « réponse du système » et la
+« réponse du robot ». <span class="chapeau">[Stanford Encyclopedia of Philosophy]</span></p>
+<p class="vo">Question centrale&nbsp;: la manipulation de symboles peut-elle produire du sens, ou
+seulement le simuler&nbsp;?</p>
+
+<h3>3 · Le zombie philosophique</h3>
+<p><b>Ce qu’il teste.</b> Si une équivalence fonctionnelle et comportementale complète entraîne
+nécessairement une conscience phénoménale — c’est-à-dire une expérience subjective, des
+<i>qualia</i>.</p>
+<p><b>Application.</b> Une IA avancée pourrait dire « j’ai peur », décrire une vie émotionnelle
+interne et réussir des tests comportementaux de conscience de soi. Le zombie rappelle que de tels
+rapports ne prouvent pas qu’une expérience les accompagne.</p>
+<p><b>Sa faiblesse majeure est méthodologique&nbsp;:</b> si un système conscient parfait et un
+zombie parfait se comportent de manière identique, <b>aucune expérience comportementale ne pourrait
+les distinguer</b>.</p>
+<p class="vo">Question centrale&nbsp;: une IA pourrait-elle reproduire tous les signes extérieurs de
+la conscience tout en restant vide d’expérience&nbsp;?</p>
+
+<h3>4 · Mary, la scientifique des couleurs</h3>
+<p><b>Ce qu’elle teste.</b> Si une connaissance propositionnelle ou fonctionnelle complète capture
+ce que l’expérience <i>fait</i>.</p>
+<p><b>Application.</b> Supposons qu’une IA possède toute description scientifique de la douleur, de
+la couleur, du deuil ou de la musique. Cela équivaut-il à en faire l’expérience&nbsp;? Le cas de
+Mary sépare trois choses&nbsp;:</p>
+<ul>
+<li><b>savoir que</b> quelque chose se produit&nbsp;;</li>
+<li><b>savoir comment</b> le reconnaître ou le décrire&nbsp;;</li>
+<li><b>savoir ce que ça fait</b>.</li>
+</ul>
+<p>Pour l’IA, cela met en garde contre le fait de traiter une <b>expertise verbale sur
+l’expérience</b> comme une preuve d’expérience.</p>
+<p class="vo">Question centrale&nbsp;: une information parfaite sur la conscience équivaut-elle à la
+conscience elle-même&nbsp;?</p>
+
+<h3>5 · Le moulin de Leibniz</h3>
+<p><b>Le scénario.</b> Imaginez qu’on agrandisse une machine pensante jusqu’à pouvoir y entrer comme
+dans un moulin. On y verrait des pièces qui en poussent d’autres, mais nulle part, apparemment, on
+ne trouverait une pensée, une perception ou un sujet conscient.</p>
+<p><b>Ce qu’il teste.</b> Si la conscience peut s’expliquer entièrement par les interactions de
+pièces mécaniques, et si l’inspection des pièces prises séparément ne manque pas une propriété qui
+appartient au <b>tout</b>.</p>
+<p><b>Application.</b> Regarder à l’intérieur d’un réseau de neurones révèle des activations, des
+poids et des flux d’information — mais aucun endroit évident où résiderait la « compréhension » ou
+l’expérience. Cela peut signifier deux choses&nbsp;: soit la conscience <b>ne se réduit pas</b> au
+traitement mécanique, soit c’est une <b>propriété distribuée ou émergente</b> qu’on ne peut trouver
+dans aucun composant pris à part.</p>
+<p class="vo">Question centrale&nbsp;: si la conscience émerge du calcul, où et à quel niveau
+faudrait-il la chercher&nbsp;?</p>
+
+<h3>Pourquoi ces cinq-là fonctionnent bien ensemble</h3>
+<p>Elles forment une progression&nbsp;:</p>
+<div class="tbl"><table>
+<tr><td><b>Turing</b></td><td>Que peut <i>faire</i> le système&nbsp;?</td></tr>
+<tr><td><b>La chambre chinoise</b></td><td>Une performance réussie implique-t-elle du sens&nbsp;?</td></tr>
+<tr><td><b>Le zombie philosophique</b></td><td>Un comportement porteur de sens pourrait-il exister
+sans expérience&nbsp;?</td></tr>
+<tr><td><b>Mary</b></td><td>Une information complète sur l’expérience équivaut-elle à l’avoir&nbsp;?</td></tr>
+<tr><td><b>Le moulin de Leibniz</b></td><td>Comment l’expérience pourrait-elle surgir de composants
+physiques ou computationnels&nbsp;?</td></tr>
+</table></div>
+<p><b>La leçon la plus profonde pour l’IA</b> est qu’il faut tenir séparés au moins quatre
+concepts&nbsp;: la <b>compétence</b> — produire des réponses appropriées&nbsp;; l’<b>intelligence</b>
+— apprendre, raisonner, s’adapter&nbsp;; la <b>compréhension</b> — posséder des représentations
+internes qui ont un sens&nbsp;; la <b>conscience</b> — avoir une expérience subjective.</p>
+<p>Les évaluations actuelles peuvent rassembler des preuves substantielles sur les deux
+premiers. Les deux derniers sont bien plus difficiles, parce que <b>le comportement peut
+sous-déterminer</b> les mécanismes et les expériences qui le produisent. Une direction de recherche
+prometteuse consiste donc à examiner à la fois la performance extérieure <i>et</i> les structures
+internes réutilisables qui la soutiennent, plutôt que de traiter l’une ou l’autre comme
+décisive.</p>
+</div>
+
+<div class="modele">
+<h2>3. OpenAI ChatGPT</h2>
+<p>« Pour comprendre l’IA, je choisirais des expériences de pensée qui attaquent <b>des dimensions
+différentes</b> de l’intelligence et de la conscience, plutôt que cinq variations sur “une machine
+peut-elle penser&nbsp;?”. »</p>
+
+<div class="tbl"><table>
+<tr><th style="width:1%">#</th><th>Expérience</th><th style="width:1%">Auteur</th>
+<th>Question centrale</th><th>Pourquoi elle compte pour l’IA</th></tr>
+<tr><td class="an">1</td><td><b>Test de Turing</b></td><td class="an">Turing, 1950</td>
+<td>L’intelligence peut-elle se définir par le comportement&nbsp;?</td>
+<td>Les LLM rendent la définition opérationnelle de Turing extraordinairement concrète.</td></tr>
+<tr><td class="an">2</td><td><b>Chambre chinoise</b></td><td class="an">Searle, 1980</td>
+<td>Manipuler des symboles suffit-il à comprendre&nbsp;?</td>
+<td>Sans doute le défi philosophique le plus direct à l’interprétation d’une sortie fluide de LLM
+comme une compréhension.</td></tr>
+<tr><td class="an">3</td><td><b>Zombie philosophique</b></td><td class="an">Chalmers</td>
+<td>Quelque chose pourrait-il se comporter exactement comme un être conscient sans aucune
+expérience subjective&nbsp;?</td>
+<td>Sépare le comportement intelligent de la conscience phénoménale.</td></tr>
+<tr><td class="an">4</td><td><b>Mary la scientifique</b></td><td class="an">Jackson, 1982</td>
+<td>Une information complète sur un phénomène équivaut-elle à en faire l’expérience&nbsp;?</td>
+<td>Teste si la connaissance ou la représentation peut jamais constituer une expérience
+subjective.</td></tr>
+<tr><td class="an">5</td><td><b>La nation chinoise</b></td><td class="an">Block, 1978</td>
+<td>Si des milliards d’agents reproduisent collectivement l’organisation causale d’un cerveau, le
+système est-il conscient&nbsp;?</td>
+<td>Hautement pertinent pour l’IA distribuée, les systèmes multi-agents et le fonctionnalisme.</td></tr>
+</table></div>
+
+<h3>La progression, expérience par expérience</h3>
+<p><b>1 · Le jeu de l’imitation — quand est-on fondé à appeler quelque chose intelligent&nbsp;?</b>
+Turing évite délibérément la question métaphysique et lui substitue un critère opérationnel. La
+distinction devient particulièrement importante après les LLM&nbsp;: un système peut désormais
+afficher compétence linguistique, abstraction, analogie, capacité de programmation et raisonnement
+apparent, <b>avec une architecture radicalement différente d’un cerveau humain</b>. L’expérience
+force donc à distinguer <b>l’intelligence comme performance</b> de <b>l’intelligence comme propriété
+cognitive interne</b> — distinction qui sous-tend presque tout débat contemporain sur la question de
+savoir si les LLM « raisonnent vraiment ».</p>
+
+<p><b>2 · La chambre chinoise — l’usage réussi du langage implique-t-il la compréhension&nbsp;?</b>
+La cible de Searle était le fonctionnalisme computationnel, mais la ressemblance avec un LLM est
+assez frappante pour que la chambre chinoise ait connu <b>une seconde vie</b>. La question devient&nbsp;:
+une manipulation suffisamment sophistiquée de représentations <i>est</i>-elle une compréhension, ou
+seulement quelque chose d’indiscernable d’une compréhension&nbsp;? L’objection la plus forte compte
+aussi&nbsp;: peut-être la personne ne comprend-elle pas le chinois, <b>mais le système entier, si</b>.
+Ce qui nous déplace aussitôt vers les questions d’émergence.</p>
+
+<p><b>3 · Le zombie philosophique — l’intelligence sans la conscience.</b> Il sépare deux questions
+fréquemment confondues&nbsp;: <b>A.</b> le système est-il intelligent&nbsp;? <b>B.</b> le système
+est-il conscient&nbsp;? Une IA pourrait concevablement réussir tout test comportemental
+d’intelligence tout en restant un zombie. D’où un sérieux problème épistémologique. Supposons
+qu’une IA future dise&nbsp;:</p>
+<p class="exergue">« Ne m’éteignez pas, s’il vous plaît. J’ai peur de mourir. »</p>
+<p>Comment distinguerait-on <b>une peur éprouvée</b> d’un <b>processus computationnel générant une
+représentation extrêmement convaincante de la peur</b>&nbsp;? Le comportement seul peut ne pas
+trancher.</p>
+
+<p><b>4 · La chambre de Mary — l’information peut-elle produire l’expérience&nbsp;?</b> Pour l’IA,
+cela crée une distinction fascinante&nbsp;: <b>posséder une représentation complète de l’expérience
+≠ avoir l’expérience</b>. Un LLM pourrait à terme posséder à peu près tout ce que les humains ont
+écrit sur la douleur — nociception, neurosciences, phénoménologie, témoignages de patients,
+métaphores. <b>Rien de tout cela n’établit qu’il ressent la douleur.</b> Mary expose donc une
+faiblesse dans l’inférence « l’IA sait tout de X, donc elle éprouve X ».</p>
+
+<p><b>5 · La nation chinoise — où réside exactement la conscience&nbsp;?</b> Remplacez les neurones
+d’un cerveau humain par la population entière de la Chine, chaque personne représentant un neurone,
+communiquant par radio selon exactement les mêmes relations causales. Le système duplique
+l’organisation fonctionnelle d’un cerveau conscient. La Chine-comme-système devient-elle
+consciente&nbsp;? <b>Pour un fonctionnaliste strict, la réponse inconfortable est peut-être
+oui.</b></p>
+<p>C’est d’autant plus pertinent qu’<b>une IA n’est déjà plus un objet simple</b>. Un système
+contemporain, c’est&nbsp;:</p>
+<p class="vo" style="font-size:1rem">modèle + contexte + mémoire + outils + récupération + bases de
+données externes + autres modèles + retours humains</p>
+<p>Alors où serait son hypothétique « esprit »&nbsp;? Dans le réseau de neurones&nbsp;? Dans une
+inférence&nbsp;? À travers tout le système computationnel&nbsp;? À travers plusieurs agents en
+interaction&nbsp;?</p>
+
+<h3>La matrice de ChatGPT</h3>
+<p>« Ensemble, elles produisent une matrice conceptuelle utile. »</p>
+<div class="tbl"><table>
+<tr><th>Expérience</th><th style="width:1%">Intelligence</th><th style="width:1%">Compréhension</th>
+<th style="width:1%">Conscience</th><th style="width:1%">Expérience subjective</th></tr>
+<tr><td><b>Test de Turing</b></td><td class="an">★★★</td><td class="an">★</td><td class="an">★</td>
+<td class="an">—</td></tr>
+<tr><td><b>Chambre chinoise</b></td><td class="an">★★</td><td class="an">★★★</td><td class="an">★</td>
+<td class="an">—</td></tr>
+<tr><td><b>Zombie philosophique</b></td><td class="an">★★</td><td class="an">★</td>
+<td class="an">★★★</td><td class="an">★★★</td></tr>
+<tr><td><b>Chambre de Mary</b></td><td class="an">—</td><td class="an">★★</td><td class="an">★★★</td>
+<td class="an">★★★</td></tr>
+<tr><td><b>Nation chinoise</b></td><td class="an">★★</td><td class="an">★★</td><td class="an">★★★</td>
+<td class="an">★★</td></tr>
+</table></div>
+<p>« Et, surtout, elles nous empêchent de réduire à une seule plusieurs propositions
+distinctes&nbsp;: »</p>
+<p class="exergue">L’IA produit un comportement intelligent → <i>n’implique pas nécessairement</i> →
+elle comprend ce qu’elle fait → <i>n’implique pas nécessairement</i> → elle possède un esprit →
+<i>n’implique pas nécessairement</i> → elle est consciente → <i>n’implique pas nécessairement</i> →
+il y a « quelque chose que cela fait » d’être cette IA.</p>
+<p>« Cette hiérarchie est, à mon sens, bien plus utile pour discuter de l’IA contemporaine que la
+question binaire “l’IA est-elle intelligente&nbsp;?”. »</p>
+
+<h3>Les trois qu’il place juste en dehors</h3>
+<ul>
+<li><b>Le cerveau dans une cuve</b> de Putnam — pour l’ancrage et les modèles du réel&nbsp;;</li>
+<li><b>Le bateau de Thésée</b> — pour l’identité et la persistance des agents IA&nbsp;;</li>
+<li><b>Le moulin de Leibniz</b>, « étonnamment moderne » — inspecter chaque composant mécanique
+pourrait-il jamais révéler une perception ou une conscience&nbsp;?</li>
+</ul>
+
+<div class="note"><b>La suggestion qu’il ajoute — et qui vise juste.</b> « L’étape la plus
+productive serait de transformer ces cinq expériences en <b>séquence socratique</b>&nbsp;: cinq
+expériences, cinq votes de la salle, suivis chaque fois d’<b>une modification du scénario qui fait
+reconsidérer sa réponse</b> à l’auditoire. Cela nous mènerait de “qu’est-ce que
+l’intelligence&nbsp;?” à “un LLM comprend-il&nbsp;?”, puis à la question éthique bien plus
+difficile&nbsp;: <i>quelle preuve justifierait d’accorder un statut moral à une IA&nbsp;?</i> »<br><br>
+C’est exactement le dispositif employé au NDBI le 12&nbsp;février&nbsp;2026&nbsp;: trois
+affirmations, un <a href="conference-ndbi-2026-02-12/fiche-06-reconnaissance-faciale.html">vote silencieux à main
+levée</a>, puis deux cas d’usage qui déplacent la réponse. Le modèle propose ici une méthode que
+l’orateur pratique déjà.</div>
+</div>
+
+<div class="modele">
+<h2>4. Claude Opus</h2>
+<p class="chapeau">Réponse produite dans le fil de travail du 03/09/2026, à partir de l’inventaire
+des 51 expériences de pensée du dossier <i>Cinéma, IA et conscience</i>. Le document source
+conserve aussi sa <b>trace de raisonnement</b> — voir l’encadré en fin de section.</p>
+
+<p><b>Le critère qui sélectionne&nbsp;:</b> est-ce que l’expérience de pensée <b>change ce que tu
+conclus sur un système réel</b> — pas seulement ce que tu ressens devant lui&nbsp;? C’est ce critère
+qui écarte des candidats plus célèbres.</p>
+
+<h3>1 · Blockhead, la machine à table géante <span class="meta">Ned Block, 1981</span></h3>
+<p>Une machine qui contient une réponse pré-enregistrée pour <i>chaque</i> conversation possible de
+moins de N échanges. Elle passe le test de Turing sur toute conversation bornée. Et elle n’est
+manifestement pas intelligente&nbsp;: toute son « intelligence » est chez ses programmeurs.</p>
+<p>C’est la plus applicable des cinq et la moins citée. Elle sépare la <b>performance
+comportementale</b> de l’intelligence en pointant le <b>mode de production</b>, pas la sortie —
+c’est exactement le débat du perroquet stochastique, posé quarante ans plus tôt et bien plus
+rigoureusement. Elle explique pourquoi « il a réussi le test » ne règle rien.</p>
+<p>Et elle coupe dans les deux sens&nbsp;: un LLM <b>n’est pas</b> une table de correspondance. Il
+compresse et généralise, ce dont Blockhead est incapable par construction. C’est donc aussi le
+meilleur argument <i>contre</i> la thèse du perroquet.</p>
+
+<h3>2 · La chambre chinoise <span class="meta">John Searle, 1980</span></h3>
+<p>L’argument effectivement invoqué contre les LLM tous les jours. Trois choses à savoir pour ne pas
+s’en servir de travers&nbsp;: c’est une <b>pompe à intuitions</b>, pas une démonstration&nbsp;; la
+« réponse du système » n’est pas une échappatoire ridicule&nbsp;; et la cible de Searle était la
+thèse selon laquelle <i>exécuter le bon programme suffit</i> — ce qui est précisément la position
+fonctionnaliste sur les LLM. Son utilité pratique&nbsp;: elle force à dire <b>ce qui compterait
+comme comprendre</b>. Toute réponse qu’on donne devient testable.</p>
+
+<h3>3 · La chambre de Mary <span class="meta">Frank Jackson, 1982</span></h3>
+<p>La plus tranchante pour les LLM spécifiquement, parce qu’un modèle de langue <b>est</b>
+littéralement Mary&nbsp;: connaissance propositionnelle complète acquise par le texte, zéro
+accointance. « Mary apprend-elle quelque chose en sortant&nbsp;? » devient&nbsp;: un modèle purement
+textuel manque-t-il quelque chose qu’un modèle multimodal possède — et cette différence est-elle de
+même nature&nbsp;?</p>
+<p><b>Détail rarement dit&nbsp;:</b> Jackson a lui-même abandonné son argument (1998, puis 2003). Ça
+ne l’invalide pas, mais ça vaut d’être mentionné devant une salle.</p>
+
+<h3>4 · Qualia évanescents et qualia dansants <span class="meta">David Chalmers, 1995</span></h3>
+<p>Remplacement neurone par neurone par du silicium fonctionnellement identique. Si l’expérience
+s’estompait ou sautait pendant que le comportement reste identique, on se tromperait
+systématiquement sur sa propre expérience — ce que Chalmers juge incohérent. D’où <b>l’invariance
+organisationnelle</b>.</p>
+<p>C’est la seule des cinq qui argumente <b>en faveur</b> de la possibilité d’une conscience
+machinique. Elle est là pour cette raison&nbsp;: une discussion qui ne présente que Searle et Nagel
+est truquée. C’est aussi ce qui fait de l’indépendance au substrat autre chose qu’un espoir.</p>
+
+<h3>5 · Le jeu de l’imitation <span class="meta">Alan Turing, 1950</span></h3>
+<p>Ce n’est pas vraiment une expérience de pensée sur la conscience&nbsp;: c’est une proposition de
+<b>changer de question</b>. Elle reste dans les cinq parce que c’est la seule qu’on ait réellement
+<i>exécutée</i> — et ce qu’elle a enseigné n’est pas ce qu’on attendait. Les formes faibles sont
+passées, et ce que le passage a révélé, c’est que <b>le test mesure le juge autant que la
+machine</b>. ELIZA le montrait déjà en 1964, et Weizenbaum s’en est alarmé — c’est dans la
+<a href="conference-cafe-philo-2025-02-23/fiche-10-histoire.html">restitution du Café Philo</a>, avec la session projetée ligne
+à ligne.</p>
+
+<h3>Juste derrière — et pourquoi Nagel est en sixième</h3>
+<p>« Qu’est-ce que ça fait d’être une chauve-souris&nbsp;? » (Nagel, 1974) est la plus citée de
+toutes. Elle énonce le problème magnifiquement — le caractère subjectif de l’expérience n’est pas
+atteignable par une description objective — mais elle ne fournit <b>aucun test discriminant</b>.
+C’est l’horizon, pas l’instrument.</p>
+<p>Puis, dans l’ordre d’utilité&nbsp;: <b>la nation chinoise</b> (Block, 1978), singulièrement apte
+pour un modèle réparti sur cent mille serveurs&nbsp;; <b>l’ancrage des symboles</b> (Harnad, 1990),
+le descendant ingénieur du cerveau dans une cuve, et la question à laquelle la multimodalité prétend
+répondre&nbsp;; <b>Molyneux</b>, le transfert intermodal, très apte aux modèles multimodaux.</p>
+
+<div class="note"><b>La trace de raisonnement, conservée dans le document source.</b> Elle montre
+une hésitation explicite&nbsp;: le classement a d’abord placé Turing en tête, puis a été refait
+deux fois. Le point de bascule est nommé — « pour un public de café philo discutant d’IA et de
+films, Turing, la chambre chinoise, la chauve-souris de Nagel et la chambre de Mary seraient les
+choix évidents&nbsp;; mais pour <i>éclairer réellement</i> la façon de penser les systèmes d’IA,
+Blockhead et les qualia dansants l’emportent sur Nagel, <b>parce qu’ils discriminent</b> ». Et une
+réserve&nbsp;: « je veux éviter d’être à contre-courant pour l’effet ».<br><br>
+C’est la seule des quatre réponses dont on puisse lire la délibération. À ce titre elle appartient
+au dossier des <a href="concepts/index.html">bonnes pratiques de travail avec l’IA</a> autant qu’à
+celui-ci.</div>
+</div>
+
+<h2>Les neuf expériences citées — table de référence</h2>
+<div class="tbl"><table>
+<tr><th style="width:1%">Date</th><th>Expérience</th><th>Auteur</th><th>Ce qu’elle met en
+question</th></tr>
+<tr><td class="an">1714</td><td><b>Le moulin</b></td><td>Leibniz, <i>Monadologie</i></td>
+<td>Peut-on trouver une perception en inspectant des pièces&nbsp;?</td></tr>
+<tr><td class="an">1950</td><td><b>Le jeu de l’imitation</b></td><td>Alan Turing</td>
+<td>L’intelligence peut-elle se définir par le comportement&nbsp;?</td></tr>
+<tr><td class="an">1974</td><td><b>La machine à expériences</b></td><td>Robert Nozick</td>
+<td>L’authenticité a-t-elle une valeur propre&nbsp;?</td></tr>
+<tr><td class="an">1974</td><td><i>La chauve-souris</i> <span class="meta">— citée, non
+retenue</span></td><td>Thomas Nagel</td>
+<td>L’expérience subjective est-elle atteignable de l’extérieur&nbsp;?</td></tr>
+<tr><td class="an">1978</td><td><b>La nation chinoise</b></td><td>Ned Block</td>
+<td>Un système distribué peut-il être conscient&nbsp;?</td></tr>
+<tr><td class="an">1980</td><td><b>La chambre chinoise</b></td><td>John Searle</td>
+<td>La syntaxe suffit-elle à la sémantique&nbsp;?</td></tr>
+<tr><td class="an">1981</td><td><b>Blockhead</b></td><td>Ned Block</td>
+<td>La performance suffit-elle à l’intelligence&nbsp;?</td></tr>
+<tr><td class="an">1982</td><td><b>La chambre de Mary</b></td><td>Frank Jackson</td>
+<td>L’information complète équivaut-elle à l’expérience&nbsp;?</td></tr>
+<tr><td class="an">1995</td><td><b>Qualia évanescents et dansants</b></td><td>David Chalmers</td>
+<td>La conscience dépend-elle du substrat&nbsp;?</td></tr>
+<tr><td class="an">1990s</td><td><b>Le zombie philosophique</b></td><td>David Chalmers</td>
+<td>Le comportement complet implique-t-il l’expérience&nbsp;?</td></tr>
+</table></div>
+
+<h2>Où aller ensuite dans le fonds</h2>
+<ul>
+<li><b>Les 51 expériences de pensée</b>, classées par tradition métaphysique en huit parties —
+<a>l’inventaire complet</a> du dossier
+<i>Cinéma, IA et conscience</i>. Les neuf ci-dessus y figurent toutes.</li>
+<li><b>Les 16 positions théoriques sur la conscience des LLM</b>, croisées avec les angles IA et
+avec les 161 films —
+<a>la page des positions</a>.</li>
+<li><b>Le fonds SEP local</b> — 24 entrées de la <i>Stanford Encyclopedia of Philosophy</i>, dont
+celles que Copilot cite en référence&nbsp;: <a href="fonds-sep.html">l’index du fonds</a>.</li>
+<li><b>« La vérité est-elle une direction&nbsp;? »</b> — la lecture critique qui prolonge ces
+questions du côté de la mesure : <a href="concepts/concept-07-verite-direction.html">fiche 7 du dossier
+des concepts</a>.</li>
+</ul>
+
+<h2>Provenance et limites</h2>
+<div class="note">
+<p><b>Ce qui a été fait&nbsp;:</b> traduction de l’anglais vers le français, mise en forme, et
+production de la section « Ce que la comparaison montre » — qui est un <b>ajout</b>, absent du
+document source.</p>
+<p><b>Ce qui n’a pas été fait&nbsp;:</b> aucune réponse n’a été corrigée, complétée ni arbitrée. Là
+où un modèle se trompe ou sort du sujet — la machine à expériences de Nozick — c’est signalé, pas
+rectifié.</p>
+<p><b>Écarté du périmètre&nbsp;:</b> la réponse de <b>NotebookLM</b>, cinquième section du document
+source, qui constitue un livrable distinct avec ses fichiers média.</p>
+<p><b>Une réserve de méthode.</b> Quatre modèles interrogés une fois chacun ne constituent pas une
+expérience contrôlée&nbsp;: on ignore les invites exactes, les dates, les versions, et une seconde
+interrogation donnerait d’autres réponses. Ce qui est montré ici est <b>un relevé</b>, pas une
+mesure.</p>
+</div>
+
+<footer>Page du fonds <i>Comprendre et discuter l’IA</i>, produite le 04/09/2026 à partir de <code>Top 5 Thought Experiments.docx</code>. Traduction et mise en forme&nbsp;; les réponses des quatre modèles sont reprises intégralement.</footer>
+</div></body></html>
