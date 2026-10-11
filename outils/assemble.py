@@ -37,6 +37,11 @@ SEPROW = re.compile(
 
 PROTEGES = {'.git', '.gitattributes', '.gitignore', '.nojekyll', 'outils', 'README.md'}
 
+# Ligne de retour vers l'accueil du domaine (BKL-CDC-027, decision d'AH du 11/10/2026), posee sur
+# la page d'accueil du portail seulement. Lien absolu https : reecrire() ne touche pas aux liens
+# http(s), et la ligne est inseree APRES reecrire() -- aucune entree d'admission n'est requise.
+RETOUR_ACCUEIL = '<p class="retour"><a href="https://www.cdatso.be/">&larr; Christo Datso</a></p>\n'
+
 
 def lire_admission(chemin):
     paires = []
@@ -305,6 +310,7 @@ def main():
             txt = poser_noindex(txt, noindex)
             txt = poser_css(txt, css)
             if dst_rel == 'index.html':
+                txt = inserer_avant(txt, '<h1>', RETOUR_ACCUEIL, 'retour accueil')
                 txt = inserer_avant(txt, '<div class="note">',
                                     '<div class="note"><p>' + textes['chapeau']['texte']
                                     + '</p></div>\n', 'chapeau')

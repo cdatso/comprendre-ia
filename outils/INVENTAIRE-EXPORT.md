@@ -11,7 +11,7 @@
 | Liens internes reecrits | 1097 |
 | Liens renvoyes vers `fonds-sep.html` | 7 |
 | Attributs `href` RETIRES (texte conserve) | 39 |
-| Poids des fichiers copies | 6757632 octets |
+| Poids des fichiers copies | 6757712 octets |
 
 ## 2. Liens retires -- page, texte du lien, cible exclue
 
@@ -69,7 +69,7 @@
 
 | Source (sous `CNF\`) | Export | Octets | SHA-256 |
 |---|---|---:|---|
-| `index.html` | `index.html` | 26405 | `9bd3382b9270b0491697f26b18ab0f23cee7940bd3304db04cab8778f4fff0b5` |
+| `index.html` | `index.html` | 26485 | `7c4cd16873dfde761ad315f2c7c5a5bdfd31e4280947ab21f8d2a11840d0ccba` |
 | `pieces-recurrentes.html` | `pieces-recurrentes.html` | 18419 | `be52eead965490e4b1a27c5fb35fda5f3d2847927bf207dd80df721479be2f8d` |
 | `provenance-licences.html` | `provenance-licences.html` | 16673 | `eac1d597614729d437bfebbcc9e3a9ef97cfdb9ab19970a0e07f22155c0b65f8` |
 | `IA/top-5-experiences-de-pensee.html` | `top-5-experiences-de-pensee.html` | 49322 | `c7e014f387906e967d53887a15a6959f7bf998c6ca931e5ce91825e9c6c92c2d` |
